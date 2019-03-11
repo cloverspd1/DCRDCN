@@ -1,0 +1,140 @@
+﻿@using BEL.DCRDCNWorkflow.Models;
+@using BEL.CommonDataContract
+@using BEL.DCRDCNWorkflow.Models.Master
+@using BEL.DCRDCNWorkflow.Models.Common
+@model DCRAdminDetailSection
+@{
+
+    ApproverMaster approverusrelist = Model.MasterData.FirstOrDefault(x => x.NameOfMaster.Equals(DCRDCNListNames.APPROVERMASTER)) as ApproverMaster;
+    List<ApproverMasterListItem> MarketingUserList = approverusrelist.Items.Where(x => (x as ApproverMasterListItem).Role == DCRRoles.LUMMARKETING).ToList().ConvertAll(p => (ApproverMasterListItem)p);
+    MarketingUserList = Helper.splitUser(MarketingUserList);
+
+    List<MasterDataItem> DCRTOBEConsidered = new List<MasterDataItem>();
+    DCRTOBEConsidered.Add(new MasterDataItem("true", "Yes"));
+    DCRTOBEConsidered.Add(new MasterDataItem("false", "No"));
+   
+}
+
+<div class="form-horizontal">
+   
+        <div class="card" id="mktHead">
+            <div class="card-head">
+                @Html.ResourceValue("Section_Title_LUMMKTINCHARGESECTION", ResourceNames.DCR)
+                <div class="btn collapse-btn" data-toggle="collapse" data-target="#lummktBody"><i class="fa fa-chevron-down"></i></div>
+            </div>
+            <div class="card-body" id="lummktBody">
+                <div class="form-horizontal">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">
+                                    <span class="text-danger text-default-light">*</span>
+                                    @Html.LabelFor(m => m.LUMMarketingUser, ResourceNames.DCR)
+
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="form-control noborder text-left">
+                                        
+                                            @Html.DisplayFor(m => m.LUMMarketingUserName)
+                                            
+                                            @Html.HiddenFor(m => m.LUMMarketingUser)
+                                            @Html.HiddenFor(m => m.LUMMarketingUserName)
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">
+                                    Comment:
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="form-control noborder text-left">
+                                        @{int i = Model.ApproversList.FindIndex(p => p.Role == DCRRoles.LUMMARKETINGINCHARGE); }
+                                        @Html.TextAreaFor(m => m.LUMIComment, new { maxlength = 255, @class = "form-control", @data_val = "true", @data_val_required = "Please Enter Comment", data_toggle = "tooltip", title = "Max 255 characters" })
+                                        @Html.ValidationMessageFor(m => m.LUMIComment, ResourceNames.DCR)
+
+
+                                        @*@Html.TextAreaFor(m => m.CurrentApprover.Comments, new { @class = "form-control requiredOnDelegate", @data_val = "true", @data_val_required = "Please Enter Comment", data_toggle = "tooltip", title = "Max 255 characters" })
+                                        @Html.HiddenFor(x => x.CurrentApprover.Approver)
+                                        @Html.HiddenFor(x => x.CurrentApprover.Role)
+                                        @Html.HiddenFor(x => x.CurrentApprover.AssignDate)
+                                        @Html.ValidationMessageFor(m => m.CurrentApprover.Comments, ResourceNames.DCR)*@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+       
+            <div class="card">
+                <div class="card-head">
+                    @Html.ResourceValue("Section_Title_LUMMKTSECTION", ResourceNames.DCR)
+                    <div class="btn collapse-btn" data-toggle="collapse" data-target="#lummktBody1"><i class="fa fa-chevron-down"></i></div>
+                </div>
+                <div class="card-body" id="lummktBody1">
+                    <div class="form-horizontal">
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">
+                                        <span class="text-danger text-default-light">*</span>
+                                        @Html.LabelFor(m => m.LUMExpectedChange, ResourceNames.DCR)
+
+                                    </label>
+                                    <div class="col-md-8 ">
+
+                                        @Html.TextAreaFor(m => m.LUMExpectedChange, new { maxlength = 255, @class = "form-control", data_toggle = "tooltip", title = "Max 255 characters" })
+                                        @Html.ValidationMessageFor(m => m.LUMExpectedChange, ResourceNames.DCR)
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">
+                                        @Html.LabelFor(m => Model.CurrentApprover.ApprovalDate, ResourceNames.Common)
+                                    </label>
+                                    <div class="col-sm-8">
+                                        <div class="form-control noborder text-left">
+                                            @(Model.CurrentApprover != null && Model.CurrentApprover.ApprovalDate.HasValue ? Model.CurrentApprover.ApprovalDate.Value.ToShortDateString() : "-")
+                                            @Html.Hidden("Approver", Model.CurrentApprover != null && Model.CurrentApprover.ApprovalDate.HasValue ? Model.CurrentApprover.ApprovalDate.Value.ToShortDateString() : string.Empty)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1" class="col-md-4 control-label">
+                                        <span class="text-danger text-default-light">*</span>
+                                        @Html.LabelFor(m => m.LUMTOBECONSIDERED, ResourceNames.DCR)
+                                    </label>
+                                    <div class="col-md-8 ">
+                                        @Html.DropDownListFor(m => m.LUMTOBECONSIDERED, new SelectList((DCRTOBEConsidered).OrderBy(x => x.Title).ToList(), "Value", "Title"), "Select", new { @class = "form-control", @data_selected = Model.LUMTOBECONSIDERED })
+                                        @Html.ValidationMessageFor(m => m.LUMTOBECONSIDERED, ResourceNames.DCR)
+                                        @*@Html.DisplayFor(m => m.LUMTOBECONSIDERED)
+                                        @Html.HiddenFor(m => m.LUMTOBECONSIDERED)*@
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        
+</div>
+
+
+

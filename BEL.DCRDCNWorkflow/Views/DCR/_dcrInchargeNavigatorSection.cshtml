@@ -1,0 +1,73 @@
+﻿@using BEL.DCRDCNWorkflow.Models.DCR
+@using BEL.CommonDataContract
+@using BEL.DCRDCNWorkflow.Models.Common
+@using BEL.DCRDCNWorkflow.Models.Master
+@model DCRInchargeNavigatorSection
+
+<script type="text/javascript">
+    @{
+        ApproverMaster approverusrelist = Model.MasterData.FirstOrDefault(x => x.NameOfMaster.Equals(DCRDCNListNames.APPROVERMASTER)) as ApproverMaster;
+        List<ApproverMasterListItem> dcrInchargeUserList = approverusrelist.Items.Where(x => (x as ApproverMasterListItem).Role == DCRRoles.LUMDCRPROCESSINCHARGE).ToList().ConvertAll(p => (ApproverMasterListItem)p);
+        dcrInchargeUserList = Helper.splitUser(dcrInchargeUserList);
+     }
+
+</script>
+<div class="form-horizontal">
+    @using (Ajax.BeginForm("SaveDCRInchargeNavigatorSection", "DCR", new AjaxOptions
+    {
+        HttpMethod = "POST",
+        LoadingElementId = "loading",
+        OnFailure = "OnFailure",
+        OnSuccess = "OnSuccess",
+        OnBegin = "BeginClient"
+    }, new { enctype = "multipart/form-data" }))
+    {
+        @Html.HiddenFor(m => m.ListDetails[0].ItemId)
+        @Html.HiddenFor(m => m.ListDetails[0].ListName)
+        @Html.HiddenFor(m => m.SectionName)
+        @Html.HiddenFor(m => m.ActionStatus)
+        @Html.HiddenFor(m => m.SendBackTo)
+   
+        @Html.HiddenFor(m => m.Status)
+        @Html.Partial("_ApproversList", Model.ApproversList)
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-md-4 control-label">
+                        <span class="text-danger text-default-light">*</span>
+                        @Html.LabelFor(m => m.DCRIncharge, ResourceNames.DCR)
+
+                    </label>
+                    <div class="col-sm-8">
+                        <div class="form-control noborder text-left">
+                            <div class="form-control noborder">
+                                @*@Html.DropDownListFor(m => m.DCRIncharge, new SelectList((Model.MasterData.FirstOrDefault(x => x.NameOfMaster.Equals(DCRDCNListNames.APPROVERMASTER)) as ApproverMaster).Items.Where(p => (p as ApproverMasterListItem).Role.Contains(DCRRoles.LUMDCRPROCESSINCHARGE)).OrderBy(x=>(x as ApproverMasterListItem).UserName), "UserID", "UserName"), "Select", new { @class = "form-control", @data_selected = Model.DCRIncharge })*@
+                                @Html.DropDownListFor(m => m.DCRIncharge, new SelectList((dcrInchargeUserList).OrderBy(x => x.UserName).ToList(), "UserID", "UserName"), "Select", new { @class = "form-control", @data_selected = Model.DCRIncharge })
+                                @Html.ValidationMessageFor(m => m.DCRIncharge, ResourceNames.DCR)
+                                @Html.HiddenFor(m => m.DCRInchargeName)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-md-4 control-label">
+                        <span class="text-danger text-default-light">*</span>
+                        @Html.ResourceValue("Label_Comments", ResourceNames.DCR)
+                    </label>
+                    <div class="col-sm-8">
+                        <div class="form-control noborder text-left">
+                            @Html.TextAreaFor(m => m.CurrentApprover.Comments, new { maxlength = 255, @class = "form-control", @data_val = "true", @data_val_required = "Please Enter Comment", data_toggle = "tooltip", title = "Max 255 characters" })
+                            @Html.HiddenFor(x => x.CurrentApprover.Approver)
+                            @Html.HiddenFor(x => x.CurrentApprover.Role)
+                            @Html.HiddenFor(x => x.CurrentApprover.AssignDate)
+                            @Html.ValidationMessageFor(m => m.CurrentApprover.Comments, ResourceNames.DCR)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

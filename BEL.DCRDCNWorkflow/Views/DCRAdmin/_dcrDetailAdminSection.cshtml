@@ -1,0 +1,382 @@
+﻿@using BEL.DCRDCNWorkflow.Models;
+@using BEL.DCRDCNWorkflow.Models.Common;
+@using BEL.DCRDCNWorkflow.Models.Master;
+@using BEL.CommonDataContract;
+@model DCRAdminDetailSection 
+<script type="text/javascript">
+    @{
+        DivisionMaster divisionlist = Model.MasterData.FirstOrDefault(x => x.NameOfMaster.Equals(DCRDCNListNames.DIVISIONMASTER)) as DivisionMaster;
+        ProductCategoryMaster prodlist = Model.MasterData.FirstOrDefault(x => x.NameOfMaster.Equals(DCRDCNListNames.PRODUCTCATEGORYMASTER)) as ProductCategoryMaster;
+        ApproverMaster approverlist = Model.MasterData.FirstOrDefault(x => x.NameOfMaster.Equals(DCRDCNListNames.APPROVERMASTER)) as ApproverMaster;
+  
+        var desingenggList = approverlist.Items.Where(x => (x as ApproverMasterListItem).Role == DCRRoles.DESIGNENGINEER).ToList();
+
+        List<MasterDataItem> statusList = new List<MasterDataItem>();
+        statusList.Add(new MasterDataItem("Consider", "Consider"));
+        statusList.Add(new MasterDataItem("Not Consider", "Not Consider"));
+    }
+    var DivisionList = JSON.parse(@(new HtmlString(Json.Encode(Newtonsoft.Json.JsonConvert.SerializeObject(divisionlist.Items.OrderBy(p => p.Title).ToList())))));
+    var ProductCategoryList = JSON.parse(@(new HtmlString(Json.Encode(Newtonsoft.Json.JsonConvert.SerializeObject(prodlist.Items.OrderBy(p => p.Title).ToList())))));
+    var Approverlist = JSON.parse(@(new HtmlString(Json.Encode(Newtonsoft.Json.JsonConvert.SerializeObject(approverlist.Items.OrderBy(p => p.Title).ToList())))));
+
+
+</script>
+
+@Html.HiddenFor(m => m.ListDetails[0].ItemId)
+@Html.HiddenFor(m => m.ListDetails[0].ListName)
+@Html.HiddenFor(m => m.SectionName)
+@Html.HiddenFor(m => m.ActionStatus)
+@Html.HiddenFor(m => m.SendBackTo)
+@Html.HiddenFor(m => m.Status)
+@Html.Partial("_ApproversList", Model.ApproversList)
+<div class="card" id="DCRDetailSection">
+    <div class="card-head" data-toggle="collapse" data-target="#sectiondetails">
+        @Html.ResourceValue("Section_Title_DCRDetailSection", ResourceNames.DCR)
+        <div class="btn collapse-btn"><i class="fa fa-chevron-down"></i></div>
+    </div>
+    <div class="card-body" id="sectiondetails">
+        <div class="form-horizontal">
+            <p><span class="text-danger text-default-light">@Html.ResourceValue("Text_Mandatory", ResourceNames.Common)</span></p>
+
+            
+            @if (!string.IsNullOrEmpty(Model.OldDCRNo))
+            {
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">
+                            @Html.LabelFor(m => m.OldDCRNo, ResourceNames.DCR)
+                        </label>
+                        <div class="col-md-8 ">
+                            <div class="form-control noborder">
+                                @Html.DisplayFor(m => m.OldDCRNo, ResourceNames.DCR)
+                                @Html.HiddenFor(m => m.OldDCRNo)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">
+                            @Html.LabelFor(m => m.OldDCRCreatedDate, ResourceNames.DCR)
+                        </label>
+                        <div class="col-md-8 ">
+                            <div class="form-control noborder">
+                                @(Model.OldDCRCreatedDate.HasValue ? Model.OldDCRCreatedDate.Value.ToShortDateString() : string.Empty)
+                                @Html.HiddenFor(m => m.OldDCRCreatedDate)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">
+                            @Html.LabelFor(m => m.OldDCRRejectedDate, ResourceNames.DCR)
+                        </label>
+                        <div class="col-md-8 ">
+                            <div class="form-control noborder">
+                                @(Model.OldDCRRejectedDate.HasValue ? Model.OldDCRRejectedDate.Value.ToShortDateString() : string.Empty)
+                                @Html.HiddenFor(m => m.OldDCRRejectedDate)
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+
+                </div>
+            </div>
+            }
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">
+                            @Html.LabelFor(m => m.ProposedBy, ResourceNames.DCR)
+                        </label>
+                        <div class="col-md-8 ">
+                            <div class="form-control noborder">
+                                @(string.IsNullOrEmpty(Model.ProposedByName) ? ViewBag.UserName : Model.ProposedByName)
+                                @Html.Hidden("ProposedBy", string.IsNullOrEmpty(Model.ProposedBy) ? (string)ViewBag.UserID : Model.ProposedBy)
+                                @Html.Hidden("ProposedByName", string.IsNullOrEmpty(Model.ProposedByName) ? (string)ViewBag.UserID : Model.ProposedByName)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">
+                            @Html.LabelFor(m => m.RequestDate, ResourceNames.DCR)
+                        </label>
+                        <div class="col-md-8 ">
+                            <div class="form-control noborder">
+                                @(Model.RequestDate.HasValue ? Model.RequestDate.Value.ToShortDateString() : DateTime.Now.ToShortDateString())
+                                @Html.Hidden("RequestDate", Model.RequestDate.HasValue ? Model.RequestDate.Value.ToShortDateString() : DateTime.Now.ToShortDateString())
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="col-md-4 control-label">
+                            <span class="text-danger text-default-light">*</span>
+                            @Html.LabelFor(m => m.RequestDepartment, ResourceNames.DCR)
+                        </label>
+                        <div class="col-md-8 ">
+                            <div class="form-control noborder">
+                                @(string.IsNullOrEmpty(Model.RequestDepartment) ? ViewBag.RequestDepartment : Model.RequestDepartment)
+                                @Html.Hidden("RequestDepartment", string.IsNullOrEmpty(Model.RequestDepartment) ? (string)ViewBag.RequestDepartment : Model.RequestDepartment)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="col-md-4 control-label">
+                            @Html.LabelFor(m => m.Status, ResourceNames.DCR)
+                        </label>
+                        <div class="col-md-8 ">
+                            <div class="form-control noborder">
+                                <span class="text-danger" id="Status">
+                                    <b>
+                                        @(string.IsNullOrEmpty(Model.WorkflowStatus) ? Html.ResourceValue("Text_New", ResourceNames.Common) : Model.WorkflowStatus)
+                                    </b>
+                                </span>
+                                @Html.HiddenFor(m => m.Status)
+                                @Html.HiddenFor(m => m.WorkflowStatus)
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="col-md-4 control-label">
+                            @Html.LabelFor(m => m.DCRNo, ResourceNames.DCR)
+                        </label>
+                        <div class="col-md-8 ">
+                            <div class="form-control noborder">
+                                <span class="text-danger" id="ReferenceNo">
+                                    <b>
+                                        @Html.DisplayFor(m => m.DCRNo, ResourceNames.DCR)
+                                        @Html.HiddenFor(m => m.DCRNo)
+                                        @Html.HiddenFor(m => m.Title)
+                                    </b>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="col-md-4 control-label">
+                            <span class="text-danger text-default-light">*</span>
+                            @Html.LabelFor(m => m.BusinessUnit, ResourceNames.DCR)
+
+                        </label>
+                        <div class="col-md-8 ">
+                            <div class="form-control noborder">
+                                @Html.DisplayFor(m => m.BusinessUnit)
+                                
+                                <div class="hidden">
+                                    @Html.DropDownListFor(m => m.BusinessUnit, new SelectList((Model.MasterData.FirstOrDefault(x => x.NameOfMaster.Equals(DCRDCNListNames.BUSINESSUNITMASTER)) as BusinessUnitMaster).Items, "Value", "Title"), "Select", new { @class = "form-control", @data_selected = Model.BusinessUnit })
+                                    @Html.ValidationMessageFor(m => m.BusinessUnit, ResourceNames.DCR)
+                                    @Html.HiddenFor(m => m.BusinessUnit)
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="col-md-4 control-label">
+                            <span class="text-danger text-default-light">*</span>
+                            @Html.LabelFor(m => m.Division, ResourceNames.DCR)
+                        </label>
+                        <div class="col-md-8">
+                            <div class="form-control noborder">
+
+                                @Html.DisplayFor(m => m.Division)
+
+                                <div class="hidden">
+                                    @Html.ListBox("DCRDivision", new MultiSelectList(new List<SelectListItem>()), new { @id = "DCRDivision", @Name = "DCRDivision", @class = "form-control", @data_selected = Model.Division })
+                                    @Html.ValidationMessageFor(m => m.Division, ResourceNames.DCR)
+                                    @Html.ValidationMessage("DCRDivision", Html.ResourceValue("Error_Division", ResourceNames.DCR))
+                                    @Html.HiddenFor(m => m.Division)
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="col-md-4 control-label">
+                            <span class="text-danger text-default-light">*</span>
+                            @Html.LabelFor(m => m.ProductCategory, ResourceNames.DCR)
+
+                        </label>
+                        <div class="col-md-8 ">
+                            <div class="form-control noborder multiselect-two">
+
+                                @Html.ListBox("DCRProductCategory", new MultiSelectList(new List<SelectListItem>().OrderBy(x => x.Value)), new { @id = "DCRProductCategory", @Name = "DCRProductCategory", @class = "form-control", @data_selected = Model.ProductCategory })
+                                @Html.ValidationMessageFor(m => m.ProductCategory, ResourceNames.DCR)
+                                @Html.ValidationMessage("DCRProductCategory", Html.ResourceValue("Error_ProductCategory", ResourceNames.DCR))
+                                @Html.HiddenFor(m => m.ProductCategory)
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="col-md-4 control-label" style="padding-top:0">
+                            <span class="text-danger text-default-light">*</span>
+                            @Html.LabelFor(m => m.Designchangeproposeddueto, ResourceNames.DCR)
+                        </label>
+                        <div class="col-md-8">
+                            @Html.DropDownListFor(m => m.Designchangeproposeddueto, new SelectList((Model.MasterData.FirstOrDefault(x => x.NameOfMaster.Equals(DCRDCNListNames.DESIGNCHANGEPROPOSEDMASTER)) as DesignchangeproposedMaster).Items.OrderBy(x => x.Title).ToList(), "Value", "Title"), "Select", new { @class = "form-control", @data_selected = Model.Designchangeproposeddueto })
+                            @Html.ValidationMessageFor(m => m.Designchangeproposeddueto, ResourceNames.DCR)
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">
+                            <span class="text-danger text-default-light">*</span>
+                            @Html.LabelFor(m => m.ProductName, ResourceNames.DCR)
+                        </label>
+                        <div class="col-md-8 ">
+                            @Html.TextBoxFor(m => m.ProductName, new { maxLength = 255, @class = "form-control", data_toggle = "tooltip", title = "Max 255 characters" })
+                            @Html.ValidationMessageFor(m => m.ProductName, ResourceNames.DCR)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div id="divproposedduetoOther" class="form-group">
+                        <label class="col-md-4 control-label">
+                            @Html.LabelFor(m => m.DesignChangeProposedOther, ResourceNames.DCR)
+                        </label>
+                        <div class="col-md-8 ">
+                            @Html.TextBoxFor(m => m.DesignChangeProposedOther, new { maxLength = 255, @class = "form-control", data_toggle = "tooltip", title = "Max 255 characters" })
+                            @Html.ValidationMessageFor(m => m.DesignChangeProposedOther, ResourceNames.DCR)
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="col-md-4 control-label">
+                            <span class="text-danger text-default-light">*</span>
+                            @Html.LabelFor(m => m.DescriptionOfDesignChangePropose, ResourceNames.DCR)
+
+                        </label>
+                        <div class="col-md-8">
+                            @Html.TextAreaFor(m => m.DescriptionOfDesignChangePropose, new { maxLength = 1000, @class = "form-control", data_toggle = "tooltip", title = "Max 1000 characters" })
+                            @Html.ValidationMessageFor(m => m.DescriptionOfDesignChangePropose, ResourceNames.DCR)
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="col-md-4 control-label">
+                            <span class="text-danger text-default-light">*</span>
+                            @Html.LabelFor(m => m.Expectedresultsifdesignchangeisc, ResourceNames.DCR)
+                        </label>
+                        <div class="col-md-8 ">
+                            @Html.TextAreaFor(m => m.Expectedresultsifdesignchangeisc, new { maxLength = 1000, @class = "form-control", data_toggle = "tooltip", title = "Max 1000 characters" })
+                            @Html.ValidationMessageFor(m => m.Expectedresultsifdesignchangeisc, ResourceNames.DCR)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="col-md-4 control-label">
+                            @Html.LabelFor(m => m.DesignChangeRequiredByDate, ResourceNames.DCR)
+                        </label>
+                        <div class="col-md-8">
+                            <div class="input-group date datepicker pastDisabled">
+                                @Html.TextBoxFor(m => m.DesignChangeRequiredByDate, "{0:dd/MM/yyyy}", new { @class = "form-control" })
+                                <span class="input-group-addon">
+                                    <span class="fa fa-calendar"></span>
+                                </span>
+                            </div>
+                            @Html.ValidationMessageFor(m => m.DesignChangeRequiredByDate, ResourceNames.DCR)
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">
+                            @Html.LabelFor(m => m.FNLDesignChangeAttachment, ResourceNames.DCR)
+
+                        </label>
+                        <div class="col-md-8 ">
+
+                            <div id="AttachmentDesignChange" data-appname="@SiteURLs.DCRDCNSITEURL">
+                            </div>
+                            @Html.TextBoxFor(m => m.FNLDesignChangeAttachment, new { @class = "notvisible" })
+                            @Html.ValidationMessageFor(m => m.FNLDesignChangeAttachment, ResourceNames.DCR)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">
+                            @Html.LabelFor(m => m.FNLExpectedResultsAttachment, ResourceNames.DCR)
+
+                        </label>
+                        <div class="col-md-8 ">
+                            <div id="AttachmentExpectedResult" data-appname="@SiteURLs.DCRDCNSITEURL">
+                            </div>
+                            @Html.TextBoxFor(m => m.FNLExpectedResultsAttachment, new { @class = "notvisible" })
+                            @Html.ValidationMessageFor(m => m.FNLExpectedResultsAttachment, ResourceNames.DCR)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*<div id="applicationstatusbody">
+                @Html.Partial("_Approvers", Model.ApproversList)
+            </div>*@
+
+            
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+</div>

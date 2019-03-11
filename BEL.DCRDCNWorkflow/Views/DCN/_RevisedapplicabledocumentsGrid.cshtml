@@ -1,0 +1,112 @@
+﻿@using BEL.DCRDCNWorkflow.Models.DCN
+@using BEL.CommonDataContract
+
+@model List<ITrans>
+@*<script type="text/javascript">
+        $(document).ready(function () {
+
+     BindFileUploadControl({
+                ElementId: 'AttachFile', Params: {}, Url: "UploadFile",
+                AllowedExtensions: [],
+                MultipleFiles: false,
+                CallBack: "OnFileUploaded"
+            });
+            uploadedFiles = BindFileList("FileNameList", "AttachFile");
+        });
+        var uploadedFiles = [];
+        function OnFileUploaded(result) {
+            uploadedFiles.push(result);
+            $("#FileNameList").val(JSON.stringify(uploadedFiles)).blur();
+        }
+
+        function AttachFileRemoveImage(ele) {
+            var Id = $(ele).attr("data-id");
+            var li = $(ele).parents("li.qq-upload-success");
+            var itemIdx = li.index();
+            ConfirmationDailog({
+                title: "Remove", message: "Are you sure to remove file?", id: Id, url: "/DCN/RemoveUploadFile", okCallback: function (id, data) {
+                    li.find(".qq-upload-status-text").remove();
+                    $('<span class="qq-upload-spinner"></span>').appendTo(li);
+                    li.removeClass("qq-upload-success");
+                    var idx = -1;
+                    var tmpList = [];
+                    $(uploadedFiles).each(function (i, item) {
+                        if (idx == -1 && item.FileId == id) {
+                            idx = i;
+                            if (item.Status == 0) {
+                                item.Status = 2;
+                                tmpList.push(item);
+                            }
+                        } else {
+                            tmpList.push(item);
+                        }
+                    });
+                    if (idx >= 0) {
+                        uploadedFiles = tmpList;
+                        li.remove();
+                        if (uploadedFiles.length == 0) {
+                            $("#FileNameList").val("").blur();
+                        } else {
+                            $("#FileNameList").val(JSON.stringify(uploadedFiles)).blur();
+                        }
+                    }
+                }
+            });
+        }
+    </script>*@
+<div class="table-responsive">
+    <table class="table table-hover table-bordered someTable">
+        <thead>
+            <tr>
+                <th>@Html.ResourceValue("Grid_Title_DocumentNo", ResourceNames.DCN)</th>
+                <th>@Html.ResourceValue("Grid_Title_DocumentTitle", ResourceNames.DCN)</th>
+                <th>@Html.ResourceValue("Grid_Title_RevisionNo", ResourceNames.DCN)</th>
+                <th>@Html.ResourceValue("Grid_Title_Issuedate", ResourceNames.DCN)</th>
+                <th>@Html.ResourceValue("Grid_Title_Action", ResourceNames.Common)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Count > 0)
+            {
+                foreach (RevisedApplicableDocuments item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.DocumentNo
+                            @{
+                    FileDetails file = @item.Files != null && @item.Files.Count > 0 ? item.Files.FirstOrDefault() : null;
+                            }
+                            @if (@file != null)
+                            {
+                                string fileurl = !string.IsNullOrEmpty(file.FileURL) ? file.FileURL.Replace("~/", BEL.DCRDCNWorkflow.Common.FileListHelper.BaseUrl + "/") : string.Empty;
+                                <div class="clearfix"></div>
+                                <a data-url="@fileurl" onclick="DownloadUploadedFile(this);" style="cursor:pointer !important"> @file.FileName</a>
+                            }
+                        </td>
+                        <td>@item.DocumentTitle</td>
+                        <td>@item.RevisionNo</td>
+                        <td>@(item.RequestDate.HasValue ? item.RequestDate.Value.ToString("dd/MM/yyyy") : "")</td>
+
+                        <td>
+                            <a class="btn ink-reaction btn-floating-action" data-ajax="true" data-ajax-loading="#loading" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#AddEditRevisedAppDocdetails" href="@Url.Action("AddEditRevisedAppDoc", "DCN", new { index = @item.Index })" >
+                                <i class='fa fa-edit'></i>
+                            </a>
+                            <a class="btn ink-reaction btn-floating-action btn-danger" onclick="DeleteRevisedAppDoc(@item.Index);">
+                                <i class='fa fa-trash-o'></i>
+                            </a>
+
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="8" class="text-center text-danger">
+                        @Html.ResourceValue("Grid_Text_NoData", ResourceNames.Common)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

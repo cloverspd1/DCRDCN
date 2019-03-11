@@ -1,0 +1,75 @@
+﻿@using BEL.DCRDCNWorkflow.Models.DCN
+@using BEL.CommonDataContract
+@using System.Collections.Generic
+@model List<DCRDetails>
+
+<div class="modal fade" id="SelectDCRModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog BindDCR" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">
+                    @Html.ResourceValue("Popup_Select_DCRNo", ResourceNames.DCN)
+                </h4>
+            </div>
+            <div class="modal-body form-horizontal">
+                <div class="table-responsive">
+                    <table id="skuproducttable" class="table table-hover table-bordered dataTable">
+                        <thead>
+                            <tr>
+                                <th>@Html.ResourceValue("Grid_Title_DCRNo", ResourceNames.DCN)</th>
+                                <th>@Html.ResourceValue("Grid_Title_ProposedBy", ResourceNames.DCN)</th>
+                                <th>@Html.ResourceValue("Grid_Title_RequestedDate", ResourceNames.DCN)</th>
+                                <th>@Html.ResourceValue("Grid_Title_Action", ResourceNames.Common)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model != null)
+                            {
+                                foreach (DCRDetails item in Model)
+                                {
+
+                                    <tr>
+                                        <td>@item.DCRNo</td>
+                                        <td>@item.ProductName</td>
+                                        <td>@(item.RequestDate.HasValue ? item.RequestDate.Value.ToString("dd/MM/yyyy") : "")</td>
+                                        <td>
+                                            <div id="divActionlink" class="col-md-4">
+                                                <a class="btn btn-primary" onclick="SelectProductSKU('@item.ID');">
+                                                    Select
+                                                </a>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="4" class="text-center text-danger">
+                                        @Html.ResourceValue("Grid_Text_NoData", ResourceNames.Common)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">@Html.ResourceValue("Button_Text_Close", ResourceNames.Common)</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#AddEditProductSample").modal('hide');
+        $("#SelectDCRModal").modal().on('shown.bs.modal', function () {
+
+        });
+        $("#SelectDCRModal").modal().on('hidden.bs.modal', function () {
+            $("#AddEditProductSample").modal('show');
+        });
+    });
+</script>

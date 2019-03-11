@@ -1,0 +1,174 @@
+﻿@using BEL.DCRDCNWorkflow.Models
+@using BEL.CommonDataContract
+@using BEL.DCRDCNWorkflow.Models.Master
+@using BEL.DCRDCNWorkflow.Models.Common
+@model DCRAdminDetailSection
+
+<script type="text/javascript">
+    @{
+
+         ApproverMaster approverusrelist = Model.MasterData.FirstOrDefault(x => x.NameOfMaster.Equals(DCRDCNListNames.APPROVERMASTER)) as ApproverMaster;
+         List<ApproverMasterListItem> qaUser = approverusrelist.Items.Where(x => (x as ApproverMasterListItem).Role == DCRRoles.QA && (x as ApproverMasterListItem).BusinessUnit == Model.BusinessUnit).ToList().ConvertAll(p => (ApproverMasterListItem)p);
+         qaUser = Helper.splitUser(qaUser);
+
+         List<MasterDataItem> DCRTOBEConsidered = new List<MasterDataItem>();
+         DCRTOBEConsidered.Add(new MasterDataItem("true", "Yes"));
+         DCRTOBEConsidered.Add(new MasterDataItem("false", "No"));
+
+     }
+</script>
+
+
+<div class="form-horizontal">
+
+
+    <div class="card" id="qaincharge">
+        <div class="card-head">
+            @Html.ResourceValue("Section_Title_QAINCHARGESECTION", ResourceNames.DCR)
+            <div class="btn collapse-btn" data-toggle="collapse" data-target="#QAInchargeSec1"><i class="fa fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body" id="QAInchargeSec1">
+            <div class="form-horizontal">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span>
+                                @Html.LabelFor(m => m.QAUser, ResourceNames.DCR)
+
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+
+                                    @Html.DisplayFor(m => m.QAUserName)
+                                    @Html.HiddenFor(m => m.QAUser)
+                                    @Html.HiddenFor(m => m.QAUserName)
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span> Comments:
+
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+                                    @{int i = Model.ApproversList.FindIndex(p => p.Role == DCRRoles.QAINCHARGE); }
+                                    @*@Html.TextArea("ApproversList[" + i + "].Comments", Model.ApproversList[i].Comments)*@
+
+                                    @Html.TextAreaFor(m => m.QAIComment, new { maxlength = 255, @class = "form-control", @data_val = "true", @data_val_required = "Please Enter Comment", data_toggle = "tooltip", title = "Max 255 characters" })
+                                    @Html.ValidationMessageFor(m => m.QAIComment, ResourceNames.DCR)
+
+
+
+
+                                    @*@Html.TextAreaFor(m => m.CurrentApprover.Comments, new { @class = "form-control", @data_val = "true", @data_val_required = "Please Enter Comment", data_toggle = "tooltip", title = "Max 255 characters" })
+                                        @Html.HiddenFor(x => x.CurrentApprover.Approver)
+                                        @Html.HiddenFor(x => x.CurrentApprover.Role)
+                                        @Html.HiddenFor(x => x.CurrentApprover.AssignDate)
+                                        @Html.ValidationMessageFor(m => m.CurrentApprover.Comments, ResourceNames.DCR)*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="card" id="qa">
+        <div class="card-head">
+            @Html.ResourceValue("Section_Title_QA", ResourceNames.DCR)
+            <div class="btn collapse-btn" data-toggle="collapse" data-target="#QAInchargeSec2"><i class="fa fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body" id="QAInchargeSec2">
+            <div class="form-horizontal">
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span>
+                                @Html.LabelFor(m => m.PerformanceTestApplicable, ResourceNames.DCR)
+
+                            </label>
+                            <div class="col-md-8 ">
+                                @Html.TextAreaFor(m => m.PerformanceTestApplicable, new { maxlength = 255, @class = "form-control", data_toggle = "tooltip", title = "Max 255 characters" })
+                                @Html.ValidationMessageFor(m => m.PerformanceTestApplicable, ResourceNames.DCR)
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                <!--  <span class="text-danger text-default-light">*</span>-->
+                                @Html.LabelFor(m => m.FNLQATestReport, ResourceNames.DCR)
+                            </label>
+                            <div class="col-md-8 ">
+                                <div id="AttachmentQATestReport" data-appname="@SiteURLs.DCRDCNSITEURL">
+                                </div>
+                                @Html.TextBoxFor(m => m.FNLQATestReport, new { @class = "notvisible" })
+                                @Html.ValidationMessageFor(m => m.FNLQATestReport, ResourceNames.DCR)
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span>
+                                @Html.LabelFor(m => m.QAEffectOfChangeOnQualityNorms, ResourceNames.DCR)
+
+                            </label>
+                            <div class="col-md-8 ">
+                                @Html.TextAreaFor(m => m.QAEffectOfChangeOnQualityNorms, new { maxlength = 1000, @class = "form-control", data_toggle = "tooltip", title = "Max 1000 characters" })
+                                @Html.ValidationMessageFor(m => m.QAEffectOfChangeOnQualityNorms, ResourceNames.DCR)
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span>
+                                @Html.LabelFor(m => m.QADCRToBeConsidered, ResourceNames.DCR)
+                            </label>
+                            <div class="col-md-8 ">
+                                @*@Html.DisplayFor(m => m.QADCRToBeConsidered)
+                                    @Html.HiddenFor(m => m.QADCRToBeConsidered)*@
+                                @Html.DropDownListFor(m => m.QADCRToBeConsidered, new SelectList((DCRTOBEConsidered).OrderBy(x => x.Title).ToList(), "Value", "Title"), "Select", new { @class = "form-control", @data_selected = Model.QADCRToBeConsidered })
+                                @Html.ValidationMessageFor(m => m.QADCRToBeConsidered, ResourceNames.DCR)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+
+</div>
+
+
+

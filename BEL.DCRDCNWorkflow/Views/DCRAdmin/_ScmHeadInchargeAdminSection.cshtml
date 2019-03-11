@@ -1,0 +1,286 @@
+﻿@using BEL.DCRDCNWorkflow.Models;
+@using BEL.CommonDataContract
+@using BEL.DCRDCNWorkflow.Models.Master
+@using BEL.DCRDCNWorkflow.Models.Common
+@model DCRAdminDetailSection
+
+<script type="text/javascript">
+    @{
+        ApproverMaster approverusrelist = Model.MasterData.FirstOrDefault(x => x.NameOfMaster.Equals(DCRDCNListNames.APPROVERMASTER)) as ApproverMaster;
+        List<ApproverMasterListItem> scmUser = approverusrelist.Items.Where(x => (x as ApproverMasterListItem).Role == DCRRoles.SCM && (x as ApproverMasterListItem).BusinessUnit == Model.BusinessUnit).ToList().ConvertAll(p => (ApproverMasterListItem)p);
+        scmUser = Helper.splitUser(scmUser);
+
+    }
+</script>
+
+<div class="form-horizontal">
+    <input type="hidden" id="hdnIsSCMInchargeSection" value="true">
+    <input type="hidden" id="hdnIsSCMInchargeSectionActive" value="">
+    <div class="card">
+        <div class="card-head">
+            @Html.ResourceValue("Section_Title_SCMINCHARGESECTION", ResourceNames.DCR)
+
+
+            <div class="btn collapse-btn" data-toggle="collapse" data-target="#scminchargebody"><i class="fa fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body" id="scminchargebody">
+            <div class="form-horizontal">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span>
+                                @Html.LabelFor(m => m.SCMUser, ResourceNames.DCR)
+
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+
+
+                                    @Html.DisplayFor(m => m.SCMUserName)
+                                    @Html.HiddenFor(m => m.SCMUser)
+                                    @Html.HiddenFor(m => m.SCMUserName)
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                @Html.LabelFor(m => m.Comment, ResourceNames.DCR)
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+                                    @{int i = Model.ApproversList.FindIndex(p => p.Role == DCRRoles.SCMINCHARGE); }
+                                    @Html.TextAreaFor(m => m.SCMIComment, new { maxlength = 500, @class = "form-control", @data_val = "true", @data_val_required = "Please Enter Comment", data_toggle = "tooltip", title = "Max 500 characters" })
+                                    @Html.ValidationMessageFor(m => m.SCMIComment, ResourceNames.DCR)
+
+                                    @*@Html.TextAreaFor(m => m.CurrentApprover.Comments, new { @class = "form-control requiredOnDelegate", @data_val = "true", @data_val_required = "Please Enter Comment", data_toggle = "tooltip", title = "Max 255 characters" })
+                                        @Html.HiddenFor(x => x.CurrentApprover.Approver)
+                                        @Html.HiddenFor(x => x.CurrentApprover.Role)
+                                        @Html.HiddenFor(x => x.CurrentApprover.AssignDate)
+                                        @Html.ValidationMessageFor(m => m.CurrentApprover.Comments, ResourceNames.DCR)*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="card">
+        <div class="card-head">
+            @if (!string.IsNullOrEmpty(Model.BusinessUnit) && Model.BusinessUnit.Contains("CP"))
+            {
+                @Html.ResourceValue("Section_Title_SCM", ResourceNames.DCR)
+            }
+            else
+            {
+                @Html.ResourceValue("Section_Title_SCMCOSTINGINCHARGESECTION", ResourceNames.DCR)
+            }
+
+            <div class="btn collapse-btn" data-toggle="collapse" data-target="#scminchargebody1"><i class="fa fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body" id="scminchargebody1">
+            <div class="form-horizontal">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                @Html.LabelFor(m => Model.CurrentApprover.ApprovalDate, ResourceNames.Common)
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+                                    @(Model.CurrentApprover != null && Model.CurrentApprover.ApprovalDate.HasValue ? Model.CurrentApprover.ApprovalDate.Value.ToShortDateString() : "-")
+                                    @Html.Hidden("Approver", Model.CurrentApprover != null && Model.CurrentApprover.ApprovalDate.HasValue ? Model.CurrentApprover.ApprovalDate.Value.ToShortDateString() : string.Empty)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 text-right">
+                        @Ajax.ActionLink("Add Vendor Details", "AddEditVendor", "DCRAdmin", new AjaxOptions() { UpdateTargetId = "addeditVendor", HttpMethod = "GET", InsertionMode = InsertionMode.Replace, LoadingElementId = "loading" }, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+                <div id="divVendorGrid" class="row panel-body grid-view">
+                    <label class="col-sm-12 left">
+                        Stock of old items related to the DC
+                    </label>
+                    <div class="col-sm-12 text-right">
+
+                        @Html.Partial("_VendorGrid", Model.VendorDCRList.ToList<ITrans>())
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+                @if (!string.IsNullOrEmpty(Model.BusinessUnit) && Model.BusinessUnit.Contains("CP"))
+                {
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">
+                                    <span class="text-danger text-default-light">*</span>
+                                    @Html.LabelFor(m => m.EffectOnCostOfPartAndProduct, ResourceNames.DCR)
+
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="form-control noborder text-left">
+                                        @Html.DropDownListFor(m => m.EffectOnCostOfPartAndProduct, new SelectList((Model.MasterData.FirstOrDefault(x => x.NameOfMaster.Equals(DCRDCNListNames.EFFECTONCOSTMASTER)) as EffectOnCostMaster).Items, "Value", "Title"), "Select", new { @class = "form-control", @data_selected = Model.EffectOnCostOfPartAndProduct })
+                                        @Html.ValidationMessageFor(m => m.EffectOnCostOfPartAndProduct, ResourceNames.DCR)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">
+                                    <span class="text-danger text-default-light">*</span>
+                                    @Html.LabelFor(m => m.CostReducedIncreasedByRs, ResourceNames.DCR)
+
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="form-control noborder text-left">
+                                        <span id="negativeSign" style="position: absolute;left: 5px; top: 3px; display: block;font-size: 25px;">-</span>
+                                        @Html.TextBoxFor(m => m.CostReducedIncreasedByRs, new { @class = "form-control fixedtwodecimal numberonly" })
+                                        @Html.ValidationMessageFor(m => m.CostReducedIncreasedByRs, ResourceNames.DCR)
+                                        @Html.Hidden("CostReduceValue", Model.CostReducedIncreasedByRs)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">
+                                    <span class="text-danger text-default-light">*</span>
+                                    @Html.LabelFor(m => m.TotalExpectedQuantityInCurrentYe, ResourceNames.DCR)
+
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="form-control noborder text-left">
+                                        @Html.TextBoxFor(m => m.TotalExpectedQuantityInCurrentYe, new { @class = "form-control  integeronly" })
+                                        @Html.ValidationMessageFor(m => m.TotalExpectedQuantityInCurrentYe, ResourceNames.DCR)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">
+                                    <span class="text-danger text-default-light">*</span>
+                                    @Html.LabelFor(m => m.TotalExpectedQuantityInNextYear, ResourceNames.DCR)
+
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="form-control noborder text-left">
+                                        @Html.TextBoxFor(m => m.TotalExpectedQuantityInNextYear, new { @class = "form-control  integeronly" })
+                                        @Html.ValidationMessageFor(m => m.TotalExpectedQuantityInNextYear, ResourceNames.DCR)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">
+                                    <span class="text-danger text-default-light">*</span>
+                                    @Html.LabelFor(m => m.TotalBenefitLossInRupeesLakhs, ResourceNames.DCR)
+
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="form-control noborder text-left">
+                                        <span id="negativeSign" style="position: absolute;left: 5px; top: 3px; display: block;font-size: 25px;">-</span>
+                                        @Html.TextBox("TotalBenefitLoss", Model.TotalBenefitLossInRupeesLakhs, new { @class = "form-control fixedtwodecimal numberonly" })
+                                        @Html.TextBoxFor(m => m.TotalBenefitLossInRupeesLakhs, new { @class = "form-control  notvisible fixedtwodecimal numberonly" })
+                                        @Html.ValidationMessageFor(m => m.TotalBenefitLossInRupeesLakhs, ResourceNames.DCR)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">
+                                    <span class="text-danger text-default-light">*</span>
+                                    @Html.LabelFor(m => m.FeedbackFromSCM, ResourceNames.DCR)
+
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="form-control noborder text-left">
+                                        @Html.TextAreaFor(m => m.FeedbackFromSCM, new { maxlength = 2500, @class = "form-control", data_toggle = "tooltip", title = "Max 500 characters" })
+                                        @Html.ValidationMessageFor(m => m.FeedbackFromSCM, ResourceNames.DCR)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">
+                                    <span class="text-danger text-default-light">*</span>
+                                    @Html.LabelFor(m => m.TotalExpectedQuantityInCurrentYe, ResourceNames.DCR)
+
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="form-control noborder text-left">
+                                        @Html.TextBoxFor(m => m.TotalExpectedQuantityInCurrentYe, new { @class = "form-control  integeronly" })
+                                        @Html.ValidationMessageFor(m => m.TotalExpectedQuantityInCurrentYe, ResourceNames.DCR)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">
+                                    <span class="text-danger text-default-light">*</span>
+                                    @Html.LabelFor(m => m.TotalExpectedQuantityInNextYear, ResourceNames.DCR)
+
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="form-control noborder text-left">
+                                        @Html.TextBoxFor(m => m.TotalExpectedQuantityInNextYear, new { @class = "form-control  integeronly" })
+                                        @Html.ValidationMessageFor(m => m.TotalExpectedQuantityInNextYear, ResourceNames.DCR)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">
+                                    <span class="text-danger text-default-light">*</span>
+                                    @Html.LabelFor(m => m.FeedbackFromSCM, ResourceNames.DCR)
+
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="form-control noborder text-left">
+                                        @Html.TextAreaFor(m => m.FeedbackFromSCM, new { maxlength = 2500, @class = "form-control", data_toggle = "tooltip", title = "Max 255 characters" })
+                                        @Html.ValidationMessageFor(m => m.FeedbackFromSCM, ResourceNames.DCR)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+
+</div>

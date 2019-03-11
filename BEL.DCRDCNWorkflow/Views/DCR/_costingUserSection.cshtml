@@ -1,0 +1,33 @@
+﻿@using BEL.DCRDCNWorkflow.Models.Master
+@using BEL.CommonDataContract
+@using BEL.DCRDCNWorkflow.Models.DCR
+@model CostingSection
+@using (Ajax.BeginForm("SaveCostingSection", "DCR", new AjaxOptions
+    {
+        HttpMethod = "POST",
+        LoadingElementId = "loading",
+        OnFailure = "OnFailure",
+        OnSuccess = "OnSuccess",
+        OnBegin = "BeginClient"
+    }, new { enctype = "multipart/form-data" }))
+{
+
+    @Html.HiddenFor(m => m.ListDetails[0].ItemId)
+    @Html.HiddenFor(m => m.ListDetails[0].ListName)
+    @Html.HiddenFor(m => m.SectionName)
+    @Html.HiddenFor(m => m.ActionStatus)
+    @Html.HiddenFor(m => m.Status)
+    @Html.Partial("_ApproversList", Model.ApproversList)
+    @Html.Partial("_CurrentApprover", Model.CurrentApprover ?? new ApplicationStatus())
+    @Html.AntiForgeryToken()
+
+    <div class="row panel-body grid-view">
+        <label class="col-sm-12 left">
+            Add Costing effect
+        </label>
+        <div class="col-sm-12 text-right">
+
+            @Html.Partial("_costingVendorGrid", Model.VendorDCRList)
+        </div>
+    </div>
+}

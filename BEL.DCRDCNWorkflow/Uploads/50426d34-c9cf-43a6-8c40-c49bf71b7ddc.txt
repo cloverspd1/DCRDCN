@@ -1,0 +1,12 @@
+Uploading Time ---- 2min 4 sec
+
+Send invite Time ---2min 15sec
+program tracker --- 23sec
+
+
+
+
+Manage Attendance time - 28sec 91ms
+Attandance submit time - 1min 10sec 50ms
+
+Show Attandance time - 1min 50sec 65ms

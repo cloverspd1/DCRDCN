@@ -1,0 +1,62 @@
+﻿@using System.Data
+@model DataTable
+<div class="table-responsive noscroll">
+    @if (Model != null)
+    {
+        <table class="table table-hover table-bordered someTable" data-component="@ViewBag.ViewComponentName">
+            <thead>
+                <tr>
+                    @foreach (DataColumn dc in Model.Columns)
+                    {
+                        if (dc.ColumnName != "FMSRowNo" && dc.ColumnName != "#hide#")
+                        {
+                            <th>@dc.ColumnName</th>
+                        }
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Rows.Count == 0)
+                {
+                    <tr>
+                        <td colspan="@Model.Columns.Count">
+                            @Html.ResourceValue("Grid_Text_NoData", ResourceNames.Common)
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (DataRow dr in Model.Rows)
+                    {
+                        <tr>
+                            @foreach (DataColumn dc in Model.Columns)
+                            {
+                                if (dc.ColumnName != "FMSRowNo" && dc.ColumnName != "#hide#")
+                                {
+                                    <td>@(new MvcHtmlString(Convert.ToString(dr[dc])))</td>
+                                }
+                            }
+                        </tr>
+                    }
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="@Model.Columns.Count">
+                        <div class="row">
+                            <div class="col-md-4 text-left">
+                                <button type="button" class="btn btn-primary" onclick="csvexport(this);">Export to CSV</button>
+                            </div>
+                            <div class="col-md-8 text-right">
+                                <button type="button" class="btn btn-primary" onclick="viewall(this);">View All</button>
+                                <button type="button" class="btn btn-primary" onclick="prevpage(this);">Previous</button>
+                                <button type="button" class="btn btn-primary" onclick="nextpage(this);">Next</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+    }
+</div>

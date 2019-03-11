@@ -1,0 +1,539 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BEL.CommonDataContract.ContainsMasterDataAttribute" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attribute\ContainsMasterDataAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.FieldBelongToListAttribute" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAA=</HashCode>
+      <FileName>Attribute\FieldBelongToListAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.FieldColumnNameAttribute" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgBAAAAIAAAAAAAAECAAIAAAACgAAAAIEAAAAAAAYAA=</HashCode>
+      <FileName>Attribute\FieldColumnNameAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.IsAppendFieldAttribute" Collapsed="true">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attribute\IsAppendFieldAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.IsApproverDetailsAttribute" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAIAAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Attribute\IsApproverDetailsAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.IsApproverMatrixFieldAttribute" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAIAAAAAAAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attribute\IsApproverMatrixFieldAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.IsFileAttribute" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attribute\IsFileAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.IsListColumnAttribute" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Attribute\IsListColumnAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.IsPersonAttribute" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAEAAQAAgAAAAIAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attribute\IsPersonAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.IsPrimaryKeyAttribute" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Attribute\IsPrimaryKeyAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.IsTaskAttribute" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAgAAAAAAAAAAAAAAAAAAgAAAIIAAACAA=</HashCode>
+      <FileName>Attribute\IsTaskAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.IsTranAttribute" Collapsed="true">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAIAAAACIAAAAAAAAAAIAAAACAA=</HashCode>
+      <FileName>Attribute\IsTranAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.IsViewerAttribute" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Attribute\IsViewerAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.MastersListAttribute" Collapsed="true">
+    <Position X="12.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attribute\MastersListAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.NotSavedColumnAttribute" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Attribute\NotSavedColumnAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.RequiredOnDraft" Collapsed="true">
+    <Position X="9.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attribute\RequiredOnDraft.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.RequiredOnSendBack" Collapsed="true">
+    <Position X="11" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attribute\RequiredOnDraft.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.RequiredOnDelegate" Collapsed="true">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attribute\RequiredOnDraft.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.Class1" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.ActionStatus" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAACAAAAAIAAAIQAAEAA=</HashCode>
+      <FileName>Common\ActionStatus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.ActivityLog" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAgAAAAAACAAACAAAAQAAAAAAEAAAAA=</HashCode>
+      <FileName>Common\ActivityLog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.ActivityLogSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAACAAgEAAAAIAAADAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Common\ActivityLogSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.CommonDataContract.AjaxResponseStatusCodes" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQCAAICAAQAAAAAAAAAAAAAAQAABABgBAAAAAAI=</HashCode>
+      <FileName>Common\AjaxResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.AjaxResponse" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAQAAAAAAAAAAAAQAAAAAABEAAAAAIAAAAAA=</HashCode>
+      <FileName>Common\AjaxResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.AjaxErrorInfo" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\AjaxResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.AppApprovalMatrix" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAGAEAAAEiGUAEAAAAgAAABAAAAABAQAAAAABIAE=</HashCode>
+      <FileName>Common\AppApprovalMatrix.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.ApplicationStatus" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAGAMAQBFiGQAEAAACgAAABAAAAABYQAAAAgBIIE=</HashCode>
+      <FileName>Common\ApplicationStatus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.ApplicationStatusSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAgEAAAAICAADAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Common\ApplicationStatusSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.CommonDataContract.Approvers" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQEAAEAAAAAAhAAAEAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Common\Approvers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.BusinessExceptionError" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAQAAEAgAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Common\BusinessExceptionError.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.Button" Collapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAACAEECAAEAAAAAwAAAAAHAABAAAAAAEAAAE=</HashCode>
+      <FileName>Common\Button.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.Constants" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAIAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.TaskStatus" Collapsed="true">
+    <Position X="7.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAEAQAQAAABAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.ItemStatus" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAQAQAAABAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.ApplicationConstants" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAEAAAQAAAAAAAAAAAAABAAAAAAAABAAA=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.ApplicationNameConstants" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.FormNameConstants" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.SectionNameConstant" Collapsed="true">
+    <Position X="12.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.ListScope" Collapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.UserRoles" Collapsed="true">
+    <Position X="12.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QBAAAQCQAgAQAAAAAAAAAAAAAAAAAQAACAAAAAAIAAA=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.Parameter" Collapsed="true">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UAAKAqAAgAEAAAACgAAEQCkAgAAEEAQAACAAACBAAgI=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.SharePointPermission" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.FormType" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.FormStatus" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAiAAAAQACQAgIAAAABEAAAQAAAQADAAAAAIABoA=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.FormApprovalStatus" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAABgA=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.ApproverStatus" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAACAAAACAAAAAAAAAAAAIAAAQACgA=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.EmailTemplateName" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QkBAIAAAAIAICABAAggiAAAmIQAggBUCABAAAEAAQAA=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.TaskMode" Collapsed="true">
+    <Position X="5.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.ButtonCaption" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAUAAEAAAA=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.SiteURLs" Collapsed="true">
+    <Position X="2.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.AKIReportType" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAQAAAAAAAAAAAAAAAAAAAgAAAAABgAAAA=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.ExportToExcelApplication" Collapsed="true">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACEAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.DataTableExtensoins" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAgAAAAAAAA=</HashCode>
+      <FileName>Common\DataTableExtensoins.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.DivisionAdminDetails" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAQAAAAAQAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Common\DivisionAdminDetails.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.FileDetails" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAIAAAAAAIAAAAAAAAAAAAAAAAJAAAA=</HashCode>
+      <FileName>Common\FileDetails.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.ListItemDetail" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAgAAAIAAAABAA=</HashCode>
+      <FileName>Common\ListItemDetail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.ListNames" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QABAAABAAAAAAQABIBAAAAgAAAAQAAAAgQAhAAgAAAA=</HashCode>
+      <FileName>Common\ListNames.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.MasterNames" Collapsed="true">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gIQBBAACBCAgFCCAAQGAAAIgBgEKBAQIAAw4AAEgARg=</HashCode>
+      <FileName>Common\MasterNames.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.MasterDataItem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Common\Masters\MasterDataItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.CommonDataContract.SLAMatrix" Collapsed="true">
+    <Position X="4" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAFiEAAEAAAAAAAABAAAAABYAAAAAgBAAE=</HashCode>
+      <FileName>Common\Masters\SLAMatrix.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.NameValueData" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Common\NameValueData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.Person" Collapsed="true">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.UploadedFile" Collapsed="true">
+    <Position X="9.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAEAAAAAAAAAAAAAAQAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Common\UploadedFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.CommonDataContract.UserDetails" Collapsed="true">
+    <Position X="11" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEIAAAAIAABAAIAAAAIAEAgAEAAAAgIAAAAAjAAAAAA=</HashCode>
+      <FileName>Common\UserDetails.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="BEL.CommonDataContract.IMaster" Collapsed="true">
+    <Position X="4" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAACCAAAAAAAAAAAAAAAAAAAgAIAAAAAgA=</HashCode>
+      <FileName>Common\Masters\IMaster.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BEL.CommonDataContract.IMasterItem" Collapsed="true">
+    <Position X="5.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Common\Masters\IMasterItem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BEL.CommonDataContract.IContract" Collapsed="true">
+    <Position X="0.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\IContract.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BEL.CommonDataContract.IForm" Collapsed="true">
+    <Position X="2.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAgAAAIAAQAAAAEBAAAAAAAAAAAAAACAAE=</HashCode>
+      <FileName>Interface\IForm.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BEL.CommonDataContract.ISection" Collapsed="true">
+    <Position X="7.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAgEAAAAIAAADAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Interface\ISection.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BEL.CommonDataContract.ITask" Collapsed="true">
+    <Position X="9.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAEAQAAgEQAAACgAAAAAAAQAAAIAAEBAAgAAAA=</HashCode>
+      <FileName>Interface\ITask.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BEL.CommonDataContract.ITrans" Collapsed="true">
+    <Position X="11" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAgAQAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Interface\ITrans.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="BEL.CommonDataContract.ButtonActionStatus" Collapsed="true">
+    <Position X="0.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIYAEoBAQEQgQAoAADAEAggAQQQQAAAUIAAUBQUEAio=</HashCode>
+      <FileName>Common\ButtonActionStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BEL.CommonDataContract.TaskActionStatus" Collapsed="true">
+    <Position X="5.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAACAAAAAAAABAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BEL.CommonDataContract.ItemActionStatus" Collapsed="true">
+    <Position X="4" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAACAAAAAAAABAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BEL.CommonDataContract.FileStatus" Collapsed="true">
+    <Position X="2.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAACAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\FileDetails.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BEL.CommonDataContract.TempKeys" Collapsed="true">
+    <Position X="7.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAJCAAAAAAAAAAA=</HashCode>
+      <FileName>Common\TempKeys.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

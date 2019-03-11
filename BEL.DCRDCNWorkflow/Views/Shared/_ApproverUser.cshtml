@@ -1,0 +1,17 @@
+﻿@using BEL.CommonDataContract.Common
+@model ApplicationStatus
+@Html.HiddenFor(x => x.ApplicationName)
+@Html.HiddenFor(x => x.Comments)
+@Html.HiddenFor(x => x.FormName)
+
+@if (Model.Role == UserRoles.CREATOR)
+{
+    @(string.IsNullOrEmpty(Model.Approver) ? ViewBag.UserEmail : Model.Approver)
+    @Html.Hidden("Approver", string.IsNullOrEmpty(Model.Approver) ? (string)ViewBag.UserEmail : Model.Approver)
+}
+else
+{
+    @Html.TextBoxFor(x => x.Approver, new { @class = "user-tags", @id = Model.Approver + Model.Levels, @data_url = "/Master/GetUsers" })
+    @Html.ValidationMessageFor(x => x.Approver, ResourceNames.PM)
+}
+

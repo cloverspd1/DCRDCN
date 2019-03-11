@@ -1,0 +1,101 @@
+﻿@using BEL.DCRDCNWorkflow.Models;
+@using BEL.DCRDCNWorkflow.Models.Common;
+@using BEL.CommonDataContract;
+@model List<ISection>
+@{
+    ViewBag.Title = "DCR Work In Progress Report";
+}
+<style>
+    table tbody td {
+        text-align: left;
+        white-space: nowrap;
+    }
+</style>
+
+@*<div class="card">
+    <div class="card-head">
+        @Html.ResourceValue("Section_Title_ResponsibleDepartment", ResourceNames.Common)
+        <div class="btn collapse-btn collapsed" data-toggle="collapse" data-target="#deptusersec"><i class="fa fa-chevron-down"></i></div>
+    </div>
+    <div id="deptusersec" class="card-body">*@
+<p>
+    <span class="text-danger text-default-light">
+        @Html.ResourceValue("Text_WIPReportTitle", ResourceNames.DCR)
+    </span>
+</p>
+<div class="panel-body grid-view" style="overflow-x:scroll;">
+
+    <table id="wipDCRTable" class="table table-hover table-bordered someTable">
+        <thead>
+            <tr>
+                <th>View Link</th>
+                <th>@Html.ResourceValue("Grid_Title_DCRNo", ResourceNames.DCR)</th>
+                <th>@Html.ResourceValue("Grid_Title_ProductName", ResourceNames.DCR)</th>
+                <th>@Html.ResourceValue("Grid_Title_DateofApplication", ResourceNames.DCR)</th>
+                <th>@Html.ResourceValue("Grid_Title_PreparedBy", ResourceNames.DCR)</th>
+                @*<th>@Html.ResourceValue("Grid_Title_DescofChange", ResourceNames.DCR)</th>*@
+                <th>@Html.ResourceValue("Grid_Title_DnD", ResourceNames.DCR)</th>
+                <th>@Html.ResourceValue("Grid_Title_SCM", ResourceNames.DCR)</th>
+                <th>@Html.ResourceValue("Grid_Title_QA", ResourceNames.DCR)</th>
+                <th>@Html.ResourceValue("Grid_Title_CC", ResourceNames.DCR)</th>
+
+                <th>@Html.ResourceValue("Grid_Title_DAPMarketing", ResourceNames.DCR)</th>
+                <th>@Html.ResourceValue("Grid_Title_KAPMarketing", ResourceNames.DCR)</th>
+                <th>@Html.ResourceValue("Grid_Title_FANSMarketing", ResourceNames.DCR)</th>
+                <th>@Html.ResourceValue("Grid_Title_LightingMarketing", ResourceNames.DCR)</th>
+                <th>@Html.ResourceValue("Grid_Title_MRMarketing", ResourceNames.DCR)</th>
+                <th>@Html.ResourceValue("Grid_Title_LUMMarketing", ResourceNames.DCR)</th>
+                <th>@Html.ResourceValue("Grid_Title_Costing", ResourceNames.DCR)</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @if (Model != null && Model.Count > 0)
+            {
+                foreach (WIPDCRDetailsSection item in Model)
+                {
+                    string url = "Lists/DCR/DispForm.aspx?ID=";
+                    //  string url = "https://bajajelect.sharepoint.com/sites/DCRDCNDev/Lists/DCR/DispForm.aspx?ID=";
+                    <tr>
+
+                        <td><a href="#" onclick="ViewWIPReport('@url@item.ID')">View</a></td>
+                        <td> @(item.DCRNo == "View" ? string.Empty : item.DCRNo)</td>
+                        <td> @item.ProductName</td>
+                        <td> @(item.RequestDate.HasValue ? item.RequestDate.Value.ToString("dd/MM/yyyy") : "")</td>
+                        <td>@item.ProposedBy</td>
+                        @*<td> @{item.DescriptionOfDesignChangePropose.Length > 50 ? item.DescriptionOfDesignChangePropose.Substring(0, 50) : item.DescriptionOfDesignChangePropose; }</td>*@
+
+                        <td> @item.DnD</td>
+                        <td> @item.SCM</td>
+                        <td> @item.QA</td>
+                        <td> @item.CC</td>
+
+                        <td>@item.DAPMarketing</td>
+                        <td>@item.KAPMarketing</td>
+                        <td>@item.FANSMarketing</td>
+                        <td>@item.LightingMarketing</td>
+                        <td>@item.MRMarketing</td>
+                        <td>@item.LUMMarketing</td>
+                        <td>@item.Costing</td>
+                    </tr>
+
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="9" class="text-center text-danger">
+                        @Html.ResourceValue("Grid_Text_NoData", ResourceNames.Common)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+@*</div>
+        <div class="clearfix"></div>
+    </div>*@
+@section scripts{
+    @Scripts.Render("~/bundles/dcrindex")
+}

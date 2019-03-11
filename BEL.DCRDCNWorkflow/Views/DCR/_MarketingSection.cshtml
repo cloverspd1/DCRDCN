@@ -1,0 +1,109 @@
+﻿@using BEL.DCRDCNWorkflow.Models.DCR
+@using BEL.CommonDataContract
+@model MarketingSection
+
+@{List<MasterDataItem> VendorList = new List<MasterDataItem>();
+VendorList.Add(new MasterDataItem("Vendor 1", "Vendor 1"));
+VendorList.Add(new MasterDataItem("Vendor 2", "Vendor 2"));
+VendorList.Add(new MasterDataItem("Vendor 3", "Vendor 3"));
+VendorList.Add(new MasterDataItem("Vendor 4", "Vendor 4"));
+VendorList.Add(new MasterDataItem("Vendor 5", "Vendor 5"));
+VendorList.Add(new MasterDataItem("Vendor 6", "Vendor 6"));
+
+List<MasterDataItem> CostList = new List<MasterDataItem>();
+CostList.Add(new MasterDataItem("Cost Increase", "Cost Increase"));
+CostList.Add(new MasterDataItem("Cost Remains Same", "Cost Remains Same"));
+CostList.Add(new MasterDataItem("Cost Reduction", "Cost Reduction"));
+
+}
+<div class="form-horizontal">
+    @using (Ajax.BeginForm("SaveMarketingSection", "DCR", new AjaxOptions
+    {
+        HttpMethod = "POST",
+        LoadingElementId = "loading",
+        OnFailure = "OnFailure",
+        OnSuccess = "OnSuccess",
+        OnBegin = "BeginClient"
+    }, new { enctype = "multipart/form-data" }))
+    {
+        @Html.HiddenFor(m => m.ListDetails[0].ItemId)
+        @Html.HiddenFor(m => m.ListDetails[0].ListName)
+        @Html.HiddenFor(m => m.SectionName)
+        @Html.HiddenFor(m => m.ActionStatus)
+        @Html.HiddenFor(m => m.SendBackTo)
+        @Html.HiddenFor(m => m.Status)
+   @Html.Partial("_ApproversList", Model.ApproversList)
+    @Html.Partial("_CurrentApprover", Model.CurrentApprover ?? new ApplicationStatus())
+       @Html.AntiForgeryToken()
+
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="col-md-4 control-label">
+                        <span class="text-danger text-default-light">*</span>
+                        @Html.LabelFor(m => m.MarketingExpectedEffectOfChange, ResourceNames.DCR)
+                        
+                    </label>
+                    <div class="col-md-8 ">
+
+                        @Html.TextAreaFor(m => m.MarketingExpectedEffectOfChange, new { @class = "form-control", data_toggle = "tooltip", title = "Max 255 characters" })
+                        @Html.ValidationMessageFor(m => m.MarketingExpectedEffectOfChange, ResourceNames.DCR)
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-md-4 control-label">
+                        @Html.LabelFor(m => Model.CurrentApprover.ApprovalDate, ResourceNames.Common)
+                    </label>
+                    <div class="col-sm-8">
+                        <div class="form-control noborder text-left">
+                            @Html.DisplayFor(m => Model.CurrentApprover.ApprovalDate, ResourceNames.DCR)
+                            @Html.HiddenFor(m => Model.CurrentApprover.ApprovalDate)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="col-md-4 control-label">
+                        <span class="text-danger text-default-light">*</span>
+                        @Html.LabelFor(m => m.MarketingDCRTOBECONSIDERED, ResourceNames.DCR)
+                    </label>
+                    <div class="col-md-8 ">
+                        <select class="form-control" id="D&DHODDISPOSA" name="D&DHODDISPOSA">
+                            <option>Select</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                        @Html.ValidationMessageFor(m => m.MarketingDCRTOBECONSIDERED, ResourceNames.DCR)
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="col-md-4 control-label">
+                        <span class="text-danger text-default-light">*</span>
+                        @Html.LabelFor(m => m.MarketingOverallComments, ResourceNames.DCR)
+                    </label>
+                    <div class="col-md-8 ">
+                        @Html.TextAreaFor(m => m.CurrentApprover.Comments, new { @class = "form-control", @data_val = "true", @data_val_required = "Please Enter Comment", data_toggle = "tooltip", title = "Max 255 characters" })
+                        @Html.HiddenFor(x => x.CurrentApprover.Approver)
+                        @Html.HiddenFor(x => x.CurrentApprover.Role)
+                        @Html.HiddenFor(x => x.CurrentApprover.AssignDate)
+                        @Html.ValidationMessageFor(m => m.CurrentApprover.Comments, ResourceNames.DCR)
+                    </div>
+                </div>
+            </div>
+           
+
+        </div>
+
+   
+
+    }
+</div>

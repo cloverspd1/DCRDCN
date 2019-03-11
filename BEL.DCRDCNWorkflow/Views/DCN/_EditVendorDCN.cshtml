@@ -1,0 +1,111 @@
+﻿@using BEL.DCRDCNWorkflow.Models.DCN
+@model VendorDCN
+
+
+<div class="modal fade" id="addeditVendorDCNModel" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">
+                    @if (Model.Index > 0)
+                    {
+                        <span>
+                            @Html.ResourceValue("Popup_Title_EditRevisedAppDoc", ResourceNames.DCN)
+                        </span>
+                    }
+                   
+                </h4>
+            </div>
+            @using (Ajax.BeginForm("SaveVendorDCN", "DCN", new AjaxOptions
+            {
+                HttpMethod = "POST",
+                LoadingElementId = "loading",
+                OnFailure = "OnFailure",
+                OnSuccess = "OnVendorEditSuccess",
+                OnBegin = "BeginClient"
+            }, new { enctype = "multipart/form-data", id = "frmSaveVendorDCN" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(m => m.RequestBy)
+                @Html.HiddenFor(m => m.RequestDate)
+                @Html.HiddenFor(m => m.RequestID)
+                @Html.HiddenFor(m => m.ID)
+                @Html.HiddenFor(m => m.Index)
+                @Html.HiddenFor(m => m.ItemAction)
+
+
+                <div class="modal-body form-horizontal" id="divCriticalInsightSection">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="SubjectIssue" class="col-md-4 control-label">
+                                    
+                                    @Html.LabelFor(m => m.VendorName, ResourceNames.DCN)
+                                </label>
+                                <div class="col-md-8 ">
+                                    @Html.DisplayFor(m=>m.VendorName)
+                                   @Html.HiddenFor(m=>m.VendorName)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="DesiredResult" class="col-md-4 control-label">
+                                    <span class="text-danger text-default-light">*</span>
+                                    @Html.LabelFor(m => m.DateOfImplementation, ResourceNames.DCN)
+                                </label>
+                                <div class="col-md-8 ">
+                                    <div class='input-group date datepicker'>
+                                        @Html.TextBoxFor(m => m.DateOfImplementation, "{0:dd/MM/yyyy}", new { @class = "form-control" })
+                                        <span class="input-group-addon">
+                                            <span class="fa fa-calendar"></span>
+                                        </span>
+                                    </div>
+                                    @Html.ValidationMessageFor(m => m.DateOfImplementation, ResourceNames.DCN)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" class="col-md-4 control-label">
+                                    <span class="text-danger text-default-light">*</span>
+                                    @Html.LabelFor(m => m.StartProductSrNo, ResourceNames.DCN)
+                                </label>
+                                <div class="col-md-8 ">
+                                    @Html.TextBoxFor(m => m.StartProductSrNo, new { maxlength = 255, @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.StartProductSrNo, ResourceNames.DCN)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                  
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="OnModelSubmit(this.form.id)">@Html.ResourceValue("Button_Text_Save", ResourceNames.Common)</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        @Html.ResourceValue("Button_Text_Close", ResourceNames.Common)
+                    </button>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#addeditVendorDCNModel").modal().on('shown.bs.modal', function () {
+            BindDatePicker("#addeditVendorDCNModel");
+            $.validator.unobtrusive.parsePopup("#addeditVendorDCNModel");
+        });
+    });
+</script>
+
+

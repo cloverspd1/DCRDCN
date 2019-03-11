@@ -1,0 +1,195 @@
+﻿@using BEL.DCRDCNWorkflow.Models;
+@using BEL.DCRDCNWorkflow.Models.Common;
+@using BEL.DCRDCNWorkflow.Models.Master;
+@using BEL.CommonDataContract
+@model DCRAdminDetailSection
+
+@{  List<MasterDataItem> statusList = new List<MasterDataItem>();
+  statusList.Add(new MasterDataItem("Consider", "Consider"));
+  statusList.Add(new MasterDataItem("Not Consider", "Not Consider"));
+
+  //ApproverMaster approverusrelist = Model.MasterData.FirstOrDefault(x => x.NameOfMaster.Equals(DCRDCNListNames.APPROVERMASTER)) as ApproverMaster;
+  //List<ApproverMasterListItem> desingenggList = approverusrelist.Items.Where(x => (x as ApproverMasterListItem).Role == DCRRoles.DESIGNENGINEER && (x as ApproverMasterListItem).BusinessUnit == Model.BusinessUnit).ToList().ConvertAll(p => (ApproverMasterListItem)p);
+  //desingenggList = Helper.splitUser(desingenggList);
+}
+
+
+<div class="form-horizontal">
+
+    <div class="card " id="DCRINCHARGE">
+        <div class="card-head">
+            @Html.ResourceValue("Section_Title_INCHARGESECTION", ResourceNames.DCR)
+
+            <div class="btn collapse-btn" data-toggle="collapse" data-target="#dcrPCRSec"><i class="fa fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body" id="dcrPCRSec">
+            <div class="form-horizontal">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span>
+                                @Html.LabelFor(m => m.DDHODDISPOSAL, ResourceNames.DCR)
+
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+
+                                    @Html.DisplayFor(m => m.DDHODDISPOSAL)
+                                    @Html.HiddenFor(m => m.DDHODDISPOSAL)
+
+                                    @*@Html.DropDownListFor(m => m.DDHODDISPOSAL, new SelectList((statusList).OrderBy(x => x.Title).ToList(), "Value", "Title"), "Select", new { @class = "form-control", @data_selected = Model.DDHODDISPOSAL })
+                                        @Html.ValidationMessageFor(m => m.DDHODDISPOSAL, ResourceNames.DCR)*@
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 notConsider">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span>
+                                @Html.LabelFor(m => m.IfNotConsidered, ResourceNames.DCR)
+
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+                                    @Html.TextAreaFor(m => m.IfNotConsidered, new { maxLength = 255, @class = "form-control", data_toggle = "tooltip", title = "Max 255 characters" })
+                                    @Html.ValidationMessageFor(m => m.IfNotConsidered, ResourceNames.DCR)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 rework">
+                        <div class="form-group ">
+                            <label class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span>
+                                @Html.LabelFor(m => m.ReworkComments, ResourceNames.DCR)
+
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+                                    @Html.TextAreaFor(m => m.ReworkComments, new { maxLength = 255, @class = "form-control", data_toggle = "tooltip", title = "Max 255 characters" })
+                                    @Html.ValidationMessageFor(m => m.ReworkComments, ResourceNames.DCR)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 consider">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span>
+                                @Html.ResourceValue("Label_Comments", ResourceNames.DCR)
+
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+                                    @{int i = Model.ApproversList.FindIndex(p => p.Role == DCRRoles.DCRPROCESSINCHARGE); }
+                                    @Html.TextAreaFor(m => m.DCRProcessIComment, new { maxlength = 255, @class = "form-control", @data_val = "true", @data_val_required = "Please Enter Comment", data_toggle = "tooltip", title = "Max 255 characters" })
+                                    @Html.ValidationMessageFor(m => m.DCRProcessIComment, ResourceNames.DCR)
+
+                                    @*@Html.TextAreaFor(m => m.CurrentApprover.Comments, new { @class = "form-control", @data_val = "true", @data_val_required = "Please Enter Comment", data_toggle = "tooltip", title = "Max 255 characters" })
+                                        @Html.HiddenFor(x => x.CurrentApprover.Approver)
+                                        @Html.HiddenFor(x => x.CurrentApprover.Role)
+                                        @Html.HiddenFor(x => x.CurrentApprover.AssignDate)
+                                        @Html.ValidationMessageFor(m => m.CurrentApprover.Comments, ResourceNames.DCR)*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 consider">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span>
+                                @Html.LabelFor(m => m.MarketingApprovalRequired, ResourceNames.DCR)
+
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+                                    <div class="form-control noborder">
+
+
+                                        @if (Model.MarketingApprovalRequired)
+                                        {
+                                            @Html.Label("Yes")
+                                        }
+                                        else
+                                        {
+                                            @Html.Label("No")
+                                        }
+                                        @Html.HiddenFor(m => m.MarketingApprovalRequired)
+
+                                    </div>
+                                    @Html.ValidationMessageFor(m => m.MarketingApprovalRequired, ResourceNames.DCR)
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 consider">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span>
+                                @*@Html.LabelFor(m => m.DesignEngineer, ResourceNames.DCR)*@
+                                @Html.LabelFor(m => m.DesignEngineerIncharge, ResourceNames.DCR)
+
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+                                    @Html.DisplayFor(m => m.DesignEngineerName)
+                                    @Html.HiddenFor(m => m.DesignEngineer)
+                                    @Html.HiddenFor(m => m.DesignEngineerName)
+                                    @*@Html.DropDownListFor(m => m.DesignEngineer, new SelectList((desingenggList).OrderBy(x => x.Title).ToList(), "UserID", "UserName"), "Select", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.DesignEngineer, ResourceNames.DCR)*@
+
+                                    @*@Html.DisplayFor(m => m.DesignEngineerInchargeName)
+                                    @Html.HiddenFor(m => m.DesignEngineerIncharge)
+                                    @Html.HiddenFor(m => m.DesignEngineerInchargeName)*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                Attachments:
+                            </label>
+                            <div class="col-md-8 ">
+                                <div id="AttachmentDCR" data-appname="@SiteURLs.DCRDCNSITEURL">
+                                </div>
+                                @Html.TextBoxFor(m => m.FNLDCRAttachment, new { @class = "notvisible" })
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span>
+                                @Html.LabelFor(m => m.TargetDateOfImplementation, ResourceNames.DCR)
+                            </label>
+                            <div class="col-md-8">
+                                <div class="input-group date datepicker">
+                                    @Html.TextBoxFor(m => m.TargetDateOfImplementation, "{0:dd/MM/yyyy}", new { @class = "form-control" })
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-calendar"></span>
+                                    </span>
+                                </div>
+                                @Html.ValidationMessageFor(m => m.TargetDateOfImplementation, ResourceNames.DCR)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>

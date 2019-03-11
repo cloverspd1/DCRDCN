@@ -1,0 +1,72 @@
+﻿@using BEL.DCRDCNWorkflow.Models.DCN
+@using BEL.CommonDataContract
+
+@model List<ITrans>
+
+<div class="table-responsive">
+    <table class="table table-hover table-bordered someTable">
+        <thead>
+            <tr>
+                <th>@Html.ResourceValue("Grid_Title_SrNo", ResourceNames.DCN)</th>
+                <th>@Html.ResourceValue("Grid_Title_Componentrawmaterial", ResourceNames.DCN)</th>
+                <th>@Html.ResourceValue("Grid_Title_PresentSpecifications", ResourceNames.DCN)</th>
+                <th>@Html.ResourceValue("Grid_Title_RevisedSpecifications", ResourceNames.DCN)</th>
+                <th>@Html.ResourceValue("Grid_Title_Action", ResourceNames.Common)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Count > 0)
+            {
+                foreach (Specification item in Model)
+                {
+
+                    <tr>
+                        <td>@item.Index</td>
+                        <td>@item.ComponentRawMaterial</td>
+                        <td>
+                            @item.PresentSpecification
+                            @{
+                    FileDetails file = @item.Files != null && @item.Files.Count > 0 ? item.Files.Where(x => !string.IsNullOrEmpty(item.FNLPresentSpecification) && item.FNLPresentSpecification.Split(',').Contains(x.FileName)).FirstOrDefault() : null;
+                            }
+                            @if (@file != null)
+                            {
+                                string fileurl = !string.IsNullOrEmpty(file.FileURL) ? file.FileURL.Replace("~/", BEL.DCRDCNWorkflow.Common.FileListHelper.BaseUrl + "/") : string.Empty;
+                                <div class="clearfix"></div>
+                                <a data-url="@fileurl" onclick="DownloadUploadedFile(this);" style="cursor:pointer !important"> @file.FileName</a>
+                            }
+                        </td>
+                        <td>
+                            @item.RevisedSpecification
+                            @{
+                    FileDetails file1 = @item.Files != null && @item.Files.Count > 0 ? item.Files.Where(x => !string.IsNullOrEmpty(item.FNLRevisedSpecification) && item.FNLRevisedSpecification.Split(',').Contains(x.FileName)).FirstOrDefault() : null;
+                            }
+                            @if (@file1 != null)
+                            {
+                                string fileurl1 = !string.IsNullOrEmpty(file1.FileURL) ? file1.FileURL.Replace("~/", BEL.DCRDCNWorkflow.Common.FileListHelper.BaseUrl + "/") : string.Empty;
+                                <div class="clearfix"></div>
+                                <a data-url="@fileurl1" onclick="DownloadUploadedFile(this);" style="cursor:pointer !important"> @file1.FileName</a>
+                            }
+                        </td>
+                        <td>
+                            <a class="btn ink-reaction btn-floating-action" data-ajax="true" data-ajax-loading="#loading" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#addeditSpecification" href="@Url.Action("AddEditSpecification", "DCNAdmin", new { index = @item.Index })">
+                                <i class='fa fa-edit'></i>
+                            </a>
+                            <a class="btn ink-reaction btn-floating-action btn-danger" onclick="AdminSpecificationDelete(@item.Index);">
+                                <i class='fa fa-trash-o'></i>
+                            </a>
+
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="8" class="text-center text-danger">
+                        @Html.ResourceValue("Grid_Text_NoData", ResourceNames.Common)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

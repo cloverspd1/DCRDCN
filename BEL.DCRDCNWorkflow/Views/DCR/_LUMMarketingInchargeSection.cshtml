@@ -1,0 +1,168 @@
+﻿@using BEL.DCRDCNWorkflow.Models.DCR
+@using BEL.CommonDataContract
+@using BEL.DCRDCNWorkflow.Models.Master
+@using BEL.DCRDCNWorkflow.Models.Common
+@model LUMMarketingInchargeSection
+@{
+
+    ApproverMaster approverusrelist = Model.MasterData.FirstOrDefault(x => x.NameOfMaster.Equals(DCRDCNListNames.APPROVERMASTER)) as ApproverMaster;
+
+    List<ApproverMasterListItem> MarketingUserList = approverusrelist.Items.Where(x => (x as ApproverMasterListItem).Role == DCRRoles.LUMMARKETING).ToList().ConvertAll(p => (ApproverMasterListItem)p);
+    MarketingUserList = Helper.splitUser(MarketingUserList);
+
+    List<MasterDataItem> DCRTOBEConsidered = new List<MasterDataItem>();
+    DCRTOBEConsidered.Add(new MasterDataItem("true", "Yes"));
+    DCRTOBEConsidered.Add(new MasterDataItem("false", "No"));
+    string sectionActiveCss = Model.IsActive ? string.Empty : "disabled";
+}
+
+<div class="form-horizontal">
+    @using (Ajax.BeginForm("SaveLUMMarketingInchargeSection", "DCR", new AjaxOptions
+    {
+        HttpMethod = "POST",
+        LoadingElementId = "loading",
+        OnFailure = "OnFailure",
+        OnSuccess = "OnSuccess",
+        OnBegin = "BeginClient"
+    }, new { enctype = "multipart/form-data", @class = @sectionActiveCss }))
+    {
+        @Html.HiddenFor(m => m.ListDetails[0].ItemId)
+        @Html.HiddenFor(m => m.ListDetails[0].ListName)
+        @Html.HiddenFor(m => m.SectionName)
+        @Html.HiddenFor(m => m.ActionStatus)
+        @Html.HiddenFor(m => m.SendBackTo)
+        @Html.HiddenFor(m => m.Status)
+        @Html.Partial("_ApproversList", Model.ApproversList)
+        @*@Html.Partial("_CurrentApprover", Model.CurrentApprover ?? new ApplicationStatus())*@
+        @Html.AntiForgeryToken()
+
+    <input type="hidden" id="hdnIsLUMMarketingInchargeSectionActive" value="@sectionActiveCss">
+
+        <div class="card @sectionActiveCss" id="mktHead">
+            <div class="card-head">
+                @Html.ResourceValue("Section_Title_LUMMKTINCHARGESECTION", ResourceNames.DCR)
+                <div class="btn collapse-btn" data-toggle="collapse" data-target="#lummktBody"><i class="fa fa-chevron-down"></i></div>
+            </div>
+            <div class="card-body" id="lummktBody">
+                <div class="form-horizontal">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">
+                                    <span class="text-danger text-default-light">*</span>
+                                    @Html.LabelFor(m => m.LUMMarketingUser, ResourceNames.DCR)
+
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="form-control noborder text-left">
+
+                                        @{string isddlhide = Model.IsActive ? string.Empty : " hide";}
+                                        <div class=@isddlhide>
+                                            @Html.ListBox("DCRLUMMarketingUser", new MultiSelectList(MarketingUserList, "UserID", "UserName"), new { @id = "DCRLUMMarketingUser", @Name = "DCRLUMMarketingUser", @class = "form-control", @data_selected = Model.LUMMarketingUser })
+                                            @Html.ValidationMessageFor(m => m.LUMMarketingUser, ResourceNames.DCR)
+                                            @Html.ValidationMessage("DCRLUMMarketingUser", Html.ResourceValue("Error_LUMMarketingUser", ResourceNames.DCR))
+                                        </div>
+                                        @Html.HiddenFor(m => m.LUMMarketingUser)
+                                        @Html.HiddenFor(m => m.LUMMarketingUserName)
+
+                                        @(!Model.IsActive && !string.IsNullOrEmpty(Model.LUMMarketingUserName) ? Model.LUMMarketingUserName : string.Empty)
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">
+                                    @*@Html.LabelFor(m => m.Comment, ResourceNames.DCR)*@
+                                    <span class="text-danger text-default-light">*</span>
+                                    Comments:
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="form-control noborder text-left">
+                                        @Html.TextAreaFor(m => m.CurrentApprover.Comments, new { maxlength = 255, @class = "form-control requiredOnDelegate", @data_val = "true", @data_val_required = "Please Enter Comment", data_toggle = "tooltip", title = "Max 255 characters" })
+                                        @Html.HiddenFor(x => x.CurrentApprover.Approver)
+                                        @Html.HiddenFor(x => x.CurrentApprover.Role)
+                                        @Html.HiddenFor(x => x.CurrentApprover.AssignDate)
+                                        @Html.ValidationMessageFor(m => m.CurrentApprover.Comments, ResourceNames.DCR)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+        if (Model.IsSubmitted)
+        {
+
+            <div class="card @sectionActiveCss">
+                <div class="card-head">
+                    @Html.ResourceValue("Section_Title_LUMMKTSECTION", ResourceNames.DCR)
+                    <div class="btn collapse-btn" data-toggle="collapse" data-target="#lummktBody1"><i class="fa fa-chevron-down"></i></div>
+                </div>
+                <div class="card-body" id="lummktBody1">
+                    <div class="form-horizontal">
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">
+                                        <span class="text-danger text-default-light">*</span>
+                                        @Html.LabelFor(m => m.LUMExpectedChange, ResourceNames.DCR)
+
+                                    </label>
+                                    <div class="col-md-8 ">
+
+                                        @Html.TextAreaFor(m => m.LUMExpectedChange, new { maxlength = 255, @class = "form-control", data_toggle = "tooltip", title = "Max 255 characters" })
+                                        @Html.ValidationMessageFor(m => m.LUMExpectedChange, ResourceNames.DCR)
+
+                                    </div>
+                                </div>
+                            </div>
+                            @if (Model.CurrentApprover != null && Model.CurrentApprover.ApprovalDate.HasValue)
+                            {
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">
+                                            @Html.LabelFor(m => Model.CurrentApprover.ApprovalDate, ResourceNames.Common)
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <div class="form-control noborder text-left">
+                                                @(Model.CurrentApprover != null && Model.CurrentApprover.ApprovalDate.HasValue ? Model.CurrentApprover.ApprovalDate.Value.ToShortDateString() : "-")
+                                                @Html.Hidden("Approver", Model.CurrentApprover != null && Model.CurrentApprover.ApprovalDate.HasValue ? Model.CurrentApprover.ApprovalDate.Value.ToShortDateString() : string.Empty)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1" class="col-md-4 control-label">
+                                        <span class="text-danger text-default-light">*</span>
+                                        @Html.LabelFor(m => m.LUMTOBECONSIDERED, ResourceNames.DCR)
+                                    </label>
+                                    <div class="col-md-8 ">
+                                        @Html.DropDownListFor(m => m.LUMTOBECONSIDERED, new SelectList((DCRTOBEConsidered).OrderBy(x => x.Title).ToList(), "Value", "Title"), "Select", new { @class = "form-control", @data_selected = Model.LUMTOBECONSIDERED })
+                                        @Html.ValidationMessageFor(m => m.LUMTOBECONSIDERED, ResourceNames.DCR)
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        }
+    }
+</div>

@@ -1,0 +1,97 @@
+﻿@using BEL.DCRDCNWorkflow.Models
+@using BEL.CommonDataContract
+@using BEL.DCRDCNWorkflow.Models.Common
+@model  DCNAdminContract
+@{
+    DCNAdminContract contract = Model as DCNAdminContract;
+    DCNAdminForm form = contract.Forms.FirstOrDefault() as DCNAdminForm;
+    ViewBag.Title = "Design Change Note";
+    DCNDetailAdminSection dcnDetailAdminSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCNSectionName.DCNDETAILADMINSECTION)) as DCNDetailAdminSection;
+    ApplicationStatusSection appStatus = form.SectionsList.FirstOrDefault(f => f != null && f.SectionName.Equals(SectionNameConstant.APPLICATIONSTATUS)) as ApplicationStatusSection;
+
+
+    string status = dcnDetailAdminSection.Status.ToLower();
+    string sectionActiveCss = string.Empty;
+    if (status.Equals("completed") || status.Equals("rejected"))
+    {
+        sectionActiveCss = "disabled";
+    }
+}
+
+@if (form != null)
+{
+    @section buttons{
+        @Html.Partial("_ButtonGroup", form.Buttons)
+    }
+
+    if (!string.IsNullOrEmpty(form.FormStatus))
+    {
+        <div class="card-body text-right pad-bot-15">
+            <div class="label label-primary">
+                @form.FormStatus
+            </div>
+        </div>
+    }
+    using (Ajax.BeginForm("SaveDCNAdminForm", "DCNAdmin", new AjaxOptions
+    {
+        HttpMethod = "POST",
+        LoadingElementId = "loading",
+        OnFailure = "OnFailure",
+        OnSuccess = "OnSuccess",
+        OnBegin = "BeginClient"
+    }, new { enctype = "multipart/form-data" }))
+    {
+
+        @Html.AntiForgeryToken()
+
+        <div id="divDCNForm">
+            <div id="tab-general">
+                <div class="row mbl">
+                    <div class="col-lg-12">
+                        <div class="tab-content responsive " id="generalTabContent">
+                            @if (dcnDetailAdminSection != null)
+                            {
+                                <div class="@sectionActiveCss">
+                                    @Html.Partial("_designDocumentEngineerAdminSection", dcnDetailAdminSection)
+                                    @*@Html.Partial("_designEngineerAdminSection", dcnDetailAdminSection)*@
+                                    @Html.Partial("_dcrprocessInchargeAdmin", dcnDetailAdminSection)
+                                    @*@Html.Partial("_scmSectionAdmin", dcnDetailAdminSection)*@
+                                    @Html.Partial("_qaInchargeAdminsection", dcnDetailAdminSection)
+                                </div>
+                            }
+
+                        
+                            @if (appStatus != null)
+                            {
+                                @Html.Partial("_ApplicationStatus", appStatus)
+                            }
+
+                            @{ActivityLogSection activityLog = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCNSectionName.ACTIVITYLOG)) as ActivityLogSection;}
+                            @if (activityLog != null)
+                            {
+                                @Html.Partial("_ActivityLogs", activityLog, new ViewDataDictionary { { "Resources", ResourceNames.DCN } })
+                            }
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-top-wrapper ">
+                <i class="fa fa-chevron-up">
+                </i>
+            </div>
+
+        </div>
+    }
+
+}
+
+<div id="AddEditVendorDCN"></div>
+<div id="AddEditRevisedAppDocdetails"></div>
+<div id="addeditSpecification"></div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/dcnindex")
+}

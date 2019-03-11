@@ -1,0 +1,58 @@
+﻿@using BEL.DCRDCNWorkflow.Models.DCN
+@model List<DCRDetails>
+         
+<div class="modal fade" id="SelectDCRModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">
+                    @Html.ResourceValue("Popup_Select_DCR", ResourceNames.DCN)
+                </h4>
+            </div>
+            <div class="modal-body form-horizontal">
+                <div class="table-responsive">
+                    <table id="dcrtable" class="table table-hover table-bordered dataTable">
+                        <thead>
+                            <tr>
+                                <th>@Html.ResourceValue("Grid_Title_DCRNo", ResourceNames.DCN)</th>
+                             
+                              
+                            </tr>
+                        </thead>
+                        <tbody>
+                          
+                                    <tr>
+                                        <td>
+                                            @Html.DropDownListFor(m => m.DCRNo, new SelectList(Model).OrderBy(x => x.).ToList(), "Value", "Title"), "Select", new { @class = "form-control", @data_selected = Model.Division
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-primary" data-ajax="true" data-ajax-failure="OnFailure" data-ajax-loading="#loading" data-ajax-method="GET" data-ajax-success="OnDCRSelected" href="/Master/GetTMSInfo?id=@item.ID">
+                                                @Html.ResourceValue("Button_Title_Select", ResourceNames.Common)
+                                            </a>
+                                        </td>
+                                     </tr>
+                               
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">@Html.ResourceValue("Button_Text_Close", ResourceNames.Common)</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+       
+        $("#SelectDCRModal").modal().on('shown.bs.modal', function () {
+            $("#dcrtable").DataTable({
+                "paging": false,
+                "searching": true,
+                "info": false
+            });
+        });
+      
+    });
+</script>

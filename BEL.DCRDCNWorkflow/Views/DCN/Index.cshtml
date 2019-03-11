@@ -1,0 +1,179 @@
+﻿@using BEL.DCRDCNWorkflow.Models.DCN
+@using BEL.CommonDataContract
+@using BEL.DCRDCNWorkflow.Models.Common
+@model  IContract
+@{
+    DCNContract contract = Model as DCNContract;
+    DCNForm form = contract.Forms.FirstOrDefault() as DCNForm;
+    ViewBag.Title = "Design Change Note";
+    DesignEngineerSection designDocumentEngineerSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCNSectionName.DESIGNENGINEERSECTION)) as DesignEngineerSection;
+   // DesignEngineerInchargeSection designEngineerSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCNSectionName.DESIGNENGINEERINCHARGESECTION)) as DesignEngineerInchargeSection;
+    DCRProcessInchargeSection dcrProcessInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCNSectionName.DCRPROCESSINCHRGESECTION)) as DCRProcessInchargeSection;
+    //DCNSCMSection scmSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCNSectionName.SCMSECTION)) as DCNSCMSection;
+    DCNQAInchargeSection qaInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCNSectionName.QAINCHARGESECTION)) as DCNQAInchargeSection;
+
+}
+
+
+@if (form != null)
+{
+    @section buttons{
+        @Html.Partial("_ButtonGroup", form.Buttons)
+    }
+
+    if (!string.IsNullOrEmpty(form.FormStatus))
+    {
+        <div class="card-body text-right pad-bot-15">
+            <div class="label label-primary">
+                @form.FormStatus
+            </div>
+        </div>
+    }
+
+
+    <div id="divDCNForm">
+        <div id="tab-general">
+            <div class="row mbl">
+                <div class="col-lg-12">
+                    <div class="tab-content responsive " id="generalTabContent">
+                        <input id="hdnDCNNo" type="hidden" value="@designDocumentEngineerSection.DCNNo" />
+                        @if (designDocumentEngineerSection != null)
+                        {
+                            string sectionActiveCss = designDocumentEngineerSection.IsActive ? string.Empty : "disabled";
+                            <div class="card @sectionActiveCss">
+                                <div class="card-head" data-toggle="collapse" data-target="#sectiondetails1">
+                                    @Html.ResourceValue("Section_Title_DesignEngineer", ResourceNames.DCN)
+                                    <div class="btn collapse-btn"><i class="fa fa-chevron-down"></i></div>
+                                </div>
+                                <div class="card-body" id="sectiondetails1">
+                                    <div class="form-horizontal">
+                                        <p><span class="text-danger text-default-light">@Html.ResourceValue("Text_Mandatory", ResourceNames.Common)</span></p>
+                                        @Html.Partial("_designDocumentEngineerSection", designDocumentEngineerSection)
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        }
+                        @*@if (designEngineerSection != null)
+                        {
+                            string sectionActiveCss = designEngineerSection.IsActive ? string.Empty : "disabled";
+                            <div class="card @sectionActiveCss ">
+                                <div class="card-head" data-toggle="collapse" data-target="#designEngineerSec">
+                                    @Html.ResourceValue("Section_Title_DesignEngineerIncharge", ResourceNames.DCN)
+
+                                    <div class="btn collapse-btn"><i class="fa fa-chevron-down"></i></div>
+                                </div>
+                                <div class="card-body" id="designEngineerSec">
+                                    <div class="form-horizontal">
+
+                                        @Html.Partial("_designEngineerSection", designEngineerSection)
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        }*@
+                        @if (dcrProcessInchargeSection != null)
+                        {
+                            string sectionActiveCss = dcrProcessInchargeSection.IsActive ? string.Empty : "disabled";
+                            <div class="card @sectionActiveCss">
+                                <div class="card-head">
+                                    @Html.ResourceValue("Section_Title_ProcessIncharge", ResourceNames.DCN)
+
+                                    <div class="btn collapse-btn" data-toggle="collapse" data-target="#dcrProcessInchargeSec"><i class="fa fa-chevron-down"></i></div>
+                                </div>
+                                <div class="card-body" id="dcrProcessInchargeSec">
+                                    <div class="form-horizontal">
+                                        @Html.Partial("_dcrprocessIncharge", dcrProcessInchargeSection)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        }
+                        @*@if (scmSection != null)
+                        {
+                            string sectionActiveCss = scmSection.IsActive ? string.Empty : "disabled";
+                            <div class="card @sectionActiveCss">
+                                <div class="card-head">
+                                    @Html.ResourceValue("Section_Title_SCMSection", ResourceNames.DCN)
+                                    <div class="btn collapse-btn" data-toggle="collapse" data-target="#scmSection"><i class="fa fa-chevron-down"></i></div>
+                                </div>
+                                <div class="card-body" id="scmSection">
+                                    <div class="form-horizontal">
+                                        @Html.Partial("_scmSection", scmSection)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        }*@
+                        @if (qaInchargeSection != null)
+                        {
+                            string sectionActiveCss = qaInchargeSection.IsActive ? string.Empty : "disabled";
+                            <div class="card @sectionActiveCss ">
+                                <div class="card-head">
+                                    @Html.ResourceValue("Section_Title_QAIncharge", ResourceNames.DCN)
+
+                                    <div class="btn collapse-btn" data-toggle="collapse" data-target="#qaInchSec"><i class="fa fa-chevron-down"></i></div>
+                                </div>
+                                <div class="card-body" id="qaInchSec">
+                                    <div class="form-horizontal">
+                                        @Html.Partial("_qainchargesection", qaInchargeSection)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+
+                        }
+
+                        @{ApplicationStatusSection appStatus = form.SectionsList.FirstOrDefault(f => f != null && f.SectionName.Equals(SectionNameConstant.APPLICATIONSTATUS)) as ApplicationStatusSection;
+
+                        if (appStatus != null)
+                        {
+                            @Html.Partial("_ApplicationStatus", appStatus)
+                        }
+
+                        ActivityLogSection activityLog = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCNSectionName.ACTIVITYLOG)) as ActivityLogSection;
+                        if (activityLog != null)
+                        {
+                            @Html.Partial("_ActivityLogs", activityLog, new ViewDataDictionary { { "Resources", ResourceNames.DCN } })
+                        }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-top-wrapper ">
+            <i class="fa fa-chevron-up">
+            </i>
+        </div>
+        @*<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+            <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.4.min.js"></script>*@
+
+    </div>
+    <div id="DCRDetails" class="hidden">
+
+    </div>
+    if (!string.IsNullOrEmpty(designDocumentEngineerSection.Status) && designDocumentEngineerSection.Status != "New")
+    {
+        if (designDocumentEngineerSection.DCNNo.Contains("CP"))
+        {
+            @Html.Partial("_printDCN", Model)
+        }
+        else if (designDocumentEngineerSection.DCNNo.Contains("LUM"))
+        {
+            @Html.Partial("_printDCNLUM", Model)
+        }
+    }
+}
+
+<div id="AddEditVendorDCN"></div>
+<div id="AddEditRevisedAppDocdetails"></div>
+<div id="addeditSpecification"></div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/dcnindex")
+}

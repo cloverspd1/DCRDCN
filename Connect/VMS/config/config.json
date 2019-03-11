@@ -1,0 +1,73 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/webparts/helloWorld/HelloWorldWebPart.js",
+      "manifest": "./src/webparts/helloWorld/HelloWorldWebPart.manifest.json",
+      "outputPath": "./dist/hello-world-web-part.bundle.js"
+    },
+    {
+      "entry": "./lib/webparts/fbForm/FbFormWebPart.js",
+      "manifest": "./src/webparts/fbForm/FbFormWebPart.manifest.json",
+      "outputPath": "./dist/fb-form-web-part.js"
+    },
+    {
+      "entry": "./lib/webparts/viewRequest/ViewRequestWebPart.js",
+      "manifest": "./src/webparts/viewRequest/ViewRequestWebPart.manifest.json",
+      "outputPath": "./dist/view-request-web-part.js"
+    },
+    {
+      "entry": "./lib/webparts/editConnectApprover/EditConnectApproverWebPart.js",
+      "manifest": "./src/webparts/editConnectApprover/EditConnectApproverWebPart.manifest.json",
+      "outputPath": "./dist/edit-connect-approver-web-part.js"
+    },
+    {
+      "entry": "./lib/webparts/myRequestListView/MyRequestListViewWebPart.js",
+      "manifest": "./src/webparts/myRequestListView/MyRequestListViewWebPart.manifest.json",
+      "outputPath": "./dist/my-request-list-view-web-part.js"
+    },
+    {
+      "entry": "./lib/webparts/viewApproverForm/ViewApproverFormWebPart.js",
+      "manifest": "./src/webparts/viewApproverForm/ViewApproverFormWebPart.manifest.json",
+      "outputPath": "./dist/view-approver-form-web-part.js"
+    },
+    {
+      "entry": "./lib/webparts/allItemsView/AllItemsViewWebPart.js",
+      "manifest": "./src/webparts/allItemsView/AllItemsViewWebPart.manifest.json",
+      "outputPath": "./dist/all-items-view-web-part.js"
+    },
+    {
+      "entry": "./lib/webparts/myPendingRequests/MyPendingRequestsWebPart.js",
+      "manifest": "./src/webparts/myPendingRequests/MyPendingRequestsWebPart.manifest.json",
+      "outputPath": "./dist/my-pending-requests-web-part.js"
+    },
+    {
+      "entry": "./lib/webparts/superAdminForm/SuperAdminFormWebPart.js",
+      "manifest": "./src/webparts/superAdminForm/SuperAdminFormWebPart.manifest.json",
+      "outputPath": "./dist/super-admin-form-web-part.js"
+    },
+    {
+      "entry": "./lib/webparts/superAdminListView/SuperAdminListViewWebPart.js",
+      "manifest": "./src/webparts/superAdminListView/SuperAdminListViewWebPart.manifest.json",
+      "outputPath": "./dist/super-admin-list-view-web-part.js"
+    },
+    {
+      "entry": "./lib/webparts/homePagePendingWebPart/HomePagePendingWebPartWebPart.js",
+      "manifest": "./src/webparts/homePagePendingWebPart/HomePagePendingWebPartWebPart.manifest.json",
+      "outputPath": "./dist/home-page-pending-web-part-web-part.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "HelloWorldWebPartStrings": "webparts/helloWorld/loc/{locale}.js",
+    "FbFormWebPartStrings": "webparts/fbForm/loc/{locale}.js",
+    "ViewRequestWebPartStrings": "webparts/viewRequest/loc/{locale}.js",
+    "EditConnectApproverWebPartStrings": "webparts/editConnectApprover/loc/{locale}.js",
+    "MyRequestListViewWebPartStrings": "webparts/myRequestListView/loc/{locale}.js",
+    "ViewApproverFormWebPartStrings": "webparts/viewApproverForm/loc/{locale}.js",
+    "AllItemsViewWebPartStrings": "webparts/allItemsView/loc/{locale}.js",
+    "MyPendingRequestsWebPartStrings": "webparts/myPendingRequests/loc/{locale}.js",
+    "SuperAdminFormWebPartStrings": "webparts/superAdminForm/loc/{locale}.js",
+    "SuperAdminListViewWebPartStrings": "webparts/superAdminListView/loc/{locale}.js",
+    "HomePagePendingWebPartWebPartStrings": "webparts/homePagePendingWebPart/loc/{locale}.js"
+  }
+}

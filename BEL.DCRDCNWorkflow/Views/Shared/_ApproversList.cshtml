@@ -1,0 +1,32 @@
+﻿@using BEL.CommonDataContract
+@model List<ApplicationStatus>
+@if (Model != null && Model.Count > 0)
+{
+    for (int i = 0; i < Model.Count; i++)
+    {
+        @Html.Hidden("ApproversList[" + i + "].ApplicationName", Model[i].ApplicationName)
+        @Html.Hidden("ApproversList[" + i + "].ApprovalDate", Model[i].ApprovalDate)
+        @Html.Hidden("ApproversList[" + i + "].ApproveBy", Model[i].ApproveBy)
+        @Html.Hidden("ApproversList[" + i + "].Approver", Model[i].Approver)
+        @Html.Hidden("ApproversList[" + i + "].AssignDate", Model[i].AssignDate)
+        @Html.Hidden("ApproversList[" + i + "].Comments", Model[i].Comments)
+        @Html.Hidden("ApproversList[" + i + "].Days", Model[i].Days)
+        @Html.Hidden("ApproversList[" + i + "].Division", Model[i].Division)
+        @Html.Hidden("ApproversList[" + i + "].DueDate", Model[i].DueDate)
+        @Html.Hidden("ApproversList[" + i + "].FillByRole", Model[i].FillByRole)
+        @Html.Hidden("ApproversList[" + i + "].FormName", Model[i].FormName)
+        @Html.Hidden("ApproversList[" + i + "].HiddenSection", Model[i].HiddenSection)
+        @Html.Hidden("ApproversList[" + i + "].ID", Model[i].ID)
+        @Html.Hidden("ApproversList[" + i + "].IsAutoApproval", Model[i].IsAutoApproval)
+        @Html.Hidden("ApproversList[" + i + "].IsEscalate", Model[i].IsEscalate)
+        @Html.Hidden("ApproversList[" + i + "].IsReminder", Model[i].IsReminder)
+        @Html.Hidden("ApproversList[" + i + "].Levels", Model[i].Levels)
+        @Html.Hidden("ApproversList[" + i + "].RequestID", Model[i].RequestID)
+        @Html.Hidden("ApproversList[" + i + "].Role", Model[i].Role)
+        @Html.Hidden("ApproversList[" + i + "].SectionName", Model[i].SectionName)
+        @Html.Hidden("ApproversList[" + i + "].Status", Model[i].Status)
+        @Html.Hidden("ApproversList[" + i + "].SubDivision", Model[i].SubDivision)
+        @Html.Hidden("ApproversList[" + i + "].Title", Model[i].Title)
+        @Html.Hidden("ApproversList[" + i + "].IsOptional", Model[i].IsOptional)
+    }
+}

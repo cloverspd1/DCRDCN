@@ -1,0 +1,82 @@
+﻿@using System.Data
+@model DataTable
+@using PIL.Repository.Common
+
+<div class="table-responsive noscroll">
+    @if (Model != null)
+    {
+        <table class="table table-hover table-bordered someTable">
+            <thead>
+                <tr>
+                    @foreach (DataColumn dc in Model.Columns)
+                    {
+                        if (dc.ColumnName == "LinkWithText")
+                        {
+                            <th></th>
+                        }
+                        else if (dc.ColumnName != "FMSRowNo")
+                        {
+                            <th>@dc.ColumnName</th>
+                        }
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Rows.Count == 0)
+                {
+                    <tr>
+                        <td colspan="@Model.Columns.Count">
+                            @Html.ResourceValue("Grid_Text_NoData", ResourceNames.Common)
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (DataRow dr in Model.Rows)
+                    {
+                        <tr>
+                            @foreach (DataColumn dc in Model.Columns)
+                            {
+                                if (dc.ColumnName == "Link")
+                                {
+                                    if (!string.IsNullOrEmpty(Convert.ToString(dr[dc])))
+                                    {
+                                        <td><a class="btn ink-reaction btn-floating-action" data-ajax="true" data-ajax-loading="#loading" data-ajax-update="#addeditfmsform" data-ajax-method="GET" href="@Convert.ToString(dr[dc])"><i clas><i class="fa fa-edit"></i></a></td>
+                                    }
+                                }
+                                if (dc.ColumnName == "LinkWithText")
+                                {
+                                    if (!string.IsNullOrEmpty(Convert.ToString(dr[dc])))
+                                    {
+                                        <td><a class="btn ink-reaction" data-ajax="true" data-ajax-loading="#loading" data-ajax-update="#addeditfmsform" data-ajax-method="GET" href="@Convert.ToString(dr[dc]).Split('|')[1]">@Convert.ToString(dr[dc]).Split('|')[0]</a></td>
+                                    }
+                                }
+                                else if (dc.ColumnName != "FMSRowNo")
+                                {
+                                    <td>@(new MvcHtmlString(Convert.ToString(dr[dc])))</td>
+                                }
+                            }
+                        </tr>
+                    }
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="@Model.Columns.Count">
+                        <div class="row">
+                            <div class="col-md-4 text-left">
+                                <button type="button" class="btn btn-primary" onclick="csvexport(this);">Export to CSV</button>
+                            </div>
+                            <div class="col-md-8 text-right">
+                                <button type="button" class="btn btn-primary" onclick="viewall(this);">View All</button>
+                                <button type="button" class="btn btn-primary" onclick="prevpage(this);">Previous</button>
+                                <button type="button" class="btn btn-primary" onclick="nextpage(this);">Next</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    }
+</div>
+<div id="addeditfmsform"></div>

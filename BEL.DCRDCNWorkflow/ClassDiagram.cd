@@ -1,0 +1,984 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Resources.Common" Collapsed="true">
+    <Position X="32.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQIAMSXQBhWBEAAApEABECBLQQMQgCAAACYgBJAAEJA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Resources.Common_ActivityLogs" Collapsed="true">
+    <Position X="14.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAQAAAAAAgEAAAABEAAAAwAABEAAAgkAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Resources.Common_ApplicationStatus" Collapsed="true">
+    <Position X="16.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIgQACAQgBAAEAIAABEAAAAQCABCAAQAEAAAAAoIE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Resources.DCN" Collapsed="true">
+    <Position X="27" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FLCjUiDVoauAMZcc6eCFEQIAg5krAVoV8GEEAAEgQvY=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Resources.DCR" Collapsed="true">
+    <Position X="27" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>k/a2bH9fDF/X/dVO30u9XGMzu/s3dul7/t6+Xp/zv7s=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.BundleConfig" Collapsed="true">
+    <Position X="21.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\BundleConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.FilterConfig" Collapsed="true">
+    <Position X="18.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\FilterConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.RouteConfig" Collapsed="true">
+    <Position X="25.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.BaseController" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gCAEAAlIYIAIQQQAAiCgEEAMiIKBAAEgIAIABQAAAQQ=</HashCode>
+      <FileName>Controllers\BaseController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.MvcExceptionHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="30.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Filters\MvcExceptionHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.SharePointContextFilterAttribute" Collapsed="true">
+    <Position X="32.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\SharePointContextFilterAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.ValidateAntiForgeryTokenOnAllPosts" Collapsed="true">
+    <Position X="21.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAIAAAAQAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\ValidateAntiForgeryTokenOnAllPosts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.MvcApplication" Collapsed="true">
+    <Position X="28.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAQAAAEAAAAAAAAAAUAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.SharePointContext" Collapsed="true">
+    <Position X="6.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAEAgAAZACGhAGAAASAEEEGBAIVIAEAEAQBAAAA=</HashCode>
+      <FileName>SharePointContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.SharePointContextProvider" Collapsed="true">
+    <Position X="1.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAABAAAAAACAACAgAAAgAABAAAAAAAAAACAQAA=</HashCode>
+      <FileName>SharePointContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.SharePointAcsContext" Collapsed="true">
+    <Position X="5.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAQAAIAABAAkAAAQAAAAAAAAAgAEAAIAAAACA=</HashCode>
+      <FileName>SharePointContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.SharePointAcsContextProvider" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAABAAAAAAAAAAAgAAAAAAAAAAAAAAAAAEIQAA=</HashCode>
+      <FileName>SharePointContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.SharePointHighTrustContext" Collapsed="true">
+    <Position X="7.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAABAAAAIAABAAgAAAQAAAAAAAAQAAEAAAAAAAAA=</HashCode>
+      <FileName>SharePointContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.SharePointHighTrustContextProvider" Collapsed="true">
+    <Position X="2.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAABAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAIQAA=</HashCode>
+      <FileName>SharePointContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.TokenHelper" Collapsed="true">
+    <Position X="18.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARwQgAgDQQtxEAACgQAgUkgEAUggADVYAQAgAgQCABE=</HashCode>
+      <FileName>TokenHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.SharePointContextToken" Collapsed="true">
+    <Position X="14.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAQAAAgAAACAAAAAAAAAAAAEAAAAAAAAAgADA=</HashCode>
+      <FileName>TokenHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.MultipleSymmetricKeySecurityToken" Collapsed="true">
+    <Position X="27" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABACAAIAAAAAAAABAAAAAAAAAAIAACAAACAAAAAQAgA=</HashCode>
+      <FileName>TokenHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.App_Start.CustomSessionAuthenticationModule" Collapsed="true">
+    <Position X="21.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\CustomSessionAuthenticationModule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.App_Start.DynamicRealmFederationAuthenticationModule" Collapsed="true">
+    <Position X="23.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAQAAAAAAAAAAAEAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>App_Start\CustomSessionAuthenticationModule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.BusinessLayer.BusinessLayerBase" Collapsed="true">
+    <Position X="25.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessLayer\BusinessLayerBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.BusinessLayer.CommonBusinessLayer" Collapsed="true">
+    <Position X="18.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACIAAAAAAAAAAAAmAgAEAAAAAAQAAAQAAAAhAAAAA=</HashCode>
+      <FileName>BusinessLayer\CommonBusinessLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.BusinessLayer.DCNBusinessLayer" Collapsed="true">
+    <Position X="32.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAIgAAAEACAAABAAAAAAAAQBAACBAAAAA=</HashCode>
+      <FileName>BusinessLayer\DCNBusinessLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.BusinessLayer.DCRBusinessLayer" Collapsed="true">
+    <Position X="14.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiAAAAAAAAAAAQAEKAACAAAgAAAAAAQBAACBABAIA=</HashCode>
+      <FileName>BusinessLayer\DCRBusinessLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Common.BundleHelper" Collapsed="true">
+    <Position X="23.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\BundleHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Common.FileListHelper" Collapsed="true">
+    <Position X="16.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAEAAAAAIQAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Common\FileListHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Common.Logger" Collapsed="true">
+    <Position X="32.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Common\Logger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Common.SessionExpiration" Collapsed="true">
+    <Position X="30.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\SessionExpiration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Common.UtilityHelper" Collapsed="true">
+    <Position X="20" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\UtilityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Common.ValidateJsonAntiForgeryTokenAttribute" Collapsed="true">
+    <Position X="23.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\ValidateJsonAntiForgeryTokenAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Web.Mvc.Html.Helper" Collapsed="true">
+    <Position X="23.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAQAACEAAQAAAAIAAAAAEAAAAAQCAAAIAAAAgAEAA=</HashCode>
+      <FileName>Common\Helper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Controllers.AdminController" Collapsed="true">
+    <Position X="1" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAEACAAAAAA=</HashCode>
+      <FileName>Controllers\Admin\AdminController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Controllers.DCNBaseController" Collapsed="true">
+    <Position X="4.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAACAAABAAAAAAAAAAAACAEAAAA=</HashCode>
+      <FileName>Controllers\DCN\DCNBaseController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Controllers.DCNController" Collapsed="true">
+    <Position X="3.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QiBgAAAAAAAAAAAAAAgKAEIAAAAhAGCAAAUACwQAAAA=</HashCode>
+      <FileName>Controllers\DCN\DCNController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Controllers.DCRBaseController" Collapsed="true">
+    <Position X="8.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgACAAAAAAAAAAAAAACAEAAAA=</HashCode>
+      <FileName>Controllers\DCR\DCRBaseController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Controllers.DCRController" Collapsed="true">
+    <Position X="7.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BCAAIAgAAAIAIIAAgAQAEIgQEBQAASSAABEKCYAAwAE=</HashCode>
+      <FileName>Controllers\DCR\DCRController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Controllers.MasterController" Collapsed="true">
+    <Position X="12.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAgQAAAAAAAAAAAAAAgBAACAEAAAAABAA=</HashCode>
+      <FileName>Controllers\Master\MasterController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Controllers.PowerBIController" Collapsed="true">
+    <Position X="32.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\PowerBIController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Controllers.PrintController" Collapsed="true">
+    <Position X="14.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\PrintController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Controllers.DCN.DCNAdminController" Collapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABgAIAAAAAAAAAAAAAIAEIAAAABAAAABAQAAgAAAAA=</HashCode>
+      <FileName>Controllers\DCN\DCNAdminController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Controllers.DCR.DCRAdminController" Collapsed="true">
+    <Position X="10" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAIgAAAAAIEAAAAAAAAAAABAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\DCR\DCRAdminController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Common.FormNames" Collapsed="true">
+    <Position X="21.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Common.DCRDCNListNames" Collapsed="true">
+    <Position X="18.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAQAAEgAAAAAEAQFAAAIgEgAIAAQAAAgAAAAAAgABA=</HashCode>
+      <FileName>Models\Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Common.Masters" Collapsed="true">
+    <Position X="21.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAEAABAAAAgAAAIAAAAAAAAAAAAAgABA=</HashCode>
+      <FileName>Models\Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Common.DCRSectionName" Collapsed="true">
+    <Position X="23.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAhAEAxACBAAiSQAAQAAABkAEAiAQQAACGQAAAKAgAA=</HashCode>
+      <FileName>Models\Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Common.DCNSectionName" Collapsed="true">
+    <Position X="25.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAABAQAAAAAgAAAAAAAABAAAAAAACAAAAQAAAAAAAA=</HashCode>
+      <FileName>Models\Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Common.DCRRoles" Collapsed="true">
+    <Position X="21.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UAAAFQIEIhgUEACYABARBIAgAIIAAQAAAAAAMSAAAAg=</HashCode>
+      <FileName>Models\Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Common.DCNRoles" Collapsed="true">
+    <Position X="21.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAEAgAQEAAAAAAABAAAAAIAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Models\Common\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCRNoCount" Collapsed="true">
+    <Position X="32.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAABAAAgAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Models\Common\DCRNoCount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCNAdminContract" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="28.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DCNAdmin\DCNAdminContract.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCNAdminForm" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="30.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAgAAAIAAQAAAAEBAAAAAAAAAAAAAACAAE=</HashCode>
+      <FileName>Models\DCNAdmin\DCNAdminForm.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCNDetailAdminSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAACAgEcCmSiDCgEAAFAIJACDWAAgACwEJEEABMSQA=</HashCode>
+      <FileName>Models\DCNAdmin\DCNDetailAdminSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.WIPDCRDetailsSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEgAwAEAAkAmQQwEBAAkIAAATgAAAAAAAAEAgAIQQA=</HashCode>
+      <FileName>Models\DCR\Report\WIPDCRDetailsSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.WIPDCRForm" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAgAAAIAAQAAAAEBAAAAAAAAAAAAAACAAE=</HashCode>
+      <FileName>Models\DCR\Report\WIPDCRForm.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCRAdminContract" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="28.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DCRAdmin\DCRAdminContract.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCRAdminDetailSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="30.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwIDm4aPgQ7WiHQ0EhQEwqtIQPWJCQOyQEZWZmhYUcA=</HashCode>
+      <FileName>Models\DCRAdmin\DCRAdminDetailSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCRAdminForm" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="32.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAgAAAIAAQAAAAEBAAAAAAAAAAAAAACAAE=</HashCode>
+      <FileName>Models\DCRAdmin\DCRAdminForm.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCN.AllDCRDetailsSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAgAiAAgEAAAAIAAADAAAAAAAAAEAAAIQQA=</HashCode>
+      <FileName>Models\DCN\AllDCRDetailsSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCN.ALLDCRForm" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAgAAAIAAQAAAAEBAAAAAAAAAAAAAACAAE=</HashCode>
+      <FileName>Models\DCN\ALLDCRForm.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCN.DCNContract" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DCN\DCNContract.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCN.DCNForm" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAgAAAIAAQAAAAEBAAAAAAAAAAAAAACAAE=</HashCode>
+      <FileName>Models\DCN\DCNForm.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCN.DCNQAInchargeSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEIAAQCCAgEAAAAIAAADAAAAAAgAAEAAAIAQA=</HashCode>
+      <FileName>Models\DCN\DCNQAInchargeSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCN.DCNSCMSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAACCAgEAAEAIAAADAAAAAAAAAEAgAIAQA=</HashCode>
+      <FileName>Models\DCN\DCNSCMSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCN.DCRDetails" Collapsed="true">
+    <Position X="20" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAACAgAUAiSgACAAAAFAAJACBEAAgAAwAJAEAAMSAA=</HashCode>
+      <FileName>Models\DCN\DCRDetails.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCN.DCRDetailsSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAgAiAAgEAAAAIAAEDAAAAAAAAAEAAAIQQA=</HashCode>
+      <FileName>Models\DCN\DCRDetailsSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCN.DCRForDCNContract" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DCN\DCRForDCNContract.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCN.DCRForDCNForm" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAgAAAIAAQAAAAEBAAAAAAAAAAAAAACAAE=</HashCode>
+      <FileName>Models\DCN\DCRForDCNForm.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCN.DCRProcessInchargeSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAACCAgEAAAAIAAADAAAAAAAAAEAAAIAQA=</HashCode>
+      <FileName>Models\DCN\DCRProcessInchargeSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCN.DesignDocumentEngineerSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="32.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAACAgEUCiSiBCgEAAFAIJACDGAAgACwAJEEAAMSQA=</HashCode>
+      <FileName>Models\DCN\DesignDocumentEngineerSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCN.DesignEngineerSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAACCAgEAAAAIAAADAAAAAAAEAEAAAIAQA=</HashCode>
+      <FileName>Models\DCN\DesignEngineerSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCN.RevisedApplicableDocuments" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAUAAFAgAQCAAAAAAAAAAIAgAAAAAEAAAAAQIA=</HashCode>
+      <FileName>Models\DCN\RevisedApplicableDocuments.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCN.Specification" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACEEAMAgAQCAAAAAgAAAAAAAAAAAAEAAAAAUIA=</HashCode>
+      <FileName>Models\DCN\Specification.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCN.Vendor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAEAAFAgAQCAAAAAAgAAAAAAAAAAAEAoAAAQAA=</HashCode>
+      <FileName>Models\DCN\Vendor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCN.VendorDCN" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAEAAFAgAQCQAAAAAgAAAAAAAAAAAEAoAAAQAA=</HashCode>
+      <FileName>Models\DCN\VendorDCN.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCN.VendorDCRSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="30.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAQCCAgEAAAAIAAADAAAAAAAAAEAAAIAQA=</HashCode>
+      <FileName>Models\DCN\VendorDCRSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.CCInchargeSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="30.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEgACACCAgEAAAAIAAADAAAAAAAAAEAAAIAQA=</HashCode>
+      <FileName>Models\DCR\CCInchargeSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.CostingSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEIAAQCCAgEAAAAIAAADAAAAAAAAAEAgAIAQA=</HashCode>
+      <FileName>Models\DCR\CostingSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.DAPMarketingInchargeSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAACCAkEgAAAIBAADQAAgAAAAAEAgAIAQA=</HashCode>
+      <FileName>Models\DCR\DAPMarketingInchargeSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.DAPMarketingSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAACCAkEgAAAIAAADAAAAAAAAAEAAAIAQA=</HashCode>
+      <FileName>Models\DCR\DAPMarketingSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.DCRContract" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DCR\DCRContract.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.DCRDetailSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAACYCEAAjSiAAgEAAAwqgACHCICAAgAAIGAiAIUYA=</HashCode>
+      <FileName>Models\DCR\DCRDetailSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.DCRForm" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="28.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAgAAAIAAQAAAAEBAAAAAAAAAAAAAACAAE=</HashCode>
+      <FileName>Models\DCR\DCRForm.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.DCRInchargeNavigatorSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="30.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAACCAgEAAAAIAAADAAAAAAAAQEIgAIAQA=</HashCode>
+      <FileName>Models\DCR\DCRInchargeNavigatorSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.DCRProcessInchargeSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQACAQCEAAASCCAgEAAAAoEAADAACAIgAAIEAgAIAYA=</HashCode>
+      <FileName>Models\DCR\DCRProcessInchargeSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.DesignEngineerInchargeSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAIEAAAACCAgEAAAAIAAADEAAgAAAABEAgAIAYA=</HashCode>
+      <FileName>Models\DCR\DesignEngineerInchargeSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.DesignEngineerSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAIEAAAACCAgEAAAAIAAALAAAAAAAAAEAAAIAYA=</HashCode>
+      <FileName>Models\DCR\DesignEngineerSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.FANSMarketingInchargeSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="32.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAEAAAACCAgEAAAAIAAADAAAwEAAAAEBgAIAQA=</HashCode>
+      <FileName>Models\DCR\FANSMarketingInchargeSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.FANSMarketingSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAEAAAACCAgEAAAAIAAADAAAQAAAAAEAAAIAQA=</HashCode>
+      <FileName>Models\DCR\FANSMarketingSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.FinalDCRProcessInchargeSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACEQAEAAAACCAgEAAAAIkAADAAAAACAAIEAgAIAQA=</HashCode>
+      <FileName>Models\DCR\FinalDCRProcessInchargeSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.KAPMarketingInchargeSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAIACCAgEAAAAIIAADAAAgAAAEIEAgAIAQA=</HashCode>
+      <FileName>Models\DCR\KAPMarketingInchargeSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.KAPMarketingSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAACCAgEAAAAIIAADAAAAAAAEAEAAAIAQA=</HashCode>
+      <FileName>Models\DCR\KAPMarketingSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.LightingMarketingInchargeSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="28.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQEAAAACCAgEgAAAIAAADAAAgAAAAAEIgAIAUA=</HashCode>
+      <FileName>Models\DCR\LightingMarketingInchargeSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.LightingMarketingSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="30.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQEAAAACCAgEAAAAIAAADAAAAAAAAAEAAAIAUA=</HashCode>
+      <FileName>Models\DCR\LightingMarketingSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.LUMMarketingInchargeSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAQACCQgEAAAAIAAQDAAAgAAAAAEAggIAQA=</HashCode>
+      <FileName>Models\DCR\LUMMarketingInchargeSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.LUMMarketingSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAQACCAgEAAAAIAAADAAAAAAAAAEAAgIAQA=</HashCode>
+      <FileName>Models\DCR\LUMMarketingSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.MarketingInchargeSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEQAAACCAgEAAAAIAAADAAIAAAAAAEAAAIQQI=</HashCode>
+      <FileName>Models\DCR\MarketingInchargeSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.MarketingSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAACCAgEAAAAIAAADAAIAAAAAAEAAAIQQA=</HashCode>
+      <FileName>Models\DCR\MarketingSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.MorphyRechardMarketingInchargeSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIBAAAEAAAACCAgEAAAAIAAADAAAgAAAAAUAiAIAQA=</HashCode>
+      <FileName>Models\DCR\MorphyRechardMarketingInchargeSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.MorphyRechardMarketingSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAEAAAACCAgEAAAAIAAADAAAAAAAAAEACAIAQA=</HashCode>
+      <FileName>Models\DCR\MorphyRechardMarketingSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.QAInchargeSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAGAQAACCAgEBAAAIAAALABAgAQAAAEAgAYAYA=</HashCode>
+      <FileName>Models\DCR\QAInchargeSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.QASection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAGAQAACCAgEAAAAIAAALABAAAQAAAEAAAIAYA=</HashCode>
+      <FileName>Models\DCR\QASection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.SCMInchargeSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQQEAAAUCCAgEAQEAIAIADAAAgAgQAAEAgAIAQA=</HashCode>
+      <FileName>Models\DCR\SCMInchargeSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.SCMSection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="28.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQQEAAAUCCAgEAQAAIAIADAAAAAgAAAEAgAIAQA=</HashCode>
+      <FileName>Models\DCR\SCMSection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.DCR.VendorDCR" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="28.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAFAAFAgAQCAAAAAAgBAAAAAAAAAAEhoAAAQAA=</HashCode>
+      <FileName>Models\DCR\VendorDCR.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Master.ApproverMaster" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAACCAAAAAAAAAAAAAAAAAAAgAIAAAAAgA=</HashCode>
+      <FileName>Models\Master\ApproverMaster.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Master.ApproverMasterListItem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAEAAAAAgAAAACAAAAAQAgAgAAAAA=</HashCode>
+      <FileName>Models\Master\ApproverMasterListItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Master.BusinessUnitMaster" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAACCAAAAAAAAAAAAAAAAAAAgAIAAAAAgA=</HashCode>
+      <FileName>Models\Master\BusinessUnitMaster.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Master.BusinessUnitMasterListItem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="28.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Models\Master\BusinessUnitMasterListItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Master.DCRProcessInchargeMaster" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAACCAAAAAAAAAAAAAAAAAAAgAIAAAAAgA=</HashCode>
+      <FileName>Models\Master\DCRProcessInchargeMaster.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Master.DCRProcessInchargeMasterListItem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAgAgAAAAA=</HashCode>
+      <FileName>Models\Master\DCRProcessInchargeMasterListItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Master.DepartmentMaster" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAACCAAAAAAAAAAAAAAAAAAAgAIAAAAAgA=</HashCode>
+      <FileName>Models\Master\DepartmentMaster.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Master.DepartmentMasterListItem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Models\Master\DepartmentMasterListItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Master.DesignchangeproposedMaster" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="28.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAACCAAAAAAAAAAAAAAAAAAAgAIAAAAAgA=</HashCode>
+      <FileName>Models\Master\DesignchangeproposedMaster.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Master.DesignchangeproposedMasterListItem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="30.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Models\Master\DesignchangeproposedMasterListItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Master.DivisionMaster" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAACCAAAAAAAAAAAAAAAAAAAgAIAAAAAgA=</HashCode>
+      <FileName>Models\Master\DivisionMaster.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Master.DivisionMasterListItem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEACAAAAAAAAAAAAAAAAAAAgAgAAEAA=</HashCode>
+      <FileName>Models\Master\DivisionMasterListItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Master.EffectOnCostMaster" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAACCAAAAAAAAAAAAAAAAAAAgAIAAAAAgA=</HashCode>
+      <FileName>Models\Master\EffectOnCostMaster.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Master.EffectOnCostMasterListItem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Models\Master\EffectOnCostMasterListItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Master.EmployeeMaster" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="28.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAACCAAAAAAAAAAAAAAAAAAAgAIAAAAAgA=</HashCode>
+      <FileName>Models\Master\EmployeeMaster.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Master.EmployeeMasterListItem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="30.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIQAAAACJAAEAAAAAAEAAAEAAAAgIAAAAggAAAAAA=</HashCode>
+      <FileName>Models\Master\EmployeeMasterListItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Master.ProductCategoryMaster" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAACCAAAAAAAAAAAAAAAAAAAgAIAAAAAgA=</HashCode>
+      <FileName>Models\Master\ProductCategoryMaster.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Master.ProductCategoryMasterListItem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAABAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Models\Master\ProductCategoryMasterListItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Master.VendorMaster" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="32.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAACCAAAAAAAAAAAAAAAAAAAgAIAAAAAgA=</HashCode>
+      <FileName>Models\Master\VendorMaster.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DCRDCNWorkflow.Models.Master.VendorMasterListItem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Models\Master\VendorMasterListItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Enum Name="BEL.DCRDCNWorkflow.RedirectionStatus" Collapsed="true">
+    <Position X="14.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAQAAAAABAAAAAAA=</HashCode>
+      <FileName>SharePointContext.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="System.Web.Mvc.Html.ResourceNames" Collapsed="true">
+    <Position X="16.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAgAAAAAAAAAAAAAAAAAAABAQAAA=</HashCode>
+      <FileName>Common\ResourceNames.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Button_Text_Add" xml:space="preserve">
+    <value>ADD</value>
+  </data>
+  <data name="Button_Text_AddSpecification" xml:space="preserve">
+    <value>Add Document</value>
+  </data>
+  <data name="Error_ApproveRework" xml:space="preserve">
+    <value>Please Select Approve/Rework</value>
+  </data>
+  <data name="Error_Dateofimplementation" xml:space="preserve">
+    <value>Implementation Date is required</value>
+  </data>
+  <data name="Error_DCRNo" xml:space="preserve">
+    <value>DCR No is required</value>
+  </data>
+  <data name="Error_DesignchangerequiredbyDate" xml:space="preserve">
+    <value>Design Change date is required</value>
+  </data>
+  <data name="Grid_Title_Componentrawmaterial" xml:space="preserve">
+    <value>Component/Raw Material</value>
+  </data>
+  <data name="Grid_Title_DateofImplementation" xml:space="preserve">
+    <value>Implementation Date</value>
+  </data>
+  <data name="Grid_Title_DocumentNo" xml:space="preserve">
+    <value>Document No.</value>
+  </data>
+  <data name="Grid_Title_DocumentTitle" xml:space="preserve">
+    <value>Document Title</value>
+  </data>
+  <data name="Grid_Title_Issuedate" xml:space="preserve">
+    <value>Issue Date</value>
+  </data>
+  <data name="Grid_Title_PresentSpecifications" xml:space="preserve">
+    <value>Present Specifications</value>
+  </data>
+  <data name="Grid_Title_RevisedSpecifications" xml:space="preserve">
+    <value>Revised Specifications</value>
+  </data>
+  <data name="Grid_Title_RevisionNo" xml:space="preserve">
+    <value>Revision No.</value>
+  </data>
+  <data name="Grid_Title_StartProductsrno" xml:space="preserve">
+    <value>Start Product Sr. No.</value>
+  </data>
+  <data name="Grid_Title_Supplier" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
+  <data name="Label_ApproveRework" xml:space="preserve">
+    <value>Approve/Rework:</value>
+  </data>
+  <data name="Label_CCIncharge" xml:space="preserve">
+    <value>CC Incharge:</value>
+  </data>
+  <data name="Label_Date" xml:space="preserve">
+    <value>Date:</value>
+  </data>
+  <data name="Label_Dateofimplementation" xml:space="preserve">
+    <value>Implementation Date:</value>
+  </data>
+  <data name="Label_DCNNo" xml:space="preserve">
+    <value>DCN No:</value>
+  </data>
+  <data name="Label_DCRNo" xml:space="preserve">
+    <value>DCR No:</value>
+  </data>
+  <data name="Label_DCRProcessIncharge" xml:space="preserve">
+    <value>DCR Process Incharge:</value>
+  </data>
+  <data name="Label_DesignChangeNoteIssuedOn" xml:space="preserve">
+    <value>Design Change note issued on:</value>
+  </data>
+  <data name="Label_InformationProvidedByQA" xml:space="preserve">
+    <value>Information Provided By QA:</value>
+  </data>
+  <data name="Label_ProductName" xml:space="preserve">
+    <value>Product Name:</value>
+  </data>
+  <data name="Label_QAIncharge" xml:space="preserve">
+    <value>QA Incharge:</value>
+  </data>
+  <data name="Label_SCMIncharge" xml:space="preserve">
+    <value>SCM:</value>
+  </data>
+  <data name="Section_Title_DesignEngineer" xml:space="preserve">
+    <value>Design Engineer Section</value>
+  </data>
+  <data name="Section_Title_ProcessIncharge" xml:space="preserve">
+    <value>DCR Process Incharge Section</value>
+  </data>
+  <data name="Section_Title_QAIncharge" xml:space="preserve">
+    <value>QA Incharge Section</value>
+  </data>
+  <data name="Section_Title_RevisedapplicabledocumentsGrid" xml:space="preserve">
+    <value>Revised Applicable Documents</value>
+  </data>
+  <data name="Section_Title_SpecificationGrid" xml:space="preserve">
+    <value>Specifications</value>
+  </data>
+  <data name="Section_Title_VendorGrid" xml:space="preserve">
+    <value>Vendor Details</value>
+  </data>
+  <data name="Error_Component" xml:space="preserve">
+    <value>Component is required</value>
+  </data>
+  <data name="Error_DocumentNo" xml:space="preserve">
+    <value>Document No is required</value>
+  </data>
+  <data name="Error_DocumentTitle" xml:space="preserve">
+    <value>Document Title is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_Issuedate" xml:space="preserve">
+    <value>Issue date is required</value>
+  </data>
+  <data name="Error_PresentSpecification" xml:space="preserve">
+    <value>Present Specifications is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_RevisedSpecification" xml:space="preserve">
+    <value>Revised Specifications is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_RevisionNo" xml:space="preserve">
+    <value>Revision No is required (Max 255 characters).</value>
+  </data>
+  <data name="Label_Component" xml:space="preserve">
+    <value>Component:</value>
+  </data>
+  <data name="Label_DocumentNo" xml:space="preserve">
+    <value>Document No.:</value>
+  </data>
+  <data name="Label_DocumentTitle" xml:space="preserve">
+    <value>Document Title:</value>
+  </data>
+  <data name="Label_Issuedate" xml:space="preserve">
+    <value>Issue Date:</value>
+  </data>
+  <data name="Label_PresentSpecification" xml:space="preserve">
+    <value>Present Specifications:</value>
+  </data>
+  <data name="Label_RevisedSpecification" xml:space="preserve">
+    <value>Revised Specifications:</value>
+  </data>
+  <data name="Label_RevisionNo" xml:space="preserve">
+    <value>Revision No.</value>
+  </data>
+  <data name="Label_RequestDepartment" xml:space="preserve">
+    <value>Request Department:</value>
+  </data>
+  <data name="Section_Title_DesignDocumentEngineer" xml:space="preserve">
+    <value>Design Document Engineer Section</value>
+  </data>
+  <data name="Label_Comment" xml:space="preserve">
+    <value>Design Engineer Comments:</value>
+  </data>
+  <data name="Error_DCRProcessInchargeComment" xml:space="preserve">
+    <value>Comments field is required (Max 255 characters).</value>
+  </data>
+  <data name="Label_DCRProcessInchargeComment" xml:space="preserve">
+    <value>DCR Process Incharge Comments:</value>
+  </data>
+  <data name="Text_SpecificationDeleted" xml:space="preserve">
+    <value>Specification Detail is deleted</value>
+  </data>
+  <data name="Text_SpecificationSave" xml:space="preserve">
+    <value>Specification Detail is saved</value>
+  </data>
+  <data name="Popup_Title_AddSpecification" xml:space="preserve">
+    <value>Add Specification</value>
+  </data>
+  <data name="Popup_Title_EditSpecification" xml:space="preserve">
+    <value>Edit Specification</value>
+  </data>
+  <data name="Error_ComponentRawMaterial" xml:space="preserve">
+    <value>Component/Raw Material is required (Max 255 characters).</value>
+  </data>
+  <data name="Label_ComponentRawMaterial" xml:space="preserve">
+    <value>Component/Raw Material</value>
+  </data>
+  <data name="Grid_Title_SrNo" xml:space="preserve">
+    <value>Sr No</value>
+  </data>
+  <data name="Text_RevisedAppDocSave" xml:space="preserve">
+    <value>Document Detail is saved</value>
+  </data>
+  <data name="Text_RevisedAppDocDeleted" xml:space="preserve">
+    <value>Document Detail is deleted</value>
+  </data>
+  <data name="Error_RequestDate" xml:space="preserve">
+    <value>Issue Date is requred</value>
+  </data>
+  <data name="Label_RequestDate" xml:space="preserve">
+    <value>Issue Date:</value>
+  </data>
+  <data name="Popup_Title_AddRevisedAppDoc" xml:space="preserve">
+    <value>Add Document</value>
+  </data>
+  <data name="Popup_Title_EditRevisedAppDoc" xml:space="preserve">
+    <value>Edit Document</value>
+  </data>
+  <data name="Text_VendorDCNDeleted" xml:space="preserve">
+    <value>Vendor Detail is deleted</value>
+  </data>
+  <data name="Text_VendorDCNSave" xml:space="preserve">
+    <value>Vendor Detail is saved</value>
+  </data>
+  <data name="Label_Title" xml:space="preserve">
+    <value>Title:</value>
+  </data>
+  <data name="Label_TitleValue" xml:space="preserve">
+    <value>Design Change Note</value>
+  </data>
+  <data name="Button_Title_SelectDCR" xml:space="preserve">
+    <value>Select DCR</value>
+  </data>
+  <data name="Error_FileNameList" xml:space="preserve">
+    <value>Document No. is required</value>
+  </data>
+  <data name="Label_FileNameList" xml:space="preserve">
+    <value>Document No.</value>
+  </data>
+  <data name="Text_RevisedApplicableValidation" xml:space="preserve">
+    <value>At least one Revised Applicable document is required</value>
+  </data>
+  <data name="Text_SpecificationValidation" xml:space="preserve">
+    <value>At least one specification/Revised Applicable document is required</value>
+  </data>
+  <data name="Grid_Title_DCRNo" xml:space="preserve">
+    <value>DCR No</value>
+  </data>
+  <data name="Popup_Select_DCRNo" xml:space="preserve">
+    <value>Select DCR No</value>
+  </data>
+  <data name="Grid_Title_ProposedBy" xml:space="preserve">
+    <value>Proposed By</value>
+  </data>
+  <data name="Grid_Title_RequestedDate" xml:space="preserve">
+    <value>Requested Date</value>
+  </data>
+  <data name="Label_DesignEngineer" xml:space="preserve">
+    <value>Design Engineer</value>
+  </data>
+  <data name="Text_SelectDCRNO" xml:space="preserve">
+    <value>Please Select DCR No</value>
+  </data>
+  <data name="Label_StartProductSrNo" xml:space="preserve">
+    <value>Start Product Sr No</value>
+  </data>
+  <data name="Label_VendorName" xml:space="preserve">
+    <value>Vendor Name:</value>
+  </data>
+  <data name="Text_Success" xml:space="preserve">
+    <value>DCN submitted Successfully</value>
+  </data>
+  <data name="Text_IsDCNGenerated" xml:space="preserve">
+    <value>This DCR No is already in used, Kindly Select another DCR No.</value>
+  </data>
+  <data name="Label_ProposedBy" xml:space="preserve">
+    <value>DCN Issued by:</value>
+  </data>
+  <data name="Error_DCRProcessIComment" xml:space="preserve">
+    <value>Comments field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_DesignEngComment" xml:space="preserve">
+    <value>Comments field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_StartProductSrNo" xml:space="preserve">
+    <value>Start Product Sr. No. is required (Max length 255 Char.)</value>
+  </data>
+  <data name="Error_FNLPresentSpecification1" xml:space="preserve">
+    <value>Present Specification Attachment is required.</value>
+  </data>
+  <data name="Error_FNLRevisedSpecification1" xml:space="preserve">
+    <value>Revised Specification Attachment is required.</value>
+  </data>
+  <data name="Label_FNLPresentSpecification" xml:space="preserve">
+    <value>Present Specification File</value>
+  </data>
+  <data name="Label_FNLRevisedSpecification" xml:space="preserve">
+    <value>Revised Specification File</value>
+  </data>
+  <data name="Text_CompleteSuccess" xml:space="preserve">
+    <value>DCN Completed successfully</value>
+  </data>
+  <data name="Text_SaveSuccess" xml:space="preserve">
+    <value>DCN saved successfully</value>
+  </data>
+  <data name="Text_SendBackSuccess" xml:space="preserve">
+    <value>DCN Send Back to Design document engineer for rework.</value>
+  </data>
+  <data name="Label_DAPMarketingIncharge" xml:space="preserve">
+    <value>DAP Marketing Incharge</value>
+  </data>
+  <data name="Label_FANSMarketingIncharge" xml:space="preserve">
+    <value>FANS Marketing Incharge</value>
+  </data>
+  <data name="Label_KAPMarketingIncharge" xml:space="preserve">
+    <value>KAP Marketing Incharge</value>
+  </data>
+  <data name="Label_LightingMarketingIncharge" xml:space="preserve">
+    <value>Lighting Marketing Incharge</value>
+  </data>
+  <data name="Label_LUMMarketingIncharge" xml:space="preserve">
+    <value>LUM Marketing Incharge</value>
+  </data>
+  <data name="Label_MRMarketingIncharge" xml:space="preserve">
+    <value>Morphy Rechard Marketing Incharge</value>
+  </data>
+  <data name="Label_DesignEngineerApproveRework" xml:space="preserve">
+    <value>Approve/Rework</value>
+  </data>
+  <data name="Label_QADateofApproval" xml:space="preserve">
+    <value>QA Date of Approval</value>
+  </data>
+  <data name="Label_WorkflowStatus" xml:space="preserve">
+    <value>Workflow Status</value>
+  </data>
+  <data name="Section_Title_SCMSection" xml:space="preserve">
+    <value>SCM Section</value>
+  </data>
+  <data name="Text_SaveDraftSuccess" xml:space="preserve">
+    <value>DCN save as draft successfully</value>
+  </data>
+  <data name="Label_DesignEngineerIncharge" xml:space="preserve">
+    <value>Design Engineer Incharge : </value>
+  </data>
+  <data name="Section_Title_DesignEngineerIncharge" xml:space="preserve">
+    <value>Design Engineer Incharge Section</value>
+  </data>
+  <data name="Error_DCRProcessICApproveRework" xml:space="preserve">
+    <value>Please select Approve/Rework.</value>
+  </data>
+  <data name="Label_DCRProcessICApproveRework" xml:space="preserve">
+    <value>Approve / Rework:</value>
+  </data>
+  <data name="Label_DCRCreator" xml:space="preserve">
+    <value>DCR Creator:</value>
+  </data>
+</root>

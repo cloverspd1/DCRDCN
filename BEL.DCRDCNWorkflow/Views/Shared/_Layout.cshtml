@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Oswald:400,700,300" />
+    @Styles.Render("~/Content/css")
+    <title>@ViewBag.Title - BEL</title>
+    <script type="text/javascript">
+        var BASEPATHURL = "@ViewData["BasePath"]";
+        var SPHOST = '@ViewData["SPHost"]';
+        var SPHOSTURL = '@ViewData["SPHostUrl"]';
+        var ENVIRONMENTLIVE = '@Convert.ToString(System.Configuration.ConfigurationManager.AppSettings["EnvironmentLive"]).ToLower().Trim()';
+    </script>
+</head>
+<body>
+    <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+        <div class="page-header pull-left">
+            <div class="page-title">@ViewBag.Title</div>
+        </div>
+        @RenderSection("buttons", false)
+        <div class="clearfix"></div>
+    </div>
+    <div class="page-content">
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/jquery", "~/bundles/bootstrap", "~/bundles/jqueryval")
+    @Scripts.RenderFormat(BEL.DCRDCNWorkflow.Common.BundleHelper.ScriptVersion, "~/bundles/spcontext")
+    @RenderSection("scripts", required: false)
+
+    <div id="loading">
+        <div id="pageLoading">
+        </div>
+        <img id="loadingimage" src="~/images/icons/loading.gif" alt="Please Wait" />
+    </div>
+    <div id="selectmeeting"></div>
+    <div id="addcomment"></div>
+</body>
+</html>

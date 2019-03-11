@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Oops!! An error has occurred";
+}
+<div id="tab-general">
+    <div class="row mbl">
+        <div class="col-lg-12">
+            <div class="tab-content responsive">
+                <div class="card-body form-horizontal">
+                    <div class="row">
+                        <div class="col-sm-2 text-center">
+                            <img src="~/images/icons/error.png" width="55%" />
+                        </div>
+                        <div class="col-sm-10">
+                            <strong>@Request["msg"]</strong>
+                            <br /><br />
+                            User: @ViewBag.UserEmail<br />
+                            The server encountered an error or misconfiguration and was unable to complete your request.<br />
+                            Please contact the server administrator and inform them with <u>error id</u>, and anything you might have done that may have caused the error.<br />
+                            More information about this error may be available in the server error logs.<br />
+                            Additionally, a 404 Not Found error was encountered while trying to request unavailble page.<br /><br />
+                            <b><u>Please Refresh the Page</u></b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6A88DEE7-C7F7-4429-94E0-527182CC2703}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BEL.CommonDataContract</RootNamespace>
+    <AssemblyName>BEL.CommonDataContract</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>%24/BEL Workflow/06.Source Code/02.Development/BEL.Workflow/BEL.CommonDataContract</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>http://tfs:8080/tfs/microsoft%2520product%2520server%2520and%2520technologies</SccAuxPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\BEL.Workflow.CA.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.IdentityModel\3.5.0.0__31bf3856ad364e35\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.Composition.Registration" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attribute\NotSavedColumnAttribute.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Common\ActionStatus.cs" />
+    <Compile Include="Common\ActivityLog.cs" />
+    <Compile Include="Common\ActivityLogSection.cs" />
+    <Compile Include="Common\AjaxResponse.cs" />
+    <Compile Include="Common\AppApprovalMatrix.cs" />
+    <Compile Include="Common\ApplicationStatus.cs" />
+    <Compile Include="Common\ApplicationStatusSection.cs" />
+    <Compile Include="Common\Approvers.cs" />
+    <Compile Include="Common\BusinessExceptionError.cs" />
+    <Compile Include="Common\Button.cs" />
+    <Compile Include="Common\ButtonActionStatus.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Attribute\ContainsMasterDataAttribute.cs" />
+    <Compile Include="Common\DataTableExtensoins.cs" />
+    <Compile Include="Common\DivisionAdminDetails.cs" />
+    <Compile Include="Attribute\FieldBelongToListAttribute.cs" />
+    <Compile Include="Attribute\FieldColumnNameAttribute.cs" />
+    <Compile Include="Common\FileDetails.cs" />
+    <Compile Include="Interface\IContract.cs" />
+    <Compile Include="Interface\IForm.cs" />
+    <Compile Include="Attribute\IsAppendFieldAttribute.cs" />
+    <Compile Include="Attribute\IsApproverDetailsAttribute.cs" />
+    <Compile Include="Attribute\IsApproverMatrixFieldAttribute.cs" />
+    <Compile Include="Interface\ISection.cs" />
+    <Compile Include="Attribute\IsFileAttribute.cs" />
+    <Compile Include="Attribute\IsListColumnAttribute.cs" />
+    <Compile Include="Attribute\IsPersonAttribute.cs" />
+    <Compile Include="Attribute\IsPrimaryKeyAttribute.cs" />
+    <Compile Include="Attribute\IsTaskAttribute.cs" />
+    <Compile Include="Attribute\IsTranAttribute.cs" />
+    <Compile Include="Attribute\IsViewerAttribute.cs" />
+    <Compile Include="Interface\ITask.cs" />
+    <Compile Include="Interface\ITrans.cs" />
+    <Compile Include="Common\ListItemDetail.cs" />
+    <Compile Include="Common\ListNames.cs" />
+    <Compile Include="Common\MasterNames.cs" />
+    <Compile Include="Attribute\MastersListAttribute.cs" />
+    <Compile Include="Common\Masters\IMaster.cs" />
+    <Compile Include="Common\Masters\IMasterItem.cs" />
+    <Compile Include="Common\Masters\MasterDataItem.cs" />
+    <Compile Include="Common\Masters\SLAMatrix.cs" />
+    <Compile Include="Common\NameValueData.cs" />
+    <Compile Include="Common\Person.cs" />
+    <Compile Include="Attribute\RequiredOnDraft.cs" />
+    <Compile Include="Common\TempKeys.cs" />
+    <Compile Include="Common\UploadedFile.cs" />
+    <Compile Include="Common\UserDetails.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,52 @@
+﻿@using BEL.DCRDCNWorkflow.Models.DCR
+@using BEL.CommonDataContract
+@model List<ITrans>
+
+
+<div class="table-responsive">
+    <table class="table table-hover table-bordered someTable">
+        <thead>
+            <tr>
+                <th>Sr No</th>
+                <th>@Html.ResourceValue("Grid_Title_VendorName", ResourceNames.DCR)</th>
+                <th>@Html.ResourceValue("Grid_Title_FGStock", ResourceNames.DCR)</th>
+                <th>@Html.ResourceValue("Grid_Title_ExistingComponentStock", ResourceNames.DCR)</th>
+                <th>@Html.ResourceValue("Grid_Title_DateOfImplementation", ResourceNames.DCR)</th>
+                <th>@Html.ResourceValue("Grid_Title_Action", ResourceNames.Common)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Count() > 0)
+            {
+                foreach (VendorDCR item in Model)
+                {
+                    <tr>
+                        <td>@item.Index</td>
+                        <td>@item.VendorName</td>
+                        <td>@item.FGStock</td>
+                        <td>@item.ExistingComponentStock</td>
+                        <td>@(item.DateOfImplementation.HasValue ? item.DateOfImplementation.Value.ToString("dd/MM/yyyy") : "")</td>
+                        <td>
+                            <a class="btn ink-reaction btn-floating-action" data-ajax="true" data-ajax-loading="#loading" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#addeditVendor" href="@Url.Action("AddEditVendor", "DCR", new { index = @item.Index })" >
+                                <i class='fa fa-edit'></i>
+                            </a>
+                            <a class="btn ink-reaction btn-floating-action btn-danger" onclick="VendorDelete('@item.Index');">
+                                <i class='fa fa-trash-o'></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="9" class="text-center text-danger">
+                        @Html.ResourceValue("Grid_Text_NoVendorData", ResourceNames.DCR) 
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

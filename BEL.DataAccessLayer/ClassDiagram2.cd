@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BEL.DataAccessLayer.CachingProviderBase" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAQAAACAAAEAAAAICAEAAgEAIAAAEAAEAAAAAABA=</HashCode>
+      <FileName>CacheHelper\CachingProviderBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BEL.DataAccessLayer.GlobalCachingProvider" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAgAAAAAAEQAEAAAAAAAA=</HashCode>
+      <FileName>CacheHelper\GlobalCachingProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BEL.DataAccessLayer.AppApprovalMatrixHelper" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAwEAEggCFBBBAAAEAgAAAABAiEKEQEIAAAIAABAA=</HashCode>
+      <FileName>Common\AppApprovalMatrixHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DataAccessLayer.AsyncHelper" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\AsyncHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DataAccessLayer.BELDataAccessLayer" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FaMCAA2AkFBEAggw4RgGtMc1SAaEwtAgUIAAhBVQwwQ=</HashCode>
+      <FileName>Common\BELDataAccessLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DataAccessLayer.BusinessExceptionHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Common\BusinessExceptionHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BEL.DataAccessLayer.EmailHelper" Collapsed="true">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAEAAAAAAABAAACAUAAAAAAAAAAAAAAEQAAAA=</HashCode>
+      <FileName>Common\EmailHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DataAccessLayer.ErrorLogging" Collapsed="true">
+    <Position X="10" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\ErrorLogging.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DataAccessLayer.ExcelHelper" Collapsed="true">
+    <Position X="11.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAABAAAAAAAAAAAAAAAIAAAAwAAAAA=</HashCode>
+      <FileName>Common\ExcelHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DataAccessLayer.FileListHelper" Collapsed="true">
+    <Position X="13.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAEAAAAAAQAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Common\FileListHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DataAccessLayer.JSONHelper" Collapsed="true">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAACAAAACBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\JSONHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DataAccessLayer.Logger" Collapsed="true">
+    <Position X="11.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Common\Logger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DataAccessLayer.MasterDataHelper" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAgAAAAAAAEAAAgEAAACAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Common\MasterDataHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DataAccessLayer.RESTHelper" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\RESTHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BEL.DataAccessLayer.TransactionHelper" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACCAAAAAAQBAAQAAAAAAIAAAAAAAAAWAEAAAgAAAA=</HashCode>
+      <FileName>Common\TransactionHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="BEL.DataAccessLayer.IGlobalCachingProvider" Collapsed="true">
+    <Position X="10" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAgAAAAAAEAAEAAAAAAAA=</HashCode>
+      <FileName>CacheHelper\IGlobalCachingProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,1114 @@
+2019-03-11 11:52:50,840 [8] INFO  - MVC - Application_Start_Done, 
+2019-03-11 11:52:50,979 [7] INFO  - MVC - Begin Request http://localhost:4430/, 
+2019-03-11 11:52:50,979 [8] INFO  - MVC - Begin Request http://localhost:4430/?ID=399, 
+2019-03-11 11:52:56,324 [8] INFO  - WCF - Helper GetFormData Condition passed for appname=DCRDCN, formNameDCR Form, User Id=32, 
+2019-03-11 11:52:56,326 [8] INFO  - WCF - Called Helper GetFormData, 
+2019-03-11 11:52:56,324 [14] INFO  - WCF - Helper.GetButtons for role 'Creator', appName='DCRDCN', formName='DCR Form', 
+2019-03-11 11:52:56,324 [7] INFO  - WCF - Called Helper.IsGroupMember true, 
+2019-03-11 11:53:00,324 [7] INFO  - WCF - Called Helper.GetEnableSectionNames {"DCR Detail Section":true}, 
+2019-03-11 11:53:00,350 [8] INFO  - WCF - Get All SLA Matrix Data  from Sharepoint root Site, 
+2019-03-11 11:53:20,868 [7] INFO  - WCF - called Helper.GetFormData, 
+2019-03-11 11:53:22,304 [7] INFO  - WCF - Helper.GetNameFromPersonField, String="Clover Sharepoint"
+2019-03-11 11:53:22,305 [7] INFO  - WCF - Helper.GetNameFromPersonField, String="Tushar Murudkar"
+2019-03-11 11:53:22,316 [8] INFO  - WCF - Helper.GetNameFromPersonField, Int32=28
+2019-03-11 11:53:22,317 [8] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 11:53:22,319 [8] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 11:53:22,320 [8] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 11:53:22,316 [7] INFO  - WCF - Helper.GetNameFromPersonField, Int32=38
+2019-03-11 11:53:22,316 [14] INFO  - WCF - Helper.GetNameFromPersonField, Int32=27
+2019-03-11 11:53:22,322 [7] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-3"
+2019-03-11 11:53:22,321 [8] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 11:53:22,327 [8] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 11:53:22,328 [8] INFO  - WCF - Helper.GetNameFromPersonField, String="Training Management Sytem User 1"
+2019-03-11 11:53:22,326 [7] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 11:53:22,325 [14] INFO  - WCF - Helper.GetNameFromPersonField, Int32=37
+2019-03-11 11:53:22,332 [14] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 11:53:22,336 [14] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 11:53:22,337 [14] INFO  - WCF - Helper.GetNameFromPersonField, String="Dnyandev Sandav"
+2019-03-11 11:53:22,340 [14] INFO  - WCF - Helper.GetNameFromPersonField, Int32=30
+2019-03-11 11:53:22,343 [14] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 11:53:22,330 [8] INFO  - WCF - Helper.GetNameFromPersonField, Int32=36
+2019-03-11 11:53:22,331 [7] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 11:53:22,344 [14] INFO  - WCF - Helper.GetNameFromPersonField, String="Bhushan Patil"
+2019-03-11 11:53:22,348 [14] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 11:53:22,345 [8] INFO  - WCF - Helper.GetNameFromPersonField, Int32=29
+2019-03-11 11:53:22,349 [14] INFO  - WCF - Helper.GetNameFromPersonField, String="Collaboration Helpdesk"
+2019-03-11 11:53:22,347 [7] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 11:53:22,352 [7] INFO  - WCF - Helper.GetNameFromPersonField, Int32=35
+2019-03-11 11:53:22,350 [8] INFO  - WCF - Helper.GetNameFromPersonField, Int32=40
+2019-03-11 11:53:22,354 [7] INFO  - WCF - Helper.GetNameFromPersonField, Int32=26
+2019-03-11 11:53:22,355 [8] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-2"
+2019-03-11 11:53:22,356 [7] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 11:53:22,351 [14] INFO  - WCF - Helper.GetNameFromPersonField, String="Training Management Sytem User 2"
+2019-03-11 11:53:22,359 [7] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-3"
+2019-03-11 11:53:22,358 [8] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 11:53:22,360 [14] INFO  - WCF - Helper.GetNameFromPersonField, Int32=37
+2019-03-11 11:53:22,361 [7] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-2"
+2019-03-11 11:53:22,362 [8] INFO  - WCF - Helper.GetNameFromPersonField, Int32=26
+2019-03-11 11:53:22,366 [8] INFO  - WCF - Helper.GetNameFromPersonField, Int32=28
+2019-03-11 11:53:22,363 [14] INFO  - WCF - Helper.GetNameFromPersonField, String="Ramdas Khutal"
+2019-03-11 11:53:22,368 [14] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 11:53:22,367 [8] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 11:53:22,365 [7] INFO  - WCF - Helper.GetNameFromPersonField, String="Dnyandev Sandav"
+2019-03-11 11:53:22,370 [8] INFO  - WCF - Helper.GetNameFromPersonField, Int32=36
+2019-03-11 11:53:22,369 [14] INFO  - WCF - Helper.GetNameFromPersonField, String="Training Management Sytem User 1"
+2019-03-11 11:53:22,374 [14] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 11:53:22,377 [14] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 11:53:22,379 [14] INFO  - WCF - Helper.GetNameFromPersonField, String="Bhushan Patil"
+2019-03-11 11:53:22,371 [7] INFO  - WCF - Helper.GetNameFromPersonField, String="Training Management Sytem User 2"
+2019-03-11 11:53:22,372 [8] INFO  - WCF - Helper.GetNameFromPersonField, Int32=35
+2019-03-11 11:53:22,380 [14] INFO  - WCF - Helper.GetNameFromPersonField, Int32=29
+2019-03-11 11:53:22,385 [14] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 11:53:22,382 [7] INFO  - WCF - Helper.GetNameFromPersonField, String="Deepak Mumbaikar"
+2019-03-11 11:53:22,388 [7] INFO  - WCF - Helper.GetNameFromPersonField, String="Ramdas Khutal"
+2019-03-11 11:53:22,389 [7] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 11:53:22,391 [7] INFO  - WCF - Helper.GetNameFromPersonField, Int32=30
+2019-03-11 11:53:22,383 [8] INFO  - WCF - Helper.GetNameFromPersonField, Int32=34
+2019-03-11 11:53:22,394 [8] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 11:53:22,386 [14] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 11:53:22,393 [7] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 11:53:22,402 [7] INFO  - WCF - Helper.GetNameFromPersonField, Int32=36
+2019-03-11 11:53:22,404 [7] INFO  - WCF - Helper.GetNameFromPersonField, String="Training Management Sytem User 1"
+2019-03-11 11:53:22,406 [7] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 11:53:22,409 [7] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 11:53:22,400 [14] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 11:53:22,414 [14] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 11:53:22,412 [7] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 11:53:22,422 [7] INFO  - WCF - Helper.GetNameFromPersonField, String="Training Management Sytem User 2"
+2019-03-11 11:53:22,423 [7] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 11:53:22,417 [14] INFO  - WCF - Helper.GetNameFromPersonField, Int32=35
+2019-03-11 11:53:22,428 [14] INFO  - WCF - Helper.GetNameFromPersonField, String="Suresh Gadhari"
+2019-03-11 11:53:22,425 [7] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 11:53:22,431 [14] INFO  - WCF - Helper.GetNameFromPersonField, Int32=39
+2019-03-11 11:53:22,433 [14] INFO  - WCF - Helper.GetNameFromPersonField, String="Clover Sharepoint"
+2019-03-11 11:53:22,432 [7] INFO  - WCF - Helper.GetNameFromPersonField, Int32=27
+2019-03-11 11:53:25,588 [7] INFO  - WCF - Get All Buttons from Sharepoint, 
+2019-03-11 11:53:25,588 [14] INFO  - WCF - Helper.GetAllButtons, 
+2019-03-11 11:53:34,807 [7] INFO  - WCF - Helper.GetButtons for role 'Creator', appName='DCRDCN', formName='DCR Form', status='', other params={}, 
+2019-03-11 11:58:05,123 [27] INFO  - MVC - Begin Request http://localhost:4430/?ID=399, 
+2019-03-11 11:58:51,106 [10] INFO  - MVC - Begin Request http://localhost:4430/, 
+2019-03-11 12:05:19,846 [46] INFO  - MVC - Application_Start_Done, 
+2019-03-11 12:05:19,925 [52] INFO  - MVC - Begin Request http://localhost:4430/, 
+2019-03-11 12:05:33,425 [47] INFO  - WCF - Helper GetFormData Condition passed for appname=DCRDCN, formNameDCR Form, User Id=32, 
+2019-03-11 12:05:33,427 [58] INFO  - WCF - Helper.GetButtons for role 'Creator', appName='DCRDCN', formName='DCR Form', 
+2019-03-11 12:05:33,428 [51] INFO  - WCF - Called Helper.IsGroupMember true, 
+2019-03-11 12:05:33,429 [53] INFO  - WCF - Called Helper GetFormData, 
+2019-03-11 12:05:38,159 [52] INFO  - WCF - Called Helper.GetEnableSectionNames {"DCR Detail Section":true}, 
+2019-03-11 12:05:38,172 [52] INFO  - WCF - Get All SLA Matrix Data  from Sharepoint root Site, 
+2019-03-11 12:05:55,753 [51] INFO  - WCF - called Helper.GetFormData, 
+2019-03-11 12:05:57,187 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:05:57,191 [58] INFO  - WCF - Helper.GetNameFromPersonField, String="Dnyandev Sandav"
+2019-03-11 12:05:57,192 [52] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:05:57,192 [54] INFO  - WCF - Helper.GetNameFromPersonField, String="Tushar Murudkar"
+2019-03-11 12:05:57,198 [54] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:05:57,199 [54] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-3"
+2019-03-11 12:05:57,196 [53] INFO  - WCF - Helper.GetNameFromPersonField, Int32=38
+2019-03-11 12:05:57,195 [58] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:05:57,193 [51] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:05:57,198 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:05:57,221 [51] INFO  - WCF - Helper.GetNameFromPersonField, String="Training Management Sytem User 2"
+2019-03-11 12:05:57,231 [51] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:05:57,237 [51] INFO  - WCF - Helper.GetNameFromPersonField, Int32=30
+2019-03-11 12:05:57,239 [51] INFO  - WCF - Helper.GetNameFromPersonField, String="Dnyandev Sandav"
+2019-03-11 12:05:57,240 [51] INFO  - WCF - Helper.GetNameFromPersonField, Int32=30
+2019-03-11 12:05:57,241 [51] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:05:57,242 [51] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:05:57,242 [51] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:05:57,243 [51] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:05:57,246 [51] INFO  - WCF - Helper.GetNameFromPersonField, String="Training Management Sytem User 1"
+2019-03-11 12:05:57,247 [51] INFO  - WCF - Helper.GetNameFromPersonField, Int32=36
+2019-03-11 12:05:57,248 [51] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:05:57,249 [51] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:05:57,250 [51] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:05:57,205 [58] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:05:57,252 [58] INFO  - WCF - Helper.GetNameFromPersonField, String="Training Management Sytem User 2"
+2019-03-11 12:05:57,253 [58] INFO  - WCF - Helper.GetNameFromPersonField, Int32=35
+2019-03-11 12:05:57,254 [58] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:05:57,222 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="Training Management Sytem User 1"
+2019-03-11 12:05:57,255 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="Clover Sharepoint"
+2019-03-11 12:05:57,256 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="Suresh Gadhari"
+2019-03-11 12:05:57,257 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:05:57,258 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=39
+2019-03-11 12:05:57,259 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=27
+2019-03-11 12:05:57,260 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:05:57,261 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="Bhushan Patil"
+2019-03-11 12:05:57,262 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:05:57,263 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=29
+2019-03-11 12:05:57,264 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:05:57,265 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="Collaboration Helpdesk"
+2019-03-11 12:05:57,267 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=40
+2019-03-11 12:05:57,269 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=35
+2019-03-11 12:05:57,270 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-2"
+2019-03-11 12:05:57,271 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=26
+2019-03-11 12:05:57,272 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:05:57,273 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:05:57,275 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-3"
+2019-03-11 12:05:57,276 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=37
+2019-03-11 12:05:57,277 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-2"
+2019-03-11 12:05:57,283 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=26
+2019-03-11 12:05:57,285 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="Ramdas Khutal"
+2019-03-11 12:05:57,286 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=28
+2019-03-11 12:05:57,287 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:05:57,288 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:05:57,289 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="Training Management Sytem User 1"
+2019-03-11 12:05:57,290 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=36
+2019-03-11 12:05:57,291 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="Training Management Sytem User 2"
+2019-03-11 12:05:57,292 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=35
+2019-03-11 12:05:57,294 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:05:57,296 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:05:57,298 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="Bhushan Patil"
+2019-03-11 12:05:57,299 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=29
+2019-03-11 12:05:57,300 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="Deepak Mumbaikar"
+2019-03-11 12:05:57,301 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=34
+2019-03-11 12:05:57,302 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:05:57,303 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="Clover Sharepoint"
+2019-03-11 12:05:57,304 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:05:57,305 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="Ramdas Khutal"
+2019-03-11 12:05:57,306 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=28
+2019-03-11 12:05:57,306 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=27
+2019-03-11 12:05:57,197 [52] INFO  - WCF - Helper.GetNameFromPersonField, Int32=36
+2019-03-11 12:05:57,203 [53] INFO  - WCF - Helper.GetNameFromPersonField, Int32=37
+2019-03-11 12:05:57,251 [51] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:05:57,255 [58] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:06:00,182 [54] INFO  - WCF - Helper.GetAllButtons, 
+2019-03-11 12:06:00,184 [47] INFO  - WCF - Get All Buttons from Sharepoint, 
+2019-03-11 12:06:08,232 [46] INFO  - WCF - Helper.GetButtons for role 'Creator', appName='DCRDCN', formName='DCR Form', status='', other params={}, 
+2019-03-11 12:07:11,599 [52] INFO  - MVC - Begin Request http://localhost:4430/?ID=399, 
+2019-03-11 12:07:11,707 [51] INFO  - WCF - Helper GetFormData Condition passed for appname=DCRDCN, formNameDCR Form, User Id=32, 
+2019-03-11 12:07:11,710 [50] INFO  - WCF - Called Helper GetFormData, 
+2019-03-11 12:07:12,753 [57] INFO  - WCF - Called Helper.GetCurrentUserRole and Role=Viewer, 
+2019-03-11 12:07:14,249 [58] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:07:14,251 [58] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:07:14,252 [58] INFO  - WCF - Helper.GetNameFromPersonField, String="Bhushan Patil"
+2019-03-11 12:07:14,254 [58] INFO  - WCF - Helper.GetNameFromPersonField, Int32=29
+2019-03-11 12:07:14,255 [58] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:07:14,256 [58] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:07:14,257 [58] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:07:14,259 [58] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:07:14,260 [58] INFO  - WCF - Helper.GetNameFromPersonField, String="Collaboration Helpdesk"
+2019-03-11 12:07:14,261 [58] INFO  - WCF - Helper.GetNameFromPersonField, Int32=40
+2019-03-11 12:07:14,261 [57] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:07:14,263 [57] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:07:14,264 [57] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:07:14,265 [57] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:07:14,266 [57] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:07:14,267 [57] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:07:14,262 [58] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:07:14,263 [50] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:07:14,274 [57] INFO  - WCF - called Helper.GetFormData, 
+2019-03-11 12:07:14,275 [58] INFO  - WCF - Helper.GetNameFromPersonField, String="Dnyandev Sandav"
+2019-03-11 12:07:14,276 [58] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:07:14,275 [57] INFO  - WCF - Helper.GetNameFromPersonField, Int32=30
+2019-03-11 12:07:14,281 [57] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:07:14,283 [57] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:07:14,285 [57] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:07:14,286 [57] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:07:14,287 [57] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:07:14,288 [57] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:07:14,289 [57] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:07:14,274 [50] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:07:14,280 [58] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:07:15,031 [50] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:07:15,033 [50] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:07:15,052 [58] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:07:15,053 [58] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:07:15,055 [50] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:07:15,056 [57] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:07:15,079 [58] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:07:15,080 [50] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:07:15,098 [57] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:07:15,100 [58] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:07:15,109 [58] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:07:15,111 [50] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:07:15,123 [50] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:07:15,124 [57] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:07:15,626 [50] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:07:15,627 [51] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:07:15,626 [58] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:07:15,629 [57] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:07:15,644 [57] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:07:15,646 [57] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:07:15,961 [57] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:07:15,968 [56] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:07:15,977 [57] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:07:15,979 [52] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:07:15,981 [51] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:07:15,982 [58] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:07:16,720 [52] INFO  - WCF - Helper.GetButtons for role 'Viewer', appName='DCRDCN', formName='DCR Form', status='Submitted', other params={"CurrentFromLevel":"6"}, 
+2019-03-11 12:07:57,116 [57] INFO  - MVC - Begin Request http://localhost:4430/?ID=399, 
+2019-03-11 12:08:01,983 [52] INFO  - WCF - Called Helper GetFormData, 
+2019-03-11 12:08:02,003 [52] INFO  - WCF - Helper GetFormData Condition passed for appname=DCRDCN, formNameDCR Form, User Id=32, 
+2019-03-11 12:08:13,928 [52] INFO  - WCF - Called Helper.GetCurrentUserRole and Role=Viewer, 
+2019-03-11 12:08:44,399 [46] ERROR - Id: 87f52b69-631e-4e68-bc18-1446ee758e2c
+2019-03-11 12:08:44,407 [46] ERROR - StatusCode: 200
+2019-03-11 12:08:44,409 [46] ERROR - Controller: 
+2019-03-11 12:08:44,410 [46] ERROR - Action: 
+2019-03-11 12:08:44,411 [46] ERROR - The remote server returned an error: (503) Server Unavailable.
+System.Net.WebException: The remote server returned an error: (503) Server Unavailable.
+   at System.Net.HttpWebRequest.GetResponse()
+   at Microsoft.SharePoint.Client.SPWebRequestExecutor.Execute()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQuery()
+   at Microsoft.SharePoint.Client.ClientRuntimeContext.ExecuteQuery()
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at BEL.DataAccessLayer.AppApprovalMatrixHelper.GetAppApprovalMatrixUsingCSOM(ClientContext context, Web web, Int32 itemId, String approvalMatrixListName, Boolean getAllRecords) in E:\Synoverge-New\Synoverge\18-January-DCRDCN\BEL.Workflow\BEL.DataAccessLayer\Common\AppApprovalMatrixHelper.cs:line 321
+   at BEL.DataAccessLayer.AppApprovalMatrixHelper.GetAppApprovalMatrix(ClientContext context, Web web, Int32 itemId, String approvalMatrixListName, Boolean getAllRecords) in E:\Synoverge-New\Synoverge\18-January-DCRDCN\BEL.Workflow\BEL.DataAccessLayer\Common\AppApprovalMatrixHelper.cs:line 300
+   at BEL.DataAccessLayer.BELDataAccessLayer.GetFormData(ClientContext context, Web web, String applicationName, String formName, Int32 itemId, String userID, IForm form, String role, Dictionary`2 activeAndHiddenSections, Dictionary`2 otherParamDictionary) in E:\Synoverge-New\Synoverge\18-January-DCRDCN\BEL.Workflow\BEL.DataAccessLayer\Common\BELDataAccessLayer.cs:line 2887
+   at BEL.DataAccessLayer.BELDataAccessLayer.GetFormData(ClientContext context, Web web, String applicationName, String formName, Int32 itemId, String userID, IForm form) in E:\Synoverge-New\Synoverge\18-January-DCRDCN\BEL.Workflow\BEL.DataAccessLayer\Common\BELDataAccessLayer.cs:line 2589
+   at BEL.DCRDCNWorkflow.BusinessLayer.DCRBusinessLayer.GetDCRDetails(IDictionary`2 objDict) in E:\Synoverge-New\Synoverge\18-January-DCRDCN\BEL.Workflow\BEL.DCRDCNWorkflow\BusinessLayer\DCRBusinessLayer.cs:line 79
+   at BEL.DCRDCNWorkflow.Controllers.DCRBaseController.GetDCRDetails(IDictionary`2 objDict) in E:\Synoverge-New\Synoverge\18-January-DCRDCN\BEL.Workflow\BEL.DCRDCNWorkflow\Controllers\DCR\DCRBaseController.cs:line 26
+   at BEL.DCRDCNWorkflow.Controllers.DCRController.Index(Int32 id, Boolean IsRetrieve) in E:\Synoverge-New\Synoverge\18-January-DCRDCN\BEL.Workflow\BEL.DCRDCNWorkflow\Controllers\DCR\DCRController.cs:line 46
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2019-03-11 12:08:44,457 [46] ERROR - The remote server returned an error: (503) Server Unavailable.
+System.Net.WebException: The remote server returned an error: (503) Server Unavailable.
+   at System.Net.HttpWebRequest.GetResponse()
+   at Microsoft.SharePoint.Client.SPWebRequestExecutor.Execute()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQuery()
+   at Microsoft.SharePoint.Client.ClientRuntimeContext.ExecuteQuery()
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at BEL.DataAccessLayer.AppApprovalMatrixHelper.GetAppApprovalMatrixUsingCSOM(ClientContext context, Web web, Int32 itemId, String approvalMatrixListName, Boolean getAllRecords) in E:\Synoverge-New\Synoverge\18-January-DCRDCN\BEL.Workflow\BEL.DataAccessLayer\Common\AppApprovalMatrixHelper.cs:line 321
+   at BEL.DataAccessLayer.AppApprovalMatrixHelper.GetAppApprovalMatrix(ClientContext context, Web web, Int32 itemId, String approvalMatrixListName, Boolean getAllRecords) in E:\Synoverge-New\Synoverge\18-January-DCRDCN\BEL.Workflow\BEL.DataAccessLayer\Common\AppApprovalMatrixHelper.cs:line 300
+   at BEL.DataAccessLayer.BELDataAccessLayer.GetFormData(ClientContext context, Web web, String applicationName, String formName, Int32 itemId, String userID, IForm form, String role, Dictionary`2 activeAndHiddenSections, Dictionary`2 otherParamDictionary) in E:\Synoverge-New\Synoverge\18-January-DCRDCN\BEL.Workflow\BEL.DataAccessLayer\Common\BELDataAccessLayer.cs:line 2887
+   at BEL.DataAccessLayer.BELDataAccessLayer.GetFormData(ClientContext context, Web web, String applicationName, String formName, Int32 itemId, String userID, IForm form) in E:\Synoverge-New\Synoverge\18-January-DCRDCN\BEL.Workflow\BEL.DataAccessLayer\Common\BELDataAccessLayer.cs:line 2589
+   at BEL.DCRDCNWorkflow.BusinessLayer.DCRBusinessLayer.GetDCRDetails(IDictionary`2 objDict) in E:\Synoverge-New\Synoverge\18-January-DCRDCN\BEL.Workflow\BEL.DCRDCNWorkflow\BusinessLayer\DCRBusinessLayer.cs:line 79
+   at BEL.DCRDCNWorkflow.Controllers.DCRBaseController.GetDCRDetails(IDictionary`2 objDict) in E:\Synoverge-New\Synoverge\18-January-DCRDCN\BEL.Workflow\BEL.DCRDCNWorkflow\Controllers\DCR\DCRBaseController.cs:line 26
+   at BEL.DCRDCNWorkflow.Controllers.DCRController.Index(Int32 id, Boolean IsRetrieve) in E:\Synoverge-New\Synoverge\18-January-DCRDCN\BEL.Workflow\BEL.DCRDCNWorkflow\Controllers\DCR\DCRController.cs:line 46
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2019-03-11 12:08:53,708 [57] INFO  - MVC - Begin Request http://localhost:4430/?ID=399, 
+2019-03-11 12:08:53,816 [51] INFO  - WCF - Called Helper GetFormData, 
+2019-03-11 12:08:53,820 [46] INFO  - WCF - Helper GetFormData Condition passed for appname=DCRDCN, formNameDCR Form, User Id=32, 
+2019-03-11 12:09:03,265 [46] INFO  - WCF - Called Helper.GetCurrentUserRole and Role=Viewer, 
+2019-03-11 12:09:07,610 [53] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:07,612 [14] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:09:07,614 [14] INFO  - WCF - Helper.GetNameFromPersonField, Int32=40
+2019-03-11 12:09:07,610 [25] INFO  - WCF - Helper.GetNameFromPersonField, String="Collaboration Helpdesk"
+2019-03-11 12:09:07,618 [25] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:09:07,627 [25] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:07,625 [53] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:07,610 [21] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:07,637 [57] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:09:07,664 [51] INFO  - WCF - Helper.GetNameFromPersonField, String="Bhushan Patil"
+2019-03-11 12:09:07,632 [48] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:09:07,672 [48] INFO  - WCF - Helper.GetNameFromPersonField, String="Dnyandev Sandav"
+2019-03-11 12:09:07,631 [46] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:09:07,636 [40] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:09:07,639 [54] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:09:07,640 [43] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:09:07,667 [53] INFO  - WCF - Helper.GetNameFromPersonField, Int32=29
+2019-03-11 12:09:07,676 [40] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:09:07,655 [38] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:09:07,674 [48] INFO  - WCF - Helper.GetNameFromPersonField, Int32=30
+2019-03-11 12:09:07,612 [15] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:09:07,616 [14] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:09:07,669 [21] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:09:07,689 [44] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:09:07,675 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:09:07,664 [52] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:09:07,663 [58] INFO  - WCF - called Helper.GetFormData, 
+2019-03-11 12:09:07,671 [51] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:07,637 [56] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:07,670 [57] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:07,638 [30] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:13,993 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:09:13,993 [58] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:09:14,113 [42] INFO  - WCF - Helper.GetButtons for role 'Viewer', appName='DCRDCN', formName='DCR Form', status='Submitted', other params={"CurrentFromLevel":"6"}, 
+2019-03-11 12:09:14,114 [42] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:14,114 [51] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:14,116 [51] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:14,118 [51] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:14,119 [51] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:09:14,120 [51] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:14,121 [51] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:09:14,123 [17] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:14,124 [48] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:14,125 [43] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:14,126 [44] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:09:14,113 [21] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:14,113 [25] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:09:14,113 [15] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:14,113 [56] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:14,115 [42] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:14,113 [14] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:14,129 [30] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:14,115 [46] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:09:14,113 [57] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:14,114 [50] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:14,114 [38] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:14,116 [52] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:09:14,116 [58] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:16,886 [58] INFO  - MVC - Begin Request http://localhost:4430/?ID=397, 
+2019-03-11 12:09:17,002 [30] INFO  - WCF - Called Helper GetFormData, 
+2019-03-11 12:09:17,003 [56] INFO  - WCF - Helper GetFormData Condition passed for appname=DCRDCN, formNameDCR Form, User Id=32, 
+2019-03-11 12:09:21,206 [50] INFO  - WCF - Called Helper.GetCurrentUserRole and Role=Viewer, 
+2019-03-11 12:09:22,364 [21] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:09:22,365 [43] INFO  - WCF - Helper.GetNameFromPersonField, String="Bhushan Patil"
+2019-03-11 12:09:22,366 [51] INFO  - WCF - Helper.GetNameFromPersonField, Int32=27
+2019-03-11 12:09:22,368 [56] INFO  - WCF - Helper.GetNameFromPersonField, Int32=38
+2019-03-11 12:09:22,369 [56] INFO  - WCF - Helper.GetNameFromPersonField, Int32=26
+2019-03-11 12:09:22,369 [56] INFO  - WCF - Helper.GetNameFromPersonField, Int32=37
+2019-03-11 12:09:22,370 [56] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:09:22,371 [56] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:09:22,371 [56] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:09:22,372 [56] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:09:22,375 [14] INFO  - WCF - Helper.GetNameFromPersonField, Int32=28
+2019-03-11 12:09:22,364 [25] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:09:22,377 [25] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:22,364 [48] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:22,378 [48] INFO  - WCF - Helper.GetNameFromPersonField, Int32=6
+2019-03-11 12:09:22,364 [38] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:22,364 [44] INFO  - WCF - Helper.GetNameFromPersonField, String="Ramdas Khutal"
+2019-03-11 12:09:22,365 [52] INFO  - WCF - Helper.GetNameFromPersonField, String="Clover Sharepoint"
+2019-03-11 12:09:22,368 [50] INFO  - WCF - Helper.GetNameFromPersonField, String="Tushar Murudkar"
+2019-03-11 12:09:22,368 [30] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-2"
+2019-03-11 12:09:22,376 [14] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:22,365 [21] INFO  - WCF - Helper.GetNameFromPersonField, String="Ramdas Khutal"
+2019-03-11 12:09:22,366 [43] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:09:22,389 [43] INFO  - WCF - called Helper.GetFormData, 
+2019-03-11 12:09:22,390 [43] INFO  - WCF - Helper.GetNameFromPersonField, Int32=28
+2019-03-11 12:09:22,365 [17] INFO  - WCF - Helper.GetNameFromPersonField, Int32=29
+2019-03-11 12:09:22,392 [44] INFO  - WCF - Helper.GetNameFromPersonField, Int32=38
+2019-03-11 12:09:22,393 [44] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:09:22,394 [44] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:09:22,396 [44] INFO  - WCF - Helper.GetNameFromPersonField, Int32=6
+2019-03-11 12:09:22,368 [57] INFO  - WCF - Helper.GetNameFromPersonField, String="Training Management Sytem User 2"
+2019-03-11 12:09:22,368 [51] INFO  - WCF - Helper.GetNameFromPersonField, Int32=35
+2019-03-11 12:09:22,369 [15] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-3"
+2019-03-11 12:09:22,377 [25] INFO  - WCF - Helper.GetNameFromPersonField, String="Clover Sharepoint 1"
+2019-03-11 12:09:22,389 [38] INFO  - WCF - Helper.GetNameFromPersonField, String="Ramdas Khutal"
+2019-03-11 12:09:22,390 [14] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:09:22,391 [43] INFO  - WCF - Helper.GetNameFromPersonField, String="Tushar Murudkar"
+2019-03-11 12:09:22,392 [17] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:09:22,365 [42] INFO  - WCF - Helper.GetNameFromPersonField, Int32=28
+2019-03-11 12:09:22,393 [21] INFO  - WCF - Helper.GetNameFromPersonField, String="Clover Sharepoint 1"
+2019-03-11 12:09:22,366 [58] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:09:23,335 [17] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:09:23,337 [17] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:23,338 [50] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:09:23,339 [50] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:09:23,340 [50] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:09:23,345 [25] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:23,335 [43] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:23,335 [42] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:09:23,337 [14] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:09:23,337 [30] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:09:23,351 [15] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:09:23,337 [52] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:23,337 [58] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:09:23,338 [17] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:23,339 [57] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:09:23,340 [38] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:23,341 [21] INFO  - WCF - Helper.GetNameFromPersonField, Int32=6
+2019-03-11 12:09:23,341 [48] INFO  - WCF - Helper.GetNameFromPersonField, String="Clover Sharepoint 1"
+2019-03-11 12:09:23,339 [44] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:23,364 [44] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:09:23,365 [44] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:09:23,340 [51] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:24,005 [38] INFO  - WCF - Helper.GetNameFromPersonField, Int32=38
+2019-03-11 12:09:24,006 [14] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:24,007 [57] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:24,005 [30] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:09:24,006 [15] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:09:24,007 [21] INFO  - WCF - Helper.GetNameFromPersonField, String="Tushar Murudkar"
+2019-03-11 12:09:24,020 [15] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:09:24,021 [21] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:24,023 [50] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:09:24,024 [43] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:26,036 [25] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:09:26,043 [48] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:26,036 [38] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:26,037 [17] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:26,044 [21] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:09:26,036 [44] INFO  - WCF - Helper.GetNameFromPersonField, String="Ramdas Khutal"
+2019-03-11 12:09:26,037 [43] INFO  - WCF - Helper.GetNameFromPersonField, Int32=28
+2019-03-11 12:09:26,037 [42] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:09:26,037 [50] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:09:26,059 [25] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:26,060 [25] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:09:26,061 [25] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:09:26,062 [25] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:26,064 [25] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:09:26,067 [25] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:09:26,069 [25] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:09:26,070 [25] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:09:26,070 [25] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:26,071 [17] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:26,072 [17] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:09:26,073 [17] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:09:26,074 [17] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:26,038 [51] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:09:26,071 [25] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:09:29,437 [51] INFO  - WCF - Helper.GetButtons for role 'Viewer', appName='DCRDCN', formName='DCR Form', status='Submitted', other params={"CurrentFromLevel":"6"}, 
+2019-03-11 12:14:18,915 [41] INFO  - MVC - Begin Request http://localhost:4430/?ID=397, 
+2019-03-11 12:14:19,057 [32] INFO  - WCF - Helper.GetNameFromPersonField, String="Ramdas Khutal"
+2019-03-11 12:14:19,061 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=28
+2019-03-11 12:14:19,063 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:14:19,065 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:14:19,066 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:14:19,068 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:14:19,069 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Clover Sharepoint 1"
+2019-03-11 12:14:19,071 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=6
+2019-03-11 12:14:19,072 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:14:19,073 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:14:19,074 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:14:19,075 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:14:19,076 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=28
+2019-03-11 12:14:19,077 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=29
+2019-03-11 12:14:19,078 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=38
+2019-03-11 12:14:19,080 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Bhushan Patil"
+2019-03-11 12:14:19,081 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Ramdas Khutal"
+2019-03-11 12:14:19,088 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=28
+2019-03-11 12:14:19,090 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Clover Sharepoint"
+2019-03-11 12:14:19,091 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=27
+2019-03-11 12:14:19,061 [54] INFO  - WCF - Helper.GetNameFromPersonField, Int32=38
+2019-03-11 12:14:19,061 [32] INFO  - WCF - Helper.GetNameFromPersonField, String="Tushar Murudkar"
+2019-03-11 12:14:19,093 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:14:19,145 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:14:19,148 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Tushar Murudkar"
+2019-03-11 12:14:19,150 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Training Management Sytem User 2"
+2019-03-11 12:14:19,154 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=35
+2019-03-11 12:14:19,159 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-3"
+2019-03-11 12:14:19,160 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-2"
+2019-03-11 12:14:19,162 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=26
+2019-03-11 12:14:19,162 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=37
+2019-03-11 12:14:19,163 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:14:19,164 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:14:19,165 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:14:19,166 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:14:19,167 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:14:19,170 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:14:19,172 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Clover Sharepoint 1"
+2019-03-11 12:14:19,173 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:14:19,174 [41] INFO  - WCF - Helper GetFormData Condition passed for appname=DCRDCN, formNameDCR Form, User Id=32, 
+2019-03-11 12:14:19,174 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=6
+2019-03-11 12:14:19,176 [41] INFO  - WCF - Called Helper.GetCurrentUserRole and Role=Viewer, 
+2019-03-11 12:14:19,177 [41] INFO  - WCF - Called Helper GetFormData, 
+2019-03-11 12:14:19,178 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:14:19,179 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:14:19,180 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:14:19,180 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:14:19,181 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:14:19,182 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:14:19,183 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:14:19,184 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:14:19,185 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:14:19,186 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:14:19,187 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:14:19,188 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Ramdas Khutal"
+2019-03-11 12:14:19,189 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=28
+2019-03-11 12:14:19,190 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:14:19,191 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:14:19,192 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:14:19,193 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:14:19,194 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:14:19,195 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=38
+2019-03-11 12:14:19,196 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:14:19,198 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:14:19,199 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:14:19,139 [32] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:14:19,201 [32] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:14:19,200 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:14:19,257 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:14:19,259 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:14:19,260 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:14:19,261 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:14:19,262 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:14:19,263 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:14:19,264 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:14:19,264 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:14:19,265 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:14:19,266 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:14:19,268 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:14:19,269 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:14:19,271 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:14:19,272 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:14:19,272 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:14:19,273 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Ramdas Khutal"
+2019-03-11 12:14:19,274 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:14:19,276 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:14:19,277 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="Clover Sharepoint 1"
+2019-03-11 12:14:19,278 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=6
+2019-03-11 12:14:19,283 [41] INFO  - WCF - called Helper.GetFormData, 
+2019-03-11 12:14:19,284 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:14:19,285 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:14:19,289 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:14:19,290 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:14:19,291 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:14:19,255 [34] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:14:19,254 [36] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:14:19,205 [32] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:14:19,255 [35] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:14:19,254 [55] INFO  - WCF - Helper.GetNameFromPersonField, String="Tushar Murudkar"
+2019-03-11 12:14:19,289 [54] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:14:19,631 [30] INFO  - WCF - Helper.GetButtons for role 'Viewer', appName='DCRDCN', formName='DCR Form', status='Submitted', other params={"CurrentFromLevel":"6"}, 
+2019-03-11 12:15:53,145 [12] INFO  - WCF - Helper.GetNameFromPersonField, String="Clover Sharepoint 1"
+2019-03-11 12:15:53,151 [33] INFO  - WCF - Called Helper GetFormData, 
+2019-03-11 12:15:53,192 [16] INFO  - WCF - Called Helper.GetCurrentUserRole and Role=Final DCR Process Incharge, 
+2019-03-11 12:15:53,193 [16] INFO  - WCF - Helper.GetNameFromPersonField, String="Tushar Murudkar"
+2019-03-11 12:15:53,194 [16] INFO  - WCF - Helper.GetNameFromPersonField, Int32=37
+2019-03-11 12:15:53,195 [16] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:15:53,196 [16] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:15:53,196 [16] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:15:53,197 [16] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:15:53,198 [16] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:15:53,199 [16] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:15:53,202 [16] INFO  - WCF - Helper.GetNameFromPersonField, Int32=38
+2019-03-11 12:15:53,207 [16] INFO  - WCF - Helper.GetNameFromPersonField, Int32=35
+2019-03-11 12:15:53,208 [16] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-2"
+2019-03-11 12:15:53,209 [16] INFO  - WCF - Helper.GetNameFromPersonField, Int32=26
+2019-03-11 12:15:53,215 [29] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-3"
+2019-03-11 12:15:53,202 [63] INFO  - WCF - Helper GetFormData Condition passed for appname=DCRDCN, formNameDCR Form, User Id=32, 
+2019-03-11 12:15:53,242 [12] INFO  - WCF - Helper.GetNameFromPersonField, Int32=6
+2019-03-11 12:15:53,204 [24] INFO  - WCF - Helper.GetNameFromPersonField, String="Training Management Sytem User 2"
+2019-03-11 12:15:53,236 [19] INFO  - MVC - Begin Request http://localhost:4430/?ID=397, 
+2019-03-11 12:15:53,297 [29] INFO  - WCF - Helper.GetNameFromPersonField, String="Ramdas Khutal"
+2019-03-11 12:15:53,322 [67] INFO  - WCF - Helper.GetNameFromPersonField, String="Tushar Murudkar"
+2019-03-11 12:15:53,359 [67] INFO  - WCF - Helper.GetNameFromPersonField, String="Clover Sharepoint 1"
+2019-03-11 12:15:53,361 [67] INFO  - WCF - Helper.GetNameFromPersonField, Int32=6
+2019-03-11 12:15:53,362 [67] INFO  - WCF - called Helper.GetFormData, 
+2019-03-11 12:15:53,363 [67] INFO  - WCF - Helper.GetNameFromPersonField, Int32=28
+2019-03-11 12:15:53,365 [67] INFO  - WCF - Helper.GetNameFromPersonField, Int32=38
+2019-03-11 12:15:53,366 [67] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:15:53,367 [67] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:15:53,367 [67] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:15:53,368 [67] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:15:53,369 [67] INFO  - WCF - Helper.GetNameFromPersonField, String="Clover Sharepoint 1"
+2019-03-11 12:15:53,370 [67] INFO  - WCF - Helper.GetNameFromPersonField, Int32=6
+2019-03-11 12:15:53,371 [67] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:15:53,372 [67] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:15:53,373 [67] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:15:53,393 [62] INFO  - WCF - Helper.GetNameFromPersonField, String="Bhushan Patil"
+2019-03-11 12:15:53,394 [62] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:15:53,395 [33] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:15:53,396 [33] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:15:53,398 [33] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:15:53,399 [33] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:15:53,376 [70] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:15:53,394 [19] INFO  - WCF - Helper.GetNameFromPersonField, Int32=27
+2019-03-11 12:15:53,426 [69] INFO  - WCF - Helper.GetNameFromPersonField, String="Ramdas Khutal"
+2019-03-11 12:15:53,427 [65] INFO  - WCF - Helper.GetNameFromPersonField, Int32=28
+2019-03-11 12:15:53,435 [65] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:15:53,437 [65] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:15:53,395 [62] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:15:53,432 [66] INFO  - WCF - Helper.GetNameFromPersonField, Int32=29
+2019-03-11 12:15:53,428 [29] INFO  - WCF - Helper.GetNameFromPersonField, String="Ramdas Khutal"
+2019-03-11 12:15:53,433 [18] INFO  - WCF - Helper.GetNameFromPersonField, Int32=28
+2019-03-11 12:15:53,393 [63] INFO  - WCF - Helper.GetNameFromPersonField, String="Clover Sharepoint"
+2019-03-11 12:15:53,394 [16] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:15:53,395 [12] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:15:53,395 [24] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:15:53,494 [24] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:15:53,495 [24] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:15:53,496 [24] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:15:53,505 [24] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:15:53,506 [33] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:15:53,517 [26] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:15:53,518 [62] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:15:53,519 [66] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:15:53,518 [65] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:15:53,544 [29] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:15:53,546 [26] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:15:53,746 [19] INFO  - WCF - Helper.GetNameFromPersonField, String="Tushar Murudkar"
+2019-03-11 12:15:53,746 [70] INFO  - WCF - Helper.GetNameFromPersonField, Int32=38
+2019-03-11 12:15:53,748 [12] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:15:53,749 [63] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:15:53,750 [16] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:15:53,746 [18] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:15:53,752 [16] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:15:53,753 [16] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:15:53,746 [69] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:15:53,746 [10] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:15:54,140 [24] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:15:54,142 [26] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:15:54,143 [26] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:15:54,144 [26] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:15:54,145 [63] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:15:54,147 [33] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:15:54,148 [29] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:15:54,149 [73] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:15:54,150 [72] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:15:54,143 [65] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:15:54,150 [67] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:15:54,141 [10] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:15:54,150 [70] INFO  - WCF - Helper.GetNameFromPersonField, String="Ramdas Khutal"
+2019-03-11 12:15:54,157 [70] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:15:54,158 [70] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:15:54,143 [62] INFO  - WCF - Helper.GetNameFromPersonField, Int32=28
+2019-03-11 12:15:54,144 [66] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:15:54,145 [18] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:15:54,195 [69] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:15:54,196 [12] INFO  - WCF - Helper.GetNameFromPersonField, Int32=33
+2019-03-11 12:15:54,197 [68] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:15:54,195 [16] INFO  - WCF - Helper.GetNameFromPersonField, String="Dhanraj Mane"
+2019-03-11 12:15:54,195 [26] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:15:54,195 [71] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:15:54,605 [29] INFO  - WCF - Helper.GetButtons for role 'Final DCR Process Incharge', appName='DCRDCN', formName='DCR Form', status='Submitted', other params={"CurrentFromLevel":"6"}, 
+2019-03-11 12:16:25,393 [24] INFO  - MVC - Begin Request http://localhost:4430/?ID=399, 
+2019-03-11 12:16:25,501 [29] INFO  - WCF - Helper GetFormData Condition passed for appname=DCRDCN, formNameDCR Form, User Id=32, 
+2019-03-11 12:16:25,504 [33] INFO  - WCF - Called Helper GetFormData, 
+2019-03-11 12:16:26,475 [24] INFO  - WCF - Called Helper.GetCurrentUserRole and Role=Viewer, 
+2019-03-11 12:16:27,320 [33] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:16:27,322 [33] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:16:27,323 [33] INFO  - WCF - Helper.GetNameFromPersonField, String="Collaboration Helpdesk"
+2019-03-11 12:16:27,325 [33] INFO  - WCF - Helper.GetNameFromPersonField, Int32=40
+2019-03-11 12:16:27,326 [33] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:16:27,327 [33] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:16:27,329 [33] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:16:27,330 [33] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:16:27,333 [33] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:16:27,334 [33] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:16:27,339 [29] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:16:27,340 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:16:27,358 [29] INFO  - WCF - called Helper.GetFormData, 
+2019-03-11 12:16:27,360 [29] INFO  - WCF - Helper.GetNameFromPersonField, String="Dnyandev Sandav"
+2019-03-11 12:16:27,364 [29] INFO  - WCF - Helper.GetNameFromPersonField, Int32=30
+2019-03-11 12:16:27,366 [29] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:16:27,368 [29] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:16:27,370 [29] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:16:27,371 [29] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:16:27,372 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:16:27,373 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:16:27,375 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:16:27,376 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:16:27,377 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:16:27,378 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:16:27,379 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:16:27,380 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:16:27,382 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:16:27,383 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="Bhushan Patil"
+2019-03-11 12:16:27,383 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=29
+2019-03-11 12:16:27,372 [29] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:16:27,903 [24] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:16:27,906 [16] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:16:27,908 [16] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:16:27,909 [16] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:16:27,911 [16] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:16:27,912 [16] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:16:27,913 [16] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:16:27,915 [16] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:16:27,903 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:16:27,907 [12] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:16:27,907 [33] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:16:27,905 [29] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:16:27,947 [63] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:16:27,951 [19] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:16:28,209 [75] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:16:28,216 [76] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:16:28,221 [75] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:16:28,222 [33] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:16:28,227 [24] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:16:28,228 [12] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:16:28,582 [16] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:16:28,583 [75] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:16:28,598 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:16:28,598 [75] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:16:28,598 [76] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:16:28,598 [33] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:16:29,133 [18] INFO  - WCF - Helper.GetButtons for role 'Viewer', appName='DCRDCN', formName='DCR Form', status='Submitted', other params={"CurrentFromLevel":"6"}, 
+2019-03-11 12:19:01,201 [64] INFO  - MVC - Begin Request http://localhost:4430/?ID=399, 
+2019-03-11 12:19:02,807 [84] INFO  - WCF - Called Helper GetFormData, 
+2019-03-11 12:19:02,811 [64] INFO  - WCF - Helper GetFormData Condition passed for appname=DCRDCN, formNameDCR Form, User Id=32, 
+2019-03-11 12:19:02,812 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:19:02,813 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:19:02,814 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:19:02,815 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=40
+2019-03-11 12:19:02,816 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="Collaboration Helpdesk"
+2019-03-11 12:19:02,817 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:19:02,818 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:19:02,819 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:19:02,821 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:19:02,822 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=29
+2019-03-11 12:19:02,822 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="Bhushan Patil"
+2019-03-11 12:19:02,823 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:19:02,824 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:19:02,826 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:19:02,827 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:19:02,828 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:19:02,829 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:19:02,830 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:19:02,831 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:19:02,832 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:19:02,833 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:19:02,834 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:19:02,835 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:19:02,835 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:19:02,836 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:19:02,837 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=30
+2019-03-11 12:19:02,838 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="Dnyandev Sandav"
+2019-03-11 12:19:02,839 [64] INFO  - WCF - called Helper.GetFormData, 
+2019-03-11 12:19:02,849 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:19:02,852 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:19:02,811 [77] INFO  - WCF - Called Helper.GetCurrentUserRole and Role=Final DCR Process Incharge, 
+2019-03-11 12:19:02,811 [79] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:19:02,811 [85] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:19:02,812 [84] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:19:02,980 [79] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:19:02,983 [77] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:19:03,019 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:19:03,021 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:19:03,022 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:19:03,023 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:19:03,028 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:19:03,029 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:19:03,031 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:19:03,033 [64] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:19:03,034 [85] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:19:03,035 [85] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:19:03,036 [85] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:19:03,038 [85] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:19:03,039 [85] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:19:03,040 [85] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:19:03,041 [85] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:19:03,044 [85] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:19:03,045 [85] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:19:03,046 [85] INFO  - WCF - Helper.GetButtons for role 'Final DCR Process Incharge', appName='DCRDCN', formName='DCR Form', status='Submitted', other params={"CurrentFromLevel":"6"}, 
+2019-03-11 12:19:03,097 [84] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:19:03,034 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:19:03,122 [91] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:19:03,140 [89] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:19:03,147 [77] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:22:28,208 [100] INFO  - MVC - Begin Request http://localhost:4430/?ID=399, 
+2019-03-11 12:22:30,698 [100] INFO  - WCF - Called Helper GetFormData, 
+2019-03-11 12:22:30,699 [101] INFO  - WCF - Helper GetFormData Condition passed for appname=DCRDCN, formNameDCR Form, User Id=32, 
+2019-03-11 12:22:33,627 [101] INFO  - WCF - Called Helper.GetCurrentUserRole and Role=Final DCR Process Incharge, 
+2019-03-11 12:22:34,405 [55] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:22:34,406 [55] INFO  - WCF - called Helper.GetFormData, 
+2019-03-11 12:22:34,408 [55] INFO  - WCF - Helper.GetNameFromPersonField, String="Dnyandev Sandav"
+2019-03-11 12:22:34,409 [55] INFO  - WCF - Helper.GetNameFromPersonField, Int32=30
+2019-03-11 12:22:34,410 [55] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:22:34,413 [54] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:22:34,421 [23] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:22:34,422 [23] INFO  - WCF - Helper.GetNameFromPersonField, String="Bhushan Patil"
+2019-03-11 12:22:34,423 [23] INFO  - WCF - Helper.GetNameFromPersonField, Int32=29
+2019-03-11 12:22:34,425 [23] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:22:34,426 [23] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:22:34,427 [23] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:22:34,428 [23] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:22:34,429 [23] INFO  - WCF - Helper.GetNameFromPersonField, String="Collaboration Helpdesk"
+2019-03-11 12:22:34,430 [23] INFO  - WCF - Helper.GetNameFromPersonField, Int32=40
+2019-03-11 12:22:34,413 [36] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:22:34,411 [35] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:22:34,411 [32] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:22:34,421 [54] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:22:34,442 [54] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:22:34,444 [54] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:22:34,410 [41] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:22:34,441 [32] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:22:34,411 [8] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:22:34,484 [36] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:22:34,487 [35] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:22:34,489 [34] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:22:34,491 [23] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:22:34,493 [101] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:22:34,494 [100] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:22:34,545 [102] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:22:34,791 [54] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:22:34,792 [55] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:22:34,795 [32] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:22:34,833 [39] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:22:34,793 [35] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:22:34,793 [41] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:22:34,794 [8] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:22:34,791 [36] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:22:34,925 [44] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:22:34,926 [44] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:22:34,929 [43] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:22:34,931 [38] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:22:34,932 [17] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:22:34,934 [13] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:22:35,241 [17] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:22:35,242 [100] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:22:35,272 [13] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:22:35,242 [38] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:22:35,242 [5] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:22:35,241 [42] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:22:35,744 [13] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:22:35,745 [13] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:22:35,747 [13] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:22:35,748 [13] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:22:35,749 [13] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:22:35,750 [13] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:22:37,275 [100] INFO  - WCF - Helper.GetButtons for role 'Final DCR Process Incharge', appName='DCRDCN', formName='DCR Form', status='Submitted', other params={"CurrentFromLevel":"6"}, 
+2019-03-11 12:23:19,305 [32] INFO  - MVC - Begin Ajax Request http://localhost:4430/Master/GetTocken?_=1552287157795, 
+2019-03-11 12:23:23,777 [101] INFO  - MVC - Begin Ajax Request http://localhost:4430/DCR/SaveFinalDCRProcessInchargeSection?Length=3Form Data: ["ListDetails[0].ItemId","ListDetails[0].ListName","SectionName","ActionStatus","SendBackTo","Status","BusinessUnit","OldDCRRejectedDate","CurrentApprover.Approver","CurrentApprover.Role","CurrentApprover.AssignDate","__RequestVerificationToken","IsApproved","CurrentApprover.Comments","FinalDesignEngineer","FinalDesignEngineerName","TargetDateOfImplementation","ButtonCaption","X-Requested-With"], 
+2019-03-11 12:23:26,499 [101] INFO  - WCF - helper.SaveData, Dictionary`2={"UserID":"32","ActionPer":" Complete|Complete","ActivityLog":"DCRActivityLog","ApplicationName":"DCRDCN","FormName":"DCR Form","DCR":"Approved"}
+2019-03-11 12:23:45,393 [102] INFO  - WCF - Saving Actual Section Properties, 
+2019-03-11 12:23:45,393 [101] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="24"
+2019-03-11 12:23:48,208 [20] INFO  - WCF - Actual Section Properties Saved, Int32=399
+2019-03-11 12:23:49,097 [20] INFO  - WCF - Saving Local Approver Matrix 'DCRApprovalMatrix' 
+List=null, 
+2019-03-11 12:24:06,840 [87] INFO  - WCF - Set Viewer  Approver ID='' and RequestId='399', 
+2019-03-11 12:24:06,855 [87] INFO  - WCF - Set Viewer  Approver ID='40,32' and RequestId='399', 
+2019-03-11 12:24:06,871 [87] INFO  - WCF - Set Viewer  Approver ID='' and RequestId='399', 
+2019-03-11 12:24:06,855 [20] INFO  - WCF - Set Viewer  Approver ID='' and RequestId='399', 
+2019-03-11 12:24:06,871 [20] INFO  - WCF - Set Viewer  Approver ID='25' and RequestId='399', 
+2019-03-11 12:24:06,855 [85] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:24:06,855 [96] INFO  - WCF - Set Viewer  Approver ID='' and RequestId='399', 
+2019-03-11 12:24:06,871 [85] INFO  - WCF - Helper.GetNameFromPersonField, String="Dnyandev Sandav"
+2019-03-11 12:24:06,871 [87] INFO  - WCF - Set Viewer  Approver ID='32' and RequestId='399', 
+2019-03-11 12:24:06,871 [87] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:24:06,871 [87] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:24:06,855 [97] INFO  - WCF - Set Viewer  Approver ID='24' and RequestId='399', 
+2019-03-11 12:24:09,170 [74] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:24:11,855 [74] INFO  - WCF - Helper.GetNameFromPersonField, Int32=29
+2019-03-11 12:24:11,855 [74] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:24:11,855 [93] INFO  - WCF - Set Viewer  Approver ID='' and RequestId='399', 
+2019-03-11 12:24:11,855 [93] INFO  - WCF - Helper.GetNameFromPersonField, String="Collaboration Helpdesk"
+2019-03-11 12:24:11,855 [93] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:24:11,871 [93] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:24:11,871 [93] INFO  - WCF - Helper.GetNameFromPersonField, Int32=40
+2019-03-11 12:24:11,871 [93] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:24:11,871 [93] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:24:11,871 [93] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:24:11,871 [93] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:24:11,871 [93] INFO  - WCF - Set Viewer  Approver ID='' and RequestId='399', 
+2019-03-11 12:24:11,871 [93] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="32"
+2019-03-11 12:24:11,871 [93] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="24"
+2019-03-11 12:24:11,871 [93] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="25"
+2019-03-11 12:24:11,871 [93] INFO  - WCF - Set Viewer  Approver ID='29,24' and RequestId='399', 
+2019-03-11 12:24:11,886 [93] INFO  - WCF - Set Viewer  Approver ID='' and RequestId='399', 
+2019-03-11 12:24:11,886 [93] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="31"
+2019-03-11 12:24:11,886 [93] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="32"
+2019-03-11 12:24:11,886 [93] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="24"
+2019-03-11 12:24:11,886 [93] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="25"
+2019-03-11 12:24:11,886 [93] INFO  - WCF - Started form level assignment, 
+2019-03-11 12:24:06,887 [78] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:24:11,886 [78] INFO  - WCF - Tasks Saved if any, 
+2019-03-11 12:24:11,855 [89] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:24:11,855 [97] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:24:06,855 [98] INFO  - WCF - Set Viewer  Approver ID='' and RequestId='399', 
+2019-03-11 12:24:11,855 [77] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:24:06,887 [83] INFO  - WCF - Set Viewer  Approver ID='' and RequestId='399', 
+2019-03-11 12:24:11,855 [90] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:24:06,871 [96] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:24:11,886 [93] INFO  - WCF - Tasks approvers Saved if any, 
+2019-03-11 12:24:11,855 [91] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:24:06,871 [85] INFO  - WCF - Helper.GetNameFromPersonField, Int32=30
+2019-03-11 12:24:11,886 [89] INFO  - WCF - Set Viewer  Approver ID='24,30' and RequestId='399', 
+2019-03-11 12:24:11,886 [97] INFO  - WCF - Set Viewer  Approver ID='' and RequestId='399', 
+2019-03-11 12:24:06,887 [94] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:24:06,887 [88] INFO  - WCF - Set Viewer  Approver ID='31' and RequestId='399', 
+2019-03-11 12:24:14,023 [90] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="40"
+2019-03-11 12:24:14,021 [82] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:24:14,019 [93] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="31"
+2019-03-11 12:24:06,855 [102] INFO  - WCF - Set Viewer  Approver ID='' and RequestId='399', 
+2019-03-11 12:24:06,855 [101] INFO  - WCF - Set Viewer  Approver ID='' and RequestId='399', 
+2019-03-11 12:24:14,018 [96] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="32"
+2019-03-11 12:24:11,855 [84] INFO  - WCF - Set Viewer  Approver ID='' and RequestId='399', 
+2019-03-11 12:24:11,886 [98] INFO  - WCF - Set Viewer  Approver ID='' and RequestId='399', 
+2019-03-11 12:24:06,871 [20] INFO  - WCF - Set Viewer  Approver ID='25,24,32,31,24' and RequestId='399', 
+2019-03-11 12:24:11,855 [74] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:24:11,886 [77] INFO  - WCF - Set Viewer  Approver ID='' and RequestId='399', 
+2019-03-11 12:24:11,886 [78] INFO  - WCF - Set Viewer  Approver ID='32' and RequestId='399', 
+2019-03-11 12:24:11,855 [87] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:24:21,486 [81] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="30"
+2019-03-11 12:24:14,007 [80] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:24:14,021 [79] INFO  - WCF - Helper.GetNameFromPersonField, String="Bhushan Patil"
+2019-03-11 12:24:14,009 [85] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="24"
+2019-03-11 12:24:11,855 [92] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:24:14,017 [91] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="29"
+2019-03-11 12:24:14,016 [89] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="24"
+2019-03-11 12:24:14,023 [83] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="24"
+2019-03-11 12:24:21,486 [90] INFO  - WCF - Calling approversDataFromList.UpdateStatusofApprovalMatrix => currlevel=6, previousLevel=5, param={"UserID":"32","ActionPer":" Complete|Complete","ActivityLog":"DCRActivityLog","ApplicationName":"DCRDCN","FormName":"DCR Form","DCR":"Approved","IsNewItem":"False"}, actionperformed=Complete, list=[{"ID":8438,"Title":"DCR Viewer","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":null,"HiddenSection":null,"Levels":"-2","Role":"Viewer","Days":0.0,"IsAutoApproval":false,"FillByRole":"Creator","Division":null,"SubDivision":null,"Approver":"25,24,32,31,24","ApproverName":"Collab App Support-1, SharePoint Notifications, DCR DCN Management Sytem User 2, DCR DCN Management Sytem User 3","Status":"Not Assigned","Comments":null,"AssignDate":null,"DueDate":null,"ApprovalDate":null,"IsEscalate":false,"IsReminder":false,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8416,"Title":"DCR Detail Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"DCR Detail Section","HiddenSection":null,"Levels":"0","Role":"Creator","Days":7.0,"IsAutoApproval":true,"FillByRole":null,"Division":null,"SubDivision":null,"Approver":"25","ApproverName":"Collab App Support-1","Status":"Approved","Comments":null,"AssignDate":"2019-01-25T03:56:52Z","DueDate":"2019-02-05T03:56:52Z","ApprovalDate":"2019-01-25T03:58:55Z","IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":"25","IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8418,"Title":"DCR Process Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"DCR Process Incharge Section","HiddenSection":null,"Levels":"2","Role":"DCR Process Incharge","Days":4.0,"IsAutoApproval":false,"FillByRole":"Creator,DCR Incharge Navigator","Division":null,"SubDivision":null,"Approver":"32","ApproverName":"DCR DCN Management Sytem User 2","Status":"Approved","Comments":"new dcr","AssignDate":"2019-01-25T03:58:55Z","DueDate":"2019-01-31T03:58:55Z","ApprovalDate":"2019-01-25T03:59:56Z","IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":"32","IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8439,"Title":"Design Engineer Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"Design Engineer Incharge Section","HiddenSection":null,"Levels":"3","Role":"Design Engineer Incharge","Days":7.0,"IsAutoApproval":false,"FillByRole":"DCR Process Incharge","Division":null,"SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Not Assigned","Comments":null,"AssignDate":null,"DueDate":null,"ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8419,"Title":"Design Engineer Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"Design Engineer Section","HiddenSection":null,"Levels":"4","Role":"Design Engineer","Days":7.0,"IsAutoApproval":false,"FillByRole":"DCR Process Incharge","Division":null,"SubDivision":null,"Approver":"24","ApproverName":"SharePoint Notifications","Status":"Approved","Comments":"new ","AssignDate":"2019-01-25T04:02:44Z","DueDate":"2019-02-05T04:02:44Z","ApprovalDate":"2019-01-25T04:08:26Z","IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":"24","IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8420,"Title":"SCM Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"SCM Incharge Section","HiddenSection":null,"Levels":"4","Role":"SCM Incharge","Days":7.0,"IsAutoApproval":false,"FillByRole":"Creator","Division":null,"SubDivision":null,"Approver":"40,32","ApproverName":"Collaboration Helpdesk, DCR DCN Management Sytem User 2","Status":"Approved","Comments":"new dcr ","AssignDate":"2019-01-25T03:59:56Z","DueDate":"2019-02-05T03:59:56Z","ApprovalDate":"2019-01-25T04:02:44Z","IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":"32","IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8421,"Title":"QA Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"QA Incharge Section","HiddenSection":null,"Levels":"4","Role":"QA Incharge","Days":7.0,"IsAutoApproval":false,"FillByRole":"Creator","Division":null,"SubDivision":null,"Approver":"31","ApproverName":"DCR DCN Management Sytem User 3","Status":"Approved","Comments":"test new ","AssignDate":"2019-01-25T04:08:26Z","DueDate":"2019-02-05T04:08:26Z","ApprovalDate":"2019-01-25T04:36:25Z","IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":"31","IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8422,"Title":"SCM Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"SCM Section","HiddenSection":null,"Levels":"4","Role":"SCM","Days":7.0,"IsAutoApproval":false,"FillByRole":"SCM Incharge","Division":null,"SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:08:26Z","DueDate":"2019-02-05T04:08:26Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8423,"Title":"QA Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"QA Section","HiddenSection":null,"Levels":"4","Role":"QA","Days":7.0,"IsAutoApproval":false,"FillByRole":"QA Incharge","Division":null,"SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:08:26Z","DueDate":"2019-02-05T04:08:26Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8424,"Title":"CC Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"CC Incharge Section","HiddenSection":null,"Levels":"5","Role":"CC Incharge","Days":7.0,"IsAutoApproval":false,"FillByRole":"Creator","Division":null,"SubDivision":null,"Approver":"29,24","ApproverName":"Bhushan Patil, SharePoint Notifications","Status":"Approved","Comments":null,"AssignDate":"2019-01-25T04:36:25Z","DueDate":"2019-02-05T04:36:25Z","ApprovalDate":"2019-01-25T04:39:25Z","IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":"24","IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8425,"Title":"KAP Marketing Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"KAP Marketing Incharge Section","HiddenSection":null,"Levels":"5","Role":"KAP Marketing Incharge","Days":7.0,"IsAutoApproval":false,"FillByRole":"Creator,DCR Process Incharge","Division":"KAP","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8426,"Title":"KAP Marketing Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"KAP Marketing Section","HiddenSection":null,"Levels":"5","Role":"KAP Marketing","Days":7.0,"IsAutoApproval":false,"FillByRole":"KAP Marketing Incharge","Division":"KAP","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8428,"Title":"DAP Marketing Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"DAP Marketing Incharge Section","HiddenSection":null,"Levels":"5","Role":"DAP Marketing Incharge","Days":7.0,"IsAutoApproval":false,"FillByRole":"Creator,DCR Process Incharge","Division":"DAP","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8429,"Title":"DAP Marketing Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"DAP Marketing Section","HiddenSection":null,"Levels":"5","Role":"DAP Marketing","Days":7.0,"IsAutoApproval":false,"FillByRole":"DAP Marketing Incharge","Division":"DAP","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8430,"Title":"FANS Marketing Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"FANS Marketing Incharge Section","HiddenSection":null,"Levels":"5","Role":"FANS Marketing Incharge","Days":7.0,"IsAutoApproval":false,"FillByRole":"Creator,DCR Process Incharge","Division":"FANS","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8431,"Title":"FANS Marketing Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"FANS Marketing Section","HiddenSection":null,"Levels":"5","Role":"FANS Marketing","Days":7.0,"IsAutoApproval":false,"FillByRole":"FANS Marketing Incharge","Division":"FANS","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8432,"Title":"Lighting Marketing Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"Lighting Marketing Incharge Section","HiddenSection":null,"Levels":"5","Role":"Lighting Marketing Incharge","Days":7.0,"IsAutoApproval":false,"FillByRole":"Creator,DCR Process Incharge","Division":"Lighting","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8433,"Title":"Lighting Marketing Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"Lighting Marketing Section","HiddenSection":null,"Levels":"5","Role":"Lighting Marketing","Days":7.0,"IsAutoApproval":false,"FillByRole":"Lighting Marketing Incharge","Division":"Lighting","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8434,"Title":"Morphy Richards Marketing Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"Morphy Richards Marketing Incharge Section","HiddenSection":null,"Levels":"5","Role":"Morphy Richards Marketing Incharge","Days":7.0,"IsAutoApproval":false,"FillByRole":"Creator,DCR Process Incharge","Division":"Morphy Richards","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8435,"Title":"Morphy Richards Marketing Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"Morphy Richards Marketing Section","HiddenSection":null,"Levels":"5","Role":"Morphy Richards Marketing","Days":7.0,"IsAutoApproval":false,"FillByRole":"Morphy Richards Marketing Incharge","Division":"Morphy Richards","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8436,"Title":"LUM Marketing Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"LUM Marketing Incharge Section","HiddenSection":null,"Levels":"5","Role":"LUM Marketing Incharge","Days":7.0,"IsAutoApproval":false,"FillByRole":"Creator,DCR Process Incharge","Division":"LUM","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8437,"Title":"LUM Marketing Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"LUM Marketing Section","HiddenSection":null,"Levels":"5","Role":"LUM Marketing","Days":7.0,"IsAutoApproval":false,"FillByRole":"LUM Marketing Incharge","Division":"LUM","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8440,"Title":"Costing Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"Costing Section","HiddenSection":null,"Levels":"5","Role":"Costing User","Days":7.0,"IsAutoApproval":false,"FillByRole":"Creator","Division":null,"SubDivision":null,"Approver":"24,30","ApproverName":"SharePoint Notifications, Dnyandev Sandav","Status":"Approved","Comments":null,"AssignDate":"2019-01-25T04:36:25Z","DueDate":"2019-02-05T04:36:25Z","ApprovalDate":"2019-01-25T04:39:25Z","IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":"24","IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8427,"Title":"Final DCR Process Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"Final DCR Process Incharge Section","HiddenSection":null,"Levels":"6","Role":"Final DCR Process Incharge","Days":7.0,"IsAutoApproval":false,"FillByRole":"Creator,DCR Incharge Navigator","Division":null,"SubDivision":null,"Approver":"32","ApproverName":"DCR DCN Management Sytem User 2","Status":"Pending","Comments":"Testing of Approved","AssignDate":null,"DueDate":null,"ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null}], 
+2019-03-11 12:24:21,486 [88] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="32"
+2019-03-11 12:24:21,454 [94] INFO  - WCF - Case Action Performed 'Complete', 
+2019-03-11 12:24:21,486 [97] INFO  - WCF - called approversDataFromList.UpdateStatusofApprovalMatrix => currlevel=6, previousLevel=5, param={"UserID":"32","ActionPer":" Complete|Complete","ActivityLog":"DCRActivityLog","ApplicationName":"DCRDCN","FormName":"DCR Form","DCR":"Approved","IsNewItem":"False"}, actionperformed=Complete, list=[{"ID":8438,"Title":"DCR Viewer","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":null,"HiddenSection":null,"Levels":"-2","Role":"Viewer","Days":0.0,"IsAutoApproval":false,"FillByRole":"Creator","Division":null,"SubDivision":null,"Approver":"25,24,32,31,24","ApproverName":"Collab App Support-1, SharePoint Notifications, DCR DCN Management Sytem User 2, DCR DCN Management Sytem User 3","Status":"Not Assigned","Comments":null,"AssignDate":null,"DueDate":null,"ApprovalDate":null,"IsEscalate":false,"IsReminder":false,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8416,"Title":"DCR Detail Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"DCR Detail Section","HiddenSection":null,"Levels":"0","Role":"Creator","Days":7.0,"IsAutoApproval":true,"FillByRole":null,"Division":null,"SubDivision":null,"Approver":"25","ApproverName":"Collab App Support-1","Status":"Approved","Comments":null,"AssignDate":"2019-01-25T03:56:52Z","DueDate":"2019-02-05T03:56:52Z","ApprovalDate":"2019-01-25T03:58:55Z","IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":"25","IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8418,"Title":"DCR Process Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"DCR Process Incharge Section","HiddenSection":null,"Levels":"2","Role":"DCR Process Incharge","Days":4.0,"IsAutoApproval":false,"FillByRole":"Creator,DCR Incharge Navigator","Division":null,"SubDivision":null,"Approver":"32","ApproverName":"DCR DCN Management Sytem User 2","Status":"Approved","Comments":"new dcr","AssignDate":"2019-01-25T03:58:55Z","DueDate":"2019-01-31T03:58:55Z","ApprovalDate":"2019-01-25T03:59:56Z","IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":"32","IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8439,"Title":"Design Engineer Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"Design Engineer Incharge Section","HiddenSection":null,"Levels":"3","Role":"Design Engineer Incharge","Days":7.0,"IsAutoApproval":false,"FillByRole":"DCR Process Incharge","Division":null,"SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Not Assigned","Comments":null,"AssignDate":null,"DueDate":null,"ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8419,"Title":"Design Engineer Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"Design Engineer Section","HiddenSection":null,"Levels":"4","Role":"Design Engineer","Days":7.0,"IsAutoApproval":false,"FillByRole":"DCR Process Incharge","Division":null,"SubDivision":null,"Approver":"24","ApproverName":"SharePoint Notifications","Status":"Approved","Comments":"new ","AssignDate":"2019-01-25T04:02:44Z","DueDate":"2019-02-05T04:02:44Z","ApprovalDate":"2019-01-25T04:08:26Z","IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":"24","IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8420,"Title":"SCM Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"SCM Incharge Section","HiddenSection":null,"Levels":"4","Role":"SCM Incharge","Days":7.0,"IsAutoApproval":false,"FillByRole":"Creator","Division":null,"SubDivision":null,"Approver":"40,32","ApproverName":"Collaboration Helpdesk, DCR DCN Management Sytem User 2","Status":"Approved","Comments":"new dcr ","AssignDate":"2019-01-25T03:59:56Z","DueDate":"2019-02-05T03:59:56Z","ApprovalDate":"2019-01-25T04:02:44Z","IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":"32","IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8421,"Title":"QA Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"QA Incharge Section","HiddenSection":null,"Levels":"4","Role":"QA Incharge","Days":7.0,"IsAutoApproval":false,"FillByRole":"Creator","Division":null,"SubDivision":null,"Approver":"31","ApproverName":"DCR DCN Management Sytem User 3","Status":"Approved","Comments":"test new ","AssignDate":"2019-01-25T04:08:26Z","DueDate":"2019-02-05T04:08:26Z","ApprovalDate":"2019-01-25T04:36:25Z","IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":"31","IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8422,"Title":"SCM Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"SCM Section","HiddenSection":null,"Levels":"4","Role":"SCM","Days":7.0,"IsAutoApproval":false,"FillByRole":"SCM Incharge","Division":null,"SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:08:26Z","DueDate":"2019-02-05T04:08:26Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8423,"Title":"QA Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"QA Section","HiddenSection":null,"Levels":"4","Role":"QA","Days":7.0,"IsAutoApproval":false,"FillByRole":"QA Incharge","Division":null,"SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:08:26Z","DueDate":"2019-02-05T04:08:26Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8424,"Title":"CC Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"CC Incharge Section","HiddenSection":null,"Levels":"5","Role":"CC Incharge","Days":7.0,"IsAutoApproval":false,"FillByRole":"Creator","Division":null,"SubDivision":null,"Approver":"29,24","ApproverName":"Bhushan Patil, SharePoint Notifications","Status":"Approved","Comments":null,"AssignDate":"2019-01-25T04:36:25Z","DueDate":"2019-02-05T04:36:25Z","ApprovalDate":"2019-01-25T04:39:25Z","IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":"24","IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8425,"Title":"KAP Marketing Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"KAP Marketing Incharge Section","HiddenSection":null,"Levels":"5","Role":"KAP Marketing Incharge","Days":7.0,"IsAutoApproval":false,"FillByRole":"Creator,DCR Process Incharge","Division":"KAP","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8426,"Title":"KAP Marketing Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"KAP Marketing Section","HiddenSection":null,"Levels":"5","Role":"KAP Marketing","Days":7.0,"IsAutoApproval":false,"FillByRole":"KAP Marketing Incharge","Division":"KAP","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8428,"Title":"DAP Marketing Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"DAP Marketing Incharge Section","HiddenSection":null,"Levels":"5","Role":"DAP Marketing Incharge","Days":7.0,"IsAutoApproval":false,"FillByRole":"Creator,DCR Process Incharge","Division":"DAP","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8429,"Title":"DAP Marketing Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"DAP Marketing Section","HiddenSection":null,"Levels":"5","Role":"DAP Marketing","Days":7.0,"IsAutoApproval":false,"FillByRole":"DAP Marketing Incharge","Division":"DAP","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8430,"Title":"FANS Marketing Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"FANS Marketing Incharge Section","HiddenSection":null,"Levels":"5","Role":"FANS Marketing Incharge","Days":7.0,"IsAutoApproval":false,"FillByRole":"Creator,DCR Process Incharge","Division":"FANS","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8431,"Title":"FANS Marketing Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"FANS Marketing Section","HiddenSection":null,"Levels":"5","Role":"FANS Marketing","Days":7.0,"IsAutoApproval":false,"FillByRole":"FANS Marketing Incharge","Division":"FANS","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8432,"Title":"Lighting Marketing Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"Lighting Marketing Incharge Section","HiddenSection":null,"Levels":"5","Role":"Lighting Marketing Incharge","Days":7.0,"IsAutoApproval":false,"FillByRole":"Creator,DCR Process Incharge","Division":"Lighting","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8433,"Title":"Lighting Marketing Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"Lighting Marketing Section","HiddenSection":null,"Levels":"5","Role":"Lighting Marketing","Days":7.0,"IsAutoApproval":false,"FillByRole":"Lighting Marketing Incharge","Division":"Lighting","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8434,"Title":"Morphy Richards Marketing Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"Morphy Richards Marketing Incharge Section","HiddenSection":null,"Levels":"5","Role":"Morphy Richards Marketing Incharge","Days":7.0,"IsAutoApproval":false,"FillByRole":"Creator,DCR Process Incharge","Division":"Morphy Richards","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8435,"Title":"Morphy Richards Marketing Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"Morphy Richards Marketing Section","HiddenSection":null,"Levels":"5","Role":"Morphy Richards Marketing","Days":7.0,"IsAutoApproval":false,"FillByRole":"Morphy Richards Marketing Incharge","Division":"Morphy Richards","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8436,"Title":"LUM Marketing Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"LUM Marketing Incharge Section","HiddenSection":null,"Levels":"5","Role":"LUM Marketing Incharge","Days":7.0,"IsAutoApproval":false,"FillByRole":"Creator,DCR Process Incharge","Division":"LUM","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8437,"Title":"LUM Marketing Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"LUM Marketing Section","HiddenSection":null,"Levels":"5","Role":"LUM Marketing","Days":7.0,"IsAutoApproval":false,"FillByRole":"LUM Marketing Incharge","Division":"LUM","SubDivision":null,"Approver":null,"ApproverName":null,"Status":"Pending","Comments":null,"AssignDate":"2019-01-25T04:39:25Z","DueDate":"2019-02-05T04:39:25Z","ApprovalDate":null,"IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":null,"IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8440,"Title":"Costing Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"Costing Section","HiddenSection":null,"Levels":"5","Role":"Costing User","Days":7.0,"IsAutoApproval":false,"FillByRole":"Creator","Division":null,"SubDivision":null,"Approver":"24,30","ApproverName":"SharePoint Notifications, Dnyandev Sandav","Status":"Approved","Comments":null,"AssignDate":"2019-01-25T04:36:25Z","DueDate":"2019-02-05T04:36:25Z","ApprovalDate":"2019-01-25T04:39:25Z","IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":"24","IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null},{"ID":8427,"Title":"Final DCR Process Incharge Section","ApplicationName":"DCRDCN","FormName":"DCR Form","SectionName":"Final DCR Process Incharge Section","HiddenSection":null,"Levels":"6","Role":"Final DCR Process Incharge","Days":7.0,"IsAutoApproval":false,"FillByRole":"Creator,DCR Incharge Navigator","Division":null,"SubDivision":null,"Approver":"32","ApproverName":"DCR DCN Management Sytem User 2","Status":"Approved","Comments":"Testing of Approved","AssignDate":null,"DueDate":null,"ApprovalDate":"2019-03-11T12:23:50.1604036+05:30","IsEscalate":true,"IsReminder":true,"RequestID":399,"ApproveBy":"32","IsOptional":false,"FormType":"Main","Files":null,"FileNameList":null,"ReasonForChange":null,"ReasonForDelay":null}], 
+2019-03-11 12:24:21,486 [98] INFO  - WCF - End of form level assignment, 
+2019-03-11 12:24:30,937 [20] INFO  - WCF - Helper.SaveFormFields in list 'DCR' id='399' with values = {"Viewer":[{"Email":null,"TypeId":"{c956ab54-16bd-4c18-89d2-996f57282a6f}","LookupId":25,"LookupValue":null},{"Email":null,"TypeId":"{c956ab54-16bd-4c18-89d2-996f57282a6f}","LookupId":24,"LookupValue":null},{"Email":null,"TypeId":"{c956ab54-16bd-4c18-89d2-996f57282a6f}","LookupId":32,"LookupValue":null},{"Email":null,"TypeId":"{c956ab54-16bd-4c18-89d2-996f57282a6f}","LookupId":31,"LookupValue":null},{"Email":null,"TypeId":"{c956ab54-16bd-4c18-89d2-996f57282a6f}","LookupId":24,"LookupValue":null}],"Creator":[{"Email":null,"TypeId":"{c956ab54-16bd-4c18-89d2-996f57282a6f}","LookupId":25,"LookupValue":null}],"DCRProcessIncharge":[{"Email":null,"TypeId":"{c956ab54-16bd-4c18-89d2-996f57282a6f}","LookupId":32,"LookupValue":null}],"DesignEngineer":[{"Email":null,"TypeId":"{c956ab54-16bd-4c18-89d2-996f57282a6f}","LookupId":24,"LookupValue":null}],"SCMIncharge":[{"Email":null,"TypeId":"{c956ab54-16bd-4c18-89d2-996f57282a6f}","LookupId":40,"LookupValue":null},{"Email":null,"TypeId":"{c956ab54-16bd-4c18-89d2-996f57282a6f}","LookupId":32,"LookupValue":null}],"QAIncharge":[{"Email":null,"TypeId":"{c956ab54-16bd-4c18-89d2-996f57282a6f}","LookupId":31,"LookupValue":null}],"CCIncharge":[{"Email":null,"TypeId":"{c956ab54-16bd-4c18-89d2-996f57282a6f}","LookupId":29,"LookupValue":null},{"Email":null,"TypeId":"{c956ab54-16bd-4c18-89d2-996f57282a6f}","LookupId":24,"LookupValue":null}],"CostingUser":[{"Email":null,"TypeId":"{c956ab54-16bd-4c18-89d2-996f57282a6f}","LookupId":24,"LookupValue":null},{"Email":null,"TypeId":"{c956ab54-16bd-4c18-89d2-996f57282a6f}","LookupId":30,"LookupValue":null}],"FinalDCRProcessIncharge":[{"Email":null,"TypeId":"{c956ab54-16bd-4c18-89d2-996f57282a6f}","LookupId":32,"LookupValue":null}],"ApprovalStatus":"Completed","Status":"Approved","FormLevel":"6|6","NextApprover":"","PendingWith":"","WorkflowStatus":"Approved"}, 
+2019-03-11 12:24:37,183 [90] INFO  - WCF - Save Form Field Name='Status'='Approved', 
+2019-03-11 12:24:37,184 [87] INFO  - WCF - Calling SetItemPermission -> itemid=399, listname=DCR, {"25,24,32,31,24,40,32,29,24,24,30,":"Read"}, 
+2019-03-11 12:24:37,285 [98] INFO  - WCF - Calling Activity Log -> {"UserID":"32","ActionPer":" Complete|Complete","ActivityLog":"DCRActivityLog","ApplicationName":"DCRDCN","FormName":"DCR Form","DCR":"Approved","IsNewItem":"False"}, 
+2019-03-11 12:24:37,296 [96] INFO  - WCF - Called Activity Log Condition Passed-> listname=DCRActivityLog, lookupid=399, activityby=32, 
+2019-03-11 12:24:37,298 [92] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="32"
+2019-03-11 12:24:37,532 [92] INFO  - WCF - Get User Emails from RoleDefinitionBindingCollection -> 25,24,32,31,24,40,32,29,24,24,30,, 
+2019-03-11 12:24:37,534 [96] INFO  - WCF - item BreakRoleInheritance(false,true); Called, 
+2019-03-11 12:24:37,532 [97] INFO  - WCF - Condition PAssed (context != null && web != null && usersWithPermission != null && item != null), 
+2019-03-11 12:24:37,535 [87] INFO  - WCF - item ResetRoleInheritance Called, 
+2019-03-11 12:24:41,124 [96] INFO  - WCF - Activity Log Parameter Saved -> Activity= Complete, 
+Changes=Status	Approved
+Assigned date	
+Approved/Updated date	11/03/2019
+Approved/Updated time	12:24 PM
+Approver Comment	Testing of Approved
+RejectedComment	
+IsApproved	Approved
+FinalDesignEngineer	SharePoint Notifications
+OldDCRRejectedDate	
+BusinessUnit	Luminaries (LUM)
+TargetDateOfImplementation	1/26/2019 1:30:00 PM, 
+ActivityDate=3/11/2019, 
+ActivityBy=32, 
+RequestID=399, 
+SectionName=Final DCR Process Incharge Section, 
+, 
+2019-03-11 12:24:41,125 [92] INFO  - WCF - Calling Activity Log -> Complete, 
+2019-03-11 12:24:41,143 [93] INFO  - WCF - Adding collRoleDefinitionBindingAssignee -> web.RoleDefinitions.GetByName(Read), 
+2019-03-11 12:24:41,970 [20] INFO  - WCF - User Permission set for -> 25,24,32,31,24,40,32,29,24,24,30,, 
+2019-03-11 12:24:53,266 [93] INFO  - WCF - Calling SetItemPermission -> Complete, 
+2019-03-11 12:24:53,266 [97] INFO  - WCF - Calling SaveAproverMatrix -> DCRApprovalMatrix, 
+2019-03-11 12:24:53,266 [94] INFO  - WCF - Called SetItemPermission Permission Assigned ->False, 
+2019-03-11 12:24:53,734 [93] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="24"
+2019-03-11 12:24:53,740 [94] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="31"
+2019-03-11 12:24:53,742 [87] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="32"
+2019-03-11 12:24:53,743 [97] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="24"
+2019-03-11 12:24:53,734 [85] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="25"
+2019-03-11 12:24:58,066 [92] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="25"
+2019-03-11 12:24:58,067 [98] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="25"
+2019-03-11 12:25:01,622 [20] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="32"
+2019-03-11 12:25:01,623 [98] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="32"
+2019-03-11 12:25:07,944 [20] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="24"
+2019-03-11 12:25:07,945 [101] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="24"
+2019-03-11 12:25:12,594 [93] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="40"
+2019-03-11 12:25:12,596 [20] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="32"
+2019-03-11 12:25:12,594 [101] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="32"
+2019-03-11 12:25:15,447 [20] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="31"
+2019-03-11 12:25:15,447 [101] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="31"
+2019-03-11 12:25:24,128 [97] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="29"
+2019-03-11 12:25:24,129 [96] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="24"
+2019-03-11 12:25:24,131 [92] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="24"
+2019-03-11 12:26:07,446 [20] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="24"
+2019-03-11 12:26:07,448 [20] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="30"
+2019-03-11 12:26:07,471 [98] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="24"
+2019-03-11 12:26:10,611 [92] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="32"
+2019-03-11 12:26:10,614 [96] INFO  - WCF - Helper.GetFieldUserValueFromPerson, String="32"
+2019-03-11 12:26:14,020 [93] INFO  - WCF - Calling SaveAproverMatrix -> Complete, 
+2019-03-11 12:26:18,370 [87] INFO  - WCF - Helper.GetNameUsingUserID, String="32"
+2019-03-11 12:26:18,370 [100] INFO  - WCF - Helper.GetNameUsingUserID, String="32"
+2019-03-11 12:26:18,370 [94] INFO  - WCF - Helper.GetNameUsingUserID got an user with name, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:26:18,370 [20] INFO  - WCF - Helper.GetNameUsingUserID got an user with name, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:26:23,412 [94] INFO  - WCF - Helper.GetEmailUsingUserID got an user with email, String="collaborate@bajajelectricals.com"
+2019-03-11 12:26:23,414 [96] INFO  - WCF - Helper.GetEmailUsingUserID, String="40"
+2019-03-11 12:26:23,415 [20] INFO  - WCF - Helper.GetEmailUsingUserID got an user with email, String="dcrdcnuser3@bajajelectricals.com"
+2019-03-11 12:26:23,412 [87] INFO  - WCF - Helper.GetEmailUsingUserID got an user with email, String="dcrdcnuser2@bajajelectricals.com"
+2019-03-11 12:26:23,415 [100] INFO  - WCF - Helper.GetEmailUsingUserID, String="24"
+2019-03-11 12:26:23,418 [99] INFO  - WCF - Helper.GetEmailUsingUserID got an user with email, String="CollabAppSupport1@bajajelectricals.com"
+2019-03-11 12:26:23,424 [87] INFO  - WCF - Helper.GetEmailUsingUserID, String="25"
+2019-03-11 12:26:23,412 [61] INFO  - WCF - Helper.GetEmailUsingUserID, String="29"
+2019-03-11 12:26:23,430 [61] INFO  - WCF - Helper.GetEmailUsingUserID, String="25"
+2019-03-11 12:26:23,431 [61] INFO  - WCF - Helper.GetEmailUsingUserID got an user with email, String="dcrdcnuser2@bajajelectricals.com"
+2019-03-11 12:26:23,435 [61] INFO  - WCF - Helper.GetEmailUsingUserID, String="32"
+2019-03-11 12:26:23,437 [61] INFO  - WCF - Email Body Replacement Listname : DCR , FieldName : DCRNo, 
+2019-03-11 12:26:23,439 [61] INFO  - WCF - Helper.GetEmailUsingUserID, String="24"
+2019-03-11 12:26:23,426 [100] INFO  - WCF - Helper.GetEmailUsingUserID got an user with email, String="Dcrdcnuser1@bajajelectricals.com"
+2019-03-11 12:26:23,418 [76] INFO  - WCF - Helper.GetEmailUsingUserID got an user with email, String="bhushanp@bajajelectricals.com"
+2019-03-11 12:26:23,416 [98] INFO  - WCF - Helper.GetEmailUsingUserID got an user with email, String="dcrdcnuser2@bajajelectricals.com"
+2019-03-11 12:26:23,414 [93] INFO  - WCF - Helper.GetEmailUsingUserID, String="32"
+2019-03-11 12:26:23,429 [87] INFO  - WCF - Helper.GetEmailUsingUserID got an user with email, String="CollabAppSupport1@bajajelectricals.com"
+2019-03-11 12:26:23,423 [20] INFO  - WCF - Helper.GetEmailUsingUserID, String="32"
+2019-03-11 12:26:23,415 [92] INFO  - WCF - Helper.GetEmailUsingUserID got an user with email, String="Dcrdcnuser1@bajajelectricals.com"
+2019-03-11 12:26:23,473 [61] INFO  - WCF - Email Body Replacement Listname : Custom , FieldName : ItemLinkClickHere, 
+2019-03-11 12:26:23,474 [68] INFO  - WCF - Email Body Replacement Listname : DCR , FieldName : DCRNo, 
+2019-03-11 12:26:23,427 [99] INFO  - WCF - Helper.GetEmailUsingUserID, String="24"
+2019-03-11 12:26:23,465 [87] INFO  - WCF - Helper.GetEmailUsingUserID, String="30"
+2019-03-11 12:26:23,465 [94] INFO  - WCF - Helper.GetEmailUsingUserID got an user with email, String="Dcrdcnuser1@bajajelectricals.com"
+2019-03-11 12:26:23,466 [100] INFO  - WCF - Helper.GetEmailUsingUserID got an user with email, String="Dcrdcnuser1@bajajelectricals.com"
+2019-03-11 12:26:23,466 [93] INFO  - WCF - Helper.GetEmailUsingUserID got an user with email, String="dnyandev.sandav@bajajelectricals.com"
+2019-03-11 12:26:23,421 [96] INFO  - WCF - Helper.GetEmailUsingUserID, String="31"
+2019-03-11 12:26:23,466 [98] INFO  - WCF - Helper.GetEmailUsingUserID, String="24"
+2019-03-11 12:27:38,235 [100] INFO  - MVC - Begin Ajax Request http://localhost:4430/Master/KeepSessionAlive, 
+2019-03-11 12:27:38,344 [70] INFO  - MVC - System Name: L0873.bel.com, 
+2019-03-11 12:32:38,385 [26] INFO  - MVC - System Name: L0873.bel.com, 
+2019-03-11 12:32:38,385 [33] INFO  - MVC - Begin Ajax Request http://localhost:4430/Master/KeepSessionAlive, 
+2019-03-11 12:35:00,186 [24] INFO  - MVC - Begin Request http://localhost:4430/?ID=399, 
+2019-03-11 12:35:00,399 [28] INFO  - WCF - Helper GetFormData Condition passed for appname=DCRDCN, formNameDCR Form, User Id=32, 
+2019-03-11 12:35:00,430 [48] INFO  - WCF - Called Helper GetFormData, 
+2019-03-11 12:35:04,291 [49] INFO  - WCF - Called Helper.GetCurrentUserRole and Role=Viewer, 
+2019-03-11 12:35:05,479 [19] INFO  - WCF - called Helper.GetFormData, 
+2019-03-11 12:35:05,483 [19] INFO  - WCF - Helper.GetNameFromPersonField, String="Dnyandev Sandav"
+2019-03-11 12:35:05,484 [19] INFO  - WCF - Helper.GetNameFromPersonField, Int32=30
+2019-03-11 12:35:05,485 [19] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:35:05,487 [19] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:35:05,489 [19] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:35:05,491 [24] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:35:05,492 [24] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:35:05,493 [24] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:35:05,494 [24] INFO  - WCF - Helper.GetNameFromPersonField, String="Bhushan Patil"
+2019-03-11 12:35:05,495 [24] INFO  - WCF - Helper.GetNameFromPersonField, Int32=29
+2019-03-11 12:35:05,497 [24] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:35:05,498 [24] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:35:05,499 [24] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:35:05,501 [24] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:35:05,502 [24] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:35:05,503 [24] INFO  - WCF - Helper.GetNameFromPersonField, String="Collaboration Helpdesk"
+2019-03-11 12:35:05,504 [24] INFO  - WCF - Helper.GetNameFromPersonField, Int32=40
+2019-03-11 12:35:05,505 [24] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:35:05,508 [24] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:35:05,509 [24] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:35:05,510 [24] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:35:05,511 [24] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:35:05,487 [64] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:35:05,491 [19] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:35:05,488 [48] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:35:05,487 [28] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:35:05,490 [60] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:35:05,489 [22] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:35:05,490 [29] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:35:05,487 [49] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:35:06,156 [59] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 3"
+2019-03-11 12:35:06,157 [58] INFO  - WCF - Helper.GetNameFromPersonField, Int32=31
+2019-03-11 12:35:06,158 [58] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:35:06,159 [58] INFO  - WCF - Helper.GetNameFromPersonField, String="Collab App Support-1"
+2019-03-11 12:35:06,161 [58] INFO  - WCF - Helper.GetNameFromPersonField, Int32=25
+2019-03-11 12:35:06,157 [59] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:35:06,710 [58] INFO  - WCF - Helper.GetNameFromPersonField, String="DCR DCN Management Sytem User 2"
+2019-03-11 12:35:06,712 [58] INFO  - WCF - Helper.GetNameFromPersonField, Int32=32
+2019-03-11 12:35:07,066 [22] INFO  - WCF - Helper.GetNameFromPersonField, String="SharePoint Notifications"
+2019-03-11 12:35:07,068 [58] INFO  - WCF - Helper.GetNameFromPersonField, Int32=24
+2019-03-11 12:35:07,587 [58] INFO  - WCF - Helper.GetButtons for role 'Viewer', appName='DCRDCN', formName='DCR Form', status='Approved', other params={"CurrentFromLevel":"6"}, 
+2019-03-11 12:45:18,788 [116] INFO  - MVC - Application_Start_Done, 
+2019-03-11 12:45:18,902 [116] INFO  - MVC - Begin Ajax Request http://localhost:4430/Master/KeepSessionAlive, 
+2019-03-11 12:45:18,903 [116] INFO  - MVC - System Name: L0873.bel.com, 

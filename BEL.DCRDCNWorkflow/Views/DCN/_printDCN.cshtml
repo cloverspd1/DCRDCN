@@ -1,0 +1,608 @@
+﻿@using BEL.DCRDCNWorkflow.Models.DCN
+@using BEL.CommonDataContract
+@using BEL.DCRDCNWorkflow.Models.Common
+@using Newtonsoft.Json;
+@model DCNContract
+@{
+    DCNForm form = Model.Forms.FirstOrDefault() as DCNForm;
+    ViewBag.Title = "Design Change Note";
+    DesignEngineerSection designDocumentEngineerSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCNSectionName.DESIGNENGINEERSECTION)) as DesignEngineerSection;
+    //DesignEngineerInchargeSection designEngineerInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCNSectionName.DESIGNENGINEERINCHARGESECTION)) as DesignEngineerInchargeSection;
+    DCRProcessInchargeSection dcrProcessInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCNSectionName.DCRPROCESSINCHRGESECTION)) as DCRProcessInchargeSection;
+    DCNQAInchargeSection qaInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCNSectionName.QAINCHARGESECTION)) as DCNQAInchargeSection;
+    // SCMInchargeSection scmInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.SCMINCHARGESECTION)) as SCMInchargeSection;
+
+    List<ITrans>
+    revisedApplicable = designDocumentEngineerSection.RevisedApplicable.ToList<ITrans>
+        ();
+    List<ITrans>
+        specification = designDocumentEngineerSection.Specification.ToList<ITrans>
+            ();
+    List<ITrans>
+        vendorDCN = qaInchargeSection != null ? qaInchargeSection.VendorDCNList.ToList<ITrans>() : null;
+
+}
+
+<div class="hidden">
+    <div id="divprint">
+        <!DOCTYPE HTML>
+        <html>
+        <head>
+            <title>Print DCN</title>
+
+        </head>
+        <body>
+            <div id="printContent" class="col-md-12">
+                <style type="text/css">
+                    .modal-dialog {
+                        width: 75% !important;
+                    }
+                </style>
+
+                <div id="card1" class="col-md-12 card" style="border:1px solid black">
+                    <div class="row borderBottom">
+                        <div class="col-sm-6 col-md-6 col-xs-6 rightBorder" style="vertical-align:middle">
+                            <img src="~/images/BajajPrintLogo.png" width="100%" />
+                        </div>
+                        <div class="col-sm-6 col-xs-6 col-md-6">
+
+                            <div class="col-xs-4 col-md-4 col-sm-4 bold text-left">
+                                @Html.LabelFor(m => designDocumentEngineerSection.RequestDepartment, ResourceNames.DCN)
+                            </div>
+                            <div class="col-xs-8 col-md-8 col-sm-8 text-left">
+                                @designDocumentEngineerSection.RequestDepartment
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row borderBottom">
+                        <div class="col-sm-6 bold">
+
+                            <div class="col-xs-4 text-left">
+                                Title:
+                            </div>
+                            <div class="col-xs-8 text-left">
+                                Design Change Note
+                            </div>
+
+                        </div>
+                        <div class="col-sm-6">
+
+                        </div>
+                    </div>
+                    <div class="row bold">
+                        <div class="col-sm-6" style="vertical-align:top;">
+
+                            <div class="col-md-4 col-xs-4 text-left">
+                                @Html.LabelFor(m => designDocumentEngineerSection.ProductName, ResourceNames.DCN)
+                            </div>
+                            <div class="col-md-8 col-xs-8 text-left">
+                                @designDocumentEngineerSection.ProductName
+                            </div>
+
+                        </div>
+                        <div class="col-sm-6" style="vertical-align:top">
+                            <div class="row">
+                                <div class="col-xs-4 col-sm-4 col-md-6 text-left">
+                                    @Html.LabelFor(m => designDocumentEngineerSection.DCNNo, ResourceNames.DCN)
+                                </div>
+                                <div class="col-xs-8 col-sm-8 col-md-6 text-left">
+                                    @designDocumentEngineerSection.DCNNo
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-4 col-sm-4 col-md-6 text-left">
+                                    @Html.LabelFor(m => designDocumentEngineerSection.DCRNo, ResourceNames.DCN)
+                                </div>
+                                <div class="col-xs-8 col-sm-8 col-md-6 text-left">
+                                    @designDocumentEngineerSection.DCRNo
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                    <div class="row borderBottom">
+                        <div class="table-responsive">
+                            <table class="table table-hover someTable text-center none-border margin-bottom-none">
+                                <thead>
+                                    <tr>
+                                        <td class="leftnone-border text-left">@Html.ResourceValue("Grid_Title_SrNo", ResourceNames.DCN)</td>
+                                        <td class="text-left">@Html.ResourceValue("Grid_Title_Componentrawmaterial", ResourceNames.DCN)</td>
+                                        <td class="text-left">@Html.ResourceValue("Grid_Title_PresentSpecifications", ResourceNames.DCN)</td>
+                                        <td class="rightnone-border text-left">@Html.ResourceValue("Grid_Title_RevisedSpecifications", ResourceNames.DCN)</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (specification != null && specification.Count != 0)
+                                    {
+                                        foreach (Specification item in specification)
+                                        {
+
+                                            <tr>
+                                                <td class="leftnone-border text-left">@item.Index</td>
+                                                <td class="text-left">@item.ComponentRawMaterial</td>
+
+                                                <td class="text-left">
+                                                    @item.PresentSpecification
+                                                    <div class="clearfix"></div>
+                                                    @item.FNLPresentSpecification
+                                                </td>
+
+                                                <td class="rightnone-border text-left">
+                                                    @item.RevisedSpecification
+                                                    <div class="clearfix"></div>
+                                                    @item.FNLRevisedSpecification
+                                                </td>
+
+                                            </tr>
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td colspan="4" class="text-center text-danger">
+                                                @*@Html.ResourceValue("Grid_Text_NoData", ResourceNames.Common)*@
+                                                 No Specification
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row" style="vertical-align:top">
+                        <div class="col-sm-12">
+                            <div class="bold">
+                                Revised Applicable Documents:
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row borderBottom">
+                        <div class="table-responsive">
+                            <table class="table table-hover someTable none-border margin-bottom-none">
+                                <thead>
+                                    <tr>
+                                        <td class="leftnone-border text-left">@Html.ResourceValue("Grid_Title_DocumentNo", ResourceNames.DCN)</td>
+                                        <td class="text-left">@Html.ResourceValue("Grid_Title_DocumentTitle", ResourceNames.DCN)</td>
+                                        <td class="text-left">@Html.ResourceValue("Grid_Title_RevisionNo", ResourceNames.DCN)</td>
+                                        <td class="rightnone-border text-left" style="white-space:nowrap;">@Html.ResourceValue("Grid_Title_Issuedate", ResourceNames.DCN)</td>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (revisedApplicable != null && revisedApplicable.Count != 0)
+                                    {
+                                        foreach (RevisedApplicableDocuments item in revisedApplicable)
+                                        {
+                                            <tr>
+                                                <td class="leftnone-border text-left">@item.DocumentNo</td>
+                                                <td class="text-left">@item.DocumentTitle</td>
+                                                <td class="text-left">@item.RevisionNo</td>
+                                                <td class="rightnone-border text-left" style="white-space:nowrap;">@item.RequestDate.Value.ToShortDateString()</td>
+                                            </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td colspan="4" class="text-center text-danger">
+                                                @*@Html.ResourceValue("Grid_Text_NoData", ResourceNames.Common)*@
+                                                No Attachment
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row borderBottom">
+                        <div class="col-sm-6" style="vertical-align:top">
+
+                            <div class="col-xs-8 col-md-8 col-sm-8 text-left">
+                                @Html.LabelFor(m => designDocumentEngineerSection.DesignChangeNoteIssuedOn, ResourceNames.DCN)
+                            </div>
+                            <div class="col-xs-4 col-md-4 col-sm-4 text-left">
+                                @(designDocumentEngineerSection != null && designDocumentEngineerSection.CurrentApprover != null && designDocumentEngineerSection.CurrentApprover.ApprovalDate.HasValue ? designDocumentEngineerSection.CurrentApprover.ApprovalDate.Value.ToShortDateString() : "-")
+                            </div>
+
+
+                        </div>
+                        <div class="col-sm-6" style="vertical-align:top">
+
+                            <div class="col-xs-8 col-md-8 col-sm-8">
+
+                            </div>
+                            <div class="col-xs-4 col-md-4 col-sm-4">
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-12 col-md-12">
+
+                            Issued to:
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1 col-xs-1 col-md-1 text-left">
+
+                            &bull;
+
+                        </div>
+                        <div class="col-sm-4 col-xs-4 col-md-4">
+                            Quality Assurance  -
+                        </div>
+                        <div class="col-sm-7 col-xs-7 col-md-7 text-left" style="padding-left:0">
+
+                            @designDocumentEngineerSection.QAInchargeName
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1 col-xs-1 col-md-1 text-left">
+
+                            &bull;
+
+                        </div>
+                        <div class="col-sm-4 col-xs-4 col-md-4 ">
+                            Supply Chain Management  -
+                        </div>
+                        <div class="col-sm-7 col-xs-7 col-md-7 text-left" style="padding-left:0">
+                            @designDocumentEngineerSection.SCMInchargeName
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1 col-xs-1 col-md-1 text-left">
+
+                            &bull;
+
+                        </div>
+                        <div class="col-sm-4 col-xs-4 col-md-4">
+                            Customer Care  -
+                        </div>
+                        <div class="col-sm-7 col-xs-7 col-md-7 text-left" style="padding-left:0">
+                            @designDocumentEngineerSection.CCInchargeName
+                        </div>
+
+                    </div>
+                    @if (!string.IsNullOrEmpty(designDocumentEngineerSection.DAPMarketingInchargeName))
+                    {
+                        <div class="row">
+                            <div class="col-sm-1 col-xs-1 col-md-1 text-left">
+
+                                &bull;
+
+                            </div>
+                            <div class="col-sm-4 col-xs-4 col-md-4">
+                                DAP Marketing Incharge  -
+                            </div>
+                            <div class="col-sm-7 col-xs-7 col-md-7 text-left" style="padding-left:0">
+                                @designDocumentEngineerSection.DAPMarketingInchargeName
+                            </div>
+
+                        </div>
+                    }
+                    @if (!string.IsNullOrEmpty(designDocumentEngineerSection.KAPMarketingInchargeName))
+                    {
+                        <div class="row">
+                            <div class="col-sm-1 col-xs-1 col-md-1 text-left">
+                                &bull;
+                            </div>
+                            <div class="col-sm-4 col-xs-4 col-md-4">
+                                KAP Marketing Incharge  -
+                            </div>
+                            <div class="col-sm-7 col-xs-7 col-md-7 text-left" style="padding-left:0">
+                                @designDocumentEngineerSection.KAPMarketingInchargeName
+                            </div>
+
+                        </div>
+                    }
+                    @if (!string.IsNullOrEmpty(designDocumentEngineerSection.FANSMarketingInchargeName))
+                    {
+                        <div class="row">
+                            <div class="col-sm-1 col-xs-1 col-md-1 text-left">
+
+                                &bull;
+
+                            </div>
+                            <div class="col-sm-4 col-xs-4 col-md-4">
+                                FANS Marketing Incharge  -
+                            </div>
+                            <div class="col-sm-7 col-xs-7 col-md-7 text-left" style="padding-left:0">
+                                @designDocumentEngineerSection.FANSMarketingInchargeName
+                            </div>
+
+                        </div>
+                    }
+                    @if (!string.IsNullOrEmpty(designDocumentEngineerSection.LightingMarketingInchargeName))
+                    {
+                        <div class="row">
+                            <div class="col-sm-1 col-xs-1 col-md-1 text-left">
+
+                                &bull;
+
+                            </div>
+                            <div class="col-sm-4 col-xs-4 col-md-4">
+                                Lighting Marketing Incharge -
+                            </div>
+                            <div class="col-sm-7 col-xs-7 col-md-7 text-left" style="padding-left:0">
+                                @designDocumentEngineerSection.LightingMarketingInchargeName
+                            </div>
+
+                        </div>
+                    }
+                    @if (!string.IsNullOrEmpty(designDocumentEngineerSection.MRMarketingInchargeName))
+                    {
+                        <div class="row">
+                            <div class="col-sm-1 col-xs-1 col-md-1 text-left">
+
+                                &bull;
+
+                            </div>
+                            <div class="col-sm-4 col-xs-4 col-md-4">
+                                Morphy Richards Marketing Incharge-
+                            </div>
+                            <div class="col-sm-7 col-xs-7 col-md-7 text-left" style="padding-left:0">
+                                @designDocumentEngineerSection.MRMarketingInchargeName
+                            </div>
+
+                        </div>
+                    }
+                    @if (!string.IsNullOrEmpty(designDocumentEngineerSection.LUMMarketingInchargeName))
+                    {
+                        <div class="row">
+                            <div class="col-sm-1 col-xs-1 col-md-1 text-left">
+
+                                &bull;
+
+                            </div>
+                            <div class="col-sm-4 col-xs-4 col-md-4">
+                                LUM Marketing Incharge  -
+                            </div>
+                            <div class="col-sm-7 col-xs-7 col-md-7 text-left" style="padding-left:0">
+                                @designDocumentEngineerSection.LUMMarketingInchargeName
+                            </div>
+
+                        </div>
+                    }
+                    <div class="row borderBottom">
+                        <div class="col-sm-1 col-xs-1 col-md-1 text-left">
+
+                            &bull;
+
+                        </div>
+                        <div class="col-sm-4 col-xs-4 col-md-4">
+                            Vendor  -
+                        </div>
+                        <div class="col-sm-7 col-xs-7 col-md-7 text-left" style="padding-left:0">
+                            @{string strVendorName = string.Empty;}
+                            @foreach (VendorDCN item in vendorDCN)
+                            {
+
+                                strVendorName += item.VendorName + ",";
+
+                            }
+
+                            @(!string.IsNullOrEmpty(strVendorName) ? strVendorName.Trim(',') : "-")
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        @if (designDocumentEngineerSection.DCNNo.Contains("CP"))
+                        {
+                            <div class="col-sm-6 bold" style="vertical-align:top">
+                                Head-Design & Development
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-sm-6 bold" style="vertical-align:top">
+                                Head-LDC
+                            </div>
+                        }
+
+
+
+
+                        <div class="col-sm-6" style="vertical-align:top">
+
+                            <div class="col-xs-4 col-md-4 col-sm-4 text-left">
+                                @Html.LabelFor(m => designDocumentEngineerSection.CurrentApprover.ApprovalDate, ResourceNames.Common)
+                            </div>
+                            <div class="col-xs-8 col-md-8 col-sm-8 text-left">
+                                @if (designDocumentEngineerSection != null && designDocumentEngineerSection.CurrentApprover != null && designDocumentEngineerSection.CurrentApprover.ApprovalDate != null)
+                                {
+                                    @designDocumentEngineerSection.CurrentApprover.ApprovalDate.Value.ToShortDateString()
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div id="card2" class="col-md-12 card" style="border:1px solid black">
+                    <div class="row" style="vertical-align:top">
+                        <div class="col-sm-12 col-xs-12 col-md-12 bold">
+
+                            Compliance Report by QA
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="table-responsive">
+                            <table class="table table-hover someTable  text-center none-border margin-bottom-none">
+                                <thead>
+                                    <tr class="borderBottom">
+                                        <td class="leftnone-border text-left">@Html.ResourceValue("Grid_Title_Supplier", ResourceNames.DCN)</td>
+                                        <td class="text-left">@Html.ResourceValue("Grid_Title_DateofImplementation", ResourceNames.DCN)</td>
+                                        <td class="rightnone-border text-left">@Html.ResourceValue("Grid_Title_StartProductsrno", ResourceNames.DCN)</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (vendorDCN != null && vendorDCN.Count != 0)
+                                    {
+                                        foreach (VendorDCN item in vendorDCN)
+                                        {
+                                            <tr class="borderBottom">
+                                                <td class="leftnone-border text-left">@item.VendorName</td>
+                                                <td class="text-left">
+                                                    @if (item.DateOfImplementation.HasValue)
+                                                    {
+                                                        @item.DateOfImplementation.Value.ToShortDateString();
+                                                    }
+                                                </td>
+                                                <td class="rightnone-border text-left">@item.StartProductSrNo</td>
+                                            </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td colspan="3" class="text-center text-danger">
+                                                @Html.ResourceValue("Grid_Text_NoVendorData", ResourceNames.DCR)
+                                            </td>
+                                        </tr>
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 bold">
+
+                            Signature by QA : @(qaInchargeSection != null && qaInchargeSection.CurrentApprover != null ? qaInchargeSection.CurrentApprover.ApproverName : string.Empty)
+
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="col-xs-4 col-md-4 col-sm-4 text-left">
+                                Date:
+                            </div>
+                            <div class="col-xs-8 col-md-8 col-sm-8 text-left">
+                                @(qaInchargeSection != null && qaInchargeSection.CurrentApprover != null && qaInchargeSection.CurrentApprover.ApprovalDate.HasValue ? qaInchargeSection.CurrentApprover.ApprovalDate.Value.ToShortDateString() : "-")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="card3" class="col-md-12 card">
+                    <div class="row">
+                        <table class="col-sm-12 col-xs-12 col-md-12 text-center" cellpadding="7">
+                            <tr class="borderBottom bold">
+                                <td colspan="2">Approved by</td>
+                                <td>Released by</td>
+
+                            </tr>
+                            <tr class="borderBottom">
+                                <td>HOD - AB Square (Appliances)</td>
+                                <td>HOD - AB Square (Fans)</td>
+                                <td>CMR</td>
+                            </tr>
+                            <tr style="height:80px">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+                <p>Form DD/F/08</p>
+            </div>
+
+        </body>
+    </html>
+</div>
+</div>
+
+<div class="modal fade" id="printModel" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"><i class="fa fa-print"></i> Print DCN</h4>
+
+            </div>
+            <div class="modal-body">
+                <p><span class="text-danger text-default-light">@Html.ResourceValue("Text_Print", ResourceNames.Common)</span></p>
+
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered someTable">
+
+                        <thead>
+                            <tr>
+                                <th>Attachment Name</th>
+                                <th>Print / Download</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    DCN Form
+                                </td>
+                                <td>
+
+                                    <a onclick="Print(this);" data-action="6" data-sendbackto="" data-sendtorole="" style="cursor:pointer !important">Print</a> &nbsp; | &nbsp;
+                                    <a onclick="PrintPreview(this);" data-action="6" data-sendbackto="" data-sendtorole="" style="cursor:pointer !important">Preview</a>
+
+                                </td>
+                            </tr>
+                            @foreach (var item in specification)
+                            {
+                                Specification obj = item as Specification;
+                                if (obj != null && obj.Files != null && obj.Files.Count != 0)
+                                {
+                                    foreach (FileDetails file in obj.Files)
+                                    {
+                                        <tr>
+                                            <td>@file.FileName</td>
+                                            <td>
+                                                <a data-url="@file.FileURL" onclick="DownloadUploadedFile(this);" style="cursor:pointer !important"> Download and Print </a>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            }
+                            @foreach (var item in revisedApplicable)
+                            {
+                                RevisedApplicableDocuments obj = item as RevisedApplicableDocuments;
+                                if (obj != null && obj.Files != null && obj.Files.Count != 0)
+                                {
+                                    <tr>
+                                        <td>@obj.Files[0].FileName</td>
+                                        <td>
+                                            <a data-url="@obj.Files[0].FileURL" onclick="DownloadUploadedFile(this);" style="cursor:pointer !important"> Download and Print </a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>

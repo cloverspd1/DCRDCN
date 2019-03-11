@@ -1,0 +1,174 @@
+﻿@using BEL.DCRDCNWorkflow.Models;
+@using BEL.DCRDCNWorkflow.Models.Common;
+@using BEL.CommonDataContract
+@model DCRAdminDetailSection
+
+
+<div class="form-horizontal">
+    <input type="hidden" id="hdnIsDesignInchargeSection" value="true">
+    <input type="hidden" id="hdnIsDesignInchargeSectionActive" value="">
+    <div class="card">
+        <div class="card-head">
+            @Html.ResourceValue("Section_Title_DESIGNENGINEERINCHARGESECTION", ResourceNames.DCR)
+            <div class="btn collapse-btn" data-toggle="collapse" data-target="#DesignInchargeSec1"><i class="fa fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body" id="designincharge">
+            <div class="form-horizontal">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span>
+                                @Html.LabelFor(m => m.DesignEngineer, ResourceNames.DCR)
+
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+
+
+                                    @Html.DisplayFor(m => m.DesignEngineerName)
+                                    @Html.HiddenFor(m => m.DesignEngineer)
+                                    @Html.HiddenFor(m => m.DesignEngineerName)
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                @Html.LabelFor(m => m.Comment, ResourceNames.DCR)
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+                                    @{int i = Model.ApproversList.FindIndex(p => p.Role == DCRRoles.DESIGNENGINEERINCHARGE); }
+                                    @Html.TextAreaFor(m => m.DesignEngineerIComment, new { maxlength = 1000, @class = "form-control", @data_val = "true", @data_val_required = "Please Enter Comment", data_toggle = "tooltip", title = "Max 1000 characters" })
+                                    @Html.ValidationMessageFor(m => m.DesignEngineerIComment, ResourceNames.DCR)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="card" id="designEngineer">
+        <div class="card-head">
+            @Html.ResourceValue("Section_Title_DesignEngineerSection", ResourceNames.DCR)
+            <div class="btn collapse-btn" data-toggle="collapse" data-target="#deSec"><i class="fa fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body" id="deSec">
+            <div class="form-horizontal">
+
+
+                <div class="row">
+                    @if (Model.CurrentApprover != null && Model.CurrentApprover.ApprovalDate.HasValue)
+                    {
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">
+
+                                    @Html.LabelFor(m => Model.CurrentApprover.ApprovalDate, ResourceNames.Common)
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="form-control noborder text-left">
+                                        @(Model.CurrentApprover != null && Model.CurrentApprover.ApprovalDate.HasValue ? Model.CurrentApprover.ApprovalDate.Value.ToShortDateString() : "-")
+                                        @Html.Hidden("ApprovalDate", Model.CurrentApprover != null && Model.CurrentApprover.ApprovalDate.HasValue ? Model.CurrentApprover.ApprovalDate.Value.ToShortDateString() : string.Empty)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                             
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @*<div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span>
+                                @Html.LabelFor(m => m.Detailsofchangesincomponents, ResourceNames.DCR)
+
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+                                    @Html.TextAreaFor(m => m.Detailsofchangesincomponents, new { maxlength = 1000, @class = "form-control", data_toggle = "tooltip", title = "Max 1000 characters" })
+                                    @Html.ValidationMessageFor(m => m.Detailsofchangesincomponents, ResourceNames.DCR)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span>
+                                @Html.LabelFor(m => m.Detailsofchangesintoolsjigs, ResourceNames.DCR)
+
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+                                    @Html.TextAreaFor(m => m.Detailsofchangesintoolsjigs, new { maxlength = 1000, @class = "form-control", data_toggle = "tooltip", title = "Max 1000 characters" })
+                                    @Html.ValidationMessageFor(m => m.Detailsofchangesintoolsjigs, ResourceNames.DCR)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span>
+                                @Html.LabelFor(m => m.EffectOnPerformance, ResourceNames.DCR)
+
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+                                    @Html.TextAreaFor(m => m.EffectOnPerformance, new { maxlength = 1000, @class = "form-control", data_toggle = "tooltip", title = "Max 1000 characters" })
+                                    @Html.ValidationMessageFor(m => m.EffectOnPerformance, ResourceNames.DCR)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                Attachments:
+                            </label>
+                            <div class="col-md-8 ">
+
+                                <div id="AttachmentDE" data-appname="@SiteURLs.DCRDCNSITEURL">
+                                </div>
+                                @Html.TextBoxFor(m => m.FNLDEAttachment, new { @class = "notvisible" })
+                                @Html.ValidationMessageFor(m => m.FNLDEAttachment, ResourceNames.DCR)
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+</div>
+
+
+

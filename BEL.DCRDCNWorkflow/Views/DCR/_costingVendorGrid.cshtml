@@ -1,0 +1,74 @@
+﻿@using BEL.DCRDCNWorkflow.Models.DCR
+@using BEL.CommonDataContract
+@model List<ITrans>
+@{
+    List<MasterDataItem> costincdecList = new List<MasterDataItem>();
+    costincdecList.Add(new MasterDataItem("Increase", "Increase"));
+    costincdecList.Add(new MasterDataItem("Decrease", "Decrease"));
+}
+<div class="table-responsive">
+    <table class="table table-hover table-bordered someTable">
+        <thead>
+            <tr>
+                <th>@Html.ResourceValue("Grid_Title_VendorName", ResourceNames.DCR)</th>
+                <th>@Html.ResourceValue("Grid_Title_ItemCode", ResourceNames.DCR)</th>
+                <th>@Html.ResourceValue("Grid_Title_CostIncreaseDecrease", ResourceNames.DCR)</th>
+                <th>@Html.ResourceValue("Grid_Title_CostValue", ResourceNames.DCR)</th>
+                <th>@Html.ResourceValue("Grid_Title_PercentageChange", ResourceNames.DCR)</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Count > 0)
+            {
+                for (int idx = 0; idx < Model.Count; idx++)
+                {
+
+                    @Html.Hidden("VendorDCRPostList[" + idx + "].Index", Model[idx].Index)
+                    @Html.Hidden("VendorDCRPostList[" + idx + "].VendorName", (Model[idx] as VendorDCR).VendorName)
+                    @Html.Hidden("VendorDCRPostList[" + idx + "].ID", (Model[idx] as VendorDCR).ID)
+                    @Html.Hidden("VendorDCRPostList[" + idx + "].RequestID", (Model[idx] as VendorDCR).RequestID)
+                    @Html.Hidden("VendorDCRPostList[" + idx + "].Quantity", (Model[idx] as VendorDCR).Quantity)
+                    @Html.Hidden("VendorDCRPostList[" + idx + "].RequestBy", (Model[idx] as VendorDCR).RequestBy)
+                    @Html.Hidden("VendorDCRPostList[" + idx + "].RequestDate", (Model[idx] as VendorDCR).RequestDate)
+                    @Html.Hidden("VendorDCRPostList[" + idx + "].ItemAction", (Model[idx] as VendorDCR).ItemAction)
+                    @Html.Hidden("VendorDCRPostList[" + idx + "].Status", (Model[idx] as VendorDCR).Status)
+                    @Html.Hidden("VendorDCRPostList[" + idx + "].FGStock", (Model[idx] as VendorDCR).FGStock)
+                    @Html.Hidden("VendorDCRPostList[" + idx + "].ExistingComponentStock", (Model[idx] as VendorDCR).ExistingComponentStock)
+                    @Html.Hidden("VendorDCRPostList[" + idx + "].DateOfImplementation", (Model[idx] as VendorDCR).DateOfImplementation)
+
+                    <tr>
+
+                        <td>@Html.DisplayFor(m => (m[idx] as VendorDCR).VendorName)</td>
+                        <td>
+
+                            @Html.TextBoxFor(m => (m[idx] as VendorDCR).ItemCode, new { maxLength = 255, @class = "form-control", @id = "VendorDCRPostList[" + idx + "].ItemCode", @Name = "VendorDCRPostList[" + idx + "].ItemCode", @data_val = "true", @data_val_required = "Item Code is required (Max length 255 Char.) " })
+                            @Html.ValidationMessageFor(m => (Model[idx] as VendorDCR).ItemCode, "Item Code is required (Max length 255 Char.)", new { @data_valmsg_for = "VendorDCRPostList[" + idx + "].ItemCode" })
+
+                        </td>
+                        <td>
+                            @Html.DropDownListFor(m => (m[idx] as VendorDCR).CostIncreaseDecrease, new SelectList((costincdecList).OrderBy(x => x.Title).ToList(), "Value", "Title", (Model[idx] as VendorDCR).CostIncreaseDecrease), "Select", new { @class = "form-control", @id = "VendorDCRPostList[" + idx + "].CostIncreaseDecrease", @Name = "VendorDCRPostList[" + idx + "].CostIncreaseDecrease", @data_val = "true", @data_val_required = "Cost Increase/Decrease is required", @data_selected = (Model[idx] as VendorDCR).CostIncreaseDecrease })
+                            @Html.ValidationMessageFor(m => (Model[idx] as VendorDCR).CostIncreaseDecrease, "Cost Increase/Decrease is required", new { @data_valmsg_for = "VendorDCRPostList[" + idx + "].CostIncreaseDecrease" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => (m[idx] as VendorDCR).CostValue, new { maxLength = 15, @class = "form-control  fixedtwodecimal numberonly", @id = "VendorDCRPostList[" + idx + "].CostValue", @Name = "VendorDCRPostList[" + idx + "].CostValue", @data_val = "true", @data_val_required = "Cost Value is required (Max length 15 digit.) " })
+                            @Html.ValidationMessageFor(m => (Model[idx] as VendorDCR).CostValue, "Cost Value is required (Max length 15 digit.)", new { @data_valmsg_for = "VendorDCRPostList[" + idx + "].CostValue" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => (m[idx] as VendorDCR).PercentageChange, new { maxLength = 15, @class = "form-control  fixedtwodecimal numberonly", @id = "VendorDCRPostList[" + idx + "].PercentageChange", @Name = "VendorDCRPostList[" + idx + "].PercentageChange", @data_val = "true", @data_val_required = "% Change is required (Max length 15 digit.) " })
+                            @Html.ValidationMessageFor(m => (Model[idx] as VendorDCR).PercentageChange, "% Change is required (Max length 15 digit.)", new { @data_valmsg_for = "VendorDCRPostList[" + idx + "].PercentageChange" })
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3" class="text-center text-danger">
+                        @Html.ResourceValue("Grid_Text_NoData", ResourceNames.Common)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

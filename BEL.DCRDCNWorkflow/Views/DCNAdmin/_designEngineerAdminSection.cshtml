@@ -1,0 +1,94 @@
+﻿@using BEL.DCRDCNWorkflow.Models
+@using BEL.DCRDCNWorkflow.Models.Master
+@using BEL.DCRDCNWorkflow.Models.Common
+@using BEL.CommonDataContract
+
+@model DCNDetailAdminSection
+<script type="text/javascript">
+    @{
+    List<MasterDataItem> approveRework = new List<MasterDataItem>();
+    approveRework.Add(new MasterDataItem("Approve", "Approve"));
+    approveRework.Add(new MasterDataItem("Rework", "Rework"));
+}
+</script>
+
+<div class="card ">
+    <div class="card-head" data-toggle="collapse" data-target="#designEngineerSec">
+        @Html.ResourceValue("Section_Title_DesignEngineer", ResourceNames.DCN)
+
+        <div class="btn collapse-btn"><i class="fa fa-chevron-down"></i></div>
+    </div>
+    <div class="card-body" id="designEngineerSec">
+        <div class="form-horizontal">
+            <div class="row">
+
+                <div class="col-md-6">
+                    @*<div class="form-group">
+
+                        <label class="col-sm-4 control-label text-right ">
+
+                            <span class="text-danger text-default-light">*</span>
+                            @Html.ResourceValue("Label_Comments", ResourceNames.DCR)
+
+                        </label>
+
+                        <div class="col-sm-8">
+                            <div class="form-control noborder ">
+                                @{int i = Model.ApproversList.FindIndex(p => p.Role == DCNRoles.DESIGNENGINEER); }
+                                @Html.TextAreaFor(m => m.DesignEngComment, new { maxlength = 255, @class = "form-control", @data_val = "true", @data_val_required = "Please Enter Comment", data_toggle = "tooltip", title = "Max 255 characters" })
+                                @Html.ValidationMessageFor(m => m.DesignEngComment, ResourceNames.DCN)
+
+                            </div>
+                        </div>
+                    </div>*@
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label text-right">
+                            <span class="text-danger text-default-light">*</span>
+                            @Html.LabelFor(m => m.ApproveRework, ResourceNames.DCN)
+                        </label>
+                        <div class="col-sm-8">
+                            <div class="form-control noborder">
+                                @Html.DisplayFor(m => m.ApproveRework)
+                                <div class="hidden">
+                                    @Html.DropDownListFor(m => m.ApproveRework, new SelectList((approveRework).OrderBy(x => x.Title).ToList(), "Value", "Title"), "Select", new { @class = "form-control", @data_selected = Model.ApproveRework })
+                                    @Html.ValidationMessageFor(m => m.ApproveRework, ResourceNames.DCN)
+                                    @Html.HiddenFor(m => m.ApproveRework)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @if (Model.ApproversList.FirstOrDefault(p => p.Role == DCNRoles.DESIGNENGINEER) != null && Model.ApproversList.FirstOrDefault(p => p.Role == DCNRoles.DESIGNENGINEER).ApprovalDate.HasValue)
+            {
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label text-right">
+
+                                Date:
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder">
+                                    @(Model.ApproversList.FirstOrDefault(p => p.Role == DCNRoles.DESIGNENGINEER) != null && Model.ApproversList.FirstOrDefault(p => p.Role == DCNRoles.DESIGNENGINEER).ApprovalDate.HasValue ? Model.ApproversList.FirstOrDefault(p => p.Role == DCNRoles.DESIGNENGINEER).ApprovalDate.Value.ToShortDateString() : "-")
+                                    @*@((Model.CurrentApprover.ApprovalDate.HasValue ? Model.CurrentApprover.ApprovalDate.Value.ToShortDateString() : string.Empty))*@
+                                    @Html.HiddenFor(m => m.ApproversList[0].ApprovalDate)
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+
+                    </div>
+                </div>
+            }
+
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+</div>

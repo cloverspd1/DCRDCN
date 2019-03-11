@@ -1,0 +1,319 @@
+﻿@using BEL.DCRDCNWorkflow.Models.DCR;
+@using BEL.DCRDCNWorkflow.Models.Common;
+@using BEL.CommonDataContract;
+@model DCRContract
+@{
+
+    DCRForm form = Model.Forms.FirstOrDefault() as DCRForm;
+    ViewBag.Title = Html.ResourceValue("Page_Title", ResourceNames.DCR);
+    DCRDetailSection dcrSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.DCRDETAILSECTION)) as DCRDetailSection;
+    DCRProcessInchargeSection dcrProcessInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.DCRPROCESSINCHARGESECTION)) as DCRProcessInchargeSection;
+    DCRInchargeNavigatorSection dcrInchargeNavigatorSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.DCRINCHARGENAVIGATORSECTION)) as DCRInchargeNavigatorSection;
+    DesignEngineerInchargeSection designEngineerInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.DESIGNENGINEERINCHARGESECTION)) as DesignEngineerInchargeSection;
+    DesignEngineerSection designEngineerSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.DESIGNENGINEERSECTION)) as DesignEngineerSection;
+    //185479517 , modify section name
+    if (designEngineerSection == null)
+    {
+        designEngineerSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.DESIGNDEVELOPENGINEERSECTION)) as DesignEngineerSection;
+    }
+    SCMInchargeSection scmInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.SCMINCHARGESECTION)) as SCMInchargeSection;
+    SCMSection scmSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.SCMSECTION)) as SCMSection;
+    QAInchargeSection qaInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.QAINCHARGESECTION)) as QAInchargeSection;
+    QASection qaSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.QASECTION)) as QASection;
+    DAPMarketingInchargeSection dapMktInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.DAPMARKETINGINCHARGESECTION)) as DAPMarketingInchargeSection;
+    DAPMarketingSection dapMktSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.DAPMARKETINGSECTION)) as DAPMarketingSection;
+
+    KAPMarketingInchargeSection kapMktInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.KAPMARKETINGINCHARGESECTION)) as KAPMarketingInchargeSection;
+    KAPMarketingSection kapMktSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.KAPMARKETINGSECTION)) as KAPMarketingSection;
+
+    FANSMarketingInchargeSection fansMktInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.FANSMARKETINGINCHARGESECTION)) as FANSMarketingInchargeSection;
+    FANSMarketingSection fansMktSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.FANSMARKETINGSECTION)) as FANSMarketingSection;
+
+    LightingMarketingInchargeSection lightingMktInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.LIGHTINGMARKETINGINCHARGESECTION)) as LightingMarketingInchargeSection;
+    LightingMarketingSection lightingMktSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.LIGHTINGMARKETINGSECTION)) as LightingMarketingSection;
+
+    MorphyRechardMarketingInchargeSection mrMktInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.MORPHYRECHARDMARKETINGINCHARGESECTION)) as MorphyRechardMarketingInchargeSection;
+    MorphyRechardMarketingSection mrMktSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.MORPHYRECHARDMARKETINGSECTION)) as MorphyRechardMarketingSection;
+
+    LUMMarketingInchargeSection lumMktInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.LUMMARKETINGINCHARGESECTION)) as LUMMarketingInchargeSection;
+    LUMMarketingSection lumMktSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.LUMMARKETINGSECTION)) as LUMMarketingSection;
+
+    CCInchargeSection ccInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.CCINCHARGESECTION)) as CCInchargeSection;
+    CostingSection costingSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.COSTINGSECTION)) as CostingSection;
+
+    FinalDCRProcessInchargeSection finalDCRProcessInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.FINALDCRPROCESSINCHARGESECTION)) as FinalDCRProcessInchargeSection;
+}
+
+@if (form != null)
+{
+    @section buttons{
+        @Html.Partial("_ButtonGroup", form.Buttons)
+    }
+
+
+    if (!string.IsNullOrEmpty(form.FormStatus))
+    {
+        <div class="card-body text-right pad-bot-15">
+            <div class="label label-primary">
+                @form.FormStatus
+            </div>
+        </div>
+    }
+
+    <div id="divDCRForm">
+        <div id="tab-general">
+            <div class="row mbl">
+                <div class="col-lg-12">
+                    <div class="tab-content responsive " id="generalTabContent">
+                        <input id="hdnDCRNo" type="hidden" value="@dcrSection.DCRNo" />
+                        @if (dcrSection != null)
+                        {
+                            string sectionActiveCss = dcrSection.IsActive ? string.Empty : "disabled";
+                            string isRetriveCase = !string.IsNullOrEmpty(Request.QueryString["IsRetrieve"]) ? "Style=background-color:#F2B7B7" : string.Empty;
+                            <div class="card @sectionActiveCss" id="DCRDetailSection">
+                                <div class="card-head" data-toggle="collapse" data-target="#sectiondetails">
+                                    @Html.ResourceValue("Section_Title_DCRDetailSection", ResourceNames.DCR)
+                                    <div class="btn collapse-btn"><i class="fa fa-chevron-down"></i></div>
+                                </div>
+                                <div class="card-body" id="sectiondetails" @isRetriveCase>
+                                    <div class="form-horizontal">
+                                        <p><span class="text-danger text-default-light">@Html.ResourceValue("Text_Mandatory", ResourceNames.Common)</span></p>
+                                        @Html.Partial("_dcrDetailSection", dcrSection)
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        }
+                        @if (dcrInchargeNavigatorSection != null)
+                        {
+                            string sectionActiveCss = dcrInchargeNavigatorSection.IsActive ? string.Empty : "disabled";
+                            <div class="card @sectionActiveCss" id="DCRINCHARGENavigator">
+                                <div class="card-head">
+                                    @Html.ResourceValue("Section_Title_INCHARGESECTIONNavigator", ResourceNames.DCR)
+
+                                    <div class="btn collapse-btn" data-toggle="collapse" data-target="#dcrNavSec"><i class="fa fa-chevron-down"></i></div>
+                                </div>
+                                <div class="card-body" id="dcrNavSec">
+                                    <div class="form-horizontal">
+                                        @Html.Partial("_dcrInchargeNavigatorSection", dcrInchargeNavigatorSection)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        }
+                        @if (dcrProcessInchargeSection != null && string.IsNullOrEmpty(Request.QueryString["IsRetrieve"]))
+                        {
+                            string sectionActiveCss = dcrProcessInchargeSection.IsActive ? string.Empty : "disabled";
+                            <div class="card @sectionActiveCss" id="DCRINCHARGE">
+                                <div class="card-head">
+                                    @Html.ResourceValue("Section_Title_INCHARGESECTION", ResourceNames.DCR)
+
+                                    <div class="btn collapse-btn" data-toggle="collapse" data-target="#dcrPCRSec"><i class="fa fa-chevron-down"></i></div>
+                                </div>
+                                <div class="card-body" id="dcrPCRSec">
+                                    <div class="form-horizontal">
+                                        @Html.Partial("_dcrProcessInchargeSection", dcrProcessInchargeSection)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        }
+                        @*@if (designEngineerInchargeSection != null)
+                        {
+                            @Html.Partial("_designEngineerInchargeSection", designEngineerInchargeSection)
+                        }
+
+                        @if (designEngineerSection != null && designEngineerInchargeSection != null && !designEngineerInchargeSection.IsSubmitted)
+                        {
+                            @Html.Partial("_designEnggSection", designEngineerSection)
+                        }*@
+                        @if (designEngineerSection != null)
+                        {
+                            @Html.Partial("_designEnggSection", designEngineerSection)
+                                    @*string sectionActiveCss = designEngineerSection.IsActive ? string.Empty : "disabled";
+                                <div class="card @sectionActiveCss" id="designEngineer">
+                                    <div class="card-head">
+                                        @Html.ResourceValue("Section_Title_DesignEngineerSection", ResourceNames.DCR)
+                                        <div class="btn collapse-btn" data-toggle="collapse" data-target="#deSec"><i class="fa fa-chevron-down"></i></div>
+                                    </div>
+                                    <div class="card-body" id="deSec">
+                                        <div class="form-horizontal">
+                                            @Html.Partial("_designEnggSection", designEngineerSection)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>*@
+                        }
+                        @if (scmInchargeSection != null)
+                        {
+                            @Html.Partial("_ScmHeadInchargeSection", scmInchargeSection)
+                        }
+
+                        @if (scmSection != null && scmInchargeSection != null && !scmInchargeSection.IsSubmitted)
+                        {
+                            @Html.Partial("_ScmSection", scmSection)
+                        }
+
+                        @if (qaInchargeSection != null)
+                        {
+                            @Html.Partial("_QAInchargeSection", qaInchargeSection)
+                        }
+
+                        @if (qaSection != null && qaInchargeSection != null && !qaInchargeSection.IsSubmitted)
+                        {
+                            @Html.Partial("_QASection", qaSection)
+                        }
+
+
+                        @if (dapMktInchargeSection != null)
+                        {
+                            @Html.Partial("_DAPMarketingInchargeSection", dapMktInchargeSection)
+                        }
+                        @if (dapMktSection != null && dapMktInchargeSection != null && !dapMktInchargeSection.IsSubmitted)
+                        {
+                            @Html.Partial("_DAPMarketingSection", dapMktSection)
+                        }
+
+                        @if (kapMktInchargeSection != null)
+                        {
+                            @Html.Partial("_KAPMarketingInchargeSection", kapMktInchargeSection)
+                        }
+                        @if (kapMktSection != null && kapMktInchargeSection != null && !kapMktInchargeSection.IsSubmitted)
+                        {
+                            @Html.Partial("_KAPMarketingSection", kapMktSection)
+                        }
+
+                        @if (fansMktInchargeSection != null)
+                        {
+                            @Html.Partial("_FANSMarketingInchargeSection", fansMktInchargeSection)
+                        }
+                        @if (fansMktSection != null && fansMktInchargeSection != null && !fansMktInchargeSection.IsSubmitted)
+                        {
+                            @Html.Partial("_FANSMarketingSection", fansMktSection)
+                        }
+
+                        @if (lightingMktInchargeSection != null)
+                        {
+                            @Html.Partial("_LightingMarketingInchargeSection", lightingMktInchargeSection)
+                        }
+                        @if (lightingMktSection != null && lightingMktInchargeSection != null && !lightingMktInchargeSection.IsSubmitted)
+                        {
+                            @Html.Partial("_LightingMarketingSection", lightingMktSection)
+                        }
+
+                        @if (mrMktInchargeSection != null)
+                        {
+                            @Html.Partial("_MRMarketingInchargeSection", mrMktInchargeSection)
+                        }
+                        @if (mrMktSection != null && mrMktInchargeSection != null && !mrMktInchargeSection.IsSubmitted)
+                        {
+                            @Html.Partial("_MRMarketingSection", mrMktSection)
+                        }
+
+                        @if (lumMktInchargeSection != null)
+                        {
+                            @Html.Partial("_LUMMarketingInchargeSection", lumMktInchargeSection)
+                        }
+                        @if (lumMktSection != null && lumMktInchargeSection != null && !lumMktInchargeSection.IsSubmitted)
+                        {
+                            @Html.Partial("_LUMMarketingSection", lumMktSection)
+                        }
+
+
+                        @if (ccInchargeSection != null)
+                        {
+                            string sectionActiveCss = ccInchargeSection.IsActive ? string.Empty : "disabled";
+                            <div class="card @sectionActiveCss" id="cchead">
+                                <div class="card-head">
+                                    @Html.ResourceValue("Section_Title_CCHead", ResourceNames.DCR)
+                                    <div class="btn collapse-btn" data-toggle="collapse" data-target="#ccHeadSec"><i class="fa fa-chevron-down"></i></div>
+                                </div>
+                                <div class="card-body" id="ccHeadSec">
+                                    <div class="form-horizontal">
+                                        @Html.Partial("_CCHeadSection", ccInchargeSection)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        }
+                        @if (costingSection != null)
+                        {
+                            string sectionActiveCss = costingSection.IsActive ? string.Empty : "disabled";
+                            <div class="card @sectionActiveCss" id="cchead">
+                                <div class="card-head">
+                                    @Html.ResourceValue("Section_Title_costingSection", ResourceNames.DCR)
+                                    <div class="btn collapse-btn" data-toggle="collapse" data-target="#costingSection"><i class="fa fa-chevron-down"></i></div>
+                                </div>
+                                <div class="card-body" id="costingSection">
+                                    <div class="form-horizontal">
+                                        @Html.Partial("_costingUserSection", costingSection)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        }
+                        @if (finalDCRProcessInchargeSection != null)
+                        {
+                            string sectionActiveCss = finalDCRProcessInchargeSection.IsActive ? string.Empty : "disabled";
+                            <div class="card @sectionActiveCss" id="cchead">
+                                <div class="card-head">
+                                    @Html.ResourceValue("Section_Title_INCHARGESECTION", ResourceNames.DCR)
+
+                                    <div class="btn collapse-btn" data-toggle="collapse" data-target="#fnlDCRPCRIN"><i class="fa fa-chevron-down"></i></div>
+                                </div>
+                                <div class="card-body" id="fnlDCRPCRIN">
+                                    <div class="form-horizontal">
+                                        @Html.Partial("_finalDCRProcessInchargeSection", finalDCRProcessInchargeSection)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        }
+                        <div class="clearfix"></div>
+
+                        @{ ApplicationStatusSection appStatus = form.SectionsList.FirstOrDefault(f => f != null && f.SectionName.Equals(SectionNameConstant.APPLICATIONSTATUS)) as ApplicationStatusSection; }
+                        @if (appStatus != null)
+                        {
+                            @Html.Partial("_ApplicationStatus", appStatus)
+                        }
+                        @{ ActivityLogSection activityLog = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.ACTIVITYLOG)) as ActivityLogSection; }
+                        @if (activityLog != null)
+                        {
+                            @Html.Partial("_ActivityLogs", activityLog, new ViewDataDictionary { { "Resources", ResourceNames.DCR } })
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="scroll-top-wrapper ">
+        <i class="fa fa-chevron-up">
+        </i>
+    </div>
+    if (dcrSection != null)
+    {
+        if (dcrSection.Status == "Completed" || dcrSection.Status == "Rejected")
+        {
+
+            @*@Html.Partial("_printDCR", Model)*@
+
+            if (dcrSection.BusinessUnit.Contains("CP"))
+            {
+                @Html.Partial("_printDCR", Model)
+            }
+            else if (dcrSection.BusinessUnit.Contains("LUM"))
+            {
+                @Html.Partial("_printDCRLUM", Model)
+            }
+
+        }
+    }
+    <div id="addeditVendor"></div>
+    @section scripts{
+        @Scripts.Render("~/bundles/dcrindex")
+    }
+}

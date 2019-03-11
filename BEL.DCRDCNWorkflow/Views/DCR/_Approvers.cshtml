@@ -1,0 +1,91 @@
+﻿@using BEL.DCRDCNWorkflow.Models.DCR
+@using BEL.DCRDCNWorkflow.Models.Common
+@using BEL.CommonDataContract
+@model List<ApplicationStatus>
+@{List<ApplicationStatus> approvers = Model.OrderBy(p => Convert.ToInt32(p.Levels)).ToList();}
+<div class="card">
+    <div class="card-head">
+        @Html.ResourceValue("Section_Title_ResponsibleDepartment", ResourceNames.Common)
+        <div class="btn collapse-btn collapsed" data-toggle="collapse" data-target="#deptusersec"><i class="fa fa-chevron-down"></i></div>
+    </div>
+    <div id="deptusersec" class="card-body">
+        <p>
+            <span class="text-danger text-default-light">
+                @Html.ResourceValue("Text_DepartmentComment", ResourceNames.Common)
+            </span>
+        </p>
+        <div class="panel-body grid-view">
+            <div class="table-responsive-tourreport">
+                <table class="table table-hover table-bordered someTable">
+                    <thead>
+                        <tr>
+                            <th width="25%">@Html.ResourceValue("Grid_Title_Departments", ResourceNames.Common_ApplicationStatus)</th>
+                            <th width="25%">@Html.ResourceValue("Grid_Title_Person", ResourceNames.Common_ApplicationStatus)</th>
+                            <th width="25%">@Html.ResourceValue("Grid_Title_Departments", ResourceNames.Common_ApplicationStatus)</th>
+                            <th width="25%">@Html.ResourceValue("Grid_Title_Person", ResourceNames.Common_ApplicationStatus)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @if (Model != null && Model.Count > 0)
+                        {
+                            for (int i = 0; i < Model.Count; i += 2)
+                            {
+                                if (Model[i].Role.Contains("Navigator"))
+                                {
+
+                                    @Html.HiddenFor(m => Model[i].Role, new { @id = "ApproversList[" + i + "].Role", @Name = "ApproversList[" + i + "].Role" })
+                                    @Html.HiddenFor(m => Model[i].Division, new { @id = "ApproversList[" + i + "].Division", @Name = "ApproversList[" + i + "].Division" })
+                                    @Html.HiddenFor(m => Model[i].Approver, new { @id = "ApproversList[" + i + "].Approver", @Name = "ApproversList[" + i + "].Approver", @class = "hiddenuser", data_division = @Model[i].Division })
+                                    i++;
+                                }
+                                string ismarketing = Model[i].Role.Contains("Marketing") ? "Marketing" : Model[i].Role;
+                                string division = !string.IsNullOrEmpty(Model[i].Division) ? Model[i].Division.Replace(" ", "") : string.Empty;
+                                //if (Model[i].Role != DCRRoles.CREATOR && Model[i].Role != DCRRoles.DCRINCHARGENAVIGATOR)
+                                //{
+                                    <tr>
+                                        <td style="font-weight:bold"> @Model[i].Role :</td>
+                                        <td class="@division @ismarketing" data-dept="@ismarketing">
+
+                                            <span>
+                                                @Model[i].ApproverName
+                                            </span>
+
+                                            @Html.HiddenFor(m => Model[i].Role, new { @id = "ApproversList[" + i + "].Role", @Name = "ApproversList[" + i + "].Role" })
+                                            @Html.HiddenFor(m => Model[i].Division, new { @id = "ApproversList[" + i + "].Division", @Name = "ApproversList[" + i + "].Division" })
+                                            @Html.HiddenFor(m => Model[i].Approver, new { @id = "ApproversList[" + i + "].Approver", @Name = "ApproversList[" + i + "].Approver", @class = "hiddenuser", data_division = @Model[i].Division })
+                                        </td>
+
+                                        @if (i + 1 < Model.Count)
+                                    {
+                                        ismarketing = Model[i + 1].Role.Contains("Marketing") ? "Marketing" : Model[i + 1].Role;
+                                        division = !string.IsNullOrEmpty(Model[i + 1].Division) ? Model[i + 1].Division.Replace(" ", "") : string.Empty;
+                                    <td style="font-weight:bold"> @Model[i + 1].Role :</td>
+                                    <td class="@division @ismarketing" data-dept="@ismarketing">
+                                        <span>
+                                            @Model[i + 1].ApproverName
+                                        </span>
+                                        @Html.HiddenFor(m => Model[i + 1].Role, new { @id = "ApproversList[" + (i + 1) + "].Role", @Name = "ApproversList[" + (i + 1) + "].Role" })
+                                        @Html.HiddenFor(m => Model[i + 1].Division, new { @id = "ApproversList[" + (i + 1) + "].Division", @Name = "ApproversList[" + (i + 1) + "].Division" })
+                                        @Html.HiddenFor(m => Model[i + 1].Approver, new { @id = "ApproversList[" + (i + 1) + "].Approver", @Name = "ApproversList[" + (i + 1) + "].Approver", @class = "hiddenuser", data_division = @Model[(i + 1)].Division })
+                                    </td>
+                                    }
+                                    </tr>
+                                //}
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="4" class="text-center text-danger">
+                                    @Html.ResourceValue("Grid_Text_NoData", ResourceNames.Common)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>

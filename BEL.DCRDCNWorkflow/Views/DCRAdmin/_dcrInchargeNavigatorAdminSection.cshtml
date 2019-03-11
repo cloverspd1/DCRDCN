@@ -1,0 +1,63 @@
+﻿@using BEL.DCRDCNWorkflow.Models
+@using BEL.CommonDataContract
+@using BEL.DCRDCNWorkflow.Models.Common
+@using BEL.DCRDCNWorkflow.Models.Master
+@model DCRAdminDetailSection
+
+
+<div class="form-horizontal">
+
+    
+    <div class="card" id="DCRINCHARGENavigator">
+        <div class="card-head">
+            @Html.ResourceValue("Section_Title_INCHARGESECTIONNavigator", ResourceNames.DCR)
+
+            <div class="btn collapse-btn" data-toggle="collapse" data-target="#dcrNavSec"><i class="fa fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body" id="dcrNavSec">
+            <div class="form-horizontal">
+                
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span>
+                                @Html.LabelFor(m => m.DCRIncharge, ResourceNames.DCR)
+
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+                                    <div class="form-control noborder">
+                                        @Html.DisplayFor(m => m.DCRInchargeName)
+                                        @Html.HiddenFor(m => m.DCRIncharge)
+                                        @Html.HiddenFor(m => m.DCRInchargeName)
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                @Html.ResourceValue("Label_Comments", ResourceNames.DCR)
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+                                    @{int i = Model.ApproversList.FindIndex(p => p.Role == DCRRoles.DCRINCHARGENAVIGATOR); }
+                                    @Html.TextAreaFor(m => m.DCRInchargeNavigatorComment, new { maxlength = 255, @class = "form-control", @data_val = "true", @data_val_required = "Please Enter Comment", data_toggle = "tooltip", title = "Max 255 characters" })
+                                    @Html.ValidationMessageFor(m => m.DCRInchargeNavigatorComment, ResourceNames.DCR)
+
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>

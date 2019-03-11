@@ -1,0 +1,1514 @@
+﻿@using BEL.DCRDCNWorkflow.Models.DCR;
+@using BEL.DCRDCNWorkflow.Models.Common;
+@using BEL.CommonDataContract;
+@using Newtonsoft.Json;
+@model DCRContract
+@{
+
+    DCRForm form = Model.Forms.FirstOrDefault() as DCRForm;
+    ViewBag.Title = Html.ResourceValue("Page_Title", ResourceNames.DCR);
+    DCRDetailSection dcrSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.DCRDETAILSECTION)) as DCRDetailSection;
+    DCRProcessInchargeSection dcrProcessInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.DCRPROCESSINCHARGESECTION)) as DCRProcessInchargeSection;
+    DCRInchargeNavigatorSection dcrInchargeNavigatorSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.DCRINCHARGENAVIGATORSECTION)) as DCRInchargeNavigatorSection;
+    DesignEngineerSection designEngineerSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.DESIGNENGINEERSECTION)) as DesignEngineerSection;
+    //185479517 , modify section name
+    if (designEngineerSection == null)
+    {
+        designEngineerSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.DESIGNDEVELOPENGINEERSECTION)) as DesignEngineerSection;
+    }
+
+
+    DesignEngineerInchargeSection designEngineerInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.DESIGNENGINEERINCHARGESECTION)) as DesignEngineerInchargeSection;
+    SCMSection scmSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.SCMSECTION)) as SCMSection;
+    SCMInchargeSection scmInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.SCMINCHARGESECTION)) as SCMInchargeSection;
+    QASection qaSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.QASECTION)) as QASection;
+    QAInchargeSection qaInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.QAINCHARGESECTION)) as QAInchargeSection;
+    CCInchargeSection ccInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.CCINCHARGESECTION)) as CCInchargeSection;
+    FinalDCRProcessInchargeSection finalDCRProcessInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.FINALDCRPROCESSINCHARGESECTION)) as FinalDCRProcessInchargeSection;
+    List<ITrans> vendorDCR = new List<ITrans>();
+    if (scmInchargeSection != null && scmInchargeSection.VendorDCRList != null)
+    {
+        vendorDCR = scmInchargeSection.VendorDCRList.ToList<ITrans>();
+    }
+    else if (scmSection != null && scmSection.VendorDCRList != null)
+    {
+        vendorDCR = scmSection.VendorDCRList.ToList<ITrans>();
+    }
+    DAPMarketingSection dapMktSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.DAPMARKETINGSECTION)) as DAPMarketingSection;
+    DAPMarketingInchargeSection dapMktInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.DAPMARKETINGINCHARGESECTION)) as DAPMarketingInchargeSection;
+    KAPMarketingSection kapMktSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.KAPMARKETINGSECTION)) as KAPMarketingSection;
+    KAPMarketingInchargeSection kapMktInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.KAPMARKETINGINCHARGESECTION)) as KAPMarketingInchargeSection;
+    FANSMarketingSection fanMktSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.FANSMARKETINGSECTION)) as FANSMarketingSection;
+    FANSMarketingInchargeSection fanMktInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.FANSMARKETINGINCHARGESECTION)) as FANSMarketingInchargeSection;
+    LightingMarketingSection lightingMktSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.LIGHTINGMARKETINGSECTION)) as LightingMarketingSection;
+    LightingMarketingInchargeSection lightingMktInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.LIGHTINGMARKETINGINCHARGESECTION)) as LightingMarketingInchargeSection;
+    MorphyRechardMarketingSection mrMktSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.MORPHYRECHARDMARKETINGSECTION)) as MorphyRechardMarketingSection;
+    MorphyRechardMarketingInchargeSection mrMktInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.MORPHYRECHARDMARKETINGINCHARGESECTION)) as MorphyRechardMarketingInchargeSection;
+    LUMMarketingSection lumMktSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.LUMMARKETINGSECTION)) as LUMMarketingSection;
+    LUMMarketingInchargeSection lumMktInchargeSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.LUMMARKETINGINCHARGESECTION)) as LUMMarketingInchargeSection;
+
+}
+<div class="hidden">
+    <div id="divprint">
+        <!DOCTYPE HTML>
+
+        <html>
+        <head>
+
+            <title>Print DCR</title>
+        </head>
+        <body>
+
+            <div id="printContent" class="col-md-12">
+                <style type="text/css">
+                    .modal-dialog {
+                        width: 75% !important;
+                    }
+                </style>
+                <div id="card1" class="col-md-12 card" style="border:1px solid black">
+                    <div class="row borderBottom">
+                        <div class="col-xs-6 col-sm-6 col-md-6 rightBorder" style="vertical-align:middle">
+
+
+                            <img id="logo" src="~/images/BajajPrintLogo.png" width="100%" />
+
+
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+
+                            <div class="col-xs-4 col-md-4 col-sm-4 text-left">
+                                @Html.LabelFor(m => dcrSection.RequestDepartment, ResourceNames.DCR)
+                            </div>
+                            <div class="col-xs-8 col-md-8 col-sm-8 text-left">
+                                @if (dcrSection != null && dcrSection.RequestDepartment != null)
+                                {
+                                    @dcrSection.RequestDepartment
+                                }
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row borderBottom">
+                        <div class="col-sm-6 bold" style="float:left">
+
+                            <div class="col-xs-4 text-left">
+                                Title:
+                            </div>
+                            <div class="col-xs-8 text-left">
+                                Design Change Requisition
+                            </div>
+
+                        </div>
+                        <div class="col-sm-6">
+
+                        </div>
+                    </div>
+                    <div class="row bold borderBottom">
+                        <div class="col-sm-6" style="vertical-align:top;">
+
+                            <div class="col-md-4 col-xs-4 text-left">
+                                @Html.LabelFor(m => dcrSection.ProductName, ResourceNames.DCR)
+
+                            </div>
+                            <div class="col-md-8 col-xs-8 text-left">
+                                @if (dcrSection != null && dcrSection.ProductName != null)
+                                {
+                                    @dcrSection.ProductName
+                                }
+
+                            </div>
+
+                        </div>
+                        <div class="col-sm-6" style="vertical-align:top">
+
+                            <div class="col-md-4 col-xs-4 text-left">
+                                @Html.LabelFor(m => dcrSection.DCRNo, ResourceNames.DCR)
+                            </div>
+                            <div class="col-md-8 col-xs-8 text-left">
+                                @if (dcrSection != null && dcrSection.DCRNo != null)
+                                {
+                                    @dcrSection.DCRNo
+                                }
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="row borderBottom">
+                        <table class="col-sm-12 col-xs-12 col-md-12 text-left">
+                            <tr class="col-sm-12 col-xs-12 col-md-12">
+                                <td class="col-sm-6 col-xs-6 col-md-6 rightBorder leftnone-border text-left" style="width:33%;">
+                                    @Html.LabelFor(m => dcrSection.Designchangeproposeddueto, ResourceNames.DCR)
+                                </td>
+                                <td class="col-sm-6 col-xs-6 col-md-6 rightBorder text-left" style="width:33%;">
+                                    @if (dcrSection != null && dcrSection.Designchangeproposeddueto != null)
+                                    {
+                                        @dcrSection.Designchangeproposeddueto
+                                    }
+                                </td>
+                                <td class="col-sm-6 col-xs-6 col-md-6 rightnone-border text-left" style="width:34%;">
+                                    @if (dcrSection != null && dcrSection.DesignChangeProposedOther != null && dcrSection.Designchangeproposeddueto.ToString().ToLower().Trim() == "others")
+                                    {
+                                        @dcrSection.DesignChangeProposedOther
+                                    }
+                                    else
+                                    {
+                                        @Html.Label("-")
+                                    }
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row borderBottom">
+                        <div class="col-sm-6 col-xs-6 col-md-6 rightBorder">
+                            <div class="text-center bold">
+                                @Html.LabelFor(m => dcrSection.DescriptionOfDesignChangePropose, ResourceNames.DCR)
+                            </div>
+                            <div class="form-group text-center bold">
+                                @if (dcrSection != null && dcrSection.DescriptionOfDesignChangePropose != null)
+                                {
+                                    @dcrSection.DescriptionOfDesignChangePropose
+                                }
+                                <div class="clearfix"></div>
+                                @if (dcrSection != null && !string.IsNullOrEmpty(dcrSection.FNLDesignChangeAttachment))
+                                {
+                                    foreach (FileDetails file in JsonConvert.DeserializeObject<List<FileDetails>>(dcrSection.FNLDesignChangeAttachment))
+                                    {
+                                        @file.FileName
+                                        <div class="clearfix"></div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 col-md-6 borderLeft">
+                            <div class="text-center bold">
+                                @Html.LabelFor(m => dcrSection.Expectedresultsifdesignchangeisc, ResourceNames.DCR)
+                            </div>
+                            <div class="form-group text-center bold">
+                                @if (dcrSection != null && dcrSection.Expectedresultsifdesignchangeisc != null)
+                                {
+                                    @dcrSection.Expectedresultsifdesignchangeisc
+                                }
+                                <div class="clearfix"></div>
+                                @if (dcrSection != null && !string.IsNullOrEmpty(dcrSection.FNLExpectedResultsAttachment))
+                                {
+                                    foreach (FileDetails file in JsonConvert.DeserializeObject<List<FileDetails>>(dcrSection.FNLExpectedResultsAttachment))
+                                    {
+                                        @file.FileName
+                                        <div class="clearfix"></div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row borderBottom">
+                        <div class="col-sm-6 col-xs-6 col-md-6">
+                            <div class="col-sm-8 col-xs-8 col-md-8 text-left">
+                                @Html.LabelFor(m => dcrSection.DesignChangeRequiredByDate, ResourceNames.DCR)
+
+                            </div>
+                            <div class="col-sm-4 col-xs-4 col-md-4 text-left">
+
+                                @if (dcrSection != null && dcrSection.DesignChangeRequiredByDate != null)
+                                {
+                                    @Html.Label(dcrSection.DesignChangeRequiredByDate.Value.ToShortDateString())
+                                }
+                                else
+                                {
+                                    @Html.Label("")
+                                }
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 col-md-6">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6" style="vertical-align:top">
+
+                            <div class="col-xs-4 col-md-4 col-sm-4 text-left">
+                                @Html.LabelFor(m => dcrSection.ProposedBy, ResourceNames.DCR)
+                            </div>
+                            <div class="col-xs-8 col-md-8 col-sm-8 text-left">
+                                @if (dcrSection != null && dcrSection.ProposedByName != null)
+                                {
+                                    @dcrSection.ProposedByName
+                                }
+
+                            </div>
+
+
+
+                        </div>
+                        <div class="col-sm-6" style="vertical-align:top">
+
+                            <div class="col-xs-5 col-md-4 col-sm-5 text-left">
+                                @Html.LabelFor(m => dcrSection.RequestDate, ResourceNames.DCR)
+                            </div>
+                            <div class="col-xs-7 col-md-8 col-sm-7 text-left">
+                                @if (dcrSection != null && dcrSection.RequestDate != null)
+                                {
+                                    @dcrSection.RequestDate.Value.ToShortDateString()
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="card2" class="col-md-12 card" style="border:1px solid black">
+                    <div class="row borderBottom">
+                        <div class="col-sm-6">
+                            @if (dcrSection.BusinessUnit.Contains("CP"))
+                            {
+                                <div class=" bold">
+                                    For AB Square
+                                </div>
+                            }
+                            else
+                            {
+                                <div class=" bold">
+                                    For LDC
+                                </div>
+                            }
+
+                            <div class="col-xs-8 col-sm-8 col-md-8">
+                            </div>
+
+                        </div>
+                        <div class="col-sm-6">
+
+                            @*<div class="col-xs-4 col-sm-4 col-md-4 text-left">
+                                    @Html.LabelFor(m => designEngineerInchargeSection.CurrentApprover.ApprovalDate, ResourceNames.Common)
+                                </div>
+                                <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                    @if (designEngineerInchargeSection != null && designEngineerInchargeSection.CurrentApprover != null && designEngineerInchargeSection.CurrentApprover.ApprovalDate != null)
+                                    {
+                                        @designEngineerInchargeSection.CurrentApprover.ApprovalDate.Value.ToShortDateString()
+                                    }
+                                </div>*@
+
+                        </div>
+                    </div>
+                    <div class="row borderBottom">
+                        <div class="col-sm-9 col-xs-10 col-md-6">
+
+                            Design change Requisition received by AB Square deptt. under DCR No. as recorded in register:
+
+                        </div>
+                        <div class="col-sm-3 col-xs-2 col-md-6 text-left">
+                            <div class="bold">
+                                @if (dcrSection != null && dcrSection.DCRNo != null)
+                                {
+                                    @dcrSection.DCRNo
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row borderBottom">
+                        <div class="col-sm-6 col-xs-6 col-md-6">
+
+                            @Html.LabelFor(m => designEngineerSection.Detailsofchangesincomponents, ResourceNames.DCR)
+
+                        </div>
+                        <div class="col-sm-6 col-xs-6 col-md-6 text-left">
+
+                            @if (designEngineerSection != null && designEngineerSection.Detailsofchangesincomponents != null)
+                            {
+                                @designEngineerSection.Detailsofchangesincomponents
+                            }
+
+                        </div>
+                    </div>
+                    <div class="row borderBottom">
+                        <div class="col-sm-6 col-xs-6 col-md-6">
+
+                            @Html.LabelFor(m => designEngineerSection.Detailsofchangesintoolsjigs, ResourceNames.DCR)
+
+                        </div>
+                        <div class="col-sm-6 col-xs-6 col-md-6 text-left">
+
+
+                            @if (designEngineerSection != null && designEngineerSection.Detailsofchangesintoolsjigs != null)
+                            {
+                                @designEngineerSection.Detailsofchangesintoolsjigs
+                            }
+
+                        </div>
+                    </div>
+                    <div class="row borderBottom">
+                        <div class="col-sm-6 col-xs-6 col-md-6">
+
+                            @Html.LabelFor(m => designEngineerSection.EffectOnPerformance, ResourceNames.DCR)
+
+                        </div>
+                        <div class="col-sm-6 col-xs-6 col-md-6 text-left">
+
+                            @if (designEngineerSection != null && designEngineerSection.EffectOnPerformance != null)
+                            {
+                                @designEngineerSection.EffectOnPerformance
+                            }
+
+                        </div>
+                    </div>
+                    <div class="row borderBottom">
+                        <div class="col-sm-6 col-xs-6 col-md-6">
+                            <div class="col-xs-6 col-sm-6 col-md-6 text-left" style="margin-left: -15px;">
+                                @Html.LabelFor(m => designEngineerSection.DateForReceiptOfSamples, ResourceNames.DCR)
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 text-left">
+                                @if (designEngineerSection != null && designEngineerSection.DateForReceiptOfSamples != null)
+                                {
+                                    @designEngineerSection.DateForReceiptOfSamples.Value.ToShortDateString()
+                                }
+                            </div>
+
+                        </div>
+                        <div class="col-sm-6 col-xs-6 col-md-6 text-left" style="margin-left: -16px;">
+                            <div class="col-xs-6 col-sm-6 col-md-6 text-left">
+                                @Html.LabelFor(m => designEngineerSection.DateForCompletionOfTesting, ResourceNames.DCR)
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 text-left">
+                                @if (designEngineerSection != null && designEngineerSection.DateForCompletionOfTesting != null)
+                                {
+                                    @designEngineerSection.DateForCompletionOfTesting.Value.ToShortDateString()
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row borderBottom">
+                        <div class="col-sm-6 col-xs-6 col-md-6">
+
+                            Overall Comments:
+
+                        </div>
+                        <div class="col-sm-6 col-xs-6 col-md-6 text-left">
+                            @if (designEngineerInchargeSection != null && designEngineerInchargeSection.CurrentApprover != null && designEngineerInchargeSection.CurrentApprover.Comments != null)
+                            {
+                                @designEngineerInchargeSection.CurrentApprover.Comments
+                            }
+                            else if (designEngineerSection != null && designEngineerSection.CurrentApprover != null && designEngineerSection.CurrentApprover.Comments != null)
+                            {
+                                @designEngineerSection.CurrentApprover.Comments
+                            }
+
+
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-sm-6 col-xs-6 col-md-6">
+
+                        </div>
+                        <div class="col-sm-6 col-xs-6 col-md-6 borderLeft text-left">
+
+
+                            DCR TO BE CONSIDERED :
+
+
+                            @if (dcrProcessInchargeSection != null && dcrProcessInchargeSection.DDHODDISPOSAL != null)
+                            {
+                                if (dcrProcessInchargeSection.DDHODDISPOSAL.ToString().ToLower() == "consider")
+                                {
+                                    @Html.Label("Yes")
+                                }
+                                else
+                                {
+                                    @Html.Label("No")
+                                }
+                            }
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="card3" class="col-md-12 card" style="border:1px solid black">
+                    <div class="row borderBottom">
+                        <div class="col-sm-6">
+
+                            @if (dcrSection.BusinessUnit.Contains("CP"))
+                            {
+                                <div class=" bold">
+                                    For Customer Care
+                                </div>
+                            }
+                            else
+                            {
+                                <div class=" bold">
+                                    For Service Dept
+                                </div>
+                            }
+
+                        </div>
+                        <div class="col-sm-6">
+
+                            <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+                                @Html.LabelFor(m => ccInchargeSection.CurrentApprover.ApprovalDate, ResourceNames.Common)
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                @if (ccInchargeSection != null && ccInchargeSection.CurrentApprover != null && ccInchargeSection.CurrentApprover.ApprovalDate != null)
+                                {
+                                    @ccInchargeSection.CurrentApprover.ApprovalDate.Value.ToShortDateString()
+                                }
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row borderBottom">
+                        <div class="col-sm-6">
+
+                            @Html.LabelFor(m => ccInchargeSection.Feasibility, ResourceNames.DCR)
+
+                        </div>
+                        <div class="col-sm-6 text-left">
+
+                            @if (ccInchargeSection != null && ccInchargeSection.Feasibility != null)
+                            {
+                                @ccInchargeSection.Feasibility
+                            }
+
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+
+                            @Html.LabelFor(m => ccInchargeSection.CCIfNotFeasibleGiveReason, ResourceNames.DCR)
+
+                        </div>
+                        <div class="col-sm-6 text-left">
+
+                            @if (ccInchargeSection != null && ccInchargeSection.CCIfNotFeasibleGiveReason != null)
+                            {
+                                @ccInchargeSection.CCIfNotFeasibleGiveReason
+                            }
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="card4" class="col-md-12 card" style="border:1px solid black">
+                    <div class="row borderBottom">
+                        <div class="col-sm-6">
+
+                            <div class="bold text-left">
+                                For QA
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-8 ">
+
+                            </div>
+
+                        </div>
+                        <div class="col-sm-6">
+
+                            <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+                                @Html.LabelFor(m => qaInchargeSection.CurrentApprover.ApprovalDate, ResourceNames.Common)
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                @if (qaInchargeSection != null && qaInchargeSection.CurrentApprover != null && qaInchargeSection.CurrentApprover.ApprovalDate != null)
+                                {
+                                    @qaInchargeSection.CurrentApprover.ApprovalDate.Value.ToShortDateString()
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row borderBottom">
+                        <div class="col-sm-4 col-xs-4 col-md-6">
+
+
+                            @Html.LabelFor(m => qaInchargeSection.PerformanceTestApplicable, ResourceNames.DCR)
+
+
+                        </div>
+                        <div class="col-sm-8 col-xs-8 col-md-6 text-left">
+
+                            @if (qaInchargeSection != null && qaInchargeSection.PerformanceTestApplicable != null)
+                            {
+                                @qaInchargeSection.PerformanceTestApplicable
+                            }
+                            else if (qaSection != null && qaSection.PerformanceTestApplicable != null)
+                            {
+                                @qaSection.PerformanceTestApplicable
+                            }
+
+                        </div>
+
+                    </div>
+
+                    <div class="row borderBottom">
+                        <div class="col-sm-4 col-xs-4 col-md-6">
+
+                            @Html.LabelFor(m => qaInchargeSection.QAEffectOfChangeOnQualityNorms, ResourceNames.DCR)
+
+
+                        </div>
+                        <div class="col-sm-8 col-xs-8 col-md-6 text-left">
+
+                            @if (qaInchargeSection != null && qaInchargeSection.QAEffectOfChangeOnQualityNorms != null)
+                            {
+                                @qaInchargeSection.QAEffectOfChangeOnQualityNorms
+                            }
+                            else if (qaSection != null && qaSection.QAEffectOfChangeOnQualityNorms != null)
+                            {
+                                @qaSection.QAEffectOfChangeOnQualityNorms
+                            }
+
+                        </div>
+                    </div>
+
+                    <div class="row borderBottom">
+                        <div class="col-xs-4 col-sm-4 col-md-6">
+
+
+                            @Html.LabelFor(m => qaInchargeSection.OverallComment, ResourceNames.DCR)
+
+
+                        </div>
+                        <div class="col-xs-8 col-sm-8 col-md-6 text-left">
+                            @if (qaInchargeSection != null && qaInchargeSection.OverallComment != null)
+                            {
+                                @qaInchargeSection.OverallComment
+                            }
+                            else if (qaSection != null && qaSection.OverallComment != null)
+                            {
+                                @qaSection.OverallComment
+                            }
+                            else if (qaInchargeSection != null && qaInchargeSection.CurrentApprover != null)
+                            {
+                                @qaInchargeSection.CurrentApprover.Comments
+                            }
+
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-sm-6">
+
+                        </div>
+                        <div class="col-sm-6 borderLeft bold text-left">
+
+
+                            @Html.LabelFor(m => qaInchargeSection.QADCRToBeConsidered, ResourceNames.DCR) :
+
+
+                            @if (qaInchargeSection != null && qaInchargeSection.QADCRToBeConsidered != null)
+                            {
+                                if (qaInchargeSection.QADCRToBeConsidered)
+                                {
+                                    @Html.Label("Yes")
+                                }
+                                else
+                                {
+                                    @Html.Label("No")
+                                }
+
+
+                            }
+                            else if (qaSection != null && qaSection.QADCRToBeConsidered != null)
+                            {
+                                if (qaSection.QADCRToBeConsidered)
+                                {
+                                    @Html.Label("Yes")
+                                }
+                                else
+                                {
+                                    @Html.Label("No")
+                                }
+                            }
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="card5" class="col-md-12 card" style="border:1px solid black">
+                    <div class="row borderBottom">
+                        <div class="col-sm-6 col-xs-6 col-md-6">
+
+                            <div class=" bold">
+                                For SCM
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-8">
+
+                            </div>
+
+                        </div>
+                        <div class="col-sm-6 col-xs-6 col-md-6">
+
+                            <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+                                @Html.LabelFor(m => scmInchargeSection.CurrentApprover.ApprovalDate, ResourceNames.Common)
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                @if (scmInchargeSection != null && scmInchargeSection.CurrentApprover != null && scmInchargeSection.CurrentApprover.ApprovalDate != null)
+                                {
+                                    @scmInchargeSection.CurrentApprover.ApprovalDate.Value.ToShortDateString()
+                                }
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            Stock of old items related to the DCR
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table-responsive">
+                            <table class="table table-hover someTable text-center none-border margin-bottom-none">
+                                <thead>
+                                    <tr>
+                                        <td class="leftnone-border text-left">Sr No</td>
+                                        <td class="text-left">@Html.ResourceValue("Grid_Title_VendorName", ResourceNames.DCR)</td>
+                                        <td class="text-left">@Html.ResourceValue("Grid_Title_FGStock", ResourceNames.DCR)</td>
+                                        <td class="text-left">@Html.ResourceValue("Grid_Title_ExistingComponentStock", ResourceNames.DCR)</td>
+                                        <td class="rightnone-border text-left">@Html.ResourceValue("Grid_Title_DateOfImplementation", ResourceNames.DCR)</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (vendorDCR != null && vendorDCR.Count > 0)
+                                    {
+                                        foreach (VendorDCR item in vendorDCR)
+                                        {
+                                            <tr>
+                                                <td class="leftnone-border text-left">@item.Index</td>
+                                                <td class="text-left">@item.VendorName</td>
+                                                <td class="text-left">@item.FGStock</td>
+                                                <td class="text-left">@item.ExistingComponentStock</td>
+                                                <td class="rightnone-border text-left">@(item.DateOfImplementation.HasValue ? item.DateOfImplementation.Value.ToString("dd/MM/yyyy") : "")</td>
+                                            </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td colspan="5" class="text-center text-danger">
+                                                @Html.ResourceValue("Grid_Text_NoVendorData", ResourceNames.DCR)
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <table class="none-border col-sm-12 col-xs-12 col-md-12 text-center">
+                            <tr>
+                                <td width="33%" class="leftnone-border text-left">
+
+                                    @Html.LabelFor(m => scmInchargeSection.EffectOnCostOfPartAndProduct, ResourceNames.DCR)
+
+                                </td>
+
+                                <td width="33%" class="text-left">
+
+                                    @if (scmInchargeSection != null && scmInchargeSection.EffectOnCostOfPartAndProduct != null)
+                                    {
+                                        @scmInchargeSection.EffectOnCostOfPartAndProduct
+                                    }
+                                    else if (scmSection != null && scmSection.EffectOnCostOfPartAndProduct != null)
+                                    {
+                                        @scmSection.EffectOnCostOfPartAndProduct
+                                    }
+
+                                </td>
+
+                                <td width="34%" class="rightnone-border  text-left">
+
+
+                                    @Html.LabelFor(m => scmInchargeSection.CostReducedIncreasedByRs, ResourceNames.DCR)
+
+                                    @if (scmInchargeSection != null && scmInchargeSection.CostReducedIncreasedByRs != null)
+                                    {
+                                        @scmInchargeSection.CostReducedIncreasedByRs
+                                    }
+                                    else if (scmSection != null && scmSection.CostReducedIncreasedByRs != null)
+                                    {
+                                        @scmSection.CostReducedIncreasedByRs
+                                    }
+                                    else
+                                    {
+                                        @Html.Label("0")
+                                    }
+
+                                </td>
+
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div class="row text-center">
+                        <table class="none-border1 col-sm-12 col-xs-12 col-md-12 text-center">
+                            <tr>
+                                <td width="33%" class="leftnone-border text-left">
+
+
+                                    @Html.LabelFor(m => scmInchargeSection.TotalExpectedQuantityInCurrentYe, ResourceNames.DCR)
+
+                                    @if (scmInchargeSection != null && scmInchargeSection.TotalExpectedQuantityInCurrentYe != null)
+                                    {
+                                        @scmInchargeSection.TotalExpectedQuantityInCurrentYe
+                                    }
+                                    else if (scmSection != null && scmSection.TotalExpectedQuantityInCurrentYe != null)
+                                    {
+                                        @scmSection.TotalExpectedQuantityInCurrentYe
+                                    }
+
+                                </td>
+                                <td width="33%" class="text-left">
+
+                                    @Html.LabelFor(m => scmInchargeSection.TotalExpectedQuantityInNextYear, ResourceNames.DCR)
+
+                                    @if (scmInchargeSection != null && scmInchargeSection.TotalExpectedQuantityInNextYear != null)
+                                    {
+                                        @scmInchargeSection.TotalExpectedQuantityInNextYear
+                                    }
+                                    else if (scmSection != null && scmSection.TotalExpectedQuantityInNextYear != null)
+                                    {
+                                        @scmSection.TotalExpectedQuantityInNextYear
+                                    }
+
+                                </td>
+                                <td width="34%" class="rightnone-border text-left">
+
+
+                                    @Html.LabelFor(m => scmInchargeSection.TotalBenefitLossInRupeesLakhs, ResourceNames.DCR)
+
+                                    @if (scmInchargeSection != null && scmInchargeSection.TotalBenefitLossInRupeesLakhs != null)
+                                    {
+                                        @scmInchargeSection.TotalBenefitLossInRupeesLakhs
+                                    }
+                                    else if (scmSection != null && scmSection.TotalBenefitLossInRupeesLakhs != null)
+                                    {
+                                        @scmSection.TotalBenefitLossInRupeesLakhs
+                                    }
+
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+                @if (dapMktInchargeSection != null)
+                {
+                    <div id="card61" class="col-md-12 card" style="border:1px solid black">
+                        <div class="row">
+                            <div class="col-sm-6 col-xs-6 col-md-6">
+
+                                <div class=" bold">
+                                    For DAP Marketing
+                                </div>
+                                <div class="col-xs-4 col-sm-4 col-md-4">
+
+                                </div>
+
+                            </div>
+                            <div class="col-sm-6 col-xs-6 col-md-6">
+
+                                <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+                                    @Html.LabelFor(m => dapMktInchargeSection.CurrentApprover.ApprovalDate, ResourceNames.Common)
+                                </div>
+                                <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                    @if (dapMktInchargeSection != null && dapMktInchargeSection.CurrentApprover != null && dapMktInchargeSection.CurrentApprover.ApprovalDate.HasValue)
+                                    {
+                                        @dapMktInchargeSection.CurrentApprover.ApprovalDate.Value.ToShortDateString()
+                                    }
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <table class="none-border col-sm-12 col-xs-12 col-md-12 text-center">
+                                <tr>
+                                    <td width="50%" class="leftnone-border">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+
+                                            @Html.LabelFor(m => dapMktInchargeSection.DAPExpectedChange, ResourceNames.DCR)
+
+                                        </div>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                            @if (dapMktInchargeSection.DAPExpectedChange != null)
+                                            {
+                                                @dapMktInchargeSection.DAPExpectedChange
+                                            }
+                                        </div>
+
+
+                                    </td>
+                                    <td width="50%" class="rightnone-border ">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+
+                                            @Html.LabelFor(m => dapMktInchargeSection.CurrentApprover.Comments, ResourceNames.DCR)
+
+                                        </div>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                            @if (dapMktInchargeSection != null && dapMktInchargeSection.CurrentApprover != null && dapMktInchargeSection.CurrentApprover.Comments != null)
+                                            {
+                                                @dapMktInchargeSection.CurrentApprover.Comments
+                                            }
+
+
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                            <table class="none-border1 col-sm-12 col-xs-12 col-md-12 text-left">
+                                <tr>
+                                    <td width="50%" class="leftnone-border"></td>
+                                    <td width="50%" class="rightnone-border">
+                                        @Html.LabelFor(m => dapMktInchargeSection.DAPTOBECONSIDERED, ResourceNames.DCR)
+
+                                        @if (dapMktInchargeSection.DAPTOBECONSIDERED != null)
+                                        {
+                                            if (dapMktInchargeSection.DAPTOBECONSIDERED)
+                                            {
+                                                @Html.Label("Yes")
+                                            }
+                                            else
+                                            {
+                                                @Html.Label("No")
+                                            }
+                                        }
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+                }
+                @if (kapMktInchargeSection != null)
+                {
+
+                    <div id="card62" class="col-md-12 card" style="border:1px solid black">
+
+                        <div class="row">
+                            <div class="col-sm-6">
+
+                                <div class=" bold">
+                                    For KAP Marketing
+                                </div>
+                                <div class="col-xs-4 col-sm-4 col-md-4">
+
+                                </div>
+
+                            </div>
+                            <div class="col-sm-6">
+
+                                <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+                                    @Html.LabelFor(m => kapMktInchargeSection.CurrentApprover.ApprovalDate, ResourceNames.Common)
+                                </div>
+                                <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                    @if (kapMktInchargeSection != null && kapMktInchargeSection.CurrentApprover != null && kapMktInchargeSection.CurrentApprover.ApprovalDate != null)
+                                    {
+                                        @kapMktInchargeSection.CurrentApprover.ApprovalDate.Value.ToShortDateString()
+                                    }
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <table class="none-border col-sm-12 col-xs-12 col-md-12 text-center">
+                                <tr>
+                                    <td width="50%" class="leftnone-border">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+
+                                            @Html.LabelFor(m => kapMktInchargeSection.KAPExpectedChange, ResourceNames.DCR)
+
+                                        </div>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                            @if (kapMktInchargeSection.KAPExpectedChange != null)
+                                            {
+                                                @kapMktInchargeSection.KAPExpectedChange
+                                            }
+                                        </div>
+
+
+                                    </td>
+                                    <td width="50%" class="rightnone-border">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 text-left text-left">
+
+                                            @Html.LabelFor(m => kapMktInchargeSection.CurrentApprover.Comments, ResourceNames.DCR)
+
+                                        </div>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                            @if (kapMktInchargeSection != null && kapMktInchargeSection.CurrentApprover != null && kapMktInchargeSection.CurrentApprover.Comments != null)
+                                            {
+                                                @kapMktInchargeSection.CurrentApprover.Comments
+                                            }
+
+
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                            <table class="none-border1 col-sm-12 col-xs-12 col-md-12 text-left">
+                                <tr>
+                                    <td width="50%" class="leftnone-border"></td>
+                                    <td width="50%" class="rightnone-border">
+                                        @Html.LabelFor(m => kapMktInchargeSection.KAPTOBECONSIDERED, ResourceNames.DCR)
+
+
+                                        @if (kapMktInchargeSection.KAPTOBECONSIDERED != null)
+                                        {
+                                            if (kapMktInchargeSection.KAPTOBECONSIDERED)
+                                            {
+                                                @Html.Label("Yes")
+                                            }
+                                            else
+                                            {
+                                                @Html.Label("No")
+                                            }
+                                        }
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+
+                    </div>
+                }
+                @if (fanMktInchargeSection != null)
+                {
+                    <div id="card63" class="col-md-12 card" style="border:1px solid black">
+                        <div class="row">
+                            <div class="col-sm-6 col-xs-6 col-md-6">
+
+                                <div class=" bold">
+                                    For FAN Marketing
+                                </div>
+                                <div class="col-xs-4 col-sm-4 col-md-4">
+
+                                </div>
+
+                            </div>
+                            <div class="col-sm-6 col-xs-6 col-md-6">
+
+                                <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+                                    @Html.LabelFor(m => fanMktInchargeSection.CurrentApprover.ApprovalDate, ResourceNames.Common)
+                                </div>
+                                <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                    @if (fanMktInchargeSection != null && fanMktInchargeSection.CurrentApprover != null && fanMktInchargeSection.CurrentApprover.ApprovalDate != null)
+                                    {
+                                        @fanMktInchargeSection.CurrentApprover.ApprovalDate.Value.ToShortDateString()
+                                    }
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <table class="none-border col-sm-12 col-xs-12 col-md-12 text-center">
+                                <tr>
+                                    <td width="50%" class="leftnone-border">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+
+                                            @Html.LabelFor(m => fanMktInchargeSection.FANSExpectedChange, ResourceNames.DCR)
+
+                                        </div>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                            @if (fanMktInchargeSection.FANSExpectedChange != null)
+                                            {
+                                                @fanMktInchargeSection.FANSExpectedChange
+                                            }
+                                        </div>
+
+
+                                    </td>
+                                    <td width="50%" class="rightnone-border">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+
+                                            @Html.LabelFor(m => fanMktInchargeSection.CurrentApprover.Comments, ResourceNames.DCR)
+
+                                        </div>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                            @if (fanMktInchargeSection != null && fanMktInchargeSection.CurrentApprover != null && fanMktInchargeSection.CurrentApprover.Comments != null)
+                                            {
+                                                @fanMktInchargeSection.CurrentApprover.Comments
+                                            }
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                            <table class="none-border1 col-sm-12 col-xs-12 col-md-12 text-left">
+                                <tr>
+                                    <td width="50%" class="leftnone-border"></td>
+                                    <td width="50%" class="rightnone-border">
+                                        @Html.LabelFor(m => fanMktInchargeSection.FANSTOBECONSIDERED, ResourceNames.DCR)
+
+                                        @if (fanMktInchargeSection.FANSTOBECONSIDERED != null)
+                                        {
+                                            if (fanMktInchargeSection.FANSTOBECONSIDERED)
+                                            {
+                                                @Html.Label("Yes")
+                                            }
+                                            else
+                                            {
+                                                @Html.Label("No")
+                                            }
+                                        }
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+
+                    </div>
+                }
+                @if (lightingMktInchargeSection != null)
+                {
+                    <div id="card64" class="col-md-12 card" style="border:1px solid black">
+                        <div class="row">
+                            <div class="col-sm-6 col-xs-6 col-md-6">
+
+                                <div class=" bold">
+                                    For Lighting Marketing
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-8">
+
+                                </div>
+
+                            </div>
+                            <div class="col-sm-6 col-xs-6 col-md-6">
+                                <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+                                    @Html.LabelFor(m => lightingMktInchargeSection.CurrentApprover.ApprovalDate, ResourceNames.Common)
+                                </div>
+                                <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                    @if (lightingMktInchargeSection != null && lightingMktInchargeSection.CurrentApprover != null && lightingMktInchargeSection.CurrentApprover.ApprovalDate != null)
+                                    {
+                                        @lightingMktInchargeSection.CurrentApprover.ApprovalDate.Value.ToShortDateString()
+                                    }
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <table class="none-border col-sm-12 col-xs-12 col-md-12 text-center">
+                                <tr>
+                                    <td width="50%" class="leftnone-border">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+
+                                            @Html.LabelFor(m => lightingMktInchargeSection.LightingExpectedChange, ResourceNames.DCR)
+
+                                        </div>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                            @if (lightingMktInchargeSection.LightingExpectedChange != null)
+                                            {
+                                                @lightingMktInchargeSection.LightingExpectedChange
+                                            }
+                                        </div>
+
+
+                                    </td>
+                                    <td width="50%" class="rightnone-border">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+
+                                            @Html.LabelFor(m => lightingMktInchargeSection.CurrentApprover.Comments, ResourceNames.DCR)
+
+                                        </div>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                            @if (lightingMktInchargeSection != null && lightingMktInchargeSection.CurrentApprover != null && lightingMktInchargeSection.CurrentApprover.Comments != null)
+                                            {
+                                                @lightingMktInchargeSection.CurrentApprover.Comments
+                                            }
+
+
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                            <table class="none-border1 col-sm-12 col-xs-12 col-md-12 text-left">
+                                <tr>
+                                    <td width="50%" class="leftnone-border"></td>
+                                    <td width="50%" class="rightnone-border">
+                                        @Html.LabelFor(m => lightingMktInchargeSection.LightingTOBECONSIDERED, ResourceNames.DCR)
+
+
+
+                                        @if (lightingMktInchargeSection.LightingTOBECONSIDERED != null)
+                                        {
+                                            if (lightingMktInchargeSection.LightingTOBECONSIDERED)
+                                            {
+                                                @Html.Label("Yes")
+                                            }
+                                            else
+                                            {
+                                                @Html.Label("No")
+                                            }
+                                        }
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+                }
+                @if (mrMktInchargeSection != null)
+                {
+                    <div class="col-md-12 card" style="border:1px solid black">
+                        <div class="row">
+                            <div class="col-sm-6 col-xs-6 col-md-6">
+
+                                <div class=" bold">
+                                    For Morphy Richards Marketing
+                                </div>
+                                <div class="col-xs-4 col-sm-4 col-md-4">
+
+                                </div>
+
+                            </div>
+                            <div class="col-sm-6 col-xs-6 col-md-6">
+
+                                <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+                                    @Html.LabelFor(m => mrMktInchargeSection.CurrentApprover.ApprovalDate, ResourceNames.Common)
+                                </div>
+                                <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                    @if (mrMktInchargeSection != null && mrMktInchargeSection.CurrentApprover != null && mrMktInchargeSection.CurrentApprover.ApprovalDate != null)
+                                    {
+                                        @mrMktInchargeSection.CurrentApprover.ApprovalDate.Value.ToShortDateString()
+                                    }
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <table class="none-border col-sm-12 col-xs-12 col-md-12 text-center">
+                                <tr>
+                                    <td width="50%" class="leftnone-border">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+
+                                            @Html.LabelFor(m => mrMktInchargeSection.MRExpectedChange, ResourceNames.DCR)
+
+                                        </div>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                            @if (mrMktInchargeSection.MRExpectedChange != null)
+                                            {
+                                                @mrMktInchargeSection.MRExpectedChange
+                                            }
+                                        </div>
+
+
+                                    </td>
+                                    <td width="50%" class="rightnone-border">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+
+                                            @Html.LabelFor(m => mrMktInchargeSection.CurrentApprover.Comments, ResourceNames.DCR)
+
+                                        </div>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                            @if (mrMktInchargeSection != null && mrMktInchargeSection.CurrentApprover != null && mrMktInchargeSection.CurrentApprover.Comments != null)
+                                            {
+                                                @mrMktInchargeSection.CurrentApprover.Comments
+                                            }
+
+
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                            <table class="none-border1 col-sm-12 col-xs-12 col-md-12 text-left">
+                                <tr>
+                                    <td width="50%" class="leftnone-border"></td>
+                                    <td width="50%" class="rightnone-border">
+                                        @Html.LabelFor(m => mrMktInchargeSection.MRTOBECONSIDERED, ResourceNames.DCR)
+
+
+                                        @if (mrMktInchargeSection.MRTOBECONSIDERED != null)
+                                        {
+                                            if (mrMktInchargeSection.MRTOBECONSIDERED)
+                                            {
+                                                @Html.Label("Yes")
+                                            }
+                                            else
+                                            {
+                                                @Html.Label("No")
+                                            }
+                                        }
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+                }
+                @if (lumMktInchargeSection != null)
+                {
+                    <div id="card6" class="col-md-12 card" style="border:1px solid black">
+                        <div class="row ">
+                            <div class="col-sm-6 col-xs-6 col-md-6">
+
+                                <div class=" bold">
+                                    For Marketing
+                                </div>
+                                <div class="col-xs-4 col-sm-4 col-md-4">
+
+                                </div>
+
+                            </div>
+                            <div class="col-sm-6 col-xs-6 col-md-6">
+
+                                <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+                                    @Html.LabelFor(m => lumMktInchargeSection.CurrentApprover.ApprovalDate, ResourceNames.Common)
+                                </div>
+                                <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                    @if (lumMktInchargeSection != null && lumMktInchargeSection.CurrentApprover != null && lumMktInchargeSection.CurrentApprover.ApprovalDate != null)
+                                    {
+                                        @lumMktInchargeSection.CurrentApprover.ApprovalDate.Value.ToShortDateString()
+                                    }
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <table class="none-border col-sm-12 col-xs-12 col-md-12 text-center">
+                                <tr>
+                                    <td width="50%" class="leftnone-border">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+
+                                            @Html.LabelFor(m => lumMktInchargeSection.LUMExpectedChange, ResourceNames.DCR)
+
+                                        </div>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                            @if (lumMktInchargeSection.LUMExpectedChange != null)
+                                            {
+                                                @lumMktInchargeSection.LUMExpectedChange
+                                            }
+                                        </div>
+
+
+                                    </td>
+                                    <td width="50%" class="rightnone-border">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+
+                                            @Html.LabelFor(m => lumMktInchargeSection.CurrentApprover.Comments, ResourceNames.DCR)
+
+                                        </div>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                            @if (lumMktInchargeSection != null && lumMktInchargeSection.CurrentApprover != null && lumMktInchargeSection.CurrentApprover.Comments != null)
+                                            {
+                                                @lumMktInchargeSection.CurrentApprover.Comments
+                                            }
+
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                            <table class="none-border1 col-sm-12 col-xs-12 col-md-12 text-left">
+                                <tr>
+                                    <td width="50%" class="leftnone-border"></td>
+                                    <td width="50%" class="rightnone-border">
+                                        @Html.LabelFor(m => lumMktInchargeSection.LUMTOBECONSIDERED, ResourceNames.DCR)
+
+
+                                        @if (lumMktInchargeSection.LUMTOBECONSIDERED != null)
+                                        {
+                                            if (lumMktInchargeSection.LUMTOBECONSIDERED)
+                                            {
+                                                @Html.Label("Yes")
+                                            }
+                                            else
+                                            {
+                                                @Html.Label("No")
+                                            }
+                                        }
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+
+
+
+                    </div>
+                }
+                <div id="card7" class="col-md-12 card" style="border:1px solid black">
+                    <div class="row borderBottom">
+                        <div class="col-sm-6">
+
+                            @if (dcrSection.BusinessUnit.Contains("CP"))
+                            {
+                                <div class=" bold">
+                                    For AB Square
+                                </div>
+                            }
+                            else
+                            {
+                                <div class=" bold">
+                                    For LDC
+                                </div>
+                            }
+                            <div class="col-xs-6 col-sm-6 col-md-8">
+
+                            </div>
+
+                        </div>
+                        <div class="col-sm-6">
+
+                            <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+
+                                @Html.LabelFor(m => finalDCRProcessInchargeSection.CurrentApprover.ApprovalDate, ResourceNames.Common)
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                @if (finalDCRProcessInchargeSection != null && finalDCRProcessInchargeSection.CurrentApprover != null && finalDCRProcessInchargeSection.CurrentApprover.ApprovalDate != null)
+                                {
+                                    @finalDCRProcessInchargeSection.CurrentApprover.ApprovalDate.Value.ToShortDateString()
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row borderBottom">
+                        <div class="col-sm-6 col-xs-6 col-md-6">
+
+                            @*@Html.LabelFor(m => finalDCRProcessInchargeSection.CommentsAfterProtoTesting, ResourceNames.DCR)*@
+                            @Html.LabelFor(m => finalDCRProcessInchargeSection.CurrentApprover.Comments, ResourceNames.DCR)
+                        </div>
+                        <div class="col-sm-6 col-xs-6 col-md-6 text-left">
+
+                            @*@if (finalDCRProcessInchargeSection != null && finalDCRProcessInchargeSection.CommentsAfterProtoTesting != null)
+                                {
+                                    @finalDCRProcessInchargeSection.CommentsAfterProtoTesting
+                                }*@
+                            @if (finalDCRProcessInchargeSection != null && finalDCRProcessInchargeSection.CurrentApprover != null && finalDCRProcessInchargeSection.CurrentApprover.Comments != null)
+                            {
+                                @finalDCRProcessInchargeSection.CurrentApprover.Comments
+                            }
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-6 col-md-6">
+
+                            @Html.LabelFor(m => finalDCRProcessInchargeSection.IsApproved, ResourceNames.DCR)
+
+                        </div>
+                        <div class="col-sm-6 col-xs-6 col-md-6 text-left">
+
+                            @if (finalDCRProcessInchargeSection != null && finalDCRProcessInchargeSection.IsApproved != null)
+                            {
+                                @finalDCRProcessInchargeSection.IsApproved
+                            }
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="card8" class="col-md-12 card">
+                    <div class="row">
+                        <table class="col-sm-12 col-xs-12 col-md-12 text-center">
+                            <tr class="bold">
+                                <td colspan="2" class="rightBorder">
+                                    Approved by
+                                </td>
+                                <td>Released by</td>
+
+                            </tr>
+                            <tr class="borderBottom">
+                                <td class="rightBorder">HOD - AB Square (Appliances)</td>
+                                <td class="rightBorder">HOD - AB Square (Fans)</td>
+                                <td> CMR</td>
+                            </tr>
+                            <tr style="height:80px; ">
+                                <td class="rightBorder"></td>
+                                <td class="rightBorder"> </td>
+                                <td></td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+                <p>Form DD/F/07 </p>
+            </div>
+
+
+
+        </body>
+    </html>
+</div>
+</div>
+<div class="modal fade" id="printModel" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"><i class="fa fa-print"></i> Print DCR</h4>
+
+            </div>
+            <div class="modal-body">
+                <p><span class="text-danger text-default-light">@Html.ResourceValue("Text_Print", ResourceNames.Common)</span></p>
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered someTable">
+
+                        <thead>
+                            <tr>
+                                <th>Attachment Name</th>
+                                <th>Print / Download</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    DCR Form
+                                </td>
+                                <td>
+
+                                    <a onclick="Print(this);" data-action="6" data-sendbackto="" data-sendtorole="" style="cursor:pointer !important">Print</a>&nbsp; | &nbsp;
+                                    <a onclick="PrintPreview(this);" data-action="6" data-sendbackto="" data-sendtorole="" style="cursor:pointer !important">Preview</a>
+                                </td>
+                            </tr>
+                            @foreach (FileDetails item in dcrSection.Files)
+                            {
+                                <tr>
+                                    <td>@item.FileName</td>
+                                    <td>
+                                        <a data-url="@item.FileURL" onclick="DownloadUploadedFile(this);" style="cursor:pointer !important"> Download and Print </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>

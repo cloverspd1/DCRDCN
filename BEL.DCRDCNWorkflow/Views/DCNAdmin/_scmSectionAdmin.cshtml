@@ -1,0 +1,65 @@
+﻿@using BEL.DCRDCNWorkflow.Models
+@using BEL.DCRDCNWorkflow.Models.Common
+@using BEL.DCRDCNWorkflow.Models.Master;
+@using BEL.CommonDataContract;
+@model DCNDetailAdminSection
+
+
+
+    <div class="card">
+    <div class="card-head">
+        @Html.ResourceValue("Section_Title_SCMSection", ResourceNames.DCN)
+
+        <div class="btn collapse-btn" data-toggle="collapse" data-target="#scmSection"><i class="fa fa-chevron-down"></i></div>
+    </div>
+        <div class="card-body" id="scmSection">
+            <div class="form-horizontal">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span>
+                                Comments:
+
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+                                    @{int i = Model.ApproversList.FindIndex(p => p.Role == DCNRoles.SCM); }
+                                    @Html.TextAreaFor(m => m.SCMComment, new { maxlength = 500, @class = "form-control", @data_val = "true", @data_val_required = "Please Enter Comment", data_toggle = "tooltip", title = "Max 500 characters" })
+                                    @Html.ValidationMessageFor(m => m.SCMComment, ResourceNames.DCN)
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @if (Model.ApproversList.FirstOrDefault(p => p.Role == DCNRoles.SCM) != null && Model.ApproversList.FirstOrDefault(p => p.Role == DCNRoles.SCM).ApprovalDate.HasValue)
+                    {
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">
+                                    Date:
+
+                                </label>
+                                <div class="col-sm-8">
+                                    @(Model.ApproversList.FirstOrDefault(p => p.Role == DCNRoles.SCM) != null && Model.ApproversList.FirstOrDefault(p => p.Role == DCNRoles.SCM).ApprovalDate.HasValue ? Model.ApproversList.FirstOrDefault(p => p.Role == DCNRoles.DCRPROCESSINCHARGE).ApprovalDate.Value.ToShortDateString() : "-")
+                                    @*@((Model.CurrentApprover.ApprovalDate.HasValue ? Model.CurrentApprover.ApprovalDate.Value.ToShortDateString() : string.Empty))*@
+                                    @Html.HiddenFor(m => m.CurrentApprover.ApprovalDate)
+
+
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    <div class="clearfix"></div>
+</div>
+
+
+

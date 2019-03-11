@@ -1,0 +1,152 @@
+﻿@using BEL.DCRDCNWorkflow.Models.DCN
+@using BEL.CommonDataContract;
+@model Specification
+
+<div class="modal fade" id="addeditSpecificationModel" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">
+                    @if (Model.Index > 0)
+                    {
+                        <span>
+                            @Html.ResourceValue("Popup_Title_EditSpecification", ResourceNames.DCN)
+                        </span>
+                    }
+                    else
+                    {
+                        <span>
+                            @Html.ResourceValue("Popup_Title_AddSpecification", ResourceNames.DCN)
+                        </span>
+                    }
+                </h4>
+            </div>
+            @using (Ajax.BeginForm("SaveSpecification", "DCN", new AjaxOptions
+            {
+                HttpMethod = "POST",
+                LoadingElementId = "loading",
+                OnFailure = "OnFailure",
+                OnSuccess = "OnSpecificationaddSuccess",
+                OnBegin = "BeginClient"
+            }, new { enctype = "multipart/form-data", id = "frmSaveSpecification" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(m => m.RequestBy)
+                @Html.HiddenFor(m => m.RequestDate)
+                @Html.HiddenFor(m => m.RequestID)
+                @Html.HiddenFor(m => m.ID)
+                @Html.HiddenFor(m => m.Index)
+                @Html.HiddenFor(m => m.ItemAction)
+                <div id="divAddSpecificationSection" class="modal-body form-horizontal">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="ComponentRawMaterial" class="col-md-4 control-label">
+                                    <span class="text-danger text-default-light">*</span>
+                                    @Html.LabelFor(m => m.ComponentRawMaterial, ResourceNames.DCN):
+                                </label>
+                                <div class="col-md-8 ">
+                                    @Html.TextAreaFor(m => m.ComponentRawMaterial, new { maxlength = 255, @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.ComponentRawMaterial, ResourceNames.DCN)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="PresentSpecification" class="col-md-4 control-label">
+                                    <span class="text-danger text-default-light">*</span>
+                                    @Html.LabelFor(m => m.PresentSpecification, ResourceNames.DCN)
+                                </label>
+                                <div class="col-md-8 ">
+                                    @Html.TextBoxFor(m => m.PresentSpecification, new { maxlength = 255, @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.PresentSpecification, ResourceNames.DCN)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="FileNameList" class="col-md-4 control-label">
+                                    @Html.LabelFor(m => m.FNLPresentSpecification, ResourceNames.DCN):
+                                </label>
+                                <div class="col-md-8 ">
+                                    <div id="CTRLPresentSpecification" data-appname="@SiteURLs.DCRDCNSITEURL">
+                                    </div>
+                                    @Html.TextBoxFor(m => m.FNLPresentSpecification, new { @class = "notvisible" })                                    
+                                    @Html.ValidationMessageFor(m => m.FNLPresentSpecification, ResourceNames.DCN)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="RevisedSpecification" class="col-md-4 control-label">
+                                    <span class="text-danger text-default-light">*</span>
+                                    @Html.LabelFor(m => m.RevisedSpecification, ResourceNames.DCN)
+                                </label>
+                                <div class="col-md-8 ">
+
+                                    @Html.TextBoxFor(m => m.RevisedSpecification, new { maxlength = 255, @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.RevisedSpecification, ResourceNames.DCN)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="FileNameList" class="col-md-4 control-label">
+                                    @Html.LabelFor(m => m.FNLRevisedSpecification, ResourceNames.DCN):
+                                </label>
+                                <div class="col-md-8 ">
+                                    <div id="CTRLRevisedSpecification" data-appname="@SiteURLs.DCRDCNSITEURL">
+                                    </div>
+                                    @Html.TextBoxFor(m => m.FNLRevisedSpecification, new { @class = "notvisible" })
+                                    @Html.ValidationMessageFor(m => m.FNLRevisedSpecification, ResourceNames.DCN)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="modal-footer">
+                    @*<button type="button" class="btn btn-primary" onclick="OnModelSubmit(this.form.id)">@Html.ResourceValue("Button_Text_Save", ResourceNames.Common)</button>*@
+                    <button type="submit" class="btn btn-primary" >@Html.ResourceValue("Button_Text_Save", ResourceNames.Common)</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        @Html.ResourceValue("Button_Text_Close", ResourceNames.Common)
+                    </button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#addeditSpecificationModel").modal().on('shown.bs.modal', function () {
+            BindUserTags("#addeditSpecificationModel");
+            BindFileUploadControl({
+                ElementId: 'CTRLPresentSpecification', Params: {}, Url: "UploadFile",
+                AllowedExtensions: [],
+                maxFiles: 1,
+                CallBack: "OnPresentSpecificationFileUploaded"
+            });
+            uploadedPSFiles = BindFileList("FNLPresentSpecification", "CTRLPresentSpecification");
+            BindFileUploadControl({
+                ElementId: 'CTRLRevisedSpecification', Params: {}, Url: "UploadFile",
+                AllowedExtensions: [],
+                maxFiles: 1,
+                CallBack: "OnRevisedSpecificationFileUploaded"
+            });
+            uploadedRSFiles = BindFileList("FNLRevisedSpecification", "CTRLRevisedSpecification");
+            $.validator.unobtrusive.parsePopup("#addeditRevisedAppDocModel");
+        });
+    });
+</script>
+

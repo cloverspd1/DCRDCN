@@ -1,0 +1,90 @@
+﻿@using BEL.DCRDCNWorkflow.Models.DCN
+@using BEL.DCRDCNWorkflow.Models.Master
+@using BEL.CommonDataContract
+
+@model DesignEngineerInchargeSection
+<script type="text/javascript">
+    @{
+    List<MasterDataItem> approveRework = new List<MasterDataItem>();
+    approveRework.Add(new MasterDataItem("Approve", "Approve"));
+    approveRework.Add(new MasterDataItem("Rework", "Rework"));
+}
+</script>
+@using (Ajax.BeginForm("SaveDesignEngineerSection", "DCN", new AjaxOptions
+    {
+        HttpMethod = "POST",
+        LoadingElementId = "loading",
+        OnFailure = "OnFailure",
+        OnSuccess = "OnSuccess",
+        OnBegin = "BeginClient"
+    }, new { enctype = "multipart/form-data" }))
+{
+
+    @Html.HiddenFor(m => m.ListDetails[0].ItemId)
+    @Html.HiddenFor(m => m.ListDetails[0].ListName)
+    @Html.HiddenFor(m => m.SectionName)
+    @Html.HiddenFor(m => m.ActionStatus)
+    @Html.HiddenFor(m => m.Status)
+    @Html.Partial("_ApproversList", Model.ApproversList)
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-4 control-label left">
+                    <span class="text-danger text-default-light">*</span>
+                    @Html.ResourceValue("Label_Comments", ResourceNames.DCR)
+                </label>
+                <div class="col-sm-8">
+                    <div class="form-control noborder text-left">
+                        @Html.TextAreaFor(m => m.CurrentApprover.Comments, new { maxlength = 255, @class = "form-control", @data_val = "true", @data_val_required = "Please Enter Comment", data_toggle = "tooltip", title = "Max 255 characters" })
+                        @Html.HiddenFor(x => x.CurrentApprover.Approver)
+                        @Html.HiddenFor(x => x.CurrentApprover.Role)
+                        @Html.HiddenFor(x => x.CurrentApprover.AssignDate)
+                        @Html.ValidationMessageFor(m => m.CurrentApprover.Comments, ResourceNames.DCN)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">
+                    <span class="text-danger text-default-light">*</span>
+                    @Html.LabelFor(m => m.ApproveRework, ResourceNames.DCN)
+                </label>
+                <div class="col-sm-8">
+                    <div class="form-control noborder">
+                        @Html.DropDownListFor(m => m.ApproveRework, new SelectList((approveRework).OrderBy(x => x.Title).ToList(), "Value", "Title"), "Select", new { @class = "form-control", @data_selected = Model.ApproveRework })
+                        @Html.ValidationMessageFor(m => m.ApproveRework, ResourceNames.DCN)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    if (Model.CurrentApprover != null && Model.CurrentApprover.ApprovalDate.HasValue)
+    {
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label left">
+
+                        Date:
+                    </label>
+                    <div class="col-sm-8">
+                        <div class="form-control noborder">
+                            @((Model.CurrentApprover.ApprovalDate.HasValue ? Model.CurrentApprover.ApprovalDate.Value.ToShortDateString() : string.Empty))
+                            @Html.HiddenFor(m => m.CurrentApprover.ApprovalDate)
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+        </div>
+    }
+
+
+}

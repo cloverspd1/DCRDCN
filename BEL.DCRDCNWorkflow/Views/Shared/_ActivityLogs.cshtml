@@ -1,0 +1,138 @@
+﻿@using BEL.CommonDataContract
+@model ActivityLogSection
+@{
+    ResourceNames resources = ViewData["Resources"] != null ? (ResourceNames)ViewData["Resources"] : ResourceNames.Common;
+}
+<div id="divActivityLogs" class="card">
+    <div class="card-head">
+        @Html.ResourceValue("Section_Title", ResourceNames.Common_ActivityLogs)
+        <div class="btn collapse-btn collapsed" data-toggle="collapse" data-target="#activitylogbody"><i class="fa fa-chevron-down"></i></div>
+    </div>
+    <div id="activitylogbody" class="card-body in">
+        <div class="panel-body grid-view">
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered someTable">
+                    <thead>
+                        <tr>
+                            <th>@Html.ResourceValue("Grid_Title_ActivityAction", ResourceNames.Common_ActivityLogs)</th>
+                            <th>@Html.ResourceValue("Grid_Title_Section", ResourceNames.Common_ActivityLogs)</th>
+                            <th>@Html.ResourceValue("Grid_Title_Date", ResourceNames.Common_ActivityLogs)</th>
+                            <th>@Html.ResourceValue("Grid_Title_Time", ResourceNames.Common_ActivityLogs)</th>
+                            <th>@Html.ResourceValue("Grid_Title_PerformedBy", ResourceNames.Common_ActivityLogs)</th>
+                            <th>@Html.ResourceValue("Grid_Title_Changes", ResourceNames.Common_ActivityLogs)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.ActivityLogs != null && Model.ActivityLogs.Count > 0)
+                        {
+                            int idx = 1;
+                            foreach (var item in Model.ActivityLogs)
+                            {
+                                <tr>
+                                    <td>@item.Activity</td>
+                                    <td>@item.SectionName</td>
+                                    <td>@(item.Created != null ? item.Created.Value.ToLocalTime().ToString("dd/MM/yyyy") : "")</td>
+                                    <td>@(item.Created != null ? item.Created.Value.ToLocalTime().ToString("HH:mm:ss") : "")</td>
+                                    <td>@item.PerformedBy</td>
+                                    <td>
+                                        @if (!string.IsNullOrEmpty(item.Changes))
+                                        {
+                                            <a href="#" data-toggle="modal" data-target="#activityDetail@(idx)" class="btn btn-primary">
+                                                @Html.ResourceValue("Grid_Link_Title_Details", ResourceNames.Common_ActivityLogs)
+                                            </a>
+                                            <div class="modal fade" id="activityDetail@(idx)" tabindex="-1" role="dialog" aria-labelledby="activityDetail@(idx)Label">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                            <h4 class="modal-title" id="activityDetail@(idx)Label">
+                                                                @Html.ResourceValue("Popup_Title_Details", ResourceNames.Common_ActivityLogs)
+                                                            </h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            @{ string[] actchangeslist = item.Changes.Split('\n');
+                                                            <table class="table table-hover table-bordered someTable">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>@Html.ResourceValue("Text_Field", ResourceNames.Common)</th>
+                                                                        <th>@Html.ResourceValue("Text_Value", ResourceNames.Common_ActivityLogs)</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    @foreach (string c in actchangeslist)
+                                                                    {
+                                                                        if (!string.IsNullOrEmpty(c) && c.Split('\t').Length == 2)
+                                                                        {
+                                                                            string[] valueparts = c.Split('\t');
+                                                                            <tr>
+                                                                                <td>
+                                                                                    @Html.Label(valueparts[0], resources)
+                                                                                </td>
+                                                                                <td>
+                                                                                    @{
+                                                                            string value = valueparts[1];
+                                                                            try
+                                                                            {
+                                                                                if (value.ToLower().Equals("true") || value.ToLower().Equals("false"))
+                                                                                {
+                                                                                    string boolValue = value.ToLower().Equals("true") ? "Yes" : "No";
+                                                                                    @(new MvcHtmlString(boolValue))
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    if (value.Contains("/") && value.Contains(":") && (value.Contains("AM") || value.Contains("PM")))
+                                                                                    {
+                                                                                        string[] datetimepart = value.Split(' ');
+                                                                                        string[] datepart = datetimepart[0].Split('/');
+                                                                                        DateTime dt = new DateTime(int.Parse(datepart[2]), int.Parse(datepart[0]), int.Parse(datepart[1]));
+                                                                                        @(new MvcHtmlString(dt.ToString("dd/MM/yyyy") + (valueparts[0].ToLower().Contains("time") ? " " + datetimepart[1] + " " + datetimepart[2] : "")))
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        @(new MvcHtmlString(value))
+                                                                                    }
+                                                                                }
+
+                                                                            }
+                                                                            catch
+                                                                            {
+                                                                                @(new MvcHtmlString(value))
+                                                                            }
+                                                                                    }
+                                                                                </td>
+                                                                            </tr>
+                                                                        }
+                                                                    }
+                                                                </tbody>
+                                                            </table>
+                                                            }
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                                @Html.ResourceValue("Button_Text_Close", ResourceNames.Common)
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </td>
+                                </tr>
+                                        idx++;
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="6" class="text-center text-danger">
+                                    @Html.ResourceValue("Grid_Text_NoData", ResourceNames.Common)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>

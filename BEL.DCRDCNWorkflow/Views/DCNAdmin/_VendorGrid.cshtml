@@ -1,0 +1,40 @@
+﻿@using BEL.DCRDCNWorkflow.Models.DCN
+@using BEL.CommonDataContract
+@model List<ITrans>
+<div class="table-responsive" id="vendortable">
+    </div>
+    <div class="table-responsive" id="vendortablefrommodel">
+        <table class="table table-hover table-bordered someTable" id="vendortable">
+            <thead>
+                <tr>
+                    <th>@Html.ResourceValue("Grid_Title_VendorName", ResourceNames.DCR)</th>
+                    <th>@Html.ResourceValue("Grid_Title_FGStock", ResourceNames.DCR)</th>
+                    <th>@Html.ResourceValue("Grid_Title_ExistingComponentStock", ResourceNames.DCR)</th>
+                    <th>@Html.ResourceValue("Grid_Title_DateOfImplementation", ResourceNames.DCR)</th>
+                </tr>
+            </thead>
+            <tbody id="vendortbody">
+                @if (Model != null && Model.Count() > 0)
+                {
+                    foreach (VendorDCN item in Model)
+                    {
+                        <tr>
+                            <td>@item.VendorName</td>
+                            <td>@item.FGStock</td>
+                            <td>@item.ExistingComponentStock</td>
+                            <td>@(item.DateOfImplementation.HasValue ? item.DateOfImplementation.Value.ToString("dd/MM/yyyy") : "")</td>
+                        </tr>
+
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="4" class="text-center text-danger" id="nodata">
+                            @Html.ResourceValue("Grid_Text_NoVendorData", ResourceNames.DCR)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

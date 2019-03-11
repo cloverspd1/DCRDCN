@@ -1,0 +1,17 @@
+﻿@model List<BEL.CommonDataContract.Button>
+<ul class="header-nav header-nav-options nav navbar-nav navbar-right pull-right">
+    @{ int buttonCount = 1;}
+    @foreach (var button in Model)
+    {
+        string jsFunc = string.IsNullOrEmpty(button.JsFunction) ? string.Empty : "onClick=" + button.JsFunction + "(this);";
+        string status = ((int)button.ButtonStatus).ToString();
+        string isVisible = button.IsVisible ? string.Empty : "class=hide";
+        <li class="pull-left"><a id="btn@(buttonCount++)" @isVisible @jsFunc data-action="@status" data-sendbackto="@button.SendBackTo" data-sendtorole="@button.SendToRole" class="btn btn-default" title="@button.ToolTip" data-placement="bottom"><i class="@button.Icon"></i>&nbsp;@button.Name</a></li>
+    }
+    <li class="pull-left">
+        <a id="btnExit" class="btn btn-default" onclick="Exit(this);" title="Exit without saving any data"  data-placement="bottom">
+            <i class="fa fa-sign-out"></i>&nbsp;
+            @Html.ResourceValue("Button_Text_Exit", ResourceNames.Common)
+        </a>
+    </li>
+</ul>

@@ -1,0 +1,245 @@
+﻿@using BEL.DCRDCNWorkflow.Models.DCR
+@using BEL.CommonDataContract
+
+@model VendorDCR
+@{
+    List<MasterDataItem> costincdecList = new List<MasterDataItem>();
+    costincdecList.Add(new MasterDataItem("Increase", "Increase"));
+    costincdecList.Add(new MasterDataItem("Decrease", "Decrease"));
+}
+
+<div class="modal fade" id="addeditVendorModel" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">
+                    @if (Model.Index > 0)
+                    {
+                        <span>
+                            @Html.ResourceValue("Popup_Title_EditVendor", ResourceNames.DCR)
+                        </span>
+                    }
+                    else
+                    {
+                        <span>
+                            @Html.ResourceValue("Popup_Title_AddVendor", ResourceNames.DCR)
+                        </span>
+                    }
+                </h4>
+            </div>
+            @using (Ajax.BeginForm("SaveVendor", "DCRAdmin", new AjaxOptions
+            {
+                HttpMethod = "POST",
+                LoadingElementId = "loading",
+                OnFailure = "OnFailure",
+                OnSuccess = "OnAdminVendoraddSuccess",
+                OnBegin = "BeginClient"
+            }, new { enctype = "multipart/form-data", id = "frmSaveVendor" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(m => m.RequestBy)
+                @Html.HiddenFor(m => m.RequestDate)
+                @Html.HiddenFor(m => m.RequestID)
+                @Html.HiddenFor(m => m.ID)
+                @Html.HiddenFor(m => m.Index)
+                @Html.HiddenFor(m => m.ItemAction)
+
+                <div id="divCriticalInsightSection" class="modal-body form-horizontal">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="Objective" class="col-md-4 control-label">
+                                    <span class="text-danger text-default-light">*</span>
+                                    @Html.LabelFor(m => m.VendorName, ResourceNames.DCR)
+                                </label>
+                                <div class="col-md-8 ">
+                                    @Html.TextBoxFor(m => m.VendorName, new { @class = "user-tags", @data_hint = "Type and Select Vendor Name", @data_url = "/DCR/GetVendors", @data_limit = "1", @data_onadd = "VendorAdded", @data_onremove = "VendorRemoved", @data_displaycolumn = "name" })
+                                    @Html.ValidationMessageFor(m => m.VendorName, ResourceNames.DCR)
+
+                                    @*@Html.TextBoxFor(m => m.VendorName, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.VendorName, ResourceNames.DCR)*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="DesiredResult" class="col-md-4 control-label">
+                                    @*<span class="text-danger text-default-light">*</span>*@
+                    @*@Html.LabelFor(m => m.Quantity, ResourceNames.DCR)
+                                    </label>
+                                    <div class="col-md-8 ">
+                                        @Html.TextBoxFor(m => m.Quantity, new { @class = "form-control integeronly" })
+                                        @Html.ValidationMessageFor(m => m.Quantity, ResourceNames.DCR)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="DesiredResult" class="col-md-4 control-label">
+                                    @*<span class="text-danger text-default-light">*</span>*@
+                                    @Html.LabelFor(m => m.FGStock, ResourceNames.DCR)
+                                </label>
+                                <div class="col-md-8 ">
+                                    @Html.TextBoxFor(m => m.FGStock, new { @class = "form-control integeronly" })
+                                    @Html.ValidationMessageFor(m => m.FGStock, ResourceNames.DCR)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="DesiredResult" class="col-md-4 control-label">
+                                    @*<span class="text-danger text-default-light">*</span>*@
+                                    @Html.LabelFor(m => m.ExistingComponentStock, ResourceNames.DCR)
+                                </label>
+                                <div class="col-md-8 ">
+                                    @Html.TextBoxFor(m => m.ExistingComponentStock, new { @class = "form-control integeronly" })
+                                    @Html.ValidationMessageFor(m => m.ExistingComponentStock, ResourceNames.DCR)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="Objective" class="col-md-4 control-label">
+                                    @Html.LabelFor(m => m.DateOfImplementation, ResourceNames.DCR)
+                                </label>
+                                <div class="col-md-8 ">
+                                    <div class='input-group date datepicker'>
+                                        @Html.TextBoxFor(m => m.DateOfImplementation, "{0:dd/MM/yyyy}", new { @class = "form-control" })
+                                        @Html.TextBoxFor(m => m.DateOfImplementation, "{0:dd/MM/yyyy hh:mm tt}", new { @class = "notvisible", @id = "hdnDateofIssueofNew", @Name = "hdnDateofIssueofNew" })
+                                        <span class="input-group-addon">
+                                            <span class="fa fa-calendar"></span>
+                                        </span>
+                                    </div>
+                                    @Html.ValidationMessageFor(m => m.DateOfImplementation, ResourceNames.DCR)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row forLUM">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="DesiredResult" class="col-md-4 control-label">
+                                    <span class="text-danger text-default-light">*</span>
+                                    @Html.LabelFor(m => m.ItemCode, ResourceNames.DCR)
+                                </label>
+                                <div class="col-md-8 ">
+                                    @Html.TextBoxFor(m => m.ItemCode, new { @class = "form-control" ,  @data_val = "true", @data_val_required = "Item Code is required (Max length 255 Char.) "})
+                                    @Html.ValidationMessageFor(m => m.ItemCode, ResourceNames.DCR)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row forLUM">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="DesiredResult" class="col-md-4 control-label">
+                                    <span class="text-danger text-default-light">*</span>
+                                    @Html.LabelFor(m => m.CostIncreaseDecrease, ResourceNames.DCR)
+                                </label>
+                                <div class="col-md-8 ">
+                                    @Html.DropDownListFor(m => m.CostIncreaseDecrease, new SelectList((costincdecList).OrderBy(x => x.Title).ToList(), "Value", "Title", Model.CostIncreaseDecrease), "Select", new { @class = "form-control", @data_val = "true", @data_val_required = "Cost Increase/Decrease is required ", @data_selected = Model.CostIncreaseDecrease })
+                                    @Html.ValidationMessageFor(m => m.CostIncreaseDecrease, ResourceNames.DCR)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row forLUM">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="DesiredResult" class="col-md-4 control-label">
+                                    <span class="text-danger text-default-light">*</span>
+                                    @Html.LabelFor(m => m.CostValue, ResourceNames.DCR)
+                                </label>
+                                <div class="col-md-8 ">
+                                    @Html.TextBoxFor(m => m.CostValue, new { @class = "form-control fixedtwodecimal numberonly", @data_val = "true", @data_val_required = "Cost Value is required (Max length 15 digit.) " })
+                                    @Html.ValidationMessageFor(m => m.CostValue, ResourceNames.DCR)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row forLUM">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="DesiredResult" class="col-md-4 control-label">
+                                    <span class="text-danger text-default-light">*</span>
+                                    @Html.LabelFor(m => m.PercentageChange, ResourceNames.DCR)
+                                </label>
+                                <div class="col-md-8 ">
+                                    @Html.TextBoxFor(m => m.PercentageChange, new { @class = "form-control fixedtwodecimal numberonly", @data_val = "true", @data_val_required = "% Change is required (Max length 15 digit.) " })
+                                    @Html.ValidationMessageFor(m => m.PercentageChange, ResourceNames.DCR)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="forCP">
+                        @Html.HiddenFor(m => m.ItemCode)
+                        @Html.HiddenFor(m => m.CostIncreaseDecrease)
+                        @Html.HiddenFor(m => m.PercentageChange)
+                        @Html.HiddenFor(m => m.CostValue)
+                    </div>
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="OnModelSubmit(this.form.id)">@Html.ResourceValue("Button_Text_Save", ResourceNames.Common)</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        @Html.ResourceValue("Button_Text_Close", ResourceNames.Common)
+                    </button>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#addeditVendorModel").modal().on('shown.bs.modal', function () {
+            BindDatePicker("#addeditVendorModel");
+            BindUserTags("#addeditVendorModel");
+            $.validator.unobtrusive.parsePopup("#addeditVendorModel");
+            BindValidation();
+            if($("#BusinessUnit").val().indexOf("CP") > 0)
+            {
+                $(".forLUM").html("");
+            }
+            else
+            {
+                $(".forCP").html("");
+            }
+        });
+    });
+    var onPlantadding = false, onPlantremoving = false;
+    function VendorAdded(ele, id, text) {
+        if (!onPlantremoving && !onPlantadding) {
+            onPlantadding = true;
+            $("#VendorName").tokenInput("clear");
+            $("#VendorName").tokenInput("add", { id: decodeURIComponent(text), name: decodeURIComponent(text) });
+            $("#VendorName").val(id).change();
+
+            // $("#VendorName").val(decodeURIComponent(text));
+        }
+        onPlantadding = false;
+    }
+    function VendorRemoved(ele) {
+        if (!onPlantadding && !onPlantremoving) {
+            onPlantremoving = true;
+            $("#VendorName").tokenInput("clear");
+            //$("#CodeNumber").val("").change();
+            $("#VendorName").val("");
+        }
+        onPlantremoving = false;
+    }
+</script>
+
+
+

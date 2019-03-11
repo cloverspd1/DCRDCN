@@ -1,0 +1,55 @@
+﻿@using BEL.CommonDataContract
+@model List<string>
+@{
+    ViewBag.Title = Html.ResourceValue("Page_CacheTitle", ResourceNames.Common);
+}
+<div id="tab-general">
+    <div class="row mbl">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-head">
+                    @Html.ResourceValue("Page_CacheTitle", ResourceNames.Common)
+                    <div class="btn collapse-btn" data-toggle="collapse" data-target="#divClearCache"><i class="fa fa-chevron-down"></i></div>
+                </div>
+                <div class="card-body form-horizontal" id="divClearCache">
+                    <div class="text-left">
+                        <button id="btnClearCache" type="button" class="btn btn-primary">@Resources.Common.Button_Text_ClearCache</button>
+                    </div>
+                    <div class="grid-view">
+                        <div class="table-responsive-npdobstacle">
+                            <table class="table table-hover table-bordered someTable" id="tblData">
+                                <thead>
+                                    <tr>
+                                        <th width="2%">@Html.CheckBox("parentCache", false, new { id = "CacheParentItem", @class = "parentCacheChk" })</th>
+                                        <th width="98%">@Html.ResourceValue("Grid_Title_CacheKey", ResourceNames.Common)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model != null && Model.Count() > 0)
+                                    {
+                                        foreach (string item in Model)
+                                        {
+                                            <tr>
+                                                <td width="2%">@Html.CheckBox("chkAuthorized" + item, false, new { id = item, name = "chkCache" + item, @data = item + "C", @class = "childCachechk" })</td>
+                                                <td width="98%">@item</td>
+                                            </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td colspan="2" class="text-center text-danger">@Html.ResourceValue("Grid_Text_NoData", ResourceNames.Common)</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/bundles/adminindex")
+}

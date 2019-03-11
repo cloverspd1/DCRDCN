@@ -1,0 +1,134 @@
+﻿@using BEL.DCRDCNWorkflow.Models;
+@using BEL.CommonDataContract
+@using BEL.DCRDCNWorkflow.Models.Master
+@using BEL.DCRDCNWorkflow.Models.Common
+@model DCRAdminDetailSection
+
+@{List<MasterDataItem> statusList = new List<MasterDataItem>();
+statusList.Add(new MasterDataItem("Approved", "Approved"));
+statusList.Add(new MasterDataItem("Not Approved", "Not Approved"));
+
+
+ApproverMaster approverusrelist = Model.MasterData.FirstOrDefault(x => x.NameOfMaster.Equals(DCRDCNListNames.APPROVERMASTER)) as ApproverMaster;
+//List<ApproverMasterListItem> DesignDocumentEngineerList = approverusrelist.Items.Where(x => (x as ApproverMasterListItem).Role == DCRRoles.DESIGNDOCUMENTENGINEER && (x as ApproverMasterListItem).BusinessUnit == Model.BusinessUnit).ToList().ConvertAll(p => (ApproverMasterListItem)p);
+//DesignDocumentEngineerList = Helper.splitUser(DesignDocumentEngineerList);
+
+List<ApproverMasterListItem> DesignEngineerList = approverusrelist.Items.Where(x => (x as ApproverMasterListItem).Role == DCRRoles.DESIGNENGINEER && (x as ApproverMasterListItem).BusinessUnit == Model.BusinessUnit).ToList().ConvertAll(p => (ApproverMasterListItem)p);
+DesignEngineerList = Helper.splitUser(DesignEngineerList);
+}
+<div class="form-horizontal">
+    <div class="card" id="cchead">
+        <div class="card-head">
+            @Html.ResourceValue("Section_Title_INCHARGESECTION", ResourceNames.DCR)
+
+            <div class="btn collapse-btn" data-toggle="collapse" data-target="#fnlDCRPCRIN"><i class="fa fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body" id="fnlDCRPCRIN">
+            <div class="form-horizontal">
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span>
+                                @Html.LabelFor(m => m.IsApproved, ResourceNames.DCR)
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+                                    @Html.DisplayFor(m => m.IsApproved)
+                                    @Html.HiddenFor(m => m.IsApproved)
+                                    @*@Html.DropDownListFor(m => m.IsApproved, new SelectList((statusList).OrderBy(x => x.Title).ToList(), "Value", "Title"), "Select", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.IsApproved, ResourceNames.DCR)*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                @Html.LabelFor(m => Model.CurrentApprover.ApprovalDate, ResourceNames.Common)
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+                                    @(Model.CurrentApprover != null && Model.CurrentApprover.ApprovalDate.HasValue ? Model.CurrentApprover.ApprovalDate.Value.ToShortDateString() : "-")
+                                    @Html.Hidden("Approver", Model.CurrentApprover != null && Model.CurrentApprover.ApprovalDate.HasValue ? Model.CurrentApprover.ApprovalDate.Value.ToShortDateString() : string.Empty)
+                                    @Html.HiddenFor(x => x.CurrentApprover.Approver)
+                                    @Html.HiddenFor(x => x.CurrentApprover.Role)
+                                    @Html.HiddenFor(x => x.CurrentApprover.AssignDate)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span>
+                                @*@Html.LabelFor(m => m.CommentsAfterProtoTesting, ResourceNames.DCR)*@
+                                @Html.LabelFor(m => m.CurrentApprover.Comments, ResourceNames.DCR)
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+                                    @*@Html.TextAreaFor(m => m.CommentsAfterProtoTesting, new { maxlength = 255, @class = "form-control", data_toggle = "tooltip", title = "Max 255 characters" })
+                                        @Html.ValidationMessageFor(m => m.CommentsAfterProtoTesting, ResourceNames.DCR)*@
+                                    @Html.TextAreaFor(m => m.CurrentApprover.Comments, new { maxLength = 255, @class = "form-control", @data_val = "true", @data_val_required = "Please Enter Comment", data_toggle = "tooltip", title = "Max 255 characters" })
+                                    @Html.ValidationMessageFor(m => m.CurrentApprover.Comments, ResourceNames.DCR)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 fnlconsider">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span>
+                                @*@Html.LabelFor(m => m.DesignDocumentEngineer, ResourceNames.DCR)*@
+                                @Html.LabelFor(m => m.FinalDesignEngineer, ResourceNames.DCR)
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="form-control noborder text-left">
+                                    @*@Html.DisplayFor(m => m.DesignDocumentEngineerName)
+                                        @Html.HiddenFor(m => m.DesignDocumentEngineer)
+                                        @Html.HiddenFor(m => m.DesignDocumentEngineerName)*@
+
+                                    @Html.DisplayFor(m => m.FinalDesignEngineerName)
+                                    @Html.HiddenFor(m => m.FinalDesignEngineer)
+                                    @Html.HiddenFor(m => m.FinalDesignEngineerName)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="col-md-4 control-label">
+                                <span class="text-danger text-default-light">*</span>
+                                @Html.LabelFor(m => m.TargetDateOfImplementation, ResourceNames.DCR)
+                            </label>
+                            <div class="col-md-8">
+                                <div class="input-group date datepicker">
+                                    @Html.TextBoxFor(m => m.TargetDateOfImplementation, "{0:dd/MM/yyyy}", new { @class = "form-control", @disabled = "disabled" })
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-calendar"></span>
+                                    </span>
+                                </div>
+                                @Html.HiddenFor(m => m.TargetDateOfImplementation)
+                                @*@Html.ValidationMessageFor(m => m.TargetDateOfImplementation, ResourceNames.DCR)*@
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+
+</div>

@@ -1,0 +1,127 @@
+﻿@using BEL.DCRDCNWorkflow.Models;
+@using BEL.DCRDCNWorkflow.Models.Common;
+@using BEL.CommonDataContract;
+@model DCRAdminContract
+@{
+
+    DCRAdminForm form = Model.Forms.FirstOrDefault() as DCRAdminForm;
+    ViewBag.Title = Html.ResourceValue("Page_Title", ResourceNames.DCR);
+    DCRAdminDetailSection dcrAdminSection = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.DCRDETAILADMINSECTION)) as DCRAdminDetailSection;
+    ApplicationStatusSection appStatus = form.SectionsList.FirstOrDefault(f => f != null && f.SectionName.Equals(SectionNameConstant.APPLICATIONSTATUS)) as ApplicationStatusSection;
+
+    string status = dcrAdminSection.Status.ToLower();
+    string sectionActiveCss = string.Empty;
+    if (status.Equals("completed") || status.Equals("rejected"))
+    {
+        sectionActiveCss = "disabled";
+    }
+
+
+}
+
+
+@if (form != null)
+{
+    @section buttons{
+        @Html.Partial("_ButtonGroup", form.Buttons)
+    }
+
+
+    if (!string.IsNullOrEmpty(form.FormStatus))
+    {
+        <div class="card-body text-right pad-bot-15">
+            <div class="label label-primary">
+                @form.FormStatus
+            </div>
+        </div>
+    }
+    using (Ajax.BeginForm("SaveDCRAdminForm", "DCRAdmin", new AjaxOptions
+    {
+        HttpMethod = "POST",
+        LoadingElementId = "loading",
+        OnFailure = "OnFailure",
+        OnSuccess = "OnSuccess",
+        OnBegin = "BeginClient"
+    }, new { enctype = "multipart/form-data" }))
+    {
+
+        @Html.AntiForgeryToken()
+
+        <div id="divDCRForm">
+            <div id="tab-general">
+                <div class="row mbl">
+                    <div class="col-lg-12">
+                        <div class="tab-content responsive @sectionActiveCss" id="generalTabContent">
+                            @if (dcrAdminSection != null)
+                            {
+
+                                @Html.Partial("_dcrDetailAdminSection", dcrAdminSection)
+                                if (appStatus != null && appStatus.ApplicationStatusList.Any(p => !string.IsNullOrEmpty(p.Approver) && p.Role == DCRRoles.DCRINCHARGENAVIGATOR && p.Status != ApproverStatus.NOTREQUIRED))
+                                {
+                                    @Html.Partial("_dcrInchargeNavigatorAdminSection", dcrAdminSection)
+                                }
+                                @Html.Partial("_dcrProcessInchargeAdminSection", dcrAdminSection)
+                                @Html.Partial("_designEnggAdminSection", dcrAdminSection)
+                                @*@Html.Partial("_designEngineerInchargeAdminSection", dcrAdminSection)*@
+                                @Html.Partial("_ScmHeadInchargeAdminSection", dcrAdminSection)
+                                @Html.Partial("_QAInchargeAdminSection", dcrAdminSection)
+                                if (appStatus != null && appStatus.ApplicationStatusList.Any(p => !string.IsNullOrEmpty(p.Approver) && p.Role == DCRRoles.DAPMARKETINGINCHARGE && p.Status != ApproverStatus.NOTREQUIRED))
+                                {
+                                    @Html.Partial("_DAPMarketingInchargeAdminSection", dcrAdminSection)
+                                }
+                                if (appStatus != null && appStatus.ApplicationStatusList.Any(p => !string.IsNullOrEmpty(p.Approver) && p.Role == DCRRoles.KAPMARKETINGINCHARGE && p.Status != ApproverStatus.NOTREQUIRED))
+                                {
+                                    @Html.Partial("_KAPMarketingInchargeAdminSection", dcrAdminSection)
+                                }
+                                if (appStatus != null && appStatus.ApplicationStatusList.Any(p => !string.IsNullOrEmpty(p.Approver) && p.Role == DCRRoles.FANSMARKETINGINCHARGE && p.Status != ApproverStatus.NOTREQUIRED))
+                                {
+
+                                    @Html.Partial("_FANSMarketingInchargeAdminSection", dcrAdminSection)
+                                }
+                                if (appStatus != null && appStatus.ApplicationStatusList.Any(p => !string.IsNullOrEmpty(p.Approver) && p.Role == DCRRoles.LIGHTINGMARKETINGINCHARGE && p.Status != ApproverStatus.NOTREQUIRED))
+                                {
+                                    @Html.Partial("_LightingMarketingInchargeAdminSection", dcrAdminSection)
+                                }
+                                if (appStatus != null && appStatus.ApplicationStatusList.Any(p => !string.IsNullOrEmpty(p.Approver) && p.Role == DCRRoles.MORPHYRICHARDSMARKETINGINCHARGE && p.Status != ApproverStatus.NOTREQUIRED))
+                                {
+                                    @Html.Partial("_MRMarketingInchargeAdminSection", dcrAdminSection)
+                                }
+                                if (appStatus != null && appStatus.ApplicationStatusList.Any(p => !string.IsNullOrEmpty(p.Approver) && p.Role == DCRRoles.LUMMARKETINGINCHARGE && p.Status != ApproverStatus.NOTREQUIRED))
+                                {
+                                    @Html.Partial("_LUMMarketingInchargeAdminSection", dcrAdminSection)
+                                }
+                                @Html.Partial("_CCHeadAdminSection", dcrAdminSection)
+                                @Html.Partial("_finalDCRProcessInchargeAdminSection", dcrAdminSection)
+                            }
+                            <div class="clearfix"></div>
+                        </div>
+
+                            @if (appStatus != null)
+                            {
+                                @Html.Partial("_ApplicationStatus", appStatus)
+                            }
+                            @{ ActivityLogSection activityLog = form.SectionsList.FirstOrDefault(f => f.SectionName.Equals(DCRSectionName.ACTIVITYLOG)) as ActivityLogSection; }
+                            @if (activityLog != null)
+                            {
+                                @Html.Partial("_ActivityLogs", activityLog, new ViewDataDictionary { { "Resources", ResourceNames.DCR } })
+                            }
+
+
+                      
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    }
+    <div class="scroll-top-wrapper ">
+        <i class="fa fa-chevron-up">
+        </i>
+    </div>
+
+    <div id="addeditVendor"></div>
+    @section scripts{
+        @Scripts.Render("~/bundles/dcrindex")
+    }
+}

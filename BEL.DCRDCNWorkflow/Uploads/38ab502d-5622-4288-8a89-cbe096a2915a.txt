@@ -1,0 +1,6 @@
+   public JsonResult GetStaticCPUpers()
+        {
+            int MarketingLevel1 = Convert.ToInt16(System.Configuration.ConfigurationManager.AppSettings["MarketingLevel1ForCp"]);
+            int MerketingLevel2 = Convert.ToInt16(System.Configuration.ConfigurationManager.AppSettings["MarketingLevel2ForCp"]);
+         
+        }

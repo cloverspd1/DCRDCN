@@ -1,0 +1,74 @@
+﻿@using BEL.DCRDCNWorkflow.Models.DCN
+@using BEL.CommonDataContract
+@model List<ITrans>
+
+<div class="table-responsive">
+    <table class="table table-hover table-bordered someTable">
+        <thead>
+            <tr>
+                <th>@Html.ResourceValue("Grid_Title_Supplier", ResourceNames.DCN)</th>
+                <th>@Html.ResourceValue("Grid_Title_DateofImplementation", ResourceNames.DCN)</th>
+                <th>@Html.ResourceValue("Grid_Title_StartProductsrno", ResourceNames.DCN)</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Count > 0)
+            {
+                //foreach (VendorDCN item in Model)
+                for (int idx = 0; idx < Model.Count; idx++)
+                {
+
+                    @Html.Hidden("VendorDCNPostList[" + idx + "].Index", Model[idx].Index)
+                    @Html.Hidden("VendorDCNPostList[" + idx + "].VendorName", (Model[idx] as VendorDCN).VendorName)
+                    @Html.Hidden("VendorDCNPostList[" + idx + "].ID", (Model[idx] as VendorDCN).ID)
+                    @Html.Hidden("VendorDCNPostList[" + idx + "].RequestID", (Model[idx] as VendorDCN).RequestID)
+                    @Html.Hidden("VendorDCNPostList[" + idx + "].Quantity", (Model[idx] as VendorDCN).Quantity)
+                    @Html.Hidden("VendorDCNPostList[" + idx + "].RequestBy", (Model[idx] as VendorDCN).RequestBy)
+                    @Html.Hidden("VendorDCNPostList[" + idx + "].RequestDate", (Model[idx] as VendorDCN).RequestDate)
+                    @Html.Hidden("VendorDCNPostList[" + idx + "].ItemAction", (Model[idx] as VendorDCN).ItemAction)
+                    @Html.Hidden("VendorDCNPostList[" + idx + "].Status", (Model[idx] as VendorDCN).Status)
+
+                    <tr>
+
+                        <td>@Html.DisplayFor(m => (m[idx] as VendorDCN).VendorName)</td>
+                        <td>
+                            <div class="input-group date datepicker">
+                                @Html.TextBoxFor(m => (m[idx] as VendorDCN).DateOfImplementation, "{0:dd/MM/yyyy}", new { @class = "form-control", @id = "VendorDCNPostList[" + idx + "].DateOfImplementation", @Name = "VendorDCNPostList[" + idx + "].DateOfImplementation", @data_val = "true", @data_val_required = "Date Of Implementation is required" })
+                                <span class="input-group-addon">
+                                    <span class="fa fa-calendar"></span>
+                                </span>
+                            </div>
+                            @Html.ValidationMessageFor(m => (Model[idx] as VendorDCN).DateOfImplementation, "Implementation Date is required", new { @data_valmsg_for = "VendorDCNPostList[" + idx + "].DateOfImplementation" })
+                        </td>
+                        <td>
+
+                            @Html.TextBoxFor(m => (m[idx] as VendorDCN).StartProductSrNo, new { @class = "form-control", @id = "VendorDCNPostList[" + idx + "].StartProductSrNo", @Name = "VendorDCNPostList[" + idx + "].StartProductSrNo", @data_val = "true", @data_val_required = "Start Product Sr. No. is required (Max length 255 Char.) " })
+                            @Html.ValidationMessageFor(m => (Model[idx] as VendorDCN).StartProductSrNo, "Start Product Sr. No. is required (Max length 255 Char.)", new { @data_valmsg_for = "VendorDCNPostList[" + idx + "].StartProductSrNo" })
+
+
+                            @*@Html.TextBoxFor(m => m[idx].StartProductSrNo, new { @class = "form-control", @id = "VendorDCNList[" + idx + "].StartProductSrNo", @Name = "VendorDCNList[" + idx + "].StartProductSrNo", @data_val = "true", @data_val_required = "Start Product Sr. No. is required (Max length 255 Char.) " })
+                                @Html.ValidationMessageFor(m => Model[idx].StartProductSrNo, "Start Product Sr. No. is required (Max length 255 Char.)", new { @data_valmsg_for = "VendorDCNList[" + idx + "].StartProductSrNo" })*@
+
+
+
+
+                            @*@Html.TextBoxFor(m => (m[idx] as VendorDCN).StartProductSrNo, new { @class = "form-control", @id = "VendorDCNList[" + idx + "].StartProductSrNo"})*@
+                            @*@Html.ValidationMessage("VendorDCNList[" + idx + "].StartProductSrNo", "Start Product Sr. No. is required (Max length 255 Char.)")*@
+                            @*@Html.ValidationMessageFor(m => (m[idx] as VendorDCN).StartProductSrNo, "Start Product Sr. No. is required (Max length 255 Char.) ", new { @data_valmsg_for = "VendorDCNList[" + idx + "].StartProductSrNo" })*@
+                        </td>
+
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3" class="text-center text-danger">
+                        @Html.ResourceValue("Grid_Text_NoData", ResourceNames.Common)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

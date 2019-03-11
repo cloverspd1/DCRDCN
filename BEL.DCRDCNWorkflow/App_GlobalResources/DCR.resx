@@ -1,0 +1,981 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Error_Department" xml:space="preserve">
+    <value>Please Select Department</value>
+  </data>
+  <data name="Label_Department" xml:space="preserve">
+    <value>Department:</value>
+  </data>
+  <data name="Label_DescriptionOfDesignChangePropose" xml:space="preserve">
+    <value>Description of design change proposed:</value>
+  </data>
+  <data name="Label_Designchangeproposeddueto" xml:space="preserve">
+    <value>Design change proposed due to:</value>
+  </data>
+  <data name="Label_DesignChangeRequiredByDate" xml:space="preserve">
+    <value>Design change required by (Date):</value>
+  </data>
+  <data name="Label_Expectedresultsifdesignchangeisc" xml:space="preserve">
+    <value>Expected results if design change is carried out:</value>
+  </data>
+  <data name="Label_ProductName" xml:space="preserve">
+    <value>Product Name:</value>
+  </data>
+  <data name="Label_ProposedBy" xml:space="preserve">
+    <value>Proposed By:</value>
+  </data>
+  <data name="Label_ReferenceNo" xml:space="preserve">
+    <value>DCR NO:</value>
+  </data>
+  <data name="Label_RequestBy" xml:space="preserve">
+    <value>Request/Created By:</value>
+  </data>
+  <data name="Label_RequestDate" xml:space="preserve">
+    <value>Proposed Date:</value>
+  </data>
+  <data name="Label_Status" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="Page_Title" xml:space="preserve">
+    <value>Design Change Requisition</value>
+  </data>
+  <data name="Section_Title_CCHead" xml:space="preserve">
+    <value>CONSUMER CARE SECTION</value>
+  </data>
+  <data name="Section_Title_DCRDetails" xml:space="preserve">
+    <value>Initiate DCR</value>
+  </data>
+  <data name="Section_Title_DCRDetailSection" xml:space="preserve">
+    <value>DCR DETAIL SECTION</value>
+  </data>
+  <data name="Section_Title_DesignEngineerSection" xml:space="preserve">
+    <value>DESIGN ENGINEER SECTION</value>
+  </data>
+  <data name="Section_Title_HOD1Section" xml:space="preserve">
+    <value>D&amp;D HOD</value>
+  </data>
+  <data name="Section_Title_HOD2Section" xml:space="preserve">
+    <value>To Be Considered</value>
+  </data>
+  <data name="Section_Title_HOD3" xml:space="preserve">
+    <value> D&amp;D SECTION</value>
+  </data>
+  <data name="Section_Title_INCHARGESECTION" xml:space="preserve">
+    <value>DCR PROCESS INCHARGE SECTION</value>
+  </data>
+  <data name="Section_Title_MKTINCHARGESECTION" xml:space="preserve">
+    <value>MARKETING INCHARGE</value>
+  </data>
+  <data name="Section_Title_MKTSECTION" xml:space="preserve">
+    <value>MARKETING SECTION</value>
+  </data>
+  <data name="Section_Title_QA" xml:space="preserve">
+    <value>QA SECTION</value>
+  </data>
+  <data name="Section_Title_QAINCHARGESECTION" xml:space="preserve">
+    <value>QA INCHARGE SECTION</value>
+  </data>
+  <data name="Section_Title_SCM" xml:space="preserve">
+    <value> SCM SECTION</value>
+  </data>
+  <data name="Section_Title_SCMINCHARGESECTION" xml:space="preserve">
+    <value>SCM INCHARGE SECTION</value>
+  </data>
+  <data name="Text_Success" xml:space="preserve">
+    <value>DCR submitted successfully</value>
+  </data>
+  <data name="Label_Attachments" xml:space="preserve">
+    <value>Attachments:</value>
+  </data>
+  <data name="Label_Comment" xml:space="preserve">
+    <value>Comments:</value>
+  </data>
+  <data name="Label_CommentsAfterProtoTesting" xml:space="preserve">
+    <value>Comments after proto testing/field trial report etc. where required:</value>
+  </data>
+  <data name="Label_CostreducedIncreasedbyRs" xml:space="preserve">
+    <value>Cost reduced / Increased by Rs:</value>
+  </data>
+  <data name="Label_Date" xml:space="preserve">
+    <value>Date:</value>
+  </data>
+  <data name="Label_DCRTOBECONSIDERED" xml:space="preserve">
+    <value>DCR to be Considered:</value>
+  </data>
+  <data name="Label_FNLDesignChangeAttachment" xml:space="preserve">
+    <value>Design change proposed Attachment:</value>
+  </data>
+  <data name="Label_DesignDocumentEngineer" xml:space="preserve">
+    <value>Design Document Engineer:</value>
+  </data>
+  <data name="Label_Detailsofchangescomponentsassembly" xml:space="preserve">
+    <value>Details of changes in components and assembly:</value>
+  </data>
+  <data name="Label_Detailsofchangestoolsjigsfixtures" xml:space="preserve">
+    <value>Details of changes in tools, jigs and fixtures:</value>
+  </data>
+  <data name="Label_QAEffectofchangeonqualitynorms" xml:space="preserve">
+    <value>Effect of change on quality norms:</value>
+  </data>
+  <data name="Label_Effectoncostofpartandproduct" xml:space="preserve">
+    <value>Effect on cost of part and product:</value>
+  </data>
+  <data name="Label_Effectonperformance" xml:space="preserve">
+    <value>Effect on performance:</value>
+  </data>
+  <data name="Label_Expectedeffectofchangeonsales" xml:space="preserve">
+    <value>Expected effect of change on sales:</value>
+  </data>
+  <data name="Label_Expectedresultattachment" xml:space="preserve">
+    <value>Expected results if design change Attachment:</value>
+  </data>
+  <data name="Label_Feasibility" xml:space="preserve">
+    <value>Feasibility:</value>
+  </data>
+  <data name="Label_FeedbackFromSCM" xml:space="preserve">
+    <value>Feedback from SCM:</value>
+  </data>
+  <data name="Label_HODComment" xml:space="preserve">
+    <value>D&amp;D HOD Comments:</value>
+  </data>
+  <data name="Label_HODDisposal" xml:space="preserve">
+    <value>D&amp;D HOD Disposal:</value>
+  </data>
+  <data name="Label_HODDisposalreason" xml:space="preserve">
+    <value>If Not Considered (reason):</value>
+  </data>
+  <data name="Label_Ifnotfeasiblegivereasonssuggestalternatives" xml:space="preserve">
+    <value>If not feasible, give reasons and/or suggest alternatives:</value>
+  </data>
+  <data name="Label_MarketingApproverRequired" xml:space="preserve">
+    <value>Marketing Approval Required:</value>
+  </data>
+  <data name="Label_MarketingUser" xml:space="preserve">
+    <value>Marketing user:</value>
+  </data>
+  <data name="Label_Overallcomment" xml:space="preserve">
+    <value>Overall Comments:</value>
+  </data>
+  <data name="Label_PerformanceTestApplicable" xml:space="preserve">
+    <value>Performance Test Applicable:</value>
+  </data>
+  <data name="Label_QAUser" xml:space="preserve">
+    <value>QA User:</value>
+  </data>
+  <data name="Label_SCMUser" xml:space="preserve">
+    <value>SCM User:</value>
+  </data>
+  <data name="Label_StockofolditemsrelatedtotheDCR" xml:space="preserve">
+    <value>Stock of old items related to the DCR:</value>
+  </data>
+  <data name="Label_TotalBenefitLossinRupeesLakhs" xml:space="preserve">
+    <value>Total Benefit / Loss in Rupees:</value>
+  </data>
+  <data name="Label_TotalExpectedQuantityincurrentye" xml:space="preserve">
+    <value>Total Expected Quantity in current  year:</value>
+  </data>
+  <data name="Label_TotalExpectedQuantityinnextyear" xml:space="preserve">
+    <value>Total Expected Quantity in next year :</value>
+  </data>
+  <data name="Label_Uploadtestreport" xml:space="preserve">
+    <value>Upload test report:</value>
+  </data>
+  <data name="Button_Text_AddVendor" xml:space="preserve">
+    <value>Add Vendor Details</value>
+  </data>
+  <data name="Error_Comment" xml:space="preserve">
+    <value>Comments field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_CostReducedIncreasedByRs" xml:space="preserve">
+    <value>Cost reduced / Increased by Rs is required</value>
+  </data>
+  <data name="Error_DCRTOBECONSIDERED" xml:space="preserve">
+    <value>DCR to be considered is required</value>
+  </data>
+  <data name="Error_DescriptionOfDesignChangePropose" xml:space="preserve">
+    <value>Description of design change proposed field is required (Max 1000 characters).</value>
+  </data>
+  <data name="Error_FNLDesignChangeAttachment" xml:space="preserve">
+    <value>Attachment for Design Change is required</value>
+  </data>
+  <data name="Error_Designchangeproposeddueto" xml:space="preserve">
+    <value>Please Select Design change proposed due to</value>
+  </data>
+  <data name="Error_DesignChangeRequiredByDate" xml:space="preserve">
+    <value>Design change required by (Date) is required</value>
+  </data>
+  <data name="Error_Detailsofchangesincomponents" xml:space="preserve">
+    <value>Details of changes in components and assembly field is required (Max 1000 characters).</value>
+  </data>
+  <data name="Error_Detailsofchangesintoolsjigs" xml:space="preserve">
+    <value>Details of changes in tools, jigs and fixtures field is required (Max 1000 characters).</value>
+  </data>
+  <data name="Error_QAEffectofchangeonqualitynorms" xml:space="preserve">
+    <value>Effect of change on quality norms field is required (Max 1000 characters).</value>
+  </data>
+  <data name="Error_EffectOnCostOfPartAndProduct" xml:space="preserve">
+    <value>Effect on cost of part and product is required</value>
+  </data>
+  <data name="Error_Effectonperformance" xml:space="preserve">
+    <value>Effect on performance field is required (Max 1000 characters).</value>
+  </data>
+  <data name="Error_Expectedeffectofchangeonsales" xml:space="preserve">
+    <value>Expected effect of change on sales field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_FNLExpectedResultsAttachment" xml:space="preserve">
+    <value>Attachment for expected result is required</value>
+  </data>
+  <data name="Error_Expectedresultsifdesignchangeisc" xml:space="preserve">
+    <value>Expected results if design change is carried out field is required (Max 1000 characters).</value>
+  </data>
+  <data name="Error_Feasibility" xml:space="preserve">
+    <value>Feasibility is required</value>
+  </data>
+  <data name="Error_FeedbackFromSCM" xml:space="preserve">
+    <value>Feedback from SCM field is required (Max 2500 characters).</value>
+  </data>
+  <data name="Error_HODDisposal" xml:space="preserve">
+    <value>Please Select D&amp;D HOD Disposal </value>
+  </data>
+  <data name="Error_HODDisposalreason" xml:space="preserve">
+    <value>Not considered reason field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_Ifnotfeasiblegivereasonssuggestalternatives" xml:space="preserve">
+    <value>Reasons or suggest is required</value>
+  </data>
+  <data name="Error_IsApproved" xml:space="preserve">
+    <value>Please Select Option</value>
+  </data>
+  <data name="Error_MarketingApproverRequired" xml:space="preserve">
+    <value> Marketing Approval is required ?</value>
+  </data>
+  <data name="Error_MarketingUser" xml:space="preserve">
+    <value>Please Select Marketing User</value>
+  </data>
+  <data name="Error_OverallComment" xml:space="preserve">
+    <value>Overall Comments field is required.</value>
+  </data>
+  <data name="Error_PerformanceTestApplicable" xml:space="preserve">
+    <value>Performance Test Applicable field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_ProductCategory" xml:space="preserve">
+    <value>Product Category is required.</value>
+  </data>
+  <data name="Error_ProductName" xml:space="preserve">
+    <value>Product Name field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_QAUser" xml:space="preserve">
+    <value>Please Select QA User</value>
+  </data>
+  <data name="Error_SCMUser" xml:space="preserve">
+    <value>Please Select SCM User</value>
+  </data>
+  <data name="Error_TotalBenefitLossInRupeesLakhs" xml:space="preserve">
+    <value>Total Benefit / Loss in Rupees is required</value>
+  </data>
+  <data name="Error_TotalExpectedQuantityInCurrentYe" xml:space="preserve">
+    <value>Total Expected Quantity in current  year is required</value>
+  </data>
+  <data name="Error_TotalExpectedQuantityInNextYear" xml:space="preserve">
+    <value>Total Expected Quantity in next year is required</value>
+  </data>
+  <data name="Error_Uploadtestreport" xml:space="preserve">
+    <value>Upload test report is required</value>
+  </data>
+  <data name="Grid_Title_DateOfImplementation" xml:space="preserve">
+    <value>Date of Implementation</value>
+  </data>
+  <data name="Grid_Title_Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="Grid_Title_VendorName" xml:space="preserve">
+    <value>Vendor Name</value>
+  </data>
+  <data name="Label_IsApproved" xml:space="preserve">
+    <value>Approved / Not Approved:</value>
+  </data>
+  <data name="Label_ProductCategory" xml:space="preserve">
+    <value>Product Category:</value>
+  </data>
+  <data name="Error_DateOfImplementation" xml:space="preserve">
+    <value>Implementation date is required</value>
+  </data>
+  <data name="Error_Quantity" xml:space="preserve">
+    <value>Quantity is required</value>
+  </data>
+  <data name="Error_Vendor" xml:space="preserve">
+    <value>Vendor is required</value>
+  </data>
+  <data name="Label_DateOfImplementation" xml:space="preserve">
+    <value>Implementation Date:</value>
+  </data>
+  <data name="Label_Quantity" xml:space="preserve">
+    <value>Quantity:</value>
+  </data>
+  <data name="Label_Vendor" xml:space="preserve">
+    <value>Vendor:</value>
+  </data>
+  <data name="Error_BusinessUnit" xml:space="preserve">
+    <value>Business Unit is required.</value>
+  </data>
+  <data name="Error_DCRIncharge" xml:space="preserve">
+    <value>Please Select DCR Incharge</value>
+  </data>
+  <data name="Label_BusinessUnit" xml:space="preserve">
+    <value>Business Unit:</value>
+  </data>
+  <data name="Label_DCRIncharge" xml:space="preserve">
+    <value>DCR Incharge:</value>
+  </data>
+  <data name="Label_NavigatorComment" xml:space="preserve">
+    <value>Comments:</value>
+  </data>
+  <data name="Error_FileNameList" xml:space="preserve">
+    <value>Attachment is required</value>
+  </data>
+  <data name="Label_DCRDCNInchargeComments" xml:space="preserve">
+    <value>DCRDCN Incharge Comments:</value>
+  </data>
+  <data name="Label_DCRInchargeComment" xml:space="preserve">
+    <value>Comments:</value>
+  </data>
+  <data name="Label_DCRNo" xml:space="preserve">
+    <value>DCR No.:</value>
+  </data>
+  <data name="Label_DDHODDISPOSAL" xml:space="preserve">
+    <value>D&amp;D HOD DISPOSAL:</value>
+  </data>
+  <data name="Label_Division" xml:space="preserve">
+    <value>Division:</value>
+  </data>
+  <data name="Label_FNLExpectedResultsAttachment" xml:space="preserve">
+    <value>Expected results if design change Attachment:</value>
+  </data>
+  <data name="Label_IfNotConsidered" xml:space="preserve">
+    <value>If Not Considered (reason):</value>
+  </data>
+  <data name="Label_MarketingApprovalRequired" xml:space="preserve">
+    <value>Marketing Approval Required:</value>
+  </data>
+  <data name="Label_RequestDepartment" xml:space="preserve">
+    <value>Request Department:</value>
+  </data>
+  <data name="Section_Title_INCHARGESECTIONNavigator" xml:space="preserve">
+    <value>DCR INCHARGE NAVIGATOR SECTION</value>
+  </data>
+  <data name="Label_Detailsofchangesincomponents" xml:space="preserve">
+    <value>Details of changes in components and assembly:</value>
+  </data>
+  <data name="Label_Detailsofchangesintoolsjigs" xml:space="preserve">
+    <value>Details of changes in tools, jigs and fixtures:</value>
+  </data>
+  <data name="Error_MarketingDCRTOBECONSIDERED" xml:space="preserve">
+    <value>DCR TO BE CONSIDERED is required</value>
+  </data>
+  <data name="Error_MarketingExpectedEffectOfChange" xml:space="preserve">
+    <value>Expected effect of change on sales field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_MarketingOverallComments" xml:space="preserve">
+    <value>Overall Comments is required</value>
+  </data>
+  <data name="Label_MarketingDCRTOBECONSIDERED" xml:space="preserve">
+    <value>DCR TO BE CONSIDERED</value>
+  </data>
+  <data name="Label_MarketingExpectedEffectOfChange" xml:space="preserve">
+    <value>Expected effect of change on sales:</value>
+  </data>
+  <data name="Label_MarketingOverallComments" xml:space="preserve">
+    <value>Overall Comments:</value>
+  </data>
+  <data name="Error_CCIfNotFeasibleGiveReason" xml:space="preserve">
+    <value>Reason is required (Max 255 characters).</value>
+  </data>
+  <data name="Label_CCIfNotFeasibleGiveReason" xml:space="preserve">
+    <value>If not feasible, give reasons and/or suggest alternatives:</value>
+  </data>
+  <data name="Label_DesignEngineer" xml:space="preserve">
+    <value>Design Engineer:</value>
+  </data>
+  <data name="Label_OldDCRCreatedDate" xml:space="preserve">
+    <value>Old DCR Created Date:</value>
+  </data>
+  <data name="Label_OldDCRNo" xml:space="preserve">
+    <value>Old DCR No.:</value>
+  </data>
+  <data name="Label_OldDCRRejectedDate" xml:space="preserve">
+    <value>Old DCR Rejected Date:</value>
+  </data>
+  <data name="Popup_Title_AddVendor" xml:space="preserve">
+    <value>Add Vendor</value>
+  </data>
+  <data name="Popup_Title_EditVendor" xml:space="preserve">
+    <value>Edit Vendor</value>
+  </data>
+  <data name="Section_Title_Vendor" xml:space="preserve">
+    <value>Vendor Grid</value>
+  </data>
+  <data name="Text_VendorDeleted" xml:space="preserve">
+    <value>Vendor Details is deleted</value>
+  </data>
+  <data name="Text_VendorSave" xml:space="preserve">
+    <value>Vendor Details is saved</value>
+  </data>
+  <data name="Section_Title_PrintDCR" xml:space="preserve">
+    <value>Print DCR</value>
+  </data>
+  <data name="Label_DesignChangeProposedOther" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="Error_DesignChangeProposedOther" xml:space="preserve">
+    <value>Other reason is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_QADCRToBeConsidered" xml:space="preserve">
+    <value>DCR To Be Considered is required</value>
+  </data>
+  <data name="Label_QADCRToBeConsidered" xml:space="preserve">
+    <value>DCR TO BE CONSIDERED</value>
+  </data>
+  <data name="Label_DCRInchargeNavigatorComment" xml:space="preserve">
+    <value>Comments:</value>
+  </data>
+  <data name="Label_Comments" xml:space="preserve">
+    <value>Comments:</value>
+  </data>
+  <data name="Label_MarketingOverallComment" xml:space="preserve">
+    <value>Overall Comments:</value>
+  </data>
+  <data name="Error_FNLQATestReport" xml:space="preserve">
+    <value>Upload Test Report is Required.</value>
+  </data>
+  <data name="Label_FNLQATestReport" xml:space="preserve">
+    <value>Upload Test Report:</value>
+  </data>
+  <data name="Error_VendorName" xml:space="preserve">
+    <value>Vendor Name field is required (Max 255 characters).</value>
+  </data>
+  <data name="Label_VendorName" xml:space="preserve">
+    <value>Vendor Name:</value>
+  </data>
+  <data name="Text_UniqeVendor" xml:space="preserve">
+    <value>This vendor name is already added</value>
+  </data>
+  <data name="Error_DAPExpectedChange" xml:space="preserve">
+    <value>DAP Expected Change field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_DAPMarketingUser" xml:space="preserve">
+    <value>Please Select DAP Marketing User</value>
+  </data>
+  <data name="Error_DAPTOBECONSIDERED" xml:space="preserve">
+    <value>DAP TO BE CONSIDERED is Required.</value>
+  </data>
+  <data name="Error_FANSExpectedChange" xml:space="preserve">
+    <value>FANS Expected Change field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_FANSMarketingUser" xml:space="preserve">
+    <value>Please Select FANS Marketing User</value>
+  </data>
+  <data name="Error_FANSTOBECONSIDERED" xml:space="preserve">
+    <value>FANS TO BE CONSIDERED is Required.</value>
+  </data>
+  <data name="Error_KAPExpectedChange" xml:space="preserve">
+    <value>KAP Expected Change field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_KAPMarketingUser" xml:space="preserve">
+    <value>Please Select KAP Marketing User</value>
+  </data>
+  <data name="Error_KAPTOBECONSIDERED" xml:space="preserve">
+    <value>KAP TO BE CONSIDERED is Required.</value>
+  </data>
+  <data name="Error_LightingExpectedChange" xml:space="preserve">
+    <value>Lighting Expected Change field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_LightingMarketingUser" xml:space="preserve">
+    <value>Please Select Lighting Marketing User</value>
+  </data>
+  <data name="Error_LightingTOBECONSIDERED" xml:space="preserve">
+    <value>Lighting TO BECONSIDERED is Required.</value>
+  </data>
+  <data name="Error_LUMExpectedChange" xml:space="preserve">
+    <value>LUM Expected Change field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_LUMMarketingUser" xml:space="preserve">
+    <value>Please Select LUM Marketing User</value>
+  </data>
+  <data name="Error_LUMTOBECONSIDERED" xml:space="preserve">
+    <value>LUM TO BE CONSIDERED is Required.</value>
+  </data>
+  <data name="Error_MRExpectedChange" xml:space="preserve">
+    <value>Morphy Richard Expected Change field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_MRMarketingUser" xml:space="preserve">
+    <value>Please Select Morphy Richard Marketing User</value>
+  </data>
+  <data name="Error_MRTOBECONSIDERED" xml:space="preserve">
+    <value>Morphy Richard TO BE CONSIDERED is Required.</value>
+  </data>
+  <data name="Label_DAPExpectedChange" xml:space="preserve">
+    <value>DAP Expected Change :</value>
+  </data>
+  <data name="Label_DAPMarketingUser" xml:space="preserve">
+    <value>DAP Marketing User : </value>
+  </data>
+  <data name="Label_DAPTOBECONSIDERED" xml:space="preserve">
+    <value>DAP MARKETING TO BE CONSIDERED :</value>
+  </data>
+  <data name="Label_FANSExpectedChange" xml:space="preserve">
+    <value>FANS Expected Change : </value>
+  </data>
+  <data name="Label_FANSMarketingUser" xml:space="preserve">
+    <value>FANS Marketing User : </value>
+  </data>
+  <data name="Label_FANSTOBECONSIDERED" xml:space="preserve">
+    <value>FANS  MARKETING TO BE CONSIDERED : </value>
+  </data>
+  <data name="Label_KAPExpectedChange" xml:space="preserve">
+    <value>KAP Expected Change : </value>
+  </data>
+  <data name="Label_KAPMarketingUser" xml:space="preserve">
+    <value>KAP Marketing User : </value>
+  </data>
+  <data name="Label_KAPTOBECONSIDERED" xml:space="preserve">
+    <value>KAP MARKETING TO BE CONSIDERED : </value>
+  </data>
+  <data name="Label_LightingExpectedChange" xml:space="preserve">
+    <value>Lighting Expected Change : </value>
+  </data>
+  <data name="Label_LightingMarketingUser" xml:space="preserve">
+    <value>Lighting Marketing User : </value>
+  </data>
+  <data name="Label_LightingTOBECONSIDERED" xml:space="preserve">
+    <value>Lighting MARKETING TO BE CONSIDERED : </value>
+  </data>
+  <data name="Label_LUMExpectedChange" xml:space="preserve">
+    <value>LUM Expected Change : </value>
+  </data>
+  <data name="Label_LUMMarketingUser" xml:space="preserve">
+    <value>LUM Marketing User : </value>
+  </data>
+  <data name="Label_LUMTOBECONSIDERED" xml:space="preserve">
+    <value>LUM MARKETING TO BE CONSIDERED : </value>
+  </data>
+  <data name="Label_MRExpectedChange" xml:space="preserve">
+    <value>Morphy Richard Expected Change : </value>
+  </data>
+  <data name="Label_MRMarketingUser" xml:space="preserve">
+    <value>Morphy Richard Marketing User : </value>
+  </data>
+  <data name="Label_MRTOBECONSIDERED" xml:space="preserve">
+    <value>Morphy Richard MARKETING TO BE CONSIDERED : </value>
+  </data>
+  <data name="Section_Title_DAPMKTINCHARGESECTION" xml:space="preserve">
+    <value>DAP MARKETING INCHARGE SECTION</value>
+  </data>
+  <data name="Section_Title_DAPMKTSECTION" xml:space="preserve">
+    <value>DAP MARKETING SECTION</value>
+  </data>
+  <data name="Section_Title_FANSMKTINCHARGESECTION" xml:space="preserve">
+    <value>FANS MARKETING INCHARGE SECTION</value>
+  </data>
+  <data name="Section_Title_FANSMKTSECTION" xml:space="preserve">
+    <value>FANS MARKETING SECTION</value>
+  </data>
+  <data name="Section_Title_KAPMKTINCHARGESECTION" xml:space="preserve">
+    <value>KAP MARKETING INCHARGE SECTION</value>
+  </data>
+  <data name="Section_Title_KAPMKTSECTION" xml:space="preserve">
+    <value>KAP MARKETING SECTION</value>
+  </data>
+  <data name="Section_Title_LIGHTINGMKTINCHARGESECTION" xml:space="preserve">
+    <value>LIGHTING MARKETING INCHARGE SECTION</value>
+  </data>
+  <data name="Section_Title_LIGHTINGMKTSECTION" xml:space="preserve">
+    <value>LIGHTING MARKETING SECTION</value>
+  </data>
+  <data name="Section_Title_LUMMKTINCHARGESECTION" xml:space="preserve">
+    <value>LUM MARKETING INCHARGE SECTION</value>
+  </data>
+  <data name="Section_Title_LUMMKTSECTION" xml:space="preserve">
+    <value>LUM MARKETING SECTION</value>
+  </data>
+  <data name="Section_Title_MRMKTINCHARGESECTION" xml:space="preserve">
+    <value>MORPHY RICHARDS MARKETING INCHARGE SECTION</value>
+  </data>
+  <data name="Section_Title_MRMKTSECTION" xml:space="preserve">
+    <value>MORPHY RICHARDS MARKETING SECTION</value>
+  </data>
+  <data name="Error_Division" xml:space="preserve">
+    <value>Division is required.</value>
+  </data>
+  <data name="Error_CommentsAfterProtoTesting" xml:space="preserve">
+    <value>Comments After Proto Testing field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_DesignDocumentEngineer" xml:space="preserve">
+    <value>Design Document Engineer is Required.</value>
+  </data>
+  <data name="Grid_Title_CC" xml:space="preserve">
+    <value>CC</value>
+  </data>
+  <data name="Grid_Title_DateofApplication" xml:space="preserve">
+    <value>Date of Application</value>
+  </data>
+  <data name="Grid_Title_DCRNo" xml:space="preserve">
+    <value>DCR No.</value>
+  </data>
+  <data name="Grid_Title_DescofChange" xml:space="preserve">
+    <value>Description of change</value>
+  </data>
+  <data name="Grid_Title_DnD" xml:space="preserve">
+    <value>Design</value>
+  </data>
+  <data name="Grid_Title_Marketing" xml:space="preserve">
+    <value>Marketing</value>
+  </data>
+  <data name="Grid_Title_PreparedBy" xml:space="preserve">
+    <value>Proposed By</value>
+  </data>
+  <data name="Grid_Title_ProductName" xml:space="preserve">
+    <value>Product Name</value>
+  </data>
+  <data name="Grid_Title_QA" xml:space="preserve">
+    <value>QA</value>
+  </data>
+  <data name="Grid_Title_SCM" xml:space="preserve">
+    <value>SCM</value>
+  </data>
+  <data name="Grid_Title_DAPMarketing" xml:space="preserve">
+    <value>DAP</value>
+  </data>
+  <data name="Grid_Title_FANSMarketing" xml:space="preserve">
+    <value>FANS</value>
+  </data>
+  <data name="Grid_Title_KAPMarketing" xml:space="preserve">
+    <value>KAP</value>
+  </data>
+  <data name="Grid_Title_LightingMarketing" xml:space="preserve">
+    <value>Lighting</value>
+  </data>
+  <data name="Grid_Title_LUMMarketing" xml:space="preserve">
+    <value>LUM</value>
+  </data>
+  <data name="Grid_Title_MRMarketing" xml:space="preserve">
+    <value>Morphy Richards</value>
+  </data>
+  <data name="Error_DAPIComment" xml:space="preserve">
+    <value>Comments field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_DCRInchargeNavigatorComment" xml:space="preserve">
+    <value>Comments field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_DCRProcessIComment" xml:space="preserve">
+    <value>Comments field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_DesignEngineerComment" xml:space="preserve">
+    <value>Comments field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_FANIComment" xml:space="preserve">
+    <value>Comments field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_KAPIComment" xml:space="preserve">
+    <value>Comments field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_LightingIComment" xml:space="preserve">
+    <value>Comments field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_LUMIComment" xml:space="preserve">
+    <value>Comments field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_MRMarketingIComment" xml:space="preserve">
+    <value>Comments field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_QAIComment" xml:space="preserve">
+    <value>Comments field is required (Max 255 characters).</value>
+  </data>
+  <data name="Error_SCMIComment" xml:space="preserve">
+    <value>Comments field is required (Max 500 characters).</value>
+  </data>
+  <data name="Grid_Title_ExistingComponentStock" xml:space="preserve">
+    <value>Finished Goods Stock at Warehouse</value>
+  </data>
+  <data name="Grid_Title_FGStock" xml:space="preserve">
+    <value>Finished Goods Stock</value>
+  </data>
+  <data name="Error_ExistingComponentStock" xml:space="preserve">
+    <value>Existing Component Stock is required.</value>
+  </data>
+  <data name="Error_FGStock" xml:space="preserve">
+    <value>FG Stock is required.</value>
+  </data>
+  <data name="Label_ExistingComponentStock" xml:space="preserve">
+    <value>Existing Component Stock</value>
+  </data>
+  <data name="Label_FGStock" xml:space="preserve">
+    <value>FG Stock</value>
+  </data>
+  <data name="Grid_Text_NoVendorData" xml:space="preserve">
+    <value>No vendor data selected.</value>
+  </data>
+  <data name="Text_CompleteSuccess" xml:space="preserve">
+    <value>DCR Completed successfully</value>
+  </data>
+  <data name="Text_RejectedSuccess" xml:space="preserve">
+    <value>DCR Rejected/Not Consider successfully.</value>
+  </data>
+  <data name="Text_SaveSuccess" xml:space="preserve">
+    <value>DCR saved successfully</value>
+  </data>
+  <data name="Label_negativeSign" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="Label_Detailsofchangesincomponentsanda" xml:space="preserve">
+    <value>Details of changes in components and assembly</value>
+  </data>
+  <data name="Label_Detailsofchangesintoolsjigsandfi" xml:space="preserve">
+    <value>Details of changes in tools, jigs and fixtures</value>
+  </data>
+  <data name="Label_IsDCRRetrieved" xml:space="preserve">
+    <value>Is DCR Retrieved?</value>
+  </data>
+  <data name="Label_QAOverallComment" xml:space="preserve">
+    <value>QA Overall Comment</value>
+  </data>
+  <data name="Label_RejectedComment" xml:space="preserve">
+    <value>Rejected Comment</value>
+  </data>
+  <data name="Label_SCMUserComment" xml:space="preserve">
+    <value>SCM User Comment</value>
+  </data>
+  <data name="Label_WorkflowStatus" xml:space="preserve">
+    <value>Workflow Status</value>
+  </data>
+  <data name="Text_DelegatedSuccess" xml:space="preserve">
+    <value>DCR delegated successfully</value>
+  </data>
+  <data name="Text_VendorRequired" xml:space="preserve">
+    <value>Atleast one Vendor data requried</value>
+  </data>
+  <data name="Label_ReworkComments" xml:space="preserve">
+    <value>If Rework (reason):</value>
+  </data>
+  <data name="Error_TargetDateOfImplementation" xml:space="preserve">
+    <value>Target Date Of Implementation is required.</value>
+  </data>
+  <data name="Label_TargetDateOfImplementation" xml:space="preserve">
+    <value>Target date of DCN Release:</value>
+  </data>
+  <data name="Section_Title_DESIGNENGINEERINCHARGESECTION" xml:space="preserve">
+    <value>DESIGN ENGINEER INCHARGE SECTION</value>
+  </data>
+  <data name="Error_DCRDESIGNENGINEERUser" xml:space="preserve">
+    <value>Design Engineer is required</value>
+  </data>
+  <data name="Label_DesignEngineerUser" xml:space="preserve">
+    <value>Design Engineer :</value>
+  </data>
+  <data name="Text_SaveDraftSuccess" xml:space="preserve">
+    <value>DCR save as draft successfully</value>
+  </data>
+  <data name="Error_DesignEngineerIncharge" xml:space="preserve">
+    <value>Design Engineer Incharge is required</value>
+  </data>
+  <data name="Label_DesignEngineerIncharge" xml:space="preserve">
+    <value>Design Engineer Incharge :</value>
+  </data>
+  <data name="Error_CostIncreaseDecrease" xml:space="preserve">
+    <value>Cost Increase/Decrease is required (Max length 15 Digit.)</value>
+  </data>
+  <data name="Error_CostValue" xml:space="preserve">
+    <value>Cost Value is required (Max length 15 digit.)</value>
+  </data>
+  <data name="Error_ItemCode" xml:space="preserve">
+    <value>ItemCode is required (Max length 255 Char.)</value>
+  </data>
+  <data name="Error_PercentageChange" xml:space="preserve">
+    <value>% Change is required (Max length 15 digit.)</value>
+  </data>
+  <data name="Grid_Title_CostIncreaseDecrease" xml:space="preserve">
+    <value>Cost Increase/Decrease</value>
+  </data>
+  <data name="Grid_Title_CostValue" xml:space="preserve">
+    <value>Cost Value</value>
+  </data>
+  <data name="Grid_Title_ItemCode" xml:space="preserve">
+    <value>Item Code</value>
+  </data>
+  <data name="Grid_Title_PercentageChange" xml:space="preserve">
+    <value>% Change</value>
+  </data>
+  <data name="Label_CostIncreaseDecrease" xml:space="preserve">
+    <value>Cost Increase/Decrease:</value>
+  </data>
+  <data name="Label_CostValue" xml:space="preserve">
+    <value>Cost Value:</value>
+  </data>
+  <data name="Label_ItemCode" xml:space="preserve">
+    <value>Item Code:</value>
+  </data>
+  <data name="Label_PercentageChange" xml:space="preserve">
+    <value>% Change:</value>
+  </data>
+  <data name="Section_Title_costingSection" xml:space="preserve">
+    <value>Costing Section</value>
+  </data>
+  <data name="Section_Title_SCMCOSTINGINCHARGESECTION" xml:space="preserve">
+    <value>SCM and Costing Section</value>
+  </data>
+  <data name="Grid_Title_Costing" xml:space="preserve">
+    <value>Costing</value>
+  </data>
+  <data name="Error_ConsiderRework" xml:space="preserve">
+    <value>Please select Consider or Rework</value>
+  </data>
+  <data name="Error_DEIReworkComments" xml:space="preserve">
+    <value>Reason for rework is required(Max 255 characters)</value>
+  </data>
+  <data name="Error_DesignEngineer" xml:space="preserve">
+    <value>Design Engineer is required.</value>
+  </data>
+  <data name="Label_ConsiderRework" xml:space="preserve">
+    <value>Consider/Rework</value>
+  </data>
+  <data name="Label_DEIReworkComments" xml:space="preserve">
+    <value>Reason for Rework</value>
+  </data>
+  <data name="Error_SameFileName" xml:space="preserve">
+    <value>You cannot upload files with same name.</value>
+  </data>
+  <data name="Error_DateForCompletionOfTesting" xml:space="preserve">
+    <value>Time for Completion of Testing is required</value>
+  </data>
+  <data name="Error_DateForReceiptOfSamples" xml:space="preserve">
+    <value>Time for Receipt of Samples is required</value>
+  </data>
+  <data name="Label_DateForCompletionOfTesting" xml:space="preserve">
+    <value>Time for Completion of Testing:</value>
+  </data>
+  <data name="Label_DateForReceiptOfSamples" xml:space="preserve">
+    <value>Time for Receipt of Samples:</value>
+  </data>
+  <data name="Error_FinalDesignEngineer" xml:space="preserve">
+    <value>Please select Design Engineer</value>
+  </data>
+  <data name="Label_FinalDesignEngineer" xml:space="preserve">
+    <value>Design Engineer:</value>
+  </data>
+</root>
