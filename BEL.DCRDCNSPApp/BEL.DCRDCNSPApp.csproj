@@ -26,7 +26,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <ActivePublishProfile>dcrdcn - Web Deploy</ActivePublishProfile>
+    <ActivePublishProfile>BELDCRDCN - Web Deploy</ActivePublishProfile>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <FileUpgradeFlags>

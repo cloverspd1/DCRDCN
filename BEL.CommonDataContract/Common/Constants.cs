@@ -460,6 +460,11 @@
         public const string COMPLETED = "Completed";
 
         /// <summary>
+        /// The Approved
+        /// </summary>
+        public const string APPROVED = "Completed";
+
+        /// <summary>
         /// The cancelled
         /// </summary>
         public const string CANCELLED = "Cancelled";

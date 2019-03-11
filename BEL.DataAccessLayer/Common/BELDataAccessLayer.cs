@@ -1758,7 +1758,15 @@
                         break;
                     case ButtonActionStatus.Complete:
                         formFieldValues.Add("ApprovalStatus", FormApprovalStatus.COMPLETED);
-                        formFieldValues.Add("Status", FormStatus.COMPLETED);
+                        if (param.ContainsKey("DCR"))
+                        {
+                            formFieldValues.Add("Status", FormStatus.APPROVED);
+                        }
+                        else
+                        {
+                            formFieldValues.Add("Status", FormStatus.COMPLETED);
+                        }
+                       
                         formFieldValues.Add("FormLevel", currLevel + "|" + currLevel);
                         formFieldValues.Add("NextApprover", string.Empty);
                         formFieldValues.Add("PendingWith", string.Empty);

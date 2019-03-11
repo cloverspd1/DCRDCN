@@ -357,6 +357,7 @@
                             designEngSection.FinalDesignEngineer = objDict[Parameter.USEREID];
                         }
                     }
+                    objDict.Add("DCR", "Approved");
                     List<ListItemDetail> objSaveDetails = BELDataAccessLayer.Instance.SaveData(this.context, this.web, sectionDetails, objDict);
                     ListItemDetail itemDetails = objSaveDetails.Where(p => p.ListName.Equals(DCRDCNListNames.DCRLIST)).FirstOrDefault<ListItemDetail>();
                     if (sectionDetails.SectionName == DCRSectionName.DCRDETAILSECTION)
