@@ -124,7 +124,7 @@
                     {
                         this.SPCurrentUser = new UserDetails();
                         //this.SPCurrentUser.UserId = "49";
-                        //this.SPCurrentUser.UserId = "6"; //cloverspd1
+                        // this.SPCurrentUser.UserId = "6"; //cloverspd1
                         //this.SPCurrentUser.UserId = "33"; //Dhanraj Mane
                          this.SPCurrentUser.UserId = "32"; //dcrdcnuser2
                         //this.SPCurrentUser.UserId = "24"; //dcrdcnuser1 sharepoint notificaiton
@@ -135,12 +135,21 @@
                         // this.SPCurrentUser.UserId = "38";// murudkara tushar
                         //this.SPCurrentUser.UserId = "29";// patil bhushan
                         // this.SPCurrentUser.UserId = "28";// Ramdas Kuthal
+                         // this.SPCurrentUser.UserId = "36"; //tmsuser1
                         //this.SPCurrentUser.UserId = "35"; //tmsuser2
                         //this.SPCurrentUser.UserId = "31"; //dcrdcnuser3
                         //this.SPCurrentUser.UserId = "46"; //deepak kamble
-                       // this.SPCurrentUser.UserId = "153"; //jyotishkumar mohit
+                        // this.SPCurrentUser.UserId = "153"; //jyotishkumar mohit
                         //this.SPCurrentUser.UserId = "179"; //jyotishkumar mohit
-                                                          // this.SPCurrentUser.UserId = "47"; //deepak mumbaiker
+                        // this.SPCurrentUser.UserId = "48"; //Arup dey
+                        //this.SPCurrentUser.UserId = "53"; //devinder behal
+                        // this.SPCurrentUser.UserId = "49"; //Chandra Singh
+                        // this.SPCurrentUser.UserId = "55"; //Ambikesh
+                        //this.SPCurrentUser.UserId = "47"; //deepak mumbaiker
+                        //this.SPCurrentUser.UserId = "167"; //Shailesh saawant
+
+                       // this.SPCurrentUser.UserId = "60"; //Arshad Shaikh
+                        //this.SPCurrentUser.UserId = "79"; //Amit Shetty
 
                         // this.SPCurrentUser.UserId = "24";
                         // this.SPCurrentUser.UserId = "220";

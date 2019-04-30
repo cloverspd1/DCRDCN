@@ -197,7 +197,7 @@
         /// <value>
         /// The time for receipt of samples.
         /// </value>
-        [DataMember, Required]
+        [DataMember]
         public DateTime? DateForReceiptOfSamples { get; set; }
 
         /// <summary>
@@ -206,7 +206,7 @@
         /// <value>
         /// The time for completion of testing.
         /// </value>
-        [DataMember, Required]
+        [DataMember]
         public DateTime? DateForCompletionOfTesting { get; set; }
 
         /// <summary>

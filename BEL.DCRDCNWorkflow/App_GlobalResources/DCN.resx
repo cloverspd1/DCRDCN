@@ -453,4 +453,7 @@
   <data name="Label_DCRCreator" xml:space="preserve">
     <value>DCR Creator:</value>
   </data>
+  <data name="Label_DCRDCNAttachment" xml:space="preserve">
+    <value>Attachment :</value>
+  </data>
 </root>

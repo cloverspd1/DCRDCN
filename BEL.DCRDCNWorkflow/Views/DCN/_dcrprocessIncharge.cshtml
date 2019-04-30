@@ -6,9 +6,10 @@
 
 <script type="text/javascript">
     @{
-    List<MasterDataItem> approveRework = new List<MasterDataItem>();
-    approveRework.Add(new MasterDataItem("Approve", "Approve"));
-    approveRework.Add(new MasterDataItem("Rework", "Rework"));
+        List<MasterDataItem> approveRework = new List<MasterDataItem>();
+        approveRework.Add(new MasterDataItem("Approve", "Approve"));
+        approveRework.Add(new MasterDataItem("Rework", "Rework"));
+        approveRework.Add(new MasterDataItem("Reject", "Reject"));
 }
 </script>
 
@@ -70,6 +71,22 @@
                 </div>
             </div>
         </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label class="col-md-4 control-label">
+                    @*<span class="text-danger text-default-light">*</span>*@
+                    Attachments:
+                </label>
+                <div class="col-md-8 ">
+
+                    <div id="AttachmentDCN" data-appname="@SiteURLs.DCRDCNSITEURL">
+                    </div>
+                    @Html.TextBoxFor(m => m.DCRDCNAttachment, new { @class = "notvisible" })
+                    @Html.ValidationMessageFor(m => m.DCRDCNAttachment, ResourceNames.DCN)
+                </div>
+            </div>
+        </div>
+
         @if (Model.CurrentApprover != null && Model.CurrentApprover.ApprovalDate.HasValue)
         {
         <div class="col-md-6">

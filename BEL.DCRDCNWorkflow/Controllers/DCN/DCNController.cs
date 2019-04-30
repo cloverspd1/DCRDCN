@@ -337,6 +337,10 @@
                         {
                             model.ActionStatus = ButtonActionStatus.NextApproval;
                         }
+                        else if (model.DCRProcessICApproveRework == "Reject")
+                        {
+                            model.ActionStatus = ButtonActionStatus.Rejected;
+                        }
                         else
                         {
                             model.ActionStatus = ButtonActionStatus.SendBack;

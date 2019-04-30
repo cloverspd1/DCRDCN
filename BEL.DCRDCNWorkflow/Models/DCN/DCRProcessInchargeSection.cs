@@ -145,5 +145,10 @@
 
         [DataMember, Required]
         public string DCRProcessICApproveRework { get; set; }
+
+        [DataMember]
+        public string DCRDCNAttachment { get; set; }
+
+        
     }
 }

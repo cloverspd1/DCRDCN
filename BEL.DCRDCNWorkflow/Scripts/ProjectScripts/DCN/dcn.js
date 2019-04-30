@@ -360,13 +360,70 @@ function SelectProductSKU(itemID) {
 }
 
 
-var uploadedFiles = [];
+var uploadedFiles = [], uploadedFiles1 = [];
 function OnFileUploaded(result) {
     var FileName = $('.qq-upload-file')[0].innerText;
     $('#DocumentNo').val(FileName);
     uploadedFiles.push(result);
     $("#FileNameList").val(JSON.stringify(uploadedFiles)).blur();
 }
+/* created by priya for dcr dcn process incharge*/
+/*start*/
+function OnFileUploadedDE(result) {
+    uploadedFiles1.push(result);
+    $("#DCRDCNAttachment").val(JSON.stringify(uploadedFiles1)).blur();
+}
+
+if ($("#DCRDCNAttachment").length != 0) {
+    BindFileUploadControl({
+        ElementId: 'AttachmentDCN', Params: {}, Url: "UploadFile",
+        AllowedExtensions: [],
+        MultipleFiles: true,
+        CallBack: "OnFileUploadedDE"
+    });
+    uploadedFiles1 = BindFileList("DCRDCNAttachment", "AttachmentDCN");
+}
+
+
+/* end*/
+
+function DCRDCNAttachmentRemoveImage(ele) {
+    var Id = $(ele).attr("data-id");
+    var li = $(ele).parents("li.qq-upload-success");
+    var itemIdx = li.index();
+    ConfirmationDailog({
+        title: "Remove", message: "Are you sure to remove file?", id: Id, url: "/DCN/RemoveUploadFile", okCallback: function (id, data) {
+            li.find(".qq-upload-status-text").remove();
+            $('<span class="qq-upload-spinner"></span>').appendTo(li);
+            li.removeClass("qq-upload-success");
+            var idx = -1;
+            var tmpList = [];
+            $(uploadedFiles1).each(function (i, item) {
+                if (idx == -1 && item.FileId == id) {
+                    idx = i;
+                    if (item.Status == 0) {
+                        item.Status = 2;
+                        tmpList.push(item);
+                    }
+                } else {
+                    tmpList.push(item);
+                }
+            });
+            if (idx >= 0) {
+                uploadedFiles1 = tmpList;
+                li.remove();
+                if (uploadedFiles1.length == 0) {
+                    $("#AttachmentDCN").val("").blur();
+                } else {
+                    $("#AttachmentDCN").val(JSON.stringify(uploadedFiles1)).blur();
+
+                }
+
+            }
+        }
+    });
+}
+
 
 function AttachFileRemoveImage(ele) {
     var Id = $(ele).attr("data-id");

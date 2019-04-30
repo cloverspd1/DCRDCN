@@ -13,7 +13,7 @@
 
     public class DCNBusinessLayer
     {
-        private static readonly Lazy<DCNBusinessLayer> lazy =
+         private static readonly Lazy<DCNBusinessLayer> lazy =
          new Lazy<DCNBusinessLayer>(() => new DCNBusinessLayer());
 
         public static DCNBusinessLayer Instance { get { return lazy.Value; } }
@@ -143,8 +143,8 @@
                                                             </Eq>
                                                         <And>
                                                             <Eq>
-                                                                    <FieldRef Name='Status' />
-                                                                    <Value Type='Text'>" + FormStatus.COMPLETED + @"</Value>
+                                                                    <FieldRef Name='WorkflowStatus' />
+                                                                    <Value Type='Text'>" + FormStatus.APPROVED + @"</Value>
                                                             </Eq>
                                                             <Eq>
                                                                     <FieldRef Name='IsDCNGenerated' />
@@ -163,8 +163,8 @@
                                                                   <Where>
                                                                     <And>
                                                                       <Eq>
-                                                                            <FieldRef Name='Status' />
-                                                                            <Value Type='Text'>" + FormStatus.COMPLETED + @"</Value>
+                                                                            <FieldRef Name='WorkflowStatus' />
+                                                                            <Value Type='Text'>" + FormStatus.APPROVED + @"</Value>
                                                                        </Eq>
                                                                        <Eq>
                                                                              <FieldRef Name='IsDCNGenerated' />
