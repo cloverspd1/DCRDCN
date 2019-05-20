@@ -126,10 +126,12 @@
                         //this.SPCurrentUser.UserId = "49";
                         // this.SPCurrentUser.UserId = "6"; //cloverspd1
                         //this.SPCurrentUser.UserId = "33"; //Dhanraj Mane
-                         this.SPCurrentUser.UserId = "32"; //dcrdcnuser2
+                         //this.SPCurrentUser.UserId = "32"; //dcrdcnuser2
+                        //this.SPCurrentUser.UserId = "73"; //abhijit khopkar
+                        // this.SPCurrentUser.UserId = "179"; //tmsuser2
                         //this.SPCurrentUser.UserId = "24"; //dcrdcnuser1 sharepoint notificaiton
                         //this.SPCurrentUser.UserId = "37"; //collabappsupport3
-                        // this.SPCurrentUser.UserId = "26"; //collabappsupport-2
+                         this.SPCurrentUser.UserId = "26"; //collabappsupport-2
                         //this.SPCurrentUser.UserId = "25"; //collabappsupport-1
                         //this.SPCurrentUser.UserId = "27";// cloverspd
                         // this.SPCurrentUser.UserId = "38";// murudkara tushar
@@ -146,6 +148,7 @@
                         // this.SPCurrentUser.UserId = "49"; //Chandra Singh
                         // this.SPCurrentUser.UserId = "55"; //Ambikesh
                         //this.SPCurrentUser.UserId = "47"; //deepak mumbaiker
+                       // this.SPCurrentUser.UserId = "87"; //Durvvi saystri
                         //this.SPCurrentUser.UserId = "167"; //Shailesh saawant
 
                        // this.SPCurrentUser.UserId = "60"; //Arshad Shaikh

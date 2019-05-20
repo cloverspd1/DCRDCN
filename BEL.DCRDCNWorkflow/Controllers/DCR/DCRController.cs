@@ -1436,6 +1436,7 @@
                     if (model.IsApproved == "Approved")
                     {
                         model.ActionStatus = ButtonActionStatus.Complete;
+                        
                     }
                     else
                     {
@@ -1450,6 +1451,10 @@
                 {
 
                     Dictionary<string, string> objDict = this.GetSaveDataDictionary(this.CurrentUser.UserId, model.ActionStatus.ToString(), model.ButtonCaption);
+                    if (model.ActionStatus == ButtonActionStatus.Complete)
+                    {
+                        objDict.Add("FinalDesignEngineer", model.FinalDesignEngineer);
+                    }
                     status = this.SaveSection(model, objDict);
                     status = this.GetMessage(status, System.Web.Mvc.Html.ResourceNames.DCR);
                 }
